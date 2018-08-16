@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -ex
+wget -qO ~/.inputrc $SELF/.inputrc

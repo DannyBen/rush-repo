@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+wget -qO ~/.gitconfig $SELF/.gitconfig
+wget -qO ~/.gitignore_global $SELF/.gitignore_global

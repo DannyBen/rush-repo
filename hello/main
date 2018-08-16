@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Rush is working properly. This message is brought to you by:"
+echo $SELF

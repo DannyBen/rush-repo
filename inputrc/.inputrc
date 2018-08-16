@@ -1,0 +1,7 @@
+# Change up/down arrows behavior
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Change tab behavior and add shift tab for old behavior
+TAB: menu-complete
+"\e[Z": complete

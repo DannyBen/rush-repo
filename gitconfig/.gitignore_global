@@ -1,0 +1,5 @@
+.byebug_history
+.sass-cache
+*.sublime-project
+*.sublime-workspace
+.envrc

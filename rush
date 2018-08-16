@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+if [[ $# != 2 ]]; then
+  printf "Usage: rush USER PACKAGE\n\n"
+  printf "Where:\n"
+  printf "  USER is a GitHub user, and\n"
+  printf "  PACKAGE is a name of a package from the user's rush repository\n"
+  exit 1
+fi
+
+echo "Downloading $1/$2"
+
+wget -qO- https://raw.githubusercontent.com/$1/rush/master/$2/main | SELF=https://raw.githubusercontent.com/$1/rush/master/$2 bash
