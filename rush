@@ -31,5 +31,5 @@ export SELF="https://raw.githubusercontent.com/$repo/rush/master/$pack"
 wget -qO- $SELF/main | bash
 
 if [[ $? != 0 ]]; then
-  echo Finished with errors (exit code $?)
+  echo "Finished with errors (exit code $?)"
 fi
