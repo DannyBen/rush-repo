@@ -25,7 +25,7 @@ else
   pack=$1
 fi
 
-echo "Downloading $repo/$pack"
+printf "Rushing $repo/$pack\n\n"
 
 export SELF="https://raw.githubusercontent.com/$repo/rush/master"
 wget -qO- $SELF/$pack/main | bash

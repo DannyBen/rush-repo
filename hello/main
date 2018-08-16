@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
-echo "Rush is working properly. This message is brought to you by:"
-echo $SELF
+if [[ -n "$SELF" ]]; then
+  echo "Rush is working properly. This message is brought to you by:"
+  echo $SELF
+else
+  echo "Rush is working, but SELF is not defined."
+fi
