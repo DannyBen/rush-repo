@@ -1,12 +1,31 @@
 #!/usr/bin/env bash
-if [[ $# != 2 ]]; then
-  printf "Usage: rush USER PACKAGE\n\n"
-  printf "Where:\n"
+if [[ $# == 0 ]] || ([[ $# == 1 ]] && [[ -z "$RUSH_REPO" ]]); then
+  printf "Usage:\n"
+  printf "  rush USER PACKAGE\n"
+  if [[ -n "$RUSH_REPO" ]]; then
+    printf "  rush PACKAGE\n"
+  fi
+  printf "\nWhere:\n"
   printf "  USER is a GitHub user, and\n"
-  printf "  PACKAGE is a name of a package from the user's rush repository\n"
+  printf "  PACKAGE is a name of a package from the user's rush repository\n\n"
+  if [[ -z "$RUSH_REPO" ]]; then
+    printf "PACKAGE can be omitted if it is set in the RUSH_REPO environment variable\n\n"
+  else
+    printf "When PACKAGE is not provided, it will default to:\n"
+    printf "  $RUSH_REPO (as specified by RUSH_REPO)\n\n"
+  fi
   exit 1
 fi
 
-echo "Downloading $1/$2"
+if [[ $# == 2 ]]; then
+  repo=$1
+  pack=$2
+else
+  repo=$RUSH_REPO
+  pack=$1
+fi
 
-wget -qO- https://raw.githubusercontent.com/$1/rush/master/$2/main | SELF=https://raw.githubusercontent.com/$1/rush/master/$2 bash
+echo "Downloading $repo/$pack"
+
+export SELF="https://raw.githubusercontent.com/$repo/rush/master"
+wget -qO- $SELF/$pack/main | bash
