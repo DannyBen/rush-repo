@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# set -ex
+
+rush dannyben dircolors
+rush dannyben exrc
+rush dannyben gitconfig
+rush dannyben inputrc
+rush dannyben irbrc
+rush dannyben tmux
+
