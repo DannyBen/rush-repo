@@ -1,0 +1,7 @@
+# ~/.ngrok2/ngrok.yml
+
+# Dont use the annoying dark console, instead just show log
+console_ui: false
+log: stdout
+web_addr: 0.0.0.0:4040
+

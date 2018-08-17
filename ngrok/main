@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+mkdir ~/.ngrok2
+wget -qO ~/.ngrok2/ngrok.yml $SELF/ngrok.yml

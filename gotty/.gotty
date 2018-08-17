@@ -1,0 +1,9 @@
+port = 3000
+
+term = "hterm" 
+
+preferences {
+  background_color = "white"
+  foreground_color = "black"
+  cursor_color = "blue"
+}

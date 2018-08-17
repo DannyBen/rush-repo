@@ -1,6 +1,6 @@
 FROM alpine
 
-ENV PACKAGES bash curl git sudo
+ENV PACKAGES bash curl git sudo tar
 ENV TERM=linux
 
 ENV PS1 "\n\n>> rush \W \$ "
