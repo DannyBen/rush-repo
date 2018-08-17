@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+sudo wget -qO /usr/local/bin/op https://raw.githubusercontent.com/DannyBen/opcode/master/op
+sudo chmod +x /usr/local/bin/op

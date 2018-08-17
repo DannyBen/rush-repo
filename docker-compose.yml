@@ -8,7 +8,7 @@ volumes:
 services:
   bash:
     build: .
-    image: dannyben/sandbox
+    image: dannyben/rush
     depends_on: [web]
     volumes: 
     - data1:/app
