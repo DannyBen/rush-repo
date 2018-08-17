@@ -7,4 +7,6 @@ rush dannyben gitconfig
 rush dannyben inputrc
 rush dannyben irbrc
 rush dannyben tmux
+rush dannyben alf
 
+echo "Done. You may need to login again."
