@@ -1,0 +1,25 @@
+version: '2'
+
+volumes:
+  data1:
+  data2:
+  data3:
+
+services:
+  bash:
+    build: .
+    image: dannyben/sandbox
+    depends_on: [web]
+    volumes: 
+    - data1:/app
+    - data2:/usr/local/bin
+    - data3:/root/
+    environment:
+      RUSH_REPO: http://web:3000
+
+  web:
+    image: dannyben/alpine-adsf
+    volumes: 
+    - /vagrant/bash/rush:/app
+    ports:
+    - 3000:3000

@@ -3,17 +3,17 @@ set -e
 
 if [[ $# == 0 ]] || ([[ $# == 1 ]] && [[ -z "$RUSH_REPO" ]]); then
   printf "Usage:\n"
-  printf "  rush USER PACKAGE\n"
+  printf "  rush REPO PACKAGE\n"
   if [[ -n "$RUSH_REPO" ]]; then
     printf "  rush PACKAGE\n"
   fi
-  printf "\nWhere:\n"
-  printf "  USER is a GitHub user or a full URL to any site, and\n"
-  printf "  PACKAGE is a name of a package from the user's rush repository\n\n"
+  printf "\nParameters:\n"
+  printf "  REPO     either a GitHub user or a full URL to any site\n"
+  printf "  PACKAGE  a name of a package from the user's rush repository\n\n"
   if [[ -z "$RUSH_REPO" ]]; then
-    printf "USER can be omitted if it is set in the RUSH_REPO environment variable\n\n"
+    printf "REPO can be omitted if it is set in the RUSH_REPO environment variable\n\n"
   else
-    printf "When USER is not provided, it will default to:\n"
+    printf "When REPO is not provided, it will default to:\n"
     printf "  $RUSH_REPO (as specified by RUSH_REPO)\n\n"
   fi
   exit 1

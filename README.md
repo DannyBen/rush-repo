@@ -46,3 +46,19 @@ Building your own Rush repository
    contain the GitHub URL for the package.
 
 See any of the folders in this repository as an example.
+
+
+Development
+--------------------------------------------------
+
+For local development and testing, use the provided docker-compose 
+configuration.
+
+    $ docker compose run bash
+
+The docker stack is set up to:
+
+- Start fresh (without rush), and store its data in volumes so you can 
+  logout and login as needed.
+- Have a rush repo point to http://web:3000
+
