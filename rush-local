@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# You can use ADSF server to test this locally by running
-# ./rush-local package-name
-
-wget -qO- http://localhost:3000/$1/main | SELF=http://localhost:3000/$1 bash

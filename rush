@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
+
 if [[ $# == 0 ]] || ([[ $# == 1 ]] && [[ -z "$RUSH_REPO" ]]); then
   printf "Usage:\n"
   printf "  rush USER PACKAGE\n"
@@ -6,12 +8,12 @@ if [[ $# == 0 ]] || ([[ $# == 1 ]] && [[ -z "$RUSH_REPO" ]]); then
     printf "  rush PACKAGE\n"
   fi
   printf "\nWhere:\n"
-  printf "  USER is a GitHub user, and\n"
+  printf "  USER is a GitHub user or a full URL to any site, and\n"
   printf "  PACKAGE is a name of a package from the user's rush repository\n\n"
   if [[ -z "$RUSH_REPO" ]]; then
-    printf "PACKAGE can be omitted if it is set in the RUSH_REPO environment variable\n\n"
+    printf "USER can be omitted if it is set in the RUSH_REPO environment variable\n\n"
   else
-    printf "When PACKAGE is not provided, it will default to:\n"
+    printf "When USER is not provided, it will default to:\n"
     printf "  $RUSH_REPO (as specified by RUSH_REPO)\n\n"
   fi
   exit 1
@@ -27,9 +29,17 @@ fi
 
 printf "\nRushing $repo/$pack\n"
 
-export SELF="https://raw.githubusercontent.com/$repo/rush/master/$pack"
+if [[ $repo =~ ':' ]]; then
+  base="$repo"
+else
+  base="https://raw.githubusercontent.com/$repo/rush/master"
+fi
+
+export SELF="$base/$pack"
+
 wget -qO- $SELF/main | bash
 
 if [[ $? != 0 ]]; then
   echo "Finished with errors (exit code $?)"
 fi
+
