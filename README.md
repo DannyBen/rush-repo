@@ -1,10 +1,20 @@
-Rush - My Remote Bash Scripts
+Rush - Linux Workstation Bootstrapper
 ==================================================
+
+```
+_______                       ______  
+____  /  ___________  ___________  /_ 
+___  /   __  ___/  / / /_  ___/_  __ \
+__  /    _  /   / /_/ /_(__  )_  / / /
+_  /     /_/    \__,_/ /____/ /_/ /_/ 
+/_/      Linux Workstation Bootstrapper
+```
+
 
 Rush is a simple bash script that executes other bash scripts from compatible 
 GitHub repositories.
 
-It was designed to easily allow bootstrapping new linux machines with your
+It was designed to easily allow bootstrapping of new linux machines with your
 desired configuration and installed packages.
 
 
@@ -35,6 +45,12 @@ variable:
     $ export RUSH_REPO=dannyben
     $ rush hello
 
+Getting packages from non GitHub repositories is also easy. Just set 
+`RUSH_REPO` to a full URL:
+
+    $ export RUSH_REPO=http://localhost:3000
+    $ rush hello
+
 
 Building your own Rush repository
 --------------------------------------------------
@@ -43,9 +59,10 @@ Building your own Rush repository
 2. Each folder you create in this repository is considered a package.
 3. Each package needs to have an executable `main` script.
 4. In the script, you have the `$SELF` environment variable, which will 
-   contain the GitHub URL for the package.
+   contain the GitHub URL for the package, so the script can easily
+   download files from its own folder ([example](/gitconfig/main)).
 
-See any of the folders in this repository as an example.
+See any of the folders in this repository for additional examples.
 
 
 Development
@@ -61,5 +78,5 @@ The docker stack is set up to:
 
 - Start fresh (with rush installed), and store its data in volumes so you can 
   logout and login as needed.
-- Have RUSH_REPO point to http://web:3000
+- Have `RUSH_REPO` point to http://web:3000
 
