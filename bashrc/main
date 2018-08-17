@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -e
+
+touch $HOME/.bashrc
+
+if ! grep -q bash_aliases $HOME/.bashrc; then
+  echo "Appending bash_aliases to ~/.bashrc"
+  echo "[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases" >> $HOME/.bashrc
+fi
+
+if ! grep -q my_bashrc $HOME/.bashrc; then
+  echo "Appending my_bashrc to ~/.bashrc"
+  echo "[[ -f ~/.my_bashrc ]] && . ~/.my_bashrc" >> $HOME/.bashrc
+fi
+
+if ! grep -q my_secrets $HOME/.bashrc; then
+  echo "Appending my_secrets to ~/.bashrc"
+  echo "[[ -f ~/.my_secrets ]] && . ~/.my_secrets" >> $HOME/.bashrc
+fi
+
+if [[ ! -f $HOME/.my_bashrc ]]; then
+  echo "Downloading an initial ~/.my_bashrc"
+  wget -qO $HOME/.my_bashrc $SELF/.my_bashrc
+fi
+
+echo "Done ammending ~/.bashrc related files"

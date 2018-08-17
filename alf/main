@@ -2,4 +2,4 @@
 set -e
 sudo wget -qO /usr/local/bin/alf https://raw.githubusercontent.com/DannyBen/alf/master/alf
 sudo chmod +x /usr/local/bin/alf
-alf connect https://github.com/DannyBen/alf -y
+alf connect https://github.com/DannyBen/alf-conf -y

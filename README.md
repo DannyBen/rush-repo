@@ -55,10 +55,11 @@ For local development and testing, use the provided docker-compose
 configuration.
 
     $ docker compose run bash
+    $ rush bootstrap   # or whatever command you wish to test
 
 The docker stack is set up to:
 
-- Start fresh (without rush), and store its data in volumes so you can 
+- Start fresh (with rush installed), and store its data in volumes so you can 
   logout and login as needed.
-- Have a rush repo point to http://web:3000
+- Have RUSH_REPO point to http://web:3000
 

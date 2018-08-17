@@ -9,4 +9,7 @@ RUN apk --no-cache add $PACKAGES
 
 WORKDIR /app
 
+COPY rush /usr/local/bin/rush
+RUN chmod + /usr/local/bin/rush
+
 CMD bash
