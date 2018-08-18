@@ -11,11 +11,11 @@ RUN apt-get update && apt-get install $PACKAGES -y
 # Set a passwordless sudoer user named bob
 RUN adduser --disabled-password --gecos "" bob && \
     usermod -aG sudo bob && \
-    echo "%sudo  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd
+    echo "%sudo  ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/nopasswd
 
 # Get rush
 COPY rush /usr/local/bin/rush
-RUN chmod + /usr/local/bin/rush
+RUN chmod +x /usr/local/bin/rush
 
 # Start the container as bob
 WORKDIR /home/bob
