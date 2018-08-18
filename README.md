@@ -55,6 +55,9 @@ Getting packages from non GitHub repositories is also easy. Just set
 Building your own Rush repository
 --------------------------------------------------
 
+You can fork this repository, and edit it to your needs, or follow these
+instructions to create one from scratch.
+
 1. Create a new repository on GitHub, named `rush`.
 2. Each folder you create in this repository is considered a package.
 3. Each package needs to have an executable `main` script.
