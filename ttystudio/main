@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -ex
+
+[[ -x "$(command -v yarn)" ]] || rush yarn
+
+sudo yarn global add ttystudio

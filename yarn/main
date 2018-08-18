@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
-set -e
+set -ex
 
-if hash yarn 2> /dev/null; then
-  echo "Yarn is already installed, Goodbye."
+[[ -x "$(command -v node)" ]] || rush node
 
-else
-  echo "Downloading binary"
-  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  sudo apt-get update && sudo apt-get install yarn -y
-
-fi
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt-get install yarn -y

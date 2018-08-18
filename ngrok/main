@@ -6,6 +6,6 @@ echo "Downloading config"
 wget -qO ~/.ngrok2/ngrok.yml $SELF/ngrok.yml
 
 echo "Downloading binary (if necessary)"
-hash ngrok || sudo apt-get install ngrok-client -y
+[[ -x "$(command -v ngrok)" ]] || sudo apt-get install ngrok-client -y
 
 echo "Done, installed version: $(ngrok version)"

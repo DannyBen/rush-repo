@@ -1,7 +1,7 @@
 FROM ubuntu
 
 # Environment
-ENV PACKAGES curl wget git sudo vim apt-transport-https
+ENV PACKAGES curl wget git sudo vim apt-transport-https build-essential
 ENV TERM=linux
 ENV PS1 "\n\n>> rush \W \$ "
 

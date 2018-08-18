@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-if hash docker 2> /dev/null; then
-  echo "Docker is already installed, Goodbye."
-
-else
-  echo "Downloading docker"
-  curl https://get.docker.com | sudo sh
-
-  echo "Adding user to docker group"
-  sudo usermod -aG docker $(whoami)
-
-  echo "Starting docker service"
-  sudo service docker start
-
-fi
+curl https://get.docker.com | sudo sh
+sudo usermod -aG docker $(whoami)
+sudo service docker start
