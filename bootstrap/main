@@ -6,7 +6,7 @@ repo=${RUSH_REPO:=dannyben}
 rush $repo bashrc
 rush $repo dircolors
 rush $repo exrc
-rush $repo gitconfig
+# rush $repo gitconfig
 rush $repo inputrc
 rush $repo irbrc
 rush $repo tmux
