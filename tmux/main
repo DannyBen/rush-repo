@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 set -ex
+
+# Config
 wget -qO ~/.tmux.conf $SELF/.tmux.conf
+
+# Binary
+hash tmux 2> /dev/null || sudo apt-get install tmux -y

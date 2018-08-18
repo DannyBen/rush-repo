@@ -2,19 +2,22 @@
 
 set -e
 
-echo Downloading config
+echo "Downloading config"
 wget -qO ~/.gotty $SELF/.gotty
 
-echo Downloading binary
-curl -s https://api.github.com/repos/yudai/gotty/releases/latest | grep "download.*linux_amd64.tar.gz" | cut -d : -f 2,3 | tr -d \" | xargs wget -q
+echo "Checking if binary download is needed"
+if ! hash gotty 2> /dev/null ; then
 
-echo Extracing binary
-tar -xzvf gotty_linux_amd64.tar.gz 
-rm gotty_linux_amd64.tar.gz
+  echo "Downloading binary"
+  curl -s https://api.github.com/repos/yudai/gotty/releases/latest | grep "download.*linux_amd64.tar.gz" | cut -d : -f 2,3 | tr -d \" | xargs wget -q
 
-echo Copying binary
-sudo mv gotty /usr/local/bin/ 
-sudo chmod +x /usr/local/bin/gotty 
+  echo "Extracing binary"
+  tar -xzvf gotty_linux_amd64.tar.gz 
+  rm gotty_linux_amd64.tar.gz
 
-echo Done
-gotty --version
+  echo "Copying binary"
+  sudo mv gotty /usr/local/bin/ 
+  sudo chmod +x /usr/local/bin/gotty 
+fi
+
+echo "Done. $(gotty --version)"

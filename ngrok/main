@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
-set -ex
-mkdir ~/.ngrok2
+set -e
+
+echo "Downloading config"
+[[ -d ~/.ngrok2 ]] || mkdir ~/.ngrok2
 wget -qO ~/.ngrok2/ngrok.yml $SELF/ngrok.yml
+
+echo "Downloading binary (if necessary)"
+hash ngrok || sudo apt-get install ngrok-client -y
+
+echo "Done, installed version: $(ngrok version)"
