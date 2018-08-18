@@ -1,7 +1,6 @@
 version: '2'
 
 volumes:
-  app:
   localbin:
   home:
 
@@ -11,9 +10,8 @@ services:
     image: dannyben/rush
     depends_on: [web]
     volumes: 
-    - app:/app
     - localbin:/usr/local/bin
-    - home:/home/bob/
+    - home:/home/ubuntu/
     environment:
       RUSH_REPO: http://web:3000
 
