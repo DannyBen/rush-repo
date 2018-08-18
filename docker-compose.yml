@@ -1,9 +1,9 @@
 version: '2'
 
 volumes:
-  data1:
-  data2:
-  data3:
+  app:
+  localbin:
+  home:
 
 services:
   bash:
@@ -11,9 +11,9 @@ services:
     image: dannyben/rush
     depends_on: [web]
     volumes: 
-    - data1:/app
-    - data2:/usr/local/bin
-    - data3:/root/
+    - app:/app
+    - localbin:/usr/local/bin
+    - home:/home/bob/
     environment:
       RUSH_REPO: http://web:3000
 

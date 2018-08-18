@@ -1,15 +1,23 @@
-FROM alpine
+FROM ubuntu
 
-ENV PACKAGES bash curl git sudo tar
+# Environment
+ENV PACKAGES curl wget git sudo vim apt-transport-https
 ENV TERM=linux
-
 ENV PS1 "\n\n>> rush \W \$ "
 
-RUN apk --no-cache add $PACKAGES
+# Install packages
+RUN apt-get update && apt-get install $PACKAGES -y
 
-WORKDIR /app
+# Set a passwordless sudoer user named bob
+RUN adduser --disabled-password --gecos "" bob && \
+    usermod -aG sudo bob && \
+    echo "%sudo  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd
 
+# Get rush
 COPY rush /usr/local/bin/rush
 RUN chmod + /usr/local/bin/rush
 
+# Start the container as bob
+WORKDIR /home/bob
+USER bob
 CMD bash

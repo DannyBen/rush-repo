@@ -24,4 +24,4 @@ export EDITOR=vim
 # eval $(op --complete)
 
 ### Rush Repo
-export RUSH_REPO=dannyben
+# export RUSH_REPO=dannyben
