@@ -3,19 +3,29 @@ set -e
 
 touch $HOME/.bashrc
 
+if ! grep -q "END OF DEFAULT BASHRC" $HOME/.bashrc; then
+  echo "Appending default marker"
+  printf "# --- END OF DEFAULT BASHRC ---\n# To restore the default file, copy it from /etc/skel/.bashrc\n\n" >> $HOME/.bashrc
+fi
+
 if ! grep -q bash_aliases $HOME/.bashrc; then
-  echo "Appending bash_aliases to ~/.bashrc"
-  echo "[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases" >> $HOME/.bashrc
+  echo "Appending bash_aliases"
+  printf "[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases\n" >> $HOME/.bashrc
 fi
 
 if ! grep -q my_bashrc $HOME/.bashrc; then
-  echo "Appending my_bashrc to ~/.bashrc"
-  echo "[[ -f ~/.my_bashrc ]] && . ~/.my_bashrc" >> $HOME/.bashrc
+  echo "Appending my_bashrc"
+  printf "[[ -f ~/.my_bashrc ]] && . ~/.my_bashrc\n" >> $HOME/.bashrc
 fi
 
 if ! grep -q my_secrets $HOME/.bashrc; then
-  echo "Appending my_secrets to ~/.bashrc"
-  echo "[[ -f ~/.my_secrets ]] && . ~/.my_secrets" >> $HOME/.bashrc
+  echo "Appending my_secrets"
+  printf "[[ -f ~/.my_secrets ]] && . ~/.my_secrets\n" >> $HOME/.bashrc
+fi
+
+if ! grep -q "END OF BASHRC" $HOME/.bashrc; then
+  echo "Appending end of file marker"
+  printf "\n# --- END OF BASHRC ---\n# If enything appears below, move it to ~/.my_bashrc\n\n" >> $HOME/.bashrc
 fi
 
 if [[ ! -f $HOME/.my_bashrc ]]; then
