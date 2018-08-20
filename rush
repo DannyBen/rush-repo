@@ -18,7 +18,7 @@ usage() {
     printf "\nParameters:\n"
     printf "  REPO     either a GitHub user or a full URL to any site\n"
     printf "           can be omitted if set in the RUSH_REPO environment variable\n"
-    printf "  PACKAGE  a name of a package from the user's rush repository\n\n"
+    printf "  PACKAGE  a name of a package from the rush repository\n\n"
   fi
 }
 
