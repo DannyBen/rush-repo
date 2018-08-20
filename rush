@@ -1,46 +1,75 @@
 #!/usr/bin/env bash
-set -o pipefail
-
-if [[ $# == 0 ]] || ([[ $# == 1 ]] && [[ -z "$RUSH_REPO" ]]); then
+usage() { 
   printf "Usage:\n"
-  printf "  rush REPO PACKAGE\n"
   if [[ -n "$RUSH_REPO" ]]; then
-    printf "  rush PACKAGE\n"
-  fi
-  printf "\nParameters:\n"
-  printf "  REPO     either a GitHub user or a full URL to any site\n"
-  printf "  PACKAGE  a name of a package from the user's rush repository\n\n"
-  if [[ -z "$RUSH_REPO" ]]; then
-    printf "REPO can be omitted if it is set in the RUSH_REPO environment variable\n\n"
+    printf "  rush [REPO] PACKAGE\n"
   else
-    printf "When REPO is not provided, it will default to:\n"
-    printf "  $RUSH_REPO (as specified by RUSH_REPO)\n\n"
+    printf "  rush REPO PACKAGE\n"
   fi
-  exit 1
-fi
 
-if [[ $# == 2 ]]; then
-  repo=$1
-  pack=$2
-else
-  repo=$RUSH_REPO
-  pack=$1
-fi
+  printf "  rush -h | --help\n"
+  printf "  rush -v | --version\n"
 
-printf "\nRushing $repo/$pack\n"
+  if [[ -n "$RUSH_REPO" ]]; then
+    printf "\nRUSH_REPO=$RUSH_REPO\n"
+  fi
 
-if [[ $repo =~ ':' ]]; then
-  base="$repo"
-else
-  base="https://raw.githubusercontent.com/$repo/rush/master"
-fi
+  if $LONG_USAGE; then
+    printf "\nParameters:\n"
+    printf "  REPO     either a GitHub user or a full URL to any site\n"
+    printf "           can be omitted if set in the RUSH_REPO environment variable\n"
+    printf "  PACKAGE  a name of a package from the user's rush repository\n\n"
+  fi
+}
 
-export SELF="$base/$pack"
+find_source() {
+  if [[ $# == 2 ]]; then
+    repo=$1
+    pack=$2
+  else
+    repo=$RUSH_REPO
+    pack=$1
+  fi
 
-wget -qO- $SELF/main | bash
-exitcode=$?
+  if [[ $repo =~ ':' ]]; then
+    base="$repo"
+  else
+    base="https://raw.githubusercontent.com/$repo/rush/master"
+  fi
+}
 
-if [[ "$exitcode" != "0" ]]; then
-  echo "Error $exitcode @ $SELF"
-fi
+execute() {
+  printf "\nRushing $repo/$pack\n"
+  export SELF="$base/$pack"
 
+  wget -qO- $SELF/main | bash
+  exitcode=$?
+
+  [[ "$exitcode" != "0" ]] && echo "Error $exitcode @ $SELF"
+}
+
+attempt_execute() {
+  if [[ $# == 0 ]] || ([[ $# == 1 ]] && [[ -z "$RUSH_REPO" ]]); then
+    usage
+  else
+    find_source $@
+    execute $@
+  fi
+}
+
+run() {
+  initialize
+  case "$1" in
+    -h | --help    ) LONG_USAGE=true; usage ;;
+    -v | --version ) echo $VERSION ;;
+    * ) attempt_execute $@ ;;
+  esac
+}
+
+initialize() {
+  VERSION="0.1.0"
+  LONG_USAGE=false
+  set -o pipefail
+}
+
+run $@
