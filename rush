@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -o pipefail
 
 if [[ $# == 0 ]] || ([[ $# == 1 ]] && [[ -z "$RUSH_REPO" ]]); then
   printf "Usage:\n"
@@ -38,8 +38,9 @@ fi
 export SELF="$base/$pack"
 
 wget -qO- $SELF/main | bash
+exitcode=$?
 
-if [[ $? != 0 ]]; then
-  echo "Finished with errors (exit code $?)"
+if [[ "$exitcode" != "0" ]]; then
+  echo "Error $exitcode @ $SELF"
 fi
 

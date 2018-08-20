@@ -12,6 +12,7 @@ services:
     volumes: 
     - localbin:/usr/local/bin
     - home:/home/ubuntu/
+    - ./rush:/usr/local/bin/rush
     environment:
       RUSH_REPO: http://web:3000
 
