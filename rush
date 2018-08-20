@@ -45,7 +45,9 @@ execute() {
   wget -qO- $SELF/main | bash
   exitcode=$?
 
-  [[ "$exitcode" != "0" ]] && echo "Error $exitcode @ $SELF"
+  if [[ "$exitcode" != "0" ]]; then
+    echo "Error $exitcode @ $SELF"
+  fi
 }
 
 attempt_execute() {
@@ -67,7 +69,7 @@ run() {
 }
 
 initialize() {
-  VERSION="0.1.0"
+  VERSION="0.1.1"
   LONG_USAGE=false
   set -o pipefail
 }
