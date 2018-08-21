@@ -9,4 +9,4 @@ eval $(ssh-agent) > /dev/null
 export RIG_HOME=/vagrant/rigs
 
 ### Non-alf aliases
-alias ..=cd ..
+alias ..="cd .."

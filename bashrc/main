@@ -30,9 +30,7 @@ if [[ ! -d $HOME/.bashrc.d ]]; then
   chmod 700 $HOME/.bashrc.d
 fi
 
-if [[ ! -f $HOME/.bashrc.d/global.bashrc ]]; then
-  echo "Downloading ~/.bashrc.d/global"
-  wget -qO $HOME/.bashrc.d/global.bashrc $SELF/global.bashrc
-fi
+echo "Downloading ~/.bashrc.d/global.bashrc"
+wget -qO $HOME/.bashrc.d/global.bashrc $SELF/global.bashrc
 
 echo "Done"

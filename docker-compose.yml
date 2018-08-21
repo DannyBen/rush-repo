@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 volumes:
   localbin:
@@ -6,19 +6,17 @@ volumes:
 
 services:
   bash:
-    build: .
     image: dannyben/rush
     depends_on: [web]
     volumes: 
     - localbin:/usr/local/bin
     - home:/home/ubuntu/
-    - ./rush:/usr/local/bin/rush
     environment:
       RUSH_REPO: http://web:3000
 
   web:
     image: dannyben/alpine-adsf
     volumes: 
-    - /vagrant/bash/rush:/app
+    - .:/app
     ports:
     - 3000:3000
