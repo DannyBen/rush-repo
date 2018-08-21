@@ -10,7 +10,9 @@ _  /     /_/    \__,_/ /____/ /_/ /_/
 /_/      Linux Workstation Bootstrapper
 ```
 
-This is my [rush][1] repo.
+This is my rush repo.
+
+For more information, visit the repository for the [rush command][1].
 
 
 Development
