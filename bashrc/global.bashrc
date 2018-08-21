@@ -1,5 +1,5 @@
 ### General
-PS1="\n\n- \W \$ "
+PS1="\n\nvagrant \W \$ "
 export EDITOR=vim
 
 ### Remember ssh key passphrase
