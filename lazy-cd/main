@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -ex
+wget -qO ~/.bashrc.d/lcd.bashrc https://raw.githubusercontent.com/pedramamini/lazy-cd/master/lcd.sh

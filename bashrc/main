@@ -13,24 +13,26 @@ if ! grep -q bash_aliases $HOME/.bashrc; then
   printf "[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases\n" >> $HOME/.bashrc
 fi
 
-if ! grep -q my_bashrc $HOME/.bashrc; then
-  echo "Appending my_bashrc"
-  printf "[[ -f ~/.my_bashrc ]] && . ~/.my_bashrc\n" >> $HOME/.bashrc
-fi
-
-if ! grep -q my_secrets $HOME/.bashrc; then
-  echo "Appending my_secrets"
-  printf "[[ -f ~/.my_secrets ]] && . ~/.my_secrets\n" >> $HOME/.bashrc
+if ! grep -q "bashrc.d" $HOME/.bashrc; then
+  echo "Appending bashrc.d"
+  printf "# Source all files in ~/.bashrc.d\n" >> $HOME/.bashrc
+  printf "for f in ~/.bashrc.d/*; do source \$f; done\n" >> $HOME/.bashrc
 fi
 
 if ! grep -q "END OF BASHRC" $HOME/.bashrc; then
   echo "Appending end of file marker"
-  printf "\n# --- END OF BASHRC ---\n# If enything appears below, move it to ~/.my_bashrc\n\n" >> $HOME/.bashrc
+  printf "\n# --- END OF BASHRC ---\n# If anything appears below, move it to ~/.bashrc.d\n\n" >> $HOME/.bashrc
 fi
 
-if [[ ! -f $HOME/.my_bashrc ]]; then
-  echo "Downloading an initial ~/.my_bashrc"
-  wget -qO $HOME/.my_bashrc $SELF/.my_bashrc
+if [[ ! -d $HOME/.bashrc.d ]]; then
+  echo "Creating ~/.bashrc.d"
+  mkdir $HOME/.bashrc.d
+  chmod 700 $HOME/.bashrc.d
 fi
 
-echo "Done ammending ~/.bashrc related files"
+if [[ ! -f $HOME/.bashrc.d/global.bashrc ]]; then
+  echo "Downloading ~/.bashrc.d/global"
+  wget -qO $HOME/.bashrc.d/global.bashrc $SELF/global.bashrc
+fi
+
+echo "Done"

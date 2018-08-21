@@ -5,3 +5,11 @@
 # Change tab behavior and add shift tab for old behavior
 TAB: menu-complete
 "\e[Z": complete
+
+# Ctrl right/left to move between words
+# "\e[C": forward-word
+# "\e[D": backward-word
+
+# Alt-s to add run command with sudo
+# "\es": "\C-asudo \C-M"
+

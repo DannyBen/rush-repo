@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+sudo apt install direnv
+wget -qO ~/.bashrc.d/direnv.bashrc $SELF/direnv.bashrc
