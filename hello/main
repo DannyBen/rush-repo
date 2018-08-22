@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
-# 
-# This is a simple example, just to test that rush is connecting
-# to the repository properly, and receives the environment variables.
-#
-
 SELF=${SELF:=ERROR}
 REPO=${REPO:=ERROR}
 PACK=${PACK:=ERROR}
