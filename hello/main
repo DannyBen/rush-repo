@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
+# 
+# This is a simple example, just to test that rush is connecting
+# to the repository properly, and receives the environment variables.
+#
 
-if [[ -n "$SELF" ]]; then
-  echo "Rush is working properly. This message is brought to you by:"
-  echo $SELF
-else
-  echo "Rush is working, but SELF is not defined."
-fi
+SELF=${SELF:=ERROR}
+REPO=${REPO:=ERROR}
+PACK=${PACK:=ERROR}
+
+echo "What's the rush?"
+echo "- SELF: $SELF"
+echo "- REPO: $REPO"
+echo "- PACK: $PACK"

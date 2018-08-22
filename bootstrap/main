@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-repo=${RUSH_REPO:=dannyben}
-
-rush $repo bashrc
-rush $repo dircolors
-rush $repo exrc
-rush $repo inputrc
-rush $repo irbrc
-rush $repo alf
+rush $REPO bashrc
+rush $REPO dircolors
+rush $REPO exrc
+rush $REPO inputrc
+rush $REPO irbrc
+rush $REPO alf
 
 printf "\nDone. You may need to login again.\n"
