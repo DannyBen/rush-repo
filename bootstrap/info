@@ -1,2 +1,4 @@
 A meta package executing several other packages to initialize a new linux
 environment.
+
+Call with 'my=yes' ro install additional personal packages.

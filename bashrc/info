@@ -1,2 +1,4 @@
-Configure ~/.bashrc with ~/.bashrc.d and install initial profile 
-configuration.
+Configure ~/.bashrc to load everything from ~/.bashrc.d and creates this
+directory if needed.
+
+Call with `my=yes` to also copy an initial global.bashrc

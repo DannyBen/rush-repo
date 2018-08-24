@@ -7,3 +7,9 @@ echo "What's the rush?"
 echo "- SELF: $SELF"
 echo "- REPO: $REPO"
 echo "- PACK: $PACK"
+
+# As a convention, you can use 'my=yes rush something' to tell the package
+# you wish to install additional aspects that are not relevant to other users
+if [[ $my ]]; then
+  echo "- my: yes"
+fi

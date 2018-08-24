@@ -6,6 +6,11 @@ rush $REPO dircolors
 rush $REPO exrc
 rush $REPO inputrc
 rush $REPO irbrc
-rush $REPO alf
+[[ -x "$(command -v alf)" ]] || rush $REPO alf
+
+if [[ $my ]]; then
+  rush gitconfig
+  rush cdpath
+fi
 
 printf "\nDone. You may need to login again.\n"
