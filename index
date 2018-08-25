@@ -1,0 +1,27 @@
+Package Index for DannyBen
+
+alf              Install Alf aliases manager
+bashrc           Configure ~/.bashrc to ~/.bashrc.d
+bootstrap        A meta package executing several configuration packages
+cdpath           Install CDPATH configuration in ~/.bashrc.d
+dircolors        Install dircolor configuration in ~/.bashrc.d
+direnv           Install direnv and relevant ~/.bashrc.d configuration
+docker           Install docker
+docker-compose   Install or update docker-compose
+exrc             Install vim configuration in ~/.exrc
+gitconfig        Install user-level .gitconfig and .gitignore_global
+gotty            Install or update gotty
+hello            Sample package
+inputrc          Install bash navigation configuration in ~/.inputrc
+irbrc            Install configuration for Ruby's IRB
+lazy-cd          Install Lazy CD
+ncdu             Install ncdu, the file size utility
+ngrok            Install ngrok and ngrok configuration file
+node             Install Node 8.x
+opcode           Install opcode
+python           Install python3 and pip3
+rush             Install rush
+rvm              Install and configure Ruby Version Manager
+tmux             Install and configure tmux
+ttystudio        Install ttystudio using Yarn
+yarn             Install Yarn
