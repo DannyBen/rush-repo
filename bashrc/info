@@ -1,4 +1,8 @@
-Configure ~/.bashrc to load everything from ~/.bashrc.d and creates this
-directory if needed.
+Configure ~/.bashrc to ~/.bashrc.d
+
+This script creates a ~/.bashrc.d directory if needed, and configured 
+~/.bashrc to load everything from it.
+
+It is required by some other packages in this repository.
 
 Call with `my=yes` to also copy an initial global.bashrc

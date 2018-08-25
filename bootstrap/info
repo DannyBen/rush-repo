@@ -1,4 +1,5 @@
-A meta package executing several other packages to initialize a new linux
-environment.
+A meta package executing several configuration packages
+
+This is designed to quickly get a new linux machine properly configured.
 
 Call with 'my=yes' ro install additional personal packages.

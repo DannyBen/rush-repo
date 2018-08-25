@@ -1,4 +1,4 @@
-Install rush.
+Install rush
 
 Call with `my=yes` to also set RUSH_REPO to point to DannyBen Rush Repository
 in '~/.bashrc.d'.
