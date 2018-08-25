@@ -1,7 +1,7 @@
 Package Index for DannyBen
 
 alf              Install Alf aliases manager
-bashrc           Configure ~/.bashrc to ~/.bashrc.d
+bashrc           Configure ~/.bashrc to use ~/.bashrc.d
 bootstrap        A meta package executing several configuration packages
 cdpath           Install CDPATH configuration in ~/.bashrc.d
 dircolors        Install dircolor configuration in ~/.bashrc.d

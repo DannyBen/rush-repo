@@ -1,4 +1,4 @@
-Configure ~/.bashrc to ~/.bashrc.d
+Configure ~/.bashrc to use ~/.bashrc.d
 
 This script creates a ~/.bashrc.d directory if needed, and configured 
 ~/.bashrc to load everything from it.
