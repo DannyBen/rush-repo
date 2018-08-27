@@ -18,6 +18,7 @@ lazy-cd          Install Lazy CD
 ncdu             Install ncdu, the file size utility
 ngrok            Install ngrok and ngrok configuration file
 node             Install Node 8.x
+now              Install or update now CLI
 opcode           Install opcode
 python           Install python3 and pip3
 rush             Install rush

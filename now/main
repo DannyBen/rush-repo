@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -ex
+curl -s https://api.github.com/repos/zeit/now-cli/releases/latest \
+  | grep "download.*now-linux.gz" \
+  | cut -d : -f 2,3 \
+  | tr -d \" \
+  | wget -qi - \
+  
+gunzip now-linux.gz
+sudo mv now-linux /usr/local/bin/now
+sudo chmod +x /usr/local/bin/now
+now --version
