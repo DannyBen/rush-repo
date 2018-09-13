@@ -28,6 +28,7 @@ if [[ ! -d $HOME/.bashrc.d ]]; then
   echo "Creating ~/.bashrc.d"
   mkdir $HOME/.bashrc.d
   chmod 700 $HOME/.bashrc.d
+  touch $HOME/.bashrc.d/empty.bashrc
 fi
 
 if [[ $my ]]; then
