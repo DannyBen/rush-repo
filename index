@@ -21,6 +21,7 @@ node             Install Node 8.x
 now              Install or update now CLI
 opcode           Install opcode
 python           Install python3 and pip3
+ruby             Install ruby using RVM
 rush             Install rush
 rvm              Install and configure Ruby Version Manager
 tmux             Install and configure tmux
