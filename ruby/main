@@ -7,7 +7,7 @@ if [[ ! -x "$(command -v rvm)" ]]; then
   exit
 fi
 
-if [[ -x "$(command -v rvm)" ]]; then
+if [[ -x "$(command -v ruby)" ]]; then
   echo "Ruby is already installed:"
   ruby --version
   exit
