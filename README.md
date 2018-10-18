@@ -13,8 +13,8 @@ _  /     /_/    \__,_/ /____/ /_/ /_/
 This is my rush repo.
 
 All packages are suitable for public consumption. Some packages can be 
-executed with `my=yes rush packagename`. When executed like this, additional
-steps will be executed.
+executed with `RUSH_MODE=personal rush packagename`. When executed like this, 
+additional steps will be executed.
 
 To see package index from the command line, run `rush /index`.
 

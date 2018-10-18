@@ -5,4 +5,4 @@ This script creates a ~/.bashrc.d directory if needed, and configured
 
 It is required by some other packages in this repository.
 
-Call with `my=yes` to also copy an initial global.bashrc
+Call with `RUSH_MODE=personal` to also copy an initial global.bashrc

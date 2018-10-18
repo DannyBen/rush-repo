@@ -8,8 +8,9 @@ echo "- SELF: $SELF"
 echo "- REPO: $REPO"
 echo "- PACK: $PACK"
 
-# As a convention, you can use 'my=yes rush something' to tell the package
-# you wish to install additional aspects that are not relevant to other users
-if [[ $my ]]; then
-  echo "- my: yes"
+# As a convention, you can use 'RUSH_MODE=personal rush something' to tell 
+# the package you wish to install additional aspects that are not relevant
+# to other users
+if [[ $RUSH_MODE ]]; then
+  echo "- RUSH_MODE: $RUSH_MODE"
 fi

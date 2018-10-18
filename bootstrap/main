@@ -8,7 +8,7 @@ rush $REPO inputrc
 rush $REPO irbrc
 [[ -x "$(command -v alf)" ]] || rush $REPO alf
 
-if [[ $my ]]; then
+if [[ $RUSH_MODE == "personal" ]]; then
   rush gitconfig
   rush cdpath
 fi
