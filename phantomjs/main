@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -ex
+
+# Dependencies
+sudo apt install libfontconfig
+
+# Download and extract
+wget -O phantomjs.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+tar xvjf phantomjs.tar.bz2
+
+# Copy to /usr/local/bin
+sudo cp phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+sudo chmod +x /usr/local/bin/phantomjs
+
+# Done. Did we succeed?
+echo "phantomjs --version:"
+phantomjs --version

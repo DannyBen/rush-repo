@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+RUBY_VERSION=2.5.0
+
 if [[ ! -x "$(command -v rvm)" ]]; then
   echo "RVM is not installed."
   echo "Run 'rush rvm' first."
@@ -13,5 +15,7 @@ if [[ -x "$(command -v ruby)" ]]; then
   exit
 fi
 
-rvm install 2.5.1
-rvm use 2.5.1 --default
+rvm install $RUBY_VERSION
+
+echo "RVM Installed, please run:"
+echo "rvm use $RUBY_VERSION --default"
