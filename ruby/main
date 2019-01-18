@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-RUBY_VERSION=2.5.0
+RUBY_VERSION=2.5.3
 
 if [[ ! -x "$(command -v rvm)" ]]; then
   echo "RVM is not installed."
