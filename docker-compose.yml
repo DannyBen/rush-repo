@@ -14,7 +14,6 @@ services:
     - ./_tmp:/home/ubuntu/tmp
     environment:
       RUSH_REPO: http://web:3000
-      RUSH_MODE: personal
 
   web:
     image: dannyben/alpine-adsf

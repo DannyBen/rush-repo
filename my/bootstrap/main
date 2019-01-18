@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 set -e
 
-rush $REPO bashrc
+# Public packages
 rush $REPO dircolors
 rush $REPO exrc
 rush $REPO inputrc
 rush $REPO irbrc
-[[ -x "$(command -v alf)" ]] || rush $REPO alf
 
-if [[ $RUSH_MODE == "personal" ]]; then
-  rush gitconfig
-  rush cdpath
-fi
+# Personal packages
+rush $REPO my/bashrc
+rush $REPO my/cdpath
+rush $REPO my/gitconfig
+
+# Install only if necessary
+[[ -x "$(command -v alf)" ]]    || rush $REPO my/alf
 
 printf "\nDone. You may need to login again.\n"

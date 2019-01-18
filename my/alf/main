@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-set -ex
+set -e
+rush $REPO alf
 alf connect https://github.com/DannyBen/alf-conf -y
