@@ -6,3 +6,8 @@ for d in */; do
   infofile="$d/info"
   [[ -f $infofile ]] && printf "%-16s `head -1 $infofile`\n" ${d:0:-1}
 done
+
+for d in my/*/; do
+  infofile="$d/info"
+  [[ -f $infofile ]] && printf "%-16s `head -1 $infofile`\n" ${d:0:-1}
+done
