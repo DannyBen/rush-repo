@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 set -ex
-wget -qO ~/.gitconfig $SELF/.gitconfig
-wget -qO ~/.gitignore_global $SELF/.gitignore_global
+rush $REPO gitconfig
+git config --global user.name "Danny Ben Shitrit"
+git config --global user.email db@dannyben.com

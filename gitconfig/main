@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -ex
+wget -qO ~/.gitignore_global $SELF/.gitignore_global
+
+git config --global push.default simple
+git config --global color.ui true
+git config --global core.editor vi
+git config --global core.autocrlf input
+git config --global core.excludesfile ~/.gitignore_global
+git config --global credential.helper "cache --timeout=21600"

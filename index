@@ -8,6 +8,7 @@ direnv           Install direnv and relevant ~/.bashrc.d configuration
 docker-compose   Install or update docker-compose
 docker           Install docker
 exrc             Install vim configuration in ~/.exrc
+gitconfig        Install user-level .gitconfig and .gitignore_global
 gotty            Install or update gotty
 hello            Sample package
 inputrc          Install bash navigation configuration in ~/.inputrc
@@ -30,10 +31,10 @@ yarn             Install Yarn
 
 Personal Packages
 
-my/alf           Connect to DannyBen Alf repository
-my/bashrc        Download global bashrc script
+my/alf           Rush Alf + connect to DannyBen repo
+my/bashrc        Rush bashrc + download global bashrc script
 my/bootstrap     Personal bootstrap
 my/cdpath        Install CDPATH configuration in ~/.bashrc.d
-my/gitconfig     Install user-level .gitconfig and .gitignore_global
+my/gitconfig     Rush gitconfig + set git username and email
 my/hello         Sample nested package
 my/rush          Connect RUSH_REPO to DannyBen
