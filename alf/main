@@ -2,8 +2,3 @@
 set -e
 sudo wget -qO /usr/local/bin/alf https://raw.githubusercontent.com/DannyBen/alf/master/alf
 sudo chmod +x /usr/local/bin/alf
-
-if [[ $RUSH_MODE == "personal" ]]; then
-  alf connect https://github.com/DannyBen/alf-conf -y
-fi
-

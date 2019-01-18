@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Downloading ~/.bashrc.d/global.bashrc"
+wget -qO $HOME/.bashrc.d/global.bashrc $SELF/global.bashrc
+echo "Done"

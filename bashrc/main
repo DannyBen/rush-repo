@@ -31,9 +31,4 @@ if [[ ! -d $HOME/.bashrc.d ]]; then
   touch $HOME/.bashrc.d/empty.bashrc
 fi
 
-if [[ $RUSH_MODE == "personal" ]]; then
-  echo "Downloading ~/.bashrc.d/global.bashrc"
-  wget -qO $HOME/.bashrc.d/global.bashrc $SELF/global.bashrc
-fi
-
 echo "Done"

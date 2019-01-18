@@ -4,5 +4,3 @@ This script creates a ~/.bashrc.d directory if needed, and configured
 ~/.bashrc to load everything from it.
 
 It is required by some other packages in this repository.
-
-Call with `RUSH_MODE=personal` to also copy an initial global.bashrc

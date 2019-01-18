@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+wget -qO ~/.bashrc.d/rush.bashrc $SELF/rush.bashrc
+

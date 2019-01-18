@@ -3,7 +3,3 @@ set -ex
 sudo wget -qO /usr/local/bin/rush \
 https://raw.githubusercontent.com/DannyBen/rush-command/master/rush && \
 sudo chmod +x /usr/local/bin/rush
-
-if [[ $RUSH_MODE == "personal" ]]; then
-  wget -qO ~/.bashrc.d/rush.bashrc $SELF/rush.bashrc
-fi
