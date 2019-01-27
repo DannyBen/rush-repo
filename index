@@ -21,6 +21,7 @@ now              Install or update now CLI
 opcode           Install opcode
 phantomjs        Install phantomjs
 python           Install python3 and pip3
+redis            Install redis server and CLI
 ruby             Install ruby using RVM
 rush             Install rush
 rvm-apt          Install and configure Ruby Version Manager using apt get
