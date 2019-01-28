@@ -1,5 +1,3 @@
 A meta package executing several configuration packages
 
 This is designed to quickly get a new linux machine properly configured.
-
-Call with 'RUSH_MODE=personal' to install additional personal packages.
