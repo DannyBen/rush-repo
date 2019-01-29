@@ -12,9 +12,9 @@ _  /     /_/    \__,_/ /____/ /_/ /_/
 
 This is my rush repo.
 
-All packages are suitable for public consumption. Some packages can be 
-executed with `RUSH_MODE=personal rush packagename`. When executed like this, 
-additional steps will be executed.
+All packages are suitable for public consumption. Packages under the [my](my)
+folder contain personal additional configuration that should normally not be
+used by anyone else.
 
 To see package index from the command line, run `rush /index`.
 
