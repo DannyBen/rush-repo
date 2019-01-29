@@ -1,6 +1,6 @@
 Configure ~/.bashrc to use ~/.bashrc.d
 
-This script creates a ~/.bashrc.d directory if needed, and configured 
+This script creates a ~/.bashrc.d directory if needed, and configures 
 ~/.bashrc to load everything from it.
 
 It is required by some other packages in this repository.
