@@ -3,7 +3,7 @@ Install Lazy CD
 Usage:
   acd name        bookmark current directory
   lcd name        recall bookmark
-  pcd name        show bookmarks
   dcd name        delete bookmark
+  pcd             show bookmarks
 
 Source: https://github.com/pedramamini/lazy-cd
