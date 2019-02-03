@@ -1,2 +1,2 @@
 ### Faster CD
-CDPATH=.:/vagrant:/vagrant/gems:/vagrant/rails:/vagrant/telesofia/web
+export CDPATH=.:/vagrant:/vagrant/gems:/vagrant/rails:/vagrant/telesofia/web
