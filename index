@@ -5,15 +5,17 @@ bashrc           Configure ~/.bashrc to use ~/.bashrc.d
 bootstrap        A meta package executing several configuration packages
 dircolors        Install dircolor configuration in ~/.bashrc.d
 direnv           Install direnv and relevant ~/.bashrc.d configuration
-docker-compose   Install or update docker-compose
 docker           Install docker
+docker-compose   Install or update docker-compose
 exrc             Install vim configuration in ~/.exrc
 gitconfig        Install user-level .gitconfig and .gitignore_global
+github-markdown-toc Install gh-md-toc Table of Contents generator
 gotty            Install or update gotty
 hello            Sample package
 inputrc          Install bash navigation configuration in ~/.inputrc
 irbrc            Install configuration for Ruby's IRB
 lazy-cd          Install Lazy CD
+locale           Set locale to en_US.UTF-8
 ncdu             Install ncdu, the file size utility
 ngrok            Install ngrok and ngrok configuration file
 node             Install Node 8.x
@@ -24,8 +26,9 @@ python           Install python3 and pip3
 redis            Install redis server and CLI
 ruby             Install ruby using RVM
 rush             Install rush
-rvm-apt          Install and configure Ruby Version Manager using apt get
 rvm              Install and configure Ruby Version Manager
+rvm-apt          Install and configure Ruby Version Manager using apt get
+slackcli         Install slack CLI shell script
 tmux             Install and configure tmux
 ttystudio        Install ttystudio using Yarn
 yarn             Install Yarn

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "Downloading executable"
+sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc
+sudo chmod +x /usr/local/bin/gh-md-toc
+
+echo "Done. $(gh-md-toc)"
