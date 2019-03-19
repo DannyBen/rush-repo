@@ -12,6 +12,7 @@ gitconfig        Install user-level .gitconfig and .gitignore_global
 github-markdown-toc Install gh-md-toc Table of Contents generator
 gotty            Install or update gotty
 hello            Sample package
+hexyl            Install hexyl HEX viewer
 inputrc          Install bash navigation configuration in ~/.inputrc
 irbrc            Install configuration for Ruby's IRB
 lazy-cd          Install Lazy CD
