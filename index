@@ -29,6 +29,7 @@ ruby             Install ruby using RVM
 rush             Install rush
 rvm              Install and configure Ruby Version Manager
 rvm-apt          Install and configure Ruby Version Manager using apt get
+shopify-themekit Install the Shopify ThemeKit CLI
 slackcli         Install slack CLI shell script
 tmux             Install and configure tmux
 ttystudio        Install ttystudio using Yarn

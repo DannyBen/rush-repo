@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -ex
+curl -s https://shopify.github.io/themekit/scripts/install.py | sudo python
