@@ -7,6 +7,7 @@ dircolors        Install dircolor configuration in ~/.bashrc.d
 direnv           Install direnv and relevant ~/.bashrc.d configuration
 docker           Install docker
 docker-compose   Install or update docker-compose
+docker-machine   Install docker-machine
 exrc             Install vim configuration in ~/.exrc
 gitconfig        Install user-level .gitconfig and .gitignore_global
 github-markdown-toc Install gh-md-toc Table of Contents generator
