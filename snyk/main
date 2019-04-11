@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+echo "Identifying latest version"
+version=$(curl -s https://api.github.com/repos/snyk/snyk/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
+
+echo "Latest version is $version"
+
+echo "Comparing with installed version (if any)"
+hash snyk 2> /dev/null && snyk --version | grep $version > /dev/null 2>&1
+
+if [[ "$?" != "0" ]]; then
+  echo "Downloading..."
+  sudo curl -L https://github.com/snyk/snyk/releases/download/v$version/snyk-linux -o /usr/local/bin/snyk
+  sudo chmod +x /usr/local/bin/snyk
+  echo "Installed in /usr/local/bin/snyk"
+
+else
+  echo "Installed version is also $version - no update needed"
+
+fi
+
+if [[ -z "$SNYK_TOKEN" ]]; then
+  echo ''
+  echo "NOTE: The environamnt variable SNYK_TOKEN is not set"
+  echo "      Get your token from https://app.snyk.io/account"
+  echo ''
+fi
+
+echo "Goodbye"

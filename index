@@ -32,6 +32,7 @@ rvm              Install and configure Ruby Version Manager
 rvm-apt          Install and configure Ruby Version Manager using apt get
 shopify-themekit Install the Shopify ThemeKit CLI
 slackcli         Install slack CLI shell script
+snyk             Install or update snyk CLI
 tmux             Install and configure tmux
 ttystudio        Install ttystudio using Yarn
 yarn             Install Yarn
