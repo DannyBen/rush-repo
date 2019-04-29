@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+echo "Identifying latest version"
+version=$(curl -s https://api.github.com/repos/rancher/k3s/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
+
+echo "Latest version is $version"
+
+echo "Comparing with installed version (if any)"
+hash k3s 2> /dev/null && k3s --version | grep $version > /dev/null 2>&1
+
+if [[ "$?" != "0" ]]; then
+  echo "Downloading k3s binary..."
+  curl -# -L https://github.com/rancher/k3s/releases/download/v$version/k3s >/tmp/k3s
+  chmod +x /tmp/k3s
+  sudo mv /tmp/k3s /usr/local/bin/k3s
+
+  echo "Done."
+  k3s --version
+
+else
+  echo "Installed version is also $version, no update needed."
+  echo "Goodbye."
+
+fi
+
+
