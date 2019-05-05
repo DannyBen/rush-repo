@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+sudo apt install nnn
+wget -qO ~/.bashrc.d/nnn.bashrc $SELF/nnn.bashrc
