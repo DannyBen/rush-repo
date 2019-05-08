@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if ! hash solo 2> /dev/null; then
+  echo "Downloading solo"
+  curl -# -L https://raw.githubusercontent.com/DannyBen/solo/master/solo >/tmp/solo
+  chmod +x /tmp/solo
+  sudo mv /tmp/solo /usr/local/bin/
+
+else
+  echo "Solo is already installed"
+
+fi
