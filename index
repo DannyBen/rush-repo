@@ -5,6 +5,7 @@ bashrc           Configure ~/.bashrc to use ~/.bashrc.d
 bootstrap        A meta package executing several configuration packages
 dircolors        Install dircolor configuration in ~/.bashrc.d
 direnv           Install direnv and relevant ~/.bashrc.d configuration
+dive             Install or update dive, docker layer inspector
 docker           Install docker
 docker-compose   Install or update docker-compose
 docker-machine   Install or update docker-machine
@@ -14,12 +15,15 @@ github-markdown-toc Install gh-md-toc Table of Contents generator
 gotty            Install or update gotty
 hello            Sample package
 hexyl            Install hexyl HEX viewer
+imagemagick-dev  Install imagemagick dev libraries
 inputrc          Install bash navigation configuration in ~/.inputrc
 irbrc            Install configuration for Ruby's IRB
+k3s              Install or update k3s
 lazy-cd          Install Lazy CD
 locale           Set locale to en_US.UTF-8
 ncdu             Install ncdu, the file size utility
 ngrok            Install ngrok and ngrok configuration file
+nnn              Install nnn, the file browser
 node             Install Node 8.x
 now              Install or update now CLI
 opcode           Install opcode
@@ -33,6 +37,7 @@ rvm-apt          Install and configure Ruby Version Manager using apt get
 shopify-themekit Install the Shopify ThemeKit CLI
 slackcli         Install slack CLI shell script
 snyk             Install or update snyk CLI
+solo             Install solo
 tmux             Install and configure tmux
 ttystudio        Install ttystudio using Yarn
 yarn             Install Yarn
