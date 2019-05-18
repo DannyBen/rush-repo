@@ -1,0 +1,22 @@
+diff:
+  # You can change the default files show in the filetree (right pane). All diff types are shown by default. 
+  hide:
+    # - added
+    # - removed
+    # - changed
+    - unchanged
+
+filetree:
+  # The default directory-collapse state
+  collapse-dir: false
+
+  # The percentage of screen width the filetree should take on the screen (must be >0 and <1)
+  pane-width: 0.6
+
+  # Show the file attributes next to the filetree
+  show-attributes: false
+
+layer:
+  # Enable showing all changes from this layer and ever previous layer
+  show-aggregated-changes: false
+
