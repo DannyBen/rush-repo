@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
-set -e
+set -ex
 
 echo "Downloading config"
 [[ -d ~/.ngrok2 ]] || mkdir ~/.ngrok2
 wget -qO ~/.ngrok2/ngrok.yml $SELF/ngrok.yml
 
 echo "Downloading binary (if necessary)"
-[[ -x "$(command -v ngrok)" ]] || sudo snap install ngrok
+
+# snap version is buggy
+# if [[ -x "$(command -v ngrok)" ]] || sudo snap install ngrok
+
+if [[ ! -x "$(command -v ngrok)" ]]; then
+  download_url=https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+  wget -O ngrok.zip $download_url
+  sudo unzip -o ngrok.zip -d /usr/local/bin/ngrok
+  rm ngrok.zip
+fi
+
 
 echo "Done, installed version: $(ngrok version)"
