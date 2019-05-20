@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -ex
+set -e
 
 echo "Downloading config"
 [[ -d ~/.ngrok2 ]] || mkdir ~/.ngrok2
@@ -13,7 +13,7 @@ echo "Downloading binary (if necessary)"
 if [[ ! -x "$(command -v ngrok)" ]]; then
   download_url=https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
   wget -O ngrok.zip $download_url
-  sudo unzip -o ngrok.zip -d /usr/local/bin/ngrok
+  sudo unzip -o ngrok.zip -d /usr/local/bin/
   rm ngrok.zip
 fi
 
