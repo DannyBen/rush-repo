@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e
+echo "Installing Rust"
+curl https://sh.rustup.rs -sSf | sh
+
+echo "Configuring rust.bashrc"
+wget -qO ~/.bashrc.d/rust.bashrc $SELF/rust.bashrc
+
+echo "Installed rust version:"
+rustc --version
+
+echo "Done. Restart your terminal or run:"
+echo "source ~/.cargo/env"
