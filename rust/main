@@ -11,3 +11,6 @@ rustc --version
 
 echo "Done. Restart your terminal or run:"
 echo "source ~/.cargo/env"
+
+echo "To uninstall run:"
+echo "rustup self uninstall"
