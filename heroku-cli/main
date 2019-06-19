@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+set -e
+curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
