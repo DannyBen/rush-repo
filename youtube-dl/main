@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Installing pip3 if necessary"
+[[ -x "$(command -v pip3)" ]] || rush python
+
+echo "Installing youtube-dl"
+sudo pip3 install youtube-dl
+
+echo "Done"
