@@ -7,18 +7,12 @@
 # 2. Replacing the binary with the latest release downloaded from GitHub
 #
 
-### TODO: Use this when the borg release page contains the correct latest 
-### release.
-###
-### This does not work for the moment, since they released an older version
-### after a newer version
-# echo "Identifying latest version"
-# version=$(curl -s https://api.github.com/repos/docker/machine/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
-# echo "Latest version is $version"
+echo "Identifying latest version"
+version=$(curl -s https://api.github.com/repos/docker/machine/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
+echo "Latest version is $version"
 
-### ... so using hardcoded version instead for now
-version=1.1.9
-echo "Considering latest version 1.1.9 (hardcoded in this rush script)"
+# If you want, force a version here
+# version=1.1.9
 
 echo "Comparing with installed version (if any)"
 hash borg 2> /dev/null && borg --version | grep $version > /dev/null 2>&1
