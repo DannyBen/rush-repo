@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 set -e
 
+# Personal packages
+rush $REPO my/bashrc
+rush $REPO my/cdpath
+rush $REPO my/gitconfig
+rush $REPO my/rigit
+rush $REPO my/ssh-agent
+
 # Public packages
 rush $REPO dircolors
 rush $REPO exrc
 rush $REPO inputrc
 rush $REPO irbrc
-
-# Personal packages
-rush $REPO my/bashrc
-rush $REPO my/cdpath
-rush $REPO my/gitconfig
 
 # Install only if necessary
 [[ -x "$(command -v alf)" ]]    || rush $REPO my/alf
