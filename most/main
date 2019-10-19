@@ -1,0 +1,4 @@
+#!/usr/bin/eng bash
+
+echo "Installing most"
+sudo apt install most

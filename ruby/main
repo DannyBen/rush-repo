@@ -21,4 +21,4 @@ echo "Downloading .gemrc"
 wget -qO ~/.gemrc $SELF/.gemrc
 
 echo "Ruby Installed, please run:"
-echo "rvm use $RUBY_VERSION --default"
+echo "rvm use $RUBY_VERSION --default && gem install bundler"

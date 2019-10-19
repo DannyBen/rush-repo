@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 set -e
-[[ -x "$(command -v unzip)" ]] || sudo apt-get install unzip
+
+echo "Installing unzip"
+sudo apt-get install unzip
