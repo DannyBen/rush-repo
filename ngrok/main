@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+echo "Installing unzip if necessary"
+[[ -x "$(command -v unzip)" ]] || rush unzip
+
 echo "Downloading config"
 [[ -d ~/.ngrok2 ]] || mkdir ~/.ngrok2
 wget -qO ~/.ngrok2/ngrok.yml $SELF/ngrok.yml
