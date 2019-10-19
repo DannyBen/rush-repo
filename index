@@ -1,24 +1,29 @@
 Package Index for DannyBen
 
 alf              Install Alf aliases manager
+awscli           Install awscli using pip
 bashrc           Configure ~/.bashrc to use ~/.bashrc.d
 bootstrap        A meta package executing several configuration packages
+borg             Install borg from GitHub
 dircolors        Install dircolor configuration in ~/.bashrc.d
 direnv           Install direnv and relevant ~/.bashrc.d configuration
 dive             Install or update dive, docker layer inspector
-docker           Install docker
 docker-compose   Install or update docker-compose
 docker-machine   Install or update docker-machine
+docker           Install docker
+doctl            Install DigitalOcean's doctl CLI
 exrc             Install vim configuration in ~/.exrc
 gitconfig        Install user-level .gitconfig and .gitignore_global
 github-markdown-toc Install gh-md-toc Table of Contents generator
 gotty            Install or update gotty
 hello            Sample package
+heroku-cli       Install Heroku CLI via apt-get
 hexyl            Install hexyl HEX viewer
 imagemagick-dev  Install imagemagick dev libraries
 inputrc          Install bash navigation configuration in ~/.inputrc
 irbrc            Install configuration for Ruby's IRB
 k3s              Install or update k3s
+kubectl          Install kubectl
 lazy-cd          Install Lazy CD
 locale           Set locale to en_US.UTF-8
 ncdu             Install ncdu, the file size utility
@@ -32,8 +37,9 @@ python           Install python3 and pip3
 redis            Install redis server and CLI
 ruby             Install ruby using RVM
 rush             Install rush
-rvm              Install and configure Ruby Version Manager
+rust             Install rust
 rvm-apt          Install and configure Ruby Version Manager using apt get
+rvm              Install and configure Ruby Version Manager
 shopify-themekit Install the Shopify ThemeKit CLI
 slackcli         Install slack CLI shell script
 snyk             Install or update snyk CLI
@@ -41,6 +47,7 @@ solo             Install solo
 tmux             Install and configure tmux
 ttystudio        Install ttystudio using Yarn
 yarn             Install Yarn
+youtube-dl       Install Youtube Downloader CLI
 
 Personal Packages
 
@@ -50,4 +57,6 @@ my/bootstrap     Personal bootstrap
 my/cdpath        Install CDPATH configuration in ~/.bashrc.d
 my/gitconfig     Rush gitconfig + set git username and email
 my/hello         Sample nested package
+my/rigit         Install personal configuration for RigIt
 my/rush          Connect RUSH_REPO to DannyBen
+my/ssh-agent     Install personal configuration for ssh-agent
