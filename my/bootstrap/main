@@ -6,7 +6,8 @@ rush $REPO my/bashrc
 rush $REPO my/cdpath
 rush $REPO my/gitconfig
 rush $REPO my/rigit
-rush $REPO my/ssh-agent
+rush $REPO my/rush
+# rush $REPO my/ssh-agent
 
 # Public packages
 rush $REPO dircolors
