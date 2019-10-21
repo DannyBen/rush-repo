@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "Installing yarn if necessary"
+[[ -x "$(command -v yarn)" ]] || rush $REPO yarn
+
+echo "installing ttystudio"
+sudo yarn global add svg-term-cli
+
