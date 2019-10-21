@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Installing pip3 if necessary"
+[[ -x "$(command -v pip3)" ]] || rush $REPO python
+
+echo "Installing termtosvg"
+sudo pip3 install --upgrade termtosvg
+termtosvg --version
+
+echo "Done"
