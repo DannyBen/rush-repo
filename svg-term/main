@@ -8,6 +8,6 @@ echo "Installing yarn if necessary"
 echo "Installing asciinema if necessary"
 [[ -x "$(command -v yarn)" ]] || rush $REPO asciinema
 
-echo "installing ttystudio"
+echo "installing svg-term-cli"
 sudo yarn global add svg-term-cli
 
