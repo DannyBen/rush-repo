@@ -8,7 +8,7 @@ echo "Latest version is $version"
 # version=1.1.9
 
 echo "Comparing with installed version (if any)"
-hash doctl 2> /dev/null && doctl version | grep $version > /dev/null 2>&1
+hash doctl 2> /dev/null && doctl version | head -n1 | grep $version > /dev/null 2>&1
 
 if [[ "$?" != "0" ]]; then
   echo "Downloading doctl from GitHub..."
