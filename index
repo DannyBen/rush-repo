@@ -1,16 +1,18 @@
 Package Index for DannyBen
 
 alf              Install Alf aliases manager
+asciinema        Install asciinema using apt
 awscli           Install awscli using pip
 bashrc           Configure ~/.bashrc to use ~/.bashrc.d
 bootstrap        A meta package executing several configuration packages
 borg             Install borg from GitHub
+ctop             Install ctop docker container top
 dircolors        Install dircolor configuration in ~/.bashrc.d
 direnv           Install direnv and relevant ~/.bashrc.d configuration
 dive             Install or update dive, docker layer inspector
+docker           Install docker
 docker-compose   Install or update docker-compose
 docker-machine   Install or update docker-machine
-docker           Install docker
 doctl            Install DigitalOcean's doctl CLI
 exrc             Install vim configuration in ~/.exrc
 gitconfig        Install user-level .gitconfig and .gitignore_global
@@ -26,6 +28,7 @@ k3s              Install or update k3s
 kubectl          Install kubectl
 lazy-cd          Install Lazy CD
 locale           Set locale to en_US.UTF-8
+most             Install most pager
 ncdu             Install ncdu, the file size utility
 ngrok            Install ngrok and ngrok configuration file
 nnn              Install nnn, the file browser
@@ -33,19 +36,22 @@ node             Install Node 8.x
 now              Install or update now CLI
 opcode           Install opcode
 phantomjs        Install phantomjs
+postgres         Install PostgreSQL
 python           Install python3 and pip3
 redis            Install redis server and CLI
 ruby             Install ruby using RVM
 rush             Install rush
 rust             Install rust
-rvm-apt          Install and configure Ruby Version Manager using apt get
-rvm              Install and configure Ruby Version Manager
+rvm              Install and configure Ruby Version Manager using apt get
 shopify-themekit Install the Shopify ThemeKit CLI
 slackcli         Install slack CLI shell script
 snyk             Install or update snyk CLI
 solo             Install solo
+svg-term         Install svg-term using Yarn
+termtosvg        Install termtosvg using pip3
 tmux             Install and configure tmux
 ttystudio        Install ttystudio using Yarn
+unzip            Install unzip
 yarn             Install Yarn
 youtube-dl       Install Youtube Downloader CLI
 
