@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Identifying latest version"
+version=$(curl -s https://api.github.com/repos/bcicen/ctop/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
+echo "Latest version is $version"
+
+# If you want, force a version here
+# version=1.1.9
+
+echo "Comparing with installed version (if any)"
+hash ctop 2> /dev/null && ctop -v | grep $version > /dev/null 2>&1
+
+if [[ "$?" != "0" ]]; then
+  echo "Downloading ctop from GitHub..."
+  sudo wget https://github.com/bcicen/ctop/releases/download/v$version/ctop-$version-linux-amd64 -O /usr/local/bin/ctop
+  sudo chmod +x /usr/local/bin/ctop
+
+  echo "Done."
+  ctop -v
+
+else
+  echo "Installed version is also $version, no update needed."
+  echo "Goodbye."
+
+fi
+
+

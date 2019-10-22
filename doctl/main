@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 echo "Identifying latest version"
 version=$(curl -s https://api.github.com/repos/digitalocean/doctl/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
