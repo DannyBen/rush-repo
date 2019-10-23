@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Identifying latest version"
+version=$(curl -s https://api.github.com/repos/cjbassi/gotop/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
+echo "Latest version is $version"
+
+# If you want, force a version here
+# version=1.1.9
+
+echo "Comparing with installed version (if any)"
+hash gotop 2> /dev/null && gotop --version | grep $version > /dev/null 2>&1
+
+if [[ "$?" != "0" ]]; then
+  echo "Downloading from GitHub..."
+  wget -qO ./gotop.deb https://github.com/cjbassi/gotop/releases/download/$version/gotop_${version}_linux_amd64.deb
+  sudo dpkg -i gotop.deb
+  rm gotop.deb
+
+  echo "Done."
+  gotop --version
+
+else
+  echo "Installed version is also $version, no update needed."
+  echo "Goodbye."
+
+fi
+
+
