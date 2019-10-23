@@ -17,6 +17,7 @@ doctl            Install DigitalOcean's doctl CLI
 exrc             Install vim configuration in ~/.exrc
 gitconfig        Install user-level .gitconfig and .gitignore_global
 github-markdown-toc Install gh-md-toc Table of Contents generator
+gotop            Install gotop graphical top UI
 gotty            Install or update gotty
 hello            Sample package
 heroku-cli       Install Heroku CLI via apt-get
