@@ -3,4 +3,3 @@ set -ex
 rush $REPO gitconfig
 git config --global user.name "Danny Ben Shitrit"
 git config --global user.email db@dannyben.com
-git config --global credential.helper "cache --timeout=21600"
