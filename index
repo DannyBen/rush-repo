@@ -19,6 +19,7 @@ gitconfig        Install user-level .gitconfig and .gitignore_global
 github-markdown-toc Install gh-md-toc Table of Contents generator
 gotop            Install gotop graphical top UI
 gotty            Install or update gotty
+grc              Install grc the generic log colorizer
 hello            Sample package
 heroku-cli       Install Heroku CLI via apt-get
 hexyl            Install hexyl HEX viewer
@@ -33,7 +34,7 @@ most             Install most pager
 ncdu             Install ncdu, the file size utility
 ngrok            Install ngrok and ngrok configuration file
 nnn              Install nnn, the file browser
-node             Install Node 8.x
+node             Install Node 12.x
 now              Install or update now CLI
 opcode           Install opcode
 phantomjs        Install phantomjs
