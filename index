@@ -2,6 +2,7 @@ Package Index for DannyBen
 
 alf              Install Alf aliases manager
 asciinema        Install asciinema using apt
+asn              Install ASN lookup tool
 awscli           Install awscli using pip
 bashrc           Configure ~/.bashrc to use ~/.bashrc.d
 bootstrap        A meta package executing several configuration packages
