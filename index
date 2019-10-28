@@ -24,6 +24,7 @@ grc              Install grc the generic log colorizer
 hello            Sample package
 heroku-cli       Install Heroku CLI via apt-get
 hexyl            Install hexyl HEX viewer
+iftop            Install iftop network monitor
 imagemagick-dev  Install imagemagick dev libraries
 inputrc          Install bash navigation configuration in ~/.inputrc
 irbrc            Install configuration for Ruby's IRB
