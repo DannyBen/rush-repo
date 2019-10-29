@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -ex
-sudo apt install golang-go
+sudo snap install go --classic
 wget -qO ~/.bashrc.d/go.bashrc $SELF/go.bashrc
