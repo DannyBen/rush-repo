@@ -67,6 +67,7 @@ my/bashrc        Rush bashrc + download global bashrc script
 my/bootstrap     Personal bootstrap
 my/cdpath        Install CDPATH configuration in ~/.bashrc.d
 my/gitconfig     Rush gitconfig + set git username and email
+my/go            Rush go and symlink GOPATH location
 my/hello         Sample nested package
 my/rigit         Install personal configuration for RigIt
 my/rush          Connect RUSH_REPO to DannyBen

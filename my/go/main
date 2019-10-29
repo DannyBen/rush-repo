@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+rush $REPO go
+[[ -d $HOME/go ]] || ln -s /vagrant/go $HOME/go
