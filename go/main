@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+sudo apt install golang-go
+wget -qO ~/.bashrc.d/go.bashrc $SELF/go.bashrc
