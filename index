@@ -7,6 +7,7 @@ awscli           Install awscli using pip
 bashrc           Configure ~/.bashrc to use ~/.bashrc.d
 bootstrap        A meta package executing several configuration packages
 borg             Install borg from GitHub
+crystal          Install crystal using apt
 ctop             Install ctop docker container top
 dircolors        Install dircolor configuration in ~/.bashrc.d
 direnv           Install direnv and relevant ~/.bashrc.d configuration
