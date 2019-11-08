@@ -34,6 +34,7 @@ k3s              Install or update k3s
 kubectl          Install kubectl
 lazy-cd          Install Lazy CD
 locale           Set locale to en_US.UTF-8
+mdbook           Install mdbook
 most             Install most pager
 ncdu             Install ncdu, the file size utility
 ngrok            Install ngrok and ngrok configuration file
@@ -58,6 +59,7 @@ termtosvg        Install termtosvg using pip3
 tmux             Install and configure tmux
 ttystudio        Install ttystudio using Yarn
 unzip            Install unzip
+vimcat           Install vimcat
 yarn             Install Yarn
 youtube-dl       Install Youtube Downloader CLI
 
