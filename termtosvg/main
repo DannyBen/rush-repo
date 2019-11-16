@@ -6,6 +6,8 @@ echo "Installing pip3 if necessary"
 
 echo "Installing termtosvg"
 sudo pip3 install --upgrade termtosvg
-termtosvg --version
+
+# there is no termtosvg --version, so we do this instead to verify install:
+termtosvg -h | head -n2
 
 echo "Done"
