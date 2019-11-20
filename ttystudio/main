@@ -2,9 +2,11 @@
 
 set -e
 
-echo "Installing yarn if necessary"
-[[ -x "$(command -v yarn)" ]] || rush $REPO yarn
+echo "This package is deprecated since it is no longer maintained."
 
-echo "installing ttystudio"
-sudo yarn global add ttystudio
+# echo "Installing yarn if necessary"
+# [[ -x "$(command -v yarn)" ]] || rush $REPO yarn
+
+# echo "installing ttystudio"
+# sudo yarn global add ttystudio
 

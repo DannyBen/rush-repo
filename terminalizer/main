@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Installing yarn if necessary"
-[[ -x "$(command -v yarn)" ]] || rush $REPO yarn
+echo "This package is currently blocked since it requires too many dependencies"
 
-echo "installing terminalizer"
-yarn global add terminalizer
+# echo "Installing yarn if necessary"
+# [[ -x "$(command -v yarn)" ]] || rush $REPO yarn
+
+# echo "installing terminalizer"
+# yarn global add terminalizer
 
