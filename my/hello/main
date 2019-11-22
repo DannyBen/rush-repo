@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
-SELF=${SELF:=ERROR}
 REPO=${REPO:=ERROR}
-PACK=${PACK:=ERROR}
 
-echo "What's the nested rush?"
-echo "- SELF: $SELF"
-echo "- REPO: $REPO"
-echo "- PACK: $PACK"
+echo "What's the nested rush? (hello from $REPO)"

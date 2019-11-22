@@ -2,8 +2,8 @@
 
 set -e
 
-echo "Downloading config"
-wget -qO ~/.gotty $SELF/.gotty
+echo "Copying config"
+cp .gotty ~/.gotty
 
 echo "Checking if binary download is needed"
 if ! hash gotty 2> /dev/null ; then

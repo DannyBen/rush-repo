@@ -2,7 +2,7 @@
 set -e
 
 echo "Installing pip3 if necessary"
-[[ -x "$(command -v pip3)" ]] || rush $REPO python
+[[ -x "$(command -v pip3)" ]] || rush get $REPO python
 
 echo "Installing youtube-dl"
 sudo pip3 install --upgrade youtube-dl

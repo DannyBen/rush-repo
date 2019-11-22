@@ -2,11 +2,11 @@
 set -e
 
 echo "Installing unzip if necessary"
-[[ -x "$(command -v unzip)" ]] || rush $REPO unzip
+[[ -x "$(command -v unzip)" ]] || rush get $REPO unzip
 
-echo "Downloading config"
+echo "Copying config"
 [[ -d ~/.ngrok2 ]] || mkdir ~/.ngrok2
-wget -qO ~/.ngrok2/ngrok.yml $SELF/ngrok.yml
+cp ngrok.yml ~/.ngrok2/ngrok.yml
 
 echo "Downloading binary (if necessary)"
 

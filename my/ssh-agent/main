@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
-set -e
-
-echo "Downloading ~/.bashrc.d/ssh-agent.bashrc"
-wget -qO $HOME/.bashrc.d/ssh-agent.bashrc $SELF/ssh-agent.bashrc
-echo "Done"
+set -ex
+cp ssh-agent.bashrc $HOME/.bashrc.d/ssh-agent.bashrc

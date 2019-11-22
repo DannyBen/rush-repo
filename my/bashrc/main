@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-rush $REPO bashrc
+rush get $REPO bashrc
 
-echo "Downloading ~/.bashrc.d/global.bashrc"
-wget -qO $HOME/.bashrc.d/global.bashrc $SELF/global.bashrc
+echo "Copying ~/.bashrc.d/global.bashrc"
+cp global.bashrc $HOME/.bashrc.d/global.bashrc
 echo "Done"

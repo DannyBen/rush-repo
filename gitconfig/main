@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -ex
-wget -qO ~/.gitignore_global $SELF/.gitignore_global
+cp .gitignore_global ~/.gitignore_global
 
 git config --global push.default simple
 git config --global color.ui true

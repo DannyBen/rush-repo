@@ -2,6 +2,6 @@
 set -ex
 
 sudo apt-get install tmux -y
-wget -qO ~/.tmux.conf $SELF/.tmux.conf
-wget -qO ~/.bashrc.d/tmux.bashrc $SELF/tmux.bashrc
+cp .tmux.conf ~/.tmux.conf
+cp tmux.bashrc ~/.bashrc.d/tmux.bashrc
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

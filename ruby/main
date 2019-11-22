@@ -17,8 +17,8 @@ fi
 
 rvm install $RUBY_VERSION
 
-echo "Downloading .gemrc"
-wget -qO ~/.gemrc $SELF/.gemrc
+echo "Copying .gemrc"
+cp .gemrc ~/.gemrc
 
 echo "Ruby Installed, please run:"
 echo "rvm use $RUBY_VERSION --default && gem install bundler"

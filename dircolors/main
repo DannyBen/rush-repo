@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 set -ex
-wget -qO ~/.dircolors $SELF/.dircolors
+cp .dircolors ~/.dircolors

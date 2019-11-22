@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-rush $REPO bashrc
-rush $REPO dircolors
-rush $REPO exrc
-rush $REPO inputrc
-rush $REPO irbrc
-[[ -x "$(command -v alf)" ]] || rush $REPO alf
+rush get $REPO bashrc
+rush get $REPO dircolors
+rush get $REPO exrc
+rush get $REPO inputrc
+rush get $REPO irbrc
+[[ -x "$(command -v alf)" ]] || rush get $REPO alf
 
 printf "\nDone. You may need to login again.\n"

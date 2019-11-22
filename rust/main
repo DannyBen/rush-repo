@@ -4,7 +4,7 @@ echo "Installing Rust"
 curl https://sh.rustup.rs -sSf | sh
 
 echo "Configuring rust.bashrc"
-wget -qO ~/.bashrc.d/rust.bashrc $SELF/rust.bashrc
+cp rust.bashrc ~/.bashrc.d/rust.bashrc
 
 echo "Installed rust version:"
 rustc --version

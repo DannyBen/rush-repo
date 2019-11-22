@@ -2,20 +2,20 @@
 set -e
 
 # Personal packages
-rush $REPO my/bashrc
-rush $REPO my/cdpath
-rush $REPO my/gitconfig
-rush $REPO my/rigit
-rush $REPO my/rush
+rush get $REPO my/bashrc
+rush get $REPO my/cdpath
+rush get $REPO my/gitconfig
+rush get $REPO my/rigit
+rush get $REPO my/rush
 # rush $REPO my/ssh-agent
 
 # Public packages
-rush $REPO dircolors
-rush $REPO exrc
-rush $REPO inputrc
-rush $REPO irbrc
+rush get $REPO dircolors
+rush get $REPO exrc
+rush get $REPO inputrc
+rush get $REPO irbrc
 
 # Install only if necessary
-[[ -x "$(command -v alf)" ]]    || rush $REPO my/alf
+[[ -x "$(command -v alf)" ]]    || rush get $REPO my/alf
 
 printf "\nDone. You may need to login again.\n"

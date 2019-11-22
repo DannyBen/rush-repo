@@ -18,8 +18,8 @@ if [[ "$?" != "0" ]]; then
   chmod +x doctl
   sudo mv doctl /usr/local/bin/
 
-  echo "Installing bash completion in bashrc.d"
-  wget -qO ~/.bashrc.d/doctl.bashrc $SELF/doctl.bashrc
+  echo "Copying bash completion in bashrc.d"
+  cp doctl.bashrc ~/.bashrc.d/doctl.bashrc
 
   echo "Done."
   doctl version

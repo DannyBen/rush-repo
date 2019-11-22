@@ -16,8 +16,8 @@ if [[ "$?" != "0" ]]; then
   sudo apt install ./dive_0.7.2_linux_amd64.deb
   rm ./dive_0.7.2_linux_amd64.deb
 
-  echo "Downloading config file to ~/.dive.yaml"
-  wget -qO ~/.dive.yaml $SELF/.dive.yaml
+  echo "Copying config file to ~/.dive.yaml"
+  cp .dive.yaml ~/.dive.yaml
 
   echo "Done. "
 
