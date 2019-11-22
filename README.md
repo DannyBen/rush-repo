@@ -10,7 +10,7 @@ _  /     /_/    \__,_/ /____/ /_/ /_/
 /_/      Personal Package Manager
 ```
 
-This is my rush repo for use with the [rush package manager][rush-cli]
+This is my rush repo for use with the [rush package manager][rush-cli].
 
 - All packages are suitable for public consumption.
 - All packages are designed for Ubuntu.
