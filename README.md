@@ -13,7 +13,7 @@ _  /     /_/    \__,_/ /____/ /_/ /_/
 This is my rush repo for use with the [rush package manager][rush-cli]
 
 - All packages are suitable for public consumption.
-- All packages are designed for Ubuntu
+- All packages are designed for Ubuntu.
 - Packages under the [my](my) folder are personal packages, most likely not
   suitable for anybody else.
 
