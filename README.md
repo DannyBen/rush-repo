@@ -1,4 +1,4 @@
-Rush - Linux Workstation Bootstrapper
+Rush Repo - DannyBen's Rush Repository
 ==================================================
 
 ```
@@ -7,28 +7,14 @@ ____  /  ___________  ___________  /_
 ___  /   __  ___/  / / /_  ___/_  __ \
 __  /    _  /   / /_/ /_(__  )_  / / /
 _  /     /_/    \__,_/ /____/ /_/ /_/ 
-/_/      Linux Workstation Bootstrapper
+/_/      Personal Package Manager
 ```
 
-This is my rush repo.
+This is my rush repo for use with the [rush package manager][rush-cli]
 
-All packages are suitable for public consumption. Packages under the [my](my)
-folder contain personal additional configuration that should normally not be
-used by anyone else.
+- All packages are suitable for public consumption.
+- All packages are designed for Ubuntu
+- Packages under the [my](my) folder are personal packages, most likely not
+  suitable for anybody else.
 
-To see package index from the command line, run `rush /index`.
-
-For more information, visit the repository for the [rush command][1].
-
-
-Development
---------------------------------------------------
-
-For local development and testing of new packages, use the provided 
-docker-compose configuration.
-
-    $ docker compose run bash
-    $ rush bootstrap   # or whatever command you wish to test
-
-
-[1]: https://github.com/DannyBen/rush-command
+[rush-cli]: https://github.com/DannyBen/rush-cli
