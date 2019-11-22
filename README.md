@@ -17,4 +17,13 @@ This is my rush repo for use with the [rush package manager][rush-cli]
 - Packages under the [my](my) folder are personal packages, most likely not
   suitable for anybody else.
 
+Add this repository
+--------------------------------------------------
+
+```shell
+$ rush clone dannyben        # download the repository
+$ rush get hello dannyben    # test that it is working
+$ rush list dannyben         # see package list
+```
+
 [rush-cli]: https://github.com/DannyBen/rush-cli

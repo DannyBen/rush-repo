@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "Downloading binary"
+curl -o shellcheck.tzr.xz https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz
+
+echo "Extracing binary"
+tar -xf shellcheck.tzr.xz
+rm shellcheck.tzr.xz
+
+echo "Copying binary"
+sudo mv shellcheck-stable/shellcheck /usr/local/bin/
+sudo chmod +x /usr/local/bin/shellcheck
+
+echo "Cleaning up"
+rm -rf shellcheck-syable
+
+echo "Done. $(shellcheck --version)"
+
+
