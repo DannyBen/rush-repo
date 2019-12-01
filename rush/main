@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 set -ex
-sudo wget -qO /usr/local/bin/rush \
-  https://raw.githubusercontent.com/DannyBen/rush-cli/master/rush && \
-  sudo chmod +x /usr/local/bin/rush
+exec sudo wget -qO /usr/local/bin/rush https://raw.githubusercontent.com/DannyBen/rush-cli/master/rush
