@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -x
+sudo dpkg -r bat
+rm -rf ~/.config/bat

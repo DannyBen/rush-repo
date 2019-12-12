@@ -1,0 +1,3 @@
+#!/usr/bin/eng bash
+set -x
+sudo apt remove most

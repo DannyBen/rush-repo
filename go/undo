@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -x
+sudo snap remove go
+rm ~/.bashrc.d/go.bashrc

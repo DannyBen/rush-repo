@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+sudo apt remove direnv
+rm ~/.bashrc.d/direnv.bashrc

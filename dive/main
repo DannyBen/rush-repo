@@ -4,7 +4,9 @@ echo "Identifying latest version"
 # version=$(curl -s https://api.github.com/repos/wagoodman/dive/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
 # echo "Latest version is $version"
 
-version=0.7.2
+# Must use hardcoded version for now.
+# ref: https://github.com/wagoodman/dive/issues/262
+version=0.9.1
 echo "Using hardcoded version $version"
 
 echo "Comparing with installed version (if any)"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -x
+rustup self uninstall
+rm ~/.bashrc.d/rust.bashrc
