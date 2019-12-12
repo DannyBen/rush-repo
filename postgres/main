@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-
-sudo apt-get -y install postgresql
-sudo apt-get -y install libpq-dev
+set -ex
+sudo apt-get -y install postgresql libpq-dev

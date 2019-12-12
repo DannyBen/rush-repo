@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -x
+sudo rm /usr/local/bin/op
+rm ~/.bashrc.d/opcode.bashrc

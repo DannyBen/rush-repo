@@ -16,7 +16,7 @@ if [[ "$?" != "0" ]]; then
   chmod +x doctl
   sudo mv doctl /usr/local/bin/
 
-  echo "Copying bash completion in bashrc.d"
+  echo "Copying bash completion to bashrc.d"
   cp doctl.bashrc ~/.bashrc.d/doctl.bashrc
 
   echo "Done."

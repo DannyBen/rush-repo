@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -x
+
+sudo apt-get remove tmux -y
+rm ~/.tmux.conf
+rm ~/.bashrc.d/tmux.bashrc
+rm -rf ~/.tmux/plugins/tpm
