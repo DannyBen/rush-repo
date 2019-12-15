@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 set -x
-sudo dpkg -r gotop
+sudo rm /usr/local/bin/hub
