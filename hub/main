@@ -16,6 +16,7 @@ if [[ "$?" != "0" ]]; then
   curl -L https://github.com/github/hub/releases/download/v$version/hub-linux-amd64-$version.tgz | tar xvz --strip-components=2 hub-linux-amd64-$version/bin/hub
 
   sudo install -m 755 hub /usr/local/bin/hub
+  rm hub
   
   echo "Done."
   hub --version
