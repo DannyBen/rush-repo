@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+echo "Identifying latest version"
+version=$(curl -s https://api.github.com/repos/instrumenta/kubeval/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
+echo "Latest version is $version"
+
+# If you want, force a version here
+# version=1.1.9
+
+echo "Comparing with installed version (if any)"
+hash kubeval 2> /dev/null && kubeval --version | head -n1 | grep $version > /dev/null 2>&1
+
+if [[ "$?" != "0" ]]; then
+  echo "Downloading from GitHub..."
+  curl -sL https://github.com/instrumenta/kubeval/releases/download/$version/kubeval-linux-amd64.tar.gz | tar -xzv - kubeval
+
+  chmod +x kubeval
+  sudo mv kubeval /usr/local/bin/
+
+  echo "Done."
+  kubeval --version
+
+else
+  echo "Installed version is also $version, no update needed."
+  echo "Goodbye."
+
+fi
+
+
