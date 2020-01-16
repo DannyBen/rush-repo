@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 set -x
-sudo rm /usr/local/bin/doctl
-rm ~/.bashrc.d/doctl.bashrc
+sudo rm /usr/local/bin/kubeval
