@@ -22,7 +22,7 @@ Add this repository
 
 ```shell
 $ rush clone dannyben        # download the repository
-$ rush get hello dannyben    # test that it is working
+$ rush get dannyben:hello    # test that it is working
 $ rush list dannyben         # see package list
 ```
 
