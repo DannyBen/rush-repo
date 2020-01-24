@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+echo "Identifying latest version"
+version=$(curl -s https://api.github.com/repos/kubernetes/kompose/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
+
+echo "Latest version is $version"
+
+echo "Comparing with installed version (if any)"
+hash kompose 2> /dev/null && kompose version | grep $version > /dev/null 2>&1
+
+if [[ "$?" != "0" ]]; then
+  echo "Downloading binary..."
+  curl -# -L https://github.com/kubernetes/kompose/releases/download/v$version/kompose-linux-amd64 -o kompose
+  chmod +x kompose
+  sudo mv kompose /usr/local/bin/
+
+  echo "Done."
+  kompose version
+
+else
+  echo "Installed version is also $version, no update needed."
+  echo "Goodbye."
+
+fi
+
+
