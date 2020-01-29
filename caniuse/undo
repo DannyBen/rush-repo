@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -x
+yarn global remove caniuse-cmd
