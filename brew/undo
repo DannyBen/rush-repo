@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -ex
+sudo apt remove linuxbrew-wrapper
+rm -f ~/.bashrc.d/brew.bashrc

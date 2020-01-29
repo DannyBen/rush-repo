@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "Installing linuxbrew-wrapper"
+sudo apt install linuxbrew-wrapper
+
+echo "Integrating with bashrc"
+cp brew.bashrc ~/.bashrc.d/
+
+echo "Running brew setup"
+brew
+
+echo "Done. You may need to restart your session or source ~/.bashrc"
