@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Identifying latest version"
+version=$(curl -s https://api.github.com/repos/cli/cli/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
+echo "Latest version is $version"
+
+echo "Comparing with installed version (if any)"
+hash gh 2> /dev/null && gh version | grep $version > /dev/null 2>&1
+
+if [[ "$?" != "0" ]]; then
+  echo "Downloading from GitHub..."
+  wget -qO ./gh.deb https://github.com/cli/cli/releases/download/v$version/gh_${version}_linux_amd64.deb
+  sudo dpkg -i gh.deb
+  rm gh.deb
+
+  echo "Done."
+  gh version
+
+else
+  echo "Installed version is also $version, no update needed."
+  echo "Goodbye."
+
+fi
+
+
