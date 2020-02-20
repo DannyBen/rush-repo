@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-set -e
-
 echo "Identifying latest version"
-version=$(curl -s https://api.github.com/repos/cjbassi/gotop/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
+version=$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
 echo "Latest version is $version"
 
 # If you want, force a version here
@@ -13,7 +11,7 @@ hash gotop 2> /dev/null && gotop --version | grep $version > /dev/null 2>&1
 
 if [[ "$?" != "0" ]]; then
   echo "Downloading from GitHub..."
-  wget -qO ./gotop.deb https://github.com/cjbassi/gotop/releases/download/$version/gotop_${version}_linux_amd64.deb
+  wget -qO ./gotop.deb https://github.com/xxxserxxx/gotop/releases/download/v$version/gotop_${version}_linux_amd64.deb
   sudo dpkg -i gotop.deb
   rm gotop.deb
 
