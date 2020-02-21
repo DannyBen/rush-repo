@@ -9,11 +9,14 @@ echo "Latest version is $version"
 # version=1.1.9
 
 echo "Comparing with installed version (if any)"
-hash ctop 2> /dev/null && ctop -v | grep $version > /dev/null 2>&1
 
-if [[ "$?" != "0" ]]; then
+installed() {
+  hash ctop 2> /dev/null && ctop -v | grep "$version" > /dev/null 2>&1
+}
+
+if ! installed ; then
   echo "Downloading ctop from GitHub..."
-  sudo wget https://github.com/bcicen/ctop/releases/download/v$version/ctop-$version-linux-amd64 -O /usr/local/bin/ctop
+  sudo wget "https://github.com/bcicen/ctop/releases/download/v$version/ctop-$version-linux-amd64" -O /usr/local/bin/ctop
   sudo chmod +x /usr/local/bin/ctop
 
   echo "Done."

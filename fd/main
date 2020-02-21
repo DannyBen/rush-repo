@@ -9,11 +9,14 @@ echo "Latest version is $version"
 # version=1.1.9
 
 echo "Comparing with installed version (if any)"
-hash fd 2> /dev/null && fd --version | grep $version > /dev/null 2>&1
 
-if [[ "$?" != "0" ]]; then
+installed() {
+  hash fd 2> /dev/null && fd --version | grep "$version" > /dev/null 2>&1
+}
+
+if ! installed ; then
   echo "Downloading from GitHub..."
-  wget -qO ./fd.deb https://github.com/sharkdp/fd/releases/download/v$version/fd_${version}_amd64.deb
+  wget -qO ./fd.deb "https://github.com/sharkdp/fd/releases/download/v$version/fd_${version}_amd64.deb"
   sudo dpkg -i fd.deb
   rm fd.deb
 

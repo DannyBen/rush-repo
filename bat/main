@@ -6,11 +6,14 @@ version=$(curl -s https://api.github.com/repos/sharkdp/bat/releases/latest | gre
 echo "Latest version is $version"
 
 echo "Comparing with installed version (if any)"
-hash bat 2> /dev/null && bat --version | grep $version > /dev/null 2>&1
 
-if [[ "$?" != "0" ]]; then
+installed() {
+  hash bat 2> /dev/null && bat --version | grep "$version" > /dev/null 2>&1
+}
+
+if ! installed ; then
   echo "Downloading from GitHub..."
-  wget -qO ./bat.deb https://github.com/sharkdp/bat/releases/download/v${version}/bat_${version}_amd64.deb
+  wget -qO ./bat.deb "https://github.com/sharkdp/bat/releases/download/v${version}/bat_${version}_amd64.deb"
   sudo dpkg -i bat.deb 
   rm bat.deb
 

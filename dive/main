@@ -5,13 +5,16 @@ version=$(curl -s https://api.github.com/repos/wagoodman/dive/releases/latest | 
 echo "Latest version is $version"
 
 echo "Comparing with installed version (if any)"
-hash dive 2> /dev/null && dive --version | grep $version > /dev/null 2>&1
 
-if [[ "$?" != "0" ]]; then
+installed() {
+  hash dive 2> /dev/null && dive --version | grep "$version" > /dev/null 2>&1
+}
+
+if ! installed ; then
   echo "Downloading binary"
-  wget https://github.com/wagoodman/dive/releases/download/v${version}/dive_${version}_linux_amd64.deb
-  sudo apt install ./dive_${version}_linux_amd64.deb
-  rm ./dive_${version}_linux_amd64.deb
+  wget "https://github.com/wagoodman/dive/releases/download/v${version}/dive_${version}_linux_amd64.deb"
+  sudo apt install "./dive_${version}_linux_amd64.deb"
+  rm "./dive_${version}_linux_amd64.deb"
 
   echo "Copying config file to ~/.dive.yaml"
   cp .dive.yaml ~/.dive.yaml
