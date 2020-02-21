@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-[[ -x "$(command -v node)" ]] || rush get "$REPO" node
+[[ -x "$(command -v node)" ]] || rush get "$REPO:node"
 
 echo "Installing Yarn"
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
