@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 set -e
-rush get $REPO:alf
+rush get "$REPO:alf"
 cd /vagrant/bash
 alf connect DannyBen/alf-conf -y

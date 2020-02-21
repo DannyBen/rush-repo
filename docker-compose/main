@@ -5,11 +5,14 @@ version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | 
 echo "Latest version is $version"
 
 echo "Comparing with installed version (if any)"
-hash docker-compose 2> /dev/null && docker-compose --version | grep $version > /dev/null 2>&1
 
-if [[ "$?" != "0" ]]; then
+installed() {
+  hash docker-compose 2> /dev/null && docker-compose --version | grep "$version" > /dev/null 2>&1
+}
+
+if ! installed ; then
   echo "Downloading..."
-  sudo curl -L https://github.com/docker/compose/releases/download/$version/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+  sudo curl -L "https://github.com/docker/compose/releases/download/$version/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
 
 else

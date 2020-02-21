@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -ex
-rush $REPO go
-[[ -d $HOME/go ]] || ln -s /store/go $HOME/go
+rush get "$REPO:go"
+[[ -d $HOME/go ]] || ln -s /store/go "$HOME/go"

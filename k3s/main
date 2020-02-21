@@ -6,11 +6,14 @@ version=$(curl -s https://api.github.com/repos/rancher/k3s/releases/latest | gre
 echo "Latest version is $version"
 
 echo "Comparing with installed version (if any)"
-hash k3s 2> /dev/null && k3s --version | grep $version > /dev/null 2>&1
 
-if [[ "$?" != "0" ]]; then
+installed() {
+  hash k3s 2> /dev/null && k3s --version | grep "$version" > /dev/null 2>&1
+}
+
+if ! installed ; then
   echo "Downloading k3s binary..."
-  curl -# -L https://github.com/rancher/k3s/releases/download/v$version/k3s >/tmp/k3s
+  curl -# -L "https://github.com/rancher/k3s/releases/download/v$version/k3s" >/tmp/k3s
   chmod +x /tmp/k3s
   sudo mv /tmp/k3s /usr/local/bin/k3s
 

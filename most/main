@@ -1,4 +1,4 @@
-#!/usr/bin/eng bash
+#!/usr/bin/env bash
 
 echo "Installing most"
 sudo apt install most

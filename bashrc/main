@@ -1,34 +1,34 @@
 #!/usr/bin/env bash
 set -e
 
-touch $HOME/.bashrc
+touch "$HOME/.bashrc"
 
-if ! grep -q "END OF DEFAULT BASHRC" $HOME/.bashrc; then
+if ! grep -q "END OF DEFAULT BASHRC" "$HOME/.bashrc"; then
   echo "Appending default marker"
-  printf "# --- END OF DEFAULT BASHRC ---\n# To restore the default file, copy it from /etc/skel/.bashrc\n\n" >> $HOME/.bashrc
+  printf "# --- END OF DEFAULT BASHRC ---\n# To restore the default file, copy it from /etc/skel/.bashrc\n\n" >> "$HOME/.bashrc"
 fi
 
-if ! grep -q bash_aliases $HOME/.bashrc; then
+if ! grep -q bash_aliases "$HOME/.bashrc"; then
   echo "Appending bash_aliases"
-  printf "[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases\n" >> $HOME/.bashrc
+  printf "[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases\n" >> "$HOME/.bashrc"
 fi
 
-if ! grep -q "bashrc.d" $HOME/.bashrc; then
+if ! grep -q "bashrc.d" "$HOME/.bashrc"; then
   echo "Appending bashrc.d"
-  printf "# Source all files in ~/.bashrc.d\n" >> $HOME/.bashrc
-  printf "for f in ~/.bashrc.d/*; do source \$f; done\n" >> $HOME/.bashrc
+  printf "# Source all files in ~/.bashrc.d\n" >> "$HOME/.bashrc"
+  printf "for f in ~/.bashrc.d/*; do source \$f; done\n" >> "$HOME/.bashrc"
 fi
 
-if ! grep -q "END OF BASHRC" $HOME/.bashrc; then
+if ! grep -q "END OF BASHRC" "$HOME/.bashrc"; then
   echo "Appending end of file marker"
-  printf "\n# --- END OF BASHRC ---\n# If anything appears below, move it to ~/.bashrc.d\n\n" >> $HOME/.bashrc
+  printf "\n# --- END OF BASHRC ---\n# If anything appears below, move it to ~/.bashrc.d\n\n" >> "$HOME/.bashrc"
 fi
 
 if [[ ! -d $HOME/.bashrc.d ]]; then
   echo "Creating ~/.bashrc.d"
-  mkdir $HOME/.bashrc.d
-  chmod 700 $HOME/.bashrc.d
-  touch $HOME/.bashrc.d/empty.bashrc
+  mkdir "$HOME/.bashrc.d"
+  chmod 700 "$HOME/.bashrc.d"
+  touch "$HOME/.bashrc.d/empty.bashrc"
 fi
 
 echo "Done"

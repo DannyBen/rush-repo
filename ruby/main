@@ -5,7 +5,7 @@ RUBY_VERSION=2.6.3
 
 if [[ ! -x "$(command -v rvm)" ]]; then
   echo "RVM is not installed."
-  echo "Run 'rush rvm' first."
+  echo "Run 'rush get $REPO:rvm' first."
   exit
 fi
 

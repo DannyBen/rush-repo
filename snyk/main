@@ -5,11 +5,14 @@ version=$(curl -s https://api.github.com/repos/snyk/snyk/releases/latest | grep 
 echo "Latest version is $version"
 
 echo "Comparing with installed version (if any)"
-hash snyk 2> /dev/null && snyk --version | grep $version > /dev/null 2>&1
 
-if [[ "$?" != "0" ]]; then
+installed() {
+  hash snyk 2> /dev/null && snyk --version | grep "$version" > /dev/null 2>&1
+}
+
+if ! installed ; then
   echo "Downloading..."
-  sudo curl -L https://github.com/snyk/snyk/releases/download/v$version/snyk-linux -o /usr/local/bin/snyk
+  sudo curl -L "https://github.com/snyk/snyk/releases/download/v$version/snyk-linux" -o /usr/local/bin/snyk
   sudo chmod +x /usr/local/bin/snyk
   echo "Installed in /usr/local/bin/snyk"
 

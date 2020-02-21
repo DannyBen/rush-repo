@@ -6,11 +6,14 @@ version=$(curl -s https://api.github.com/repos/cli/cli/releases/latest | grep "t
 echo "Latest version is $version"
 
 echo "Comparing with installed version (if any)"
-hash gh 2> /dev/null && gh version | grep $version > /dev/null 2>&1
 
-if [[ "$?" != "0" ]]; then
+installed() {
+  hash gh 2> /dev/null && gh version | grep "$version" > /dev/null 2>&1
+}
+
+if ! installed ; then
   echo "Downloading from GitHub..."
-  wget -qO ./gh.deb https://github.com/cli/cli/releases/download/v$version/gh_${version}_linux_amd64.deb
+  wget -qO ./gh.deb "https://github.com/cli/cli/releases/download/v$version/gh_${version}_linux_amd64.deb"
   sudo dpkg -i gh.deb
   rm gh.deb
 

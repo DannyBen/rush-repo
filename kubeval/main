@@ -7,11 +7,14 @@ echo "Latest version is $version"
 # version=1.1.9
 
 echo "Comparing with installed version (if any)"
-hash kubeval 2> /dev/null && kubeval --version | head -n1 | grep $version > /dev/null 2>&1
 
-if [[ "$?" != "0" ]]; then
+installed() {
+  hash kubeval 2> /dev/null && kubeval --version | head -n1 | grep "$version" > /dev/null 2>&1
+}
+
+if ! installed ; then
   echo "Downloading from GitHub..."
-  curl -sL https://github.com/instrumenta/kubeval/releases/download/$version/kubeval-linux-amd64.tar.gz | tar -xzv - kubeval
+  curl -sL "https://github.com/instrumenta/kubeval/releases/download/$version/kubeval-linux-amd64.tar.gz" | tar -xzv - kubeval
 
   chmod +x kubeval
   sudo mv kubeval /usr/local/bin/
