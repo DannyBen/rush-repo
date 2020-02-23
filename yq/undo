@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -x
+sudo rm /usr/local/bin/yq
