@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 set -x
 sudo rm /usr/local/bin/kubectl
-rm ~/.bashrc.d/kubectl.bashrc
+# rm ~/.bashrc.d/kubectl.bashrc
 
