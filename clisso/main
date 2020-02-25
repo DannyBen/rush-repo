@@ -18,7 +18,7 @@ if ! installed ; then
   echo "Installing unzip if necessary"
   [[ -x "$(command -v unzip)" ]] || rush get "$REPO:unzip"
 
-  wget -O clisso.zip $download_url
+  wget -O clisso.zip "$download_url"
   sudo unzip -o clisso.zip -d /usr/local/bin/
   sudo mv /usr/local/bin/clisso-linux-amd64 /usr/local/bin/clisso
   rm clisso.zip
