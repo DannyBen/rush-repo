@@ -1,34 +1,37 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Identifying latest version"
+echo "/// Identifying latest version"
 version=$(curl -s https://api.github.com/repos/allcloud-io/clisso/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
-echo "Latest version is $version"
+echo "/// Latest version is $version"
 
-echo "Comparing with installed version (if any)"
+echo "/// Comparing with installed version (if any)"
 
 installed() {
   hash clisso 2> /dev/null && clisso version 2>&1 | grep "$version" > /dev/null 2>&1
 }
 
 if ! installed ; then
-  echo "Downloading binary"
-  download_url="https://github.com/allcloud-io/clisso/releases/download/${version}/clisso-linux-amd64.zip"
-
-  echo "Installing unzip if necessary"
+  echo "/// Installing unzip if necessary"
   [[ -x "$(command -v unzip)" ]] || rush get "$REPO:unzip"
 
-  wget -O clisso.zip "$download_url"
+  echo "/// Downloading binary"
+  download_url="https://github.com/allcloud-io/clisso/releases/download/${version}/clisso-linux-amd64.zip"
+
+  wget --no-verbose -O clisso.zip "$download_url"
+  
+  echo "/// Unpacking archive"
   sudo unzip -o clisso.zip -d /usr/local/bin/
-  sudo mv /usr/local/bin/clisso-linux-amd64 /usr/local/bin/clisso
   rm clisso.zip
 
-  echo "Done"
+  echo "/// Renaming binary"
+  sudo mv /usr/local/bin/clisso-linux-amd64 /usr/local/bin/clisso
+
+  echo "/// Done"
   clisso version
 
 else
-  echo "Installed version is also $version, no update needed."
-  echo "Goodbye."
+  echo "/// Installed version is also $version, no update needed."
+  echo "/// Goodbye."
 
 fi
-
