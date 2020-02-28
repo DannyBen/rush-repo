@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-set -e
+source ../../common.sh
 
-rush get "$REPO:bashrc"
+say "installing prerequisites"
+needs bashrc
 
-echo "Copying ~/.bashrc.d/global.bashrc"
+say "copying ~/.bashrc.d/global.bashrc"
 cp global.bashrc "$HOME/.bashrc.d/global.bashrc"
-echo "Done"
+
+say "my/bashrc installation complete"

@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
-set -ex
-rush get "$REPO:go"
+source ../../common.sh
+
+say "installing prerequisites"
+needs go
+
+say "symlinking ~/go => /store/go"
 [[ -d $HOME/go ]] || ln -s /store/go "$HOME/go"

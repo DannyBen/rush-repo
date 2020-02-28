@@ -1,21 +1,12 @@
 #!/usr/bin/env bash
-set -e
+source ../../common.sh
 
-# Personal packages
-rush get "$REPO:my/bashrc"
-rush get "$REPO:my/cdpath"
-rush get "$REPO:my/gitconfig"
-rush get "$REPO:my/rigit"
-rush get "$REPO:my/rush"
-# rush get "$REPO:my/ssh-agent"
+say "installing my/* packages"
+needs my/bashrc my/cdpath my/gitconfig my/rigit my/rush
 
-# Public packages
-rush get "$REPO:dircolors"
-rush get "$REPO:exrc"
-rush get "$REPO:inputrc"
-rush get "$REPO:irbrc"
+say "installing public packages"
+needs dircolors exrc inputrc irbrc
 
-# Install only if necessary
-[[ -x "$(command -v alf)" ]] || rush get "$REPO:my/alf"
+[[ command_exist alf ]] || rush get "$REPO:my/alf"
 
-printf "\nDone. You may need to login again.\n"
+say "my/bootstrap complete, you may need to login again"

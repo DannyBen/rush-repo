@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-set -ex
-rush get "$REPO:gitconfig"
+source ../../common.sh
+
+say "installing prerequisites"
+needs gitconfig
+
+say "applying personal git configuration"
 git config --global user.name "Danny Ben Shitrit"
 git config --global user.email db@dannyben.com
