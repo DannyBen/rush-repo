@@ -1,29 +1,20 @@
 #!/usr/bin/env bash
-set -e
+source ../common.sh
 
-echo "Identifying latest version"
-version=$(curl -s https://api.github.com/repos/cli/cli/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
-echo "Latest version is $version"
+say "identifying latest version for cli/cli"
+version=$(get_github_release_version cli/cli)
+say "latest version is $version"
 
-echo "Comparing with installed version (if any)"
-
-installed() {
-  hash gh 2> /dev/null && gh version | grep "$version" > /dev/null 2>&1
-}
-
-if ! installed ; then
-  echo "Downloading from GitHub..."
+if ! is_installed gh version ; then
+  say "installing gh (github)"
   wget -qO ./gh.deb "https://github.com/cli/cli/releases/download/v$version/gh_${version}_linux_amd64.deb"
   sudo dpkg -i gh.deb
   rm gh.deb
 
-  echo "Done."
   gh version
+  say "gh installation complete"
 
 else
-  echo "Installed version is also $version, no update needed."
-  echo "Goodbye."
+  say "installed version is also $version, no update needed."
 
 fi
-
-

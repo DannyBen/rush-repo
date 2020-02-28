@@ -1,32 +1,20 @@
 #!/usr/bin/env bash
-set -e
+source ../common.sh
 
-echo "Identifying latest version"
-version=$(curl -s https://api.github.com/repos/cjbassi/ytop/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
-echo "Latest version is $version"
+say "identifying latest version for cjbassi/ytop"
+version=$(get_github_release_version cjbassi/ytop)
+say "latest version is $version"
 
-# If you want, force a version here
-# version=1.1.9
-
-echo "Comparing with installed version (if any)"
-
-installed() {
-  hash ytop 2> /dev/null && ytop --version | grep "$version" > /dev/null 2>&1
-}
-
-if ! installed ; then
-  echo "Downloading from GitHub..."
+if ! is_installed ytop; then
+  say "installing ytop (github)"
   curl -sL "https://github.com/cjbassi/ytop/releases/download/$version/ytop-$version-x86_64-unknown-linux-gnu.tar.gz" | tar -xzv
   chmod +x ytop
   sudo mv ytop /usr/local/bin/
 
-  echo "Done."
   ytop --version
+  say "ytop installation complete"
 
 else
-  echo "Installed version is also $version, no update needed."
-  echo "Goodbye."
+  say "installed version is also $version, no update needed."
 
 fi
-
-

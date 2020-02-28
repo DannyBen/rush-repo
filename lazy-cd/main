@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
-set -ex
+source ../common.sh
+
+say "installing prerequisites"
+needs bashrc
+
+say "installing lazy-cd (github)"
 wget -qO ~/.bashrc.d/lcd.bashrc https://raw.githubusercontent.com/pedramamini/lazy-cd/master/lcd.sh
+
+say "lazy-cd installation complete"

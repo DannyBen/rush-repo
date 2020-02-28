@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+source ../common.sh
 
-set -e
+say "instaling heroku-cli (install script)"
 curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+say "heroku installation complete"

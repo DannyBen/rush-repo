@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-set -e
-echo "Rush will update in the background in a moment"
+source ../common.sh
+
+say "installing rush (github)"
+say "rush will update in the background in a moment"
 ( sleep 1 && sudo wget -qO /usr/local/bin/rush https://raw.githubusercontent.com/DannyBen/rush-cli/master/rush ) &

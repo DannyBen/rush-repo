@@ -1,24 +1,25 @@
 #!/usr/bin/env bash
-set -e
+source ../common.sh
 
-RUBY_VERSION=2.6.3
+version=2.6.3
 
-if [[ ! -x "$(command -v rvm)" ]]; then
-  echo "RVM is not installed."
-  echo "Run 'rush get $REPO:rvm' first."
-  exit
+if ! command_exist rvm ; then
+  attention "rvm is not installed"
+  attention "run 'rush get $REPO:rvm' first and try again"
+  exit 1
 fi
 
-if [[ -x "$(command -v ruby)" ]]; then
-  echo "Ruby is already installed:"
-  ruby --version
-  exit
+if ! is_installed ruby ; then
+  rvm install "$version"
+
+  say "copying ~/.gemrc"
+  cp .gemrc ~/.gemrc
+
+  attention "please run:"
+  attention "rvm use $version --default && gem install bundler"
+
+else
+  say "installed version is also $version, no update needed."
+
 fi
 
-rvm install $RUBY_VERSION
-
-echo "Copying .gemrc"
-cp .gemrc ~/.gemrc
-
-echo "Ruby Installed, please run:"
-echo "rvm use $RUBY_VERSION --default && gem install bundler"

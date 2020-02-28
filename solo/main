@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
+source ../common.sh
 
-if ! hash solo 2> /dev/null; then
-  echo "Downloading solo"
+if command_exist solo ; then
+  say "solo is already installed"
+
+else
+  say "installing solo (github)"
   curl -# -L https://raw.githubusercontent.com/DannyBen/solo/master/solo >/tmp/solo
   chmod +x /tmp/solo
   sudo mv /tmp/solo /usr/local/bin/
-
-else
-  echo "Solo is already installed"
+  
+  say "solo installation complete"
 
 fi

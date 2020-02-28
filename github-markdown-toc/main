@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
+source ../common.sh
 
-set -e
+say "identifying latest version for ekalinin/github-markdown-toc"
+version=$(get_github_release_version ekalinin/github-markdown-toc)
+say "latest version is $version"
 
-echo "Downloading executable"
-sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc
-sudo chmod +x /usr/local/bin/gh-md-toc
+if ! is_installed gh-md-toc ; then
+  say "installing gh-md-toc"
+  sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc
+  sudo chmod +x /usr/local/bin/gh-md-toc
 
-echo "Done. $(gh-md-toc)"
+  gh-md-toc --version
+  say "gh-md-toc installation complete"
+else
+  say "installed version is also $version, no update needed."
+
+fi

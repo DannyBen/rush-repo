@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
-set -ex
+source ../common.sh
 
-wget "https://github.com/ofavre/vimcat/releases/download/v1.0.0/vimcat_1.0.0-1_all.deb"
-sudo dpkg -i vimcat_1.0.0-1_all.deb
-rm vimcat_1.0.0-1_all.deb
+version=1.0.0
+
+if command_exist vimcat; then
+  say "vimcat is already installed"
+
+else
+  say "installing vimcat (github)"
+  wget "https://github.com/ofavre/vimcat/releases/download/v$version/vimcat_$version-1_all.deb"
+  sudo dpkg -i vimcat_$version-1_all.deb
+  rm vimcat_$version-1_all.deb
+
+  say "vimcat installation complete"
+
+fi

@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
+source ../common.sh
 
-set -e
+say "installing prerequisites"
+needs bashrc
 
-echo "Installing linuxbrew-wrapper"
-sudo apt install linuxbrew-wrapper
+say "installing linuxbrew-wrapper (apt)"
+sudo apt install -y linuxbrew-wrapper
 
-echo "Integrating with bashrc"
+say "copying ~/.bashrc.d config"
 cp brew.bashrc ~/.bashrc.d/
 
-echo "Running brew setup"
+say "running brew setup"
 brew
 
-echo "Done. You may need to restart your session or source ~/.bashrc"
+say "brew installation complete"
+say "restart your session or source ~/.bashrc"

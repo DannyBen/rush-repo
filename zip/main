@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-set -ex
-sudo apt install zip
+source ../common.sh
+
+say "installing zip (apt)"
+sudo apt-get install -y zip
+say "zip installation complete"

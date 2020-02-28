@@ -1,35 +1,27 @@
 #!/usr/bin/env bash
 # Source: https://github.com/docker/machine/releases
+source ../common.sh
 
-echo "Identifying latest version"
-version=$(curl -s https://api.github.com/repos/docker/machine/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
+say "identifying latest version for docker/machine"
+version=$(get_github_release_version docker/machine)
+say "latest version is $version"
 
-echo "Latest version is $version"
-
-echo "Comparing with installed version (if any)"
-
-installed() {
-  hash docker-machine 2> /dev/null && docker-machine --version | grep "$version" > /dev/null 2>&1
-}
-
-if ! installed ; then
-  echo "Downloading docker-machine..."
+if ! is_installed docker-machine ; then
+  say "installing docker-machine (github)"
   curl -# -L "https://github.com/docker/machine/releases/download/v$version/docker-machine-$(uname -s)-$(uname -m)" >/tmp/docker-machine
   chmod +x /tmp/docker-machine
   sudo mv /tmp/docker-machine /usr/local/bin/docker-machine
 
-  echo "Downloading docker-machine 'use' command wrapper..."
+  say "downloading docker-machine 'use' command wrapper"
   sudo wget -q --show-progress https://raw.githubusercontent.com/docker/machine/master/contrib/completion/bash/docker-machine-wrapper.bash -O /etc/bash_completion.d/docker-machine-wrapper.bash
 
-  echo "Downloading docker-machine bash completion..."
+  say "downloading docker-machine bash completion"
   sudo wget -q --show-progress https://raw.githubusercontent.com/docker/machine/master/contrib/completion/bash/docker-machine.bash -O /etc/bash_completion.d/docker-machine.bash
 
-  echo "Done. You may need to restart your shell."
+  say "docker-machine installation complete"
+  say "you may need to restart your shell"
 
 else
-  echo "Installed version is also $version, no update needed."
-  echo "Goodbye."
+  say "installed version is also $version, no update needed."
 
 fi
-
-

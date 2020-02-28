@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
-set -ex
-sudo apt install ack
+source ../common.sh
+
+say "installing ack (apt)"
+sudo apt install -y ack
 echo "--color-match=blue" > ~/.ackrc
+ack --version | head -n1
+say "ack installation complete"

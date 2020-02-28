@@ -1,24 +1,26 @@
 #!/usr/bin/env bash
-set -e
+source ../common.sh
 
-echo "Installing unzip if necessary"
-[[ -x "$(command -v unzip)" ]] || rush get "$REPO:unzip"
-
-echo "Copying config"
-[[ -d ~/.ngrok2 ]] || mkdir ~/.ngrok2
-cp ngrok.yml ~/.ngrok2/ngrok.yml
-
-echo "Downloading binary (if necessary)"
-
-# snap version is buggy
-# if [[ -x "$(command -v ngrok)" ]] || sudo snap install ngrok
+say "checking if ngrok is already installed"
 
 if [[ ! -x "$(command -v ngrok)" ]]; then
+  say "installing prerequisites"
+  needs unzip
+
+  say "installing ngrok (direct download)"
   download_url=https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
   wget -O ngrok.zip $download_url
   sudo unzip -o ngrok.zip -d /usr/local/bin/
   rm ngrok.zip
+
+  say "copying config file to ~/.ngrok/ngrok.yml"
+  [[ -d ~/.ngrok2 ]] || mkdir ~/.ngrok2
+  cp ngrok.yml ~/.ngrok2/ngrok.yml
+
+  ngrok --version
+  say "ngrok installation complete"
+
+else
+  say "ngrok is already installed"
+
 fi
-
-
-echo "Done, installed version: $(ngrok version)"

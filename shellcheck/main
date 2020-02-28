@@ -1,20 +1,19 @@
 #!/usr/bin/env bash
-set -e
+source ../common.sh
 
-echo "Downloading binary"
+say "installing shellcheck (google)"
 curl -o shellcheck.tzr.xz https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz
 
-echo "Extracing binary"
+say "extracing archive"
 tar -xf shellcheck.tzr.xz
 rm shellcheck.tzr.xz
 
-echo "Copying binary"
+say "copying binary"
 sudo mv shellcheck-stable/shellcheck /usr/local/bin/
 sudo chmod +x /usr/local/bin/shellcheck
 
-echo "Cleaning up"
+say "cleaning up"
 rm -rf shellcheck-stable
 
-echo "Done. $(shellcheck --version)"
-
-
+shellcheck --version
+say "shellcheck installation complete"

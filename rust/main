@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
-set -e
-echo "Installing Rust"
+source ../common.sh
+
+say "installing prerequisites"
+needs bashrc
+
+say "installing rust (setup script)"
 curl https://sh.rustup.rs -sSf | sh
 
-echo "Configuring rust.bashrc"
+say "copying rust.bashrc"
 cp rust.bashrc ~/.bashrc.d/rust.bashrc
 
-echo "Installed rust version:"
-rustc --version
+say "rust installation complete"
+say "restart your terminal or source ~/.cargo/env"
 
-echo "Done. Restart your terminal or run:"
-echo "source ~/.cargo/env"
-
-echo "To uninstall run:"
-echo "rustup self uninstall"

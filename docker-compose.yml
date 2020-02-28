@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  bash: &default
+    build: .
+    image: dannyben/rush-repo-sandbox
+    volumes: 
+    - .:/app/rush-repo
+

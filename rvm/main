@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
+source ../common.sh
 
-set -e
+if command_exist rvm ; then
+  say "rvm is already installed"
 
-sudo apt-get install software-properties-common
-sudo apt-add-repository -y ppa:rael-gc/rvm
-sudo apt-get update
-sudo apt-get install rvm
-sudo usermod -a -G rvm "$(whoami)"
+else
+  say "installing rvm (apt)"
+  sudo apt-get install -y software-properties-common
+  sudo apt-add-repository -y ppa:rael-gc/rvm
+  sudo apt-get update -y
+  sudo apt-get install -y rvm
+  sudo usermod -a -G rvm "$(whoami)"
 
-echo "Done."
-echo "Restart your session for RVM to be enabled."
+  say "rvm installation complete"
+  say "restart your session for rvm to be enabled"
 
+fi

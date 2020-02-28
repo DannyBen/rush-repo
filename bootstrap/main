@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-set -e
+source ../common.sh
+
+say "installing essential rush packages"
 
 rush get "$REPO:bashrc"
 rush get "$REPO:dircolors"
@@ -8,4 +10,4 @@ rush get "$REPO:inputrc"
 rush get "$REPO:irbrc"
 [[ -x "$(command -v alf)" ]] || rush get "$REPO:alf"
 
-printf "\nDone. You may need to login again.\n"
+say "bootstrap complete - you may need to restart your session"

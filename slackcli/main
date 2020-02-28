@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
-set -e
+source ../common.sh
 
-echo "Installing dependencies"
-[[ -x "$(command -v rvm)" ]] || sudo apt-get install jq -y
-
-echo "Installing slk shell script"
+say "installing slack cli (github)"
 sudo wget -qO /usr/local/bin/slk https://raw.githubusercontent.com/rockymadden/slack-cli/master/src/slack
 sudo chmod +x /usr/local/bin/slk
-
-echo "Done. Remember to set the SLACK_CLI_TOKEN environment variable."
-printf "$ slk --version:\n"
 slk --version
+say "slack cli installation complete"
+attention "remember to set the SLACK_CLI_TOKEN environment variable"
 

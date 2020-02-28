@@ -1,23 +1,29 @@
 #!/usr/bin/env bash
+source ../common.sh
 
-set -e
+say "identifying latest version for yudai/gotty"
+version=$(get_github_release_version yudai/gotty)
+say "latest version is $version"
 
-echo "Copying config"
-cp .gotty ~/.gotty
-
-echo "Checking if binary download is needed"
-if ! hash gotty 2> /dev/null ; then
-
-  echo "Downloading binary"
+if ! is_installed gotty ; then
+  say "installing gotty (github)"
   curl -s https://api.github.com/repos/yudai/gotty/releases/latest | grep "download.*linux_amd64.tar.gz" | cut -d : -f 2,3 | tr -d \" | xargs wget -q
 
-  echo "Extracing binary"
+  say "extracing binary"
   tar -xzvf gotty_linux_amd64.tar.gz 
   rm gotty_linux_amd64.tar.gz
 
-  echo "Copying binary"
+  say "copying binary"
   sudo mv gotty /usr/local/bin/ 
   sudo chmod +x /usr/local/bin/gotty 
-fi
 
-echo "Done. $(gotty --version)"
+  say "copying config"
+  cp .gotty ~/.gotty
+
+  gotty --version
+  say "gotty installation complete"
+
+else
+  say "installed version is also $version, no update needed."
+
+fi

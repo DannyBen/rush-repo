@@ -1,34 +1,27 @@
 #!/usr/bin/env bash
-echo "Identifying latest version"
-version=$(curl -s https://api.github.com/repos/digitalocean/doctl/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
-echo "Latest version is $version"
+source ../common.sh
 
-# If you want, force a version here
-# version=1.1.9
+say "identifying latest version for digitalocean/doctl"
+version=$(get_github_release_version digitalocean/doctl)
+say "latest version is $version"
 
-echo "Comparing with installed version (if any)"
+if ! is_installed doctl version ; then
+  say "install prerequisites"
+  needs bashrc
 
-installed() {
-  hash doctl 2> /dev/null && doctl version | head -n1 | grep "$version" > /dev/null 2>&1
-}
-
-if ! installed ; then
-  echo "Downloading doctl from GitHub..."
+  say "installing doctl (github)"
   curl -sL "https://github.com/digitalocean/doctl/releases/download/v$version/doctl-$version-linux-amd64.tar.gz" | tar -xzv
 
   chmod +x doctl
   sudo mv doctl /usr/local/bin/
 
-  echo "Copying bash completion to bashrc.d"
+  say "ccopying bash completion to bashrc.d"
   cp doctl.bashrc ~/.bashrc.d/doctl.bashrc
 
-  echo "Done."
   doctl version
+  say "doctl installation complete"
 
 else
-  echo "Installed version is also $version, no update needed."
-  echo "Goodbye."
+  say "installed version is also $version, no update needed."
 
 fi
-
-

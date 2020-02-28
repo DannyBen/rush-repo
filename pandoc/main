@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-set -ex
-sudo apt install pandoc
+source ../common.sh
+say "installing pandoc (apt)"
+sudo apt install -y pandoc
+say "pandoc installation complete"

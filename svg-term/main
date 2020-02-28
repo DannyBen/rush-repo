@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
+source ../common.sh
 
-set -e
+if command_exist svg-term ; then
+  say "svg-term is already installed"
 
-echo "Installing yarn if necessary"
-[[ -x "$(command -v yarn)" ]] || rush get "$REPO:yarn"
+else
 
-echo "Installing asciinema if necessary"
-[[ -x "$(command -v yarn)" ]] || rush get "$REPO:asciinema"
+  say "installing prerequisites"
+  needs yarn asciinema
 
-echo "installing svg-term-cli"
-sudo yarn global add svg-term-cli
+  say "installing svg-term-cli (yarn)"
+  sudo yarn global add svg-term-cli
 
+  say "svg-term installation complete"
+
+fi

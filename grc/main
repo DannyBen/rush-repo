@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-set -ex
-sudo apt install grc
+source ../common.sh
+say "installing grc (apt)"
+sudo apt install -y grc
+say "grc installation complete"

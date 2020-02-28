@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
+source ../common.sh
 
-set -e
+say "installing prerequisites"
+needs yarn
 
-echo "Installing yarn if necessary"
-[[ -x "$(command -v yarn)" ]] || rush get "$REPO:yarn"
-
-echo "installing caniuse-cmd"
+say "installing caniuse-cmd (yarn)"
 yarn global add caniuse-cmd
+say "caniuse installation complete"
+say "you may need to restart your session"
 

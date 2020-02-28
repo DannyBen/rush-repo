@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
-set -ex
-curl -s https://api.github.com/repos/zeit/now-cli/releases/latest \
-  | grep "download.*now-linux.gz" \
-  | cut -d : -f 2,3 \
-  | tr -d \" \
-  | wget -qi - \
-  
-gunzip now-linux.gz
-sudo mv now-linux /usr/local/bin/now
-sudo chmod +x /usr/local/bin/now
-now --version
+source ../common.sh
+
+say "installing prerequisites"
+needs yarn
+
+say "installing now cli (yarn)"
+yarn global add now
+
+say "now installation complete"

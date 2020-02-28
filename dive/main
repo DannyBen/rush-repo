@@ -1,30 +1,22 @@
 #!/usr/bin/env bash
+source ../common.sh
 
-echo "Identifying latest version"
-version=$(curl -s https://api.github.com/repos/wagoodman/dive/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
-echo "Latest version is $version"
+say "identifying latest version for wagoodman/dive"
+version=$(get_github_release_version wagoodman/dive)
+say "latest version is $version"
 
-echo "Comparing with installed version (if any)"
-
-installed() {
-  hash dive 2> /dev/null && dive --version | grep "$version" > /dev/null 2>&1
-}
-
-if ! installed ; then
-  echo "Downloading binary"
+if ! is_installed dive ; then
+  say  "installing dive (github)"
   wget "https://github.com/wagoodman/dive/releases/download/v${version}/dive_${version}_linux_amd64.deb"
   sudo apt install "./dive_${version}_linux_amd64.deb"
   rm "./dive_${version}_linux_amd64.deb"
 
-  echo "Copying config file to ~/.dive.yaml"
+  say "copying config file to ~/.dive.yaml"
   cp .dive.yaml ~/.dive.yaml
 
-  echo "Done. "
+  say "dive installation complete"
 
 else
-  echo "Installed version is also $version, no update needed."
-  echo "Goodbye."
+  say "installed version is also $version, no update needed."
 
 fi
-
-
