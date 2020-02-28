@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
-set -ex
+source ../common.sh
+
+say "installing prerequisites"
+needs python
+
+say "installing shopify themekit (install script)"
 curl -s https://shopify.github.io/themekit/scripts/install.py | sudo python
+theme version
+say "themekit installation complete"

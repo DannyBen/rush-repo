@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
-set -ex
+source ../common.sh
 
-sudo apt-get install tmux -y
+say "installing prerequisites"
+needs bashrc
+
+say "installing tmux (apt)"
+sudo apt-get install -y tmux
+
+say "copying configuration files"
 cp .tmux.conf ~/.tmux.conf
 cp tmux.bashrc ~/.bashrc.d/tmux.bashrc
+
+say "installing tmux plugin manager (tpm)"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+say "tmux installation complete"

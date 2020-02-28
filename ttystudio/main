@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
+source ../common.sh
 
-set -e
-
-echo "This package is deprecated since it is no longer maintained."
+attention "this package is deprecated since it is no longer maintained."
 
 # echo "Installing yarn if necessary"
 # [[ -x "$(command -v yarn)" ]] || rush get "$REPO:yarn"

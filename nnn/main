@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
-set -ex
+source ../common.sh
+
+say "installing prerequisites"
+needs bashrc
+
+say "installing nnn (apt)"
 sudo apt install nnn
+
+say "copying bashrc.d config"
 cp nnn.bashrc ~/.bashrc.d/nnn.bashrc
+
+nnn -v
+say "nnn installation complete"

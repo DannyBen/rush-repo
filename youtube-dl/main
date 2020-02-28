@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-set -e
+source ../common.sh
 
-echo "Installing pip3 if necessary"
-[[ -x "$(command -v pip3)" ]] || rush get "$REPO:python"
+say "installing prerequisites"
+needs python
 
-echo "Installing youtube-dl"
+say "installing youtube-dl (pip)"
 sudo pip3 install --upgrade youtube-dl
-youtube-dl --version
 
-echo "Done"
+youtube-dl --version
+say "youtube-dl installation complete"

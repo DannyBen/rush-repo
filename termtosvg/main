@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
-set -e
+source ../common.sh
 
-echo "Installing pip3 if necessary"
-[[ -x "$(command -v pip3)" ]] || rush get "$REPO:python"
+say "installing prerequisites"
+needs python
 
-echo "Installing termtosvg"
+say "installing termtosvg (pip)"
 sudo pip3 install --upgrade termtosvg
 
-# there is no termtosvg --version, so we do this instead to verify install:
 termtosvg -h | head -n2
-
-echo "Done"
+say "termtosvg installation complete"

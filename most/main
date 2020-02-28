@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+source ../common.sh
 
-echo "Installing most"
-sudo apt install most
+say "installing most (apt)"
+sudo apt install -y most
+say "most installation complete"

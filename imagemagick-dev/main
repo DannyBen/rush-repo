@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-set -ex
-sudo apt-get install imagemagick libmagick++-dev
+source ../common.sh
+say "installing imagemagick and libmagick++-dev"
+sudo apt-get install -y imagemagick libmagick++-dev
+say "imagemagick-dev installation complete"

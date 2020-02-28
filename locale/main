@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-set -ex
+source ../common.sh
+say "configuring locale"
 sudo localectl set-locale LANG=en_US.UTF-8

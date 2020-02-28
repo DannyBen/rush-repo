@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-set -ex
+source ../common.sh
+say "installing redis client and server (apt)"
 sudo apt-get install -y redis-tools redis-server
+say "redis installation complete"

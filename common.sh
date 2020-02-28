@@ -12,6 +12,7 @@ underlined() { printf "\e[4m%b\e[0m\n" "$*"; }
 
 # Output functions
 say() { printf "%-20s | %s\n" "$(cyan $(basename $PWD))" "$(bold "$*")"; }
+attention() { printf "%-20s | %s\n" "$(cyan $(basename $PWD))" "$(red "$*")"; }
 
 # Utility functions
 get_github_release_version() {
@@ -22,6 +23,10 @@ is_installed() {
   local cmd=$1
   local version_flag=${2:---version}
   hash $cmd 2> /dev/null && $cmd $version_flag 2>&1 | grep "$version" > /dev/null 2>&1
+}
+
+command_exist() {
+  [[ -x "$(command -v $1)" ]]
 }
 
 needs() {

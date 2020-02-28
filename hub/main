@@ -1,33 +1,21 @@
 #!/usr/bin/env bash
-set -e
+source ../common.sh
 
-echo "Identifying latest version"
-version=$(curl -s https://api.github.com/repos/github/hub/releases/latest | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v)
-echo "Latest version is $version"
+say "identifying latest version for github/hub"
+version=$(get_github_release_version github/hub)
+say "latest version is $version"
 
-# If you want, force a version here
-# version=1.1.9
-
-echo "Comparing with installed version (if any)"
-
-installed() {
-  hash hub 2> /dev/null && hub --version | grep "$version" > /dev/null 2>&1
-}
-
-if ! installed ; then
-  echo "Downloading from GitHub..."
+if ! is_installed hub ; then
+  say "installing hub (github)"
   curl -L "https://github.com/github/hub/releases/download/v$version/hub-linux-amd64-$version.tgz" | tar xvz --strip-components=2 "hub-linux-amd64-$version/bin/hub"
 
   sudo install -m 755 hub /usr/local/bin/hub
   rm hub
   
-  echo "Done."
   hub --version
+  say "hub installation complete"
 
 else
-  echo "Installed version is also $version, no update needed."
-  echo "Goodbye."
+  say "installed version is also $version, no update needed."
 
 fi
-
-

@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
-set -ex
+source ../common.sh
+
+say "installing prerequisites"
+needs bashrc
+
+say "installing opcode (github)"
 sudo wget -qO /usr/local/bin/op https://raw.githubusercontent.com/DannyBen/opcode/master/op
 sudo chmod +x /usr/local/bin/op
+
+say "copying bashrc.d config"
 cp opcode.bashrc ~/.bashrc.d/opcode.bashrc
+
+op --version
+say "opcode installtion complete"
