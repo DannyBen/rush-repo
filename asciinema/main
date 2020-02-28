@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-set -e
-sudo apt-get install asciinema
+source ../common.sh
+
+say "installing asciinemt (apt)"
+sudo apt-get install -y asciinema
 asciinema --version
+say "asciinema installation complete"

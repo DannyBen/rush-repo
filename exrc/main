@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-set -ex
+source ../common.sh
+say "copying ~/.exrc"
 cp .exrc ~/.exrc

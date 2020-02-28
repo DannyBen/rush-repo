@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
-set -ex
+source ../common.sh
+
+say "installing prerequisites"
+needs bashrc
+
+say "installing go (snap)"
 sudo snap install go --classic
+
+say "copying bashrc.d config"
 cp go.bashrc ~/.bashrc.d/go.bashrc
+
+say "go installation complete"

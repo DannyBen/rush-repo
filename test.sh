@@ -7,7 +7,10 @@ echo "==> shellcheck started"
 
 for file in **/{main,undo} ; do
   echo "==> shellcheck $file"
-  shellcheck $file
+  wd=$PWD
+  cd ./$(dirname $file)
+  shellcheck -x $(basename $file)
+  cd $wd
 done
 
 echo "==> shellcheck done, all good"

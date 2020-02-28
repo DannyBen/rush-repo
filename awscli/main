@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # ref: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux
-set -ex
+source ../common.sh
+
+say "installing awscli (pip"
 sudo pip install awscli
 aws --version
+say "awscli installation complete"

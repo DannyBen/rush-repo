@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-set -e
+source ../common.sh
 
+say "installing docker (setuip script)"
 curl https://get.docker.com | sudo sh
 sudo usermod -aG docker "$(whoami)"
 sudo service docker start
+say "docker installation complete"

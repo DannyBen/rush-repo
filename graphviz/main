@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-set -ex
-sudo apt install graphviz
+source ../common.sh
+say "installing graphviz (apt)"
+sudo apt install -y graphviz
+convert --version
+say "graphviz installation complete"
