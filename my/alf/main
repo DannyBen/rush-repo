@@ -8,6 +8,6 @@ say "connecting alf to github repo"
 wd=$PWD
 cd /vagrant/bash
 alf connect DannyBen/alf-conf -y
-cd $wd
+cd "$wd"
 
 say "my/alf installation complete"
