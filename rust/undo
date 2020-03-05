@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-set -x
+source ../common.sh
+
+say "uninstalling rust"
 rustup self uninstall
 rm ~/.bashrc.d/rust.bashrc
+say "uninstalled rust"

@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-set -x
+source ../common.sh
+
+say "uninstalling cron-explain"
 sudo rm /usr/local/bin/cron-explain
+say "uninstalled cron-explain"

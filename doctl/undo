@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-set -x
+source ../common.sh
+
+say "uninstalling doctl"
 sudo rm /usr/local/bin/doctl
 rm ~/.bashrc.d/doctl.bashrc
+say "uninstalled doctl"

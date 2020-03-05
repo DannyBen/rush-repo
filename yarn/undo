@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-set -x
-sudo apt-get remove yarn -y
+source ../common.sh
+
+say "uninstalling yarn"
+sudo apt-get remove -y yarn
 rm ~/.bashrc.d/yarn.bashrc
+say "uninstalled yarn"

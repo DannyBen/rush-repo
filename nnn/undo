@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-set -x
-sudo apt remove nnn
+source ../common.sh
+
+say "uninstalling nnn"
+sudo apt remove -y nnn
 rm ~/.bashrc.d/nnn.bashrc
+say "uninstalled nnn"

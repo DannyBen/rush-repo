@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-set -x
+source ../common.sh
+
+say "uninstalling k3s"
 sudo rm /usr/local/bin/k3s
 sudo rm -rf /etc/rancher
 sudo rm -rf "$HOME/.rancher"
+say "uninstalled k3s"

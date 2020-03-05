@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-set -ex
-sudo apt remove pandoc
+source ../common.sh
+
+say "uninstalling pandoc"
+sudo apt remove -y pandoc
+say "uninstalled pandoc"

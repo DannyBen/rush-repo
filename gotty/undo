@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-set -x
+source ../common.sh
+
+say "uninstalling gotty"
 rm ~/.gotty
 sudo rm /usr/local/bin/gotty
+say "uninstalled gotty"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "installing docker (setuip script)"
+say "installing docker (setup script)"
 curl https://get.docker.com | sudo sh
 sudo usermod -aG docker "$(whoami)"
 sudo service docker start

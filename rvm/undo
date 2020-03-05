@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-set -x
-sudo apt remove rvm
+source ../common.sh
+
+say "uninstalling rvm"
+sudo apt remove -y rvm
+say "uninstalled rvm"

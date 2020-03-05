@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-set -x
-sudo apt remove dive
+source ../common.sh
+
+say "uninstalling dive"
+sudo apt remove -y dive
 rm ~/.dive.yaml
+say "uninstalled dive"

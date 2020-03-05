@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-set -x
+source ../common.sh
+
+say "uninstalling kubectl"
 sudo rm /usr/local/bin/kubectl
 # rm ~/.bashrc.d/kubectl.bashrc
+say "uninstalled kubectl"
 

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-set -x
-sudo apt-get remove nodejs
+source ../common.sh
+
+say "uninstalling nodejs"
+sudo apt-get remove -y nodejs
+say "uninstalled nodejs"
 

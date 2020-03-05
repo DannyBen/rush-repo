@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-set -x
+source ../common.sh
+
+say "uninstalling docker-machine"
 sudo rm /usr/local/bin/docker-machine
 sudo rm /etc/bash_completion.d/docker-machine-wrapper.bash
 sudo rm /etc/bash_completion.d/docker-machine.bash
+say "uninstalled docker-machine"

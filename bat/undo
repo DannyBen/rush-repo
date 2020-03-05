@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-set -x
+source ../common.sh
+
+say "uninstalling bat"
 sudo dpkg -r bat
 rm -rf ~/.config/bat
+say "uninstalled bat"

@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-set -ex
-sudo apt remove librsvg2-bin
+source ../common.sh
+
+say "uninstalling rsvg-convert"
+sudo apt remove -y librsvg2-bin
+say "uninstalled rsvg-convert"
