@@ -1,27 +1,13 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for digitalocean/doctl"
-version=$(get_github_release_version digitalocean/doctl)
-say "latest version is $version"
-
-if ! is_installed doctl version ; then
-  say "install prerequisites"
-  needs bashrc
-
-  say "installing doctl (github)"
+install_function() {
   curl -sL "https://github.com/digitalocean/doctl/releases/download/v$version/doctl-$version-linux-amd64.tar.gz" | tar -xzv
-
   chmod +x doctl
   sudo mv doctl /usr/local/bin/
 
-  say "ccopying bash completion to bashrc.d"
   cp doctl.bashrc ~/.bashrc.d/doctl.bashrc
+}
 
-  doctl version
-  say "doctl installation complete"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
+needs bashrc
+github_install_helper doctl "digitalocean/doctl" "version"

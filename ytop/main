@@ -1,20 +1,10 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for cjbassi/ytop"
-version=$(get_github_release_version cjbassi/ytop)
-say "latest version is $version"
-
-if ! is_installed ytop; then
-  say "installing ytop (github)"
+install_function() {
   curl -sL "https://github.com/cjbassi/ytop/releases/download/$version/ytop-$version-x86_64-unknown-linux-gnu.tar.gz" | tar -xzv
   chmod +x ytop
   sudo mv ytop /usr/local/bin/
+}
 
-  ytop --version
-  say "ytop installation complete"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper ytop "cjbassi/ytop"

@@ -5,8 +5,6 @@ if command_exist svg-term ; then
   say "svg-term is already installed"
 
 else
-
-  say "installing prerequisites"
   needs yarn asciinema
 
   say "installing svg-term-cli (yarn)"

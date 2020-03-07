@@ -3,8 +3,10 @@ source ../common.sh
 
 say "checking if ngrok is already installed"
 
-if [[ ! -x "$(command -v ngrok)" ]]; then
-  say "installing prerequisites"
+if command_exist ngrok ; then
+  say "ngrok is already installed"
+
+else
   needs unzip
 
   say "installing ngrok (direct download)"
@@ -19,8 +21,5 @@ if [[ ! -x "$(command -v ngrok)" ]]; then
 
   ngrok --version
   say "ngrok installation complete"
-
-else
-  say "ngrok is already installed"
 
 fi

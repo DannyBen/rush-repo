@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 source ../../common.sh
 
-say "installing prerequisites"
 needs gitconfig
 
 say "applying personal git configuration"

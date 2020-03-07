@@ -1,24 +1,14 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for snyk/snyk"
-version=$(get_github_release_version snyk/snyk)
-say "latest version is $version"
-
-if ! is_installed snyk ; then
-  say "installing snyk (github)"
+install_function() {
   sudo curl -L "https://github.com/snyk/snyk/releases/download/v$version/snyk-linux" -o /usr/local/bin/snyk
   sudo chmod +x /usr/local/bin/snyk
+}
 
-  snyk --version
-  say "snyk instalation complete"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper snyk "snyk/snyk"
 
 if [[ -z "$SNYK_TOKEN" ]]; then
-  attention "NOTE: The environamnt variable SNYK_TOKEN is not set"
-  attention "      Get your token from https://app.snyk.io/account"
+  attention "the environamnt variable SNYK_TOKEN is not set"
+  attention "get your token from https://app.snyk.io/account"
 fi

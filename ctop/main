@@ -1,19 +1,9 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for bcicen/ctop"
-version=$(get_github_release_version bcicen/ctop)
-say "latest version is $version"
-
-if ! is_installed ctop -v ; then
-  say "installing ctop (github)"
+install_function() {
   sudo wget "https://github.com/bcicen/ctop/releases/download/v$version/ctop-$version-linux-amd64" -O /usr/local/bin/ctop
   sudo chmod +x /usr/local/bin/ctop
+}
 
-  ctop -v
-  say "ctop installation complete"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper ctop "bcicen/ctop" "-v"

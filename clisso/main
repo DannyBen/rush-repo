@@ -1,29 +1,15 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for allcloud-io/clisso"
-version=$(get_github_release_version allcloud-io/clisso)
-say "latest version is $version"
-
-if ! is_installed clisso version ; then
-  say "installing prerequisites"
-  needs unzip
-
-  say "installing clisso (github)"
+install_function() {
   download_url="https://github.com/allcloud-io/clisso/releases/download/${version}/clisso-linux-amd64.zip"
   wget --no-verbose -O clisso.zip "$download_url"
   
-  say "unpacking archive"
   sudo unzip -o clisso.zip -d /usr/local/bin/
   rm clisso.zip
 
-  say "renaming binary"
   sudo mv /usr/local/bin/clisso-linux-amd64 /usr/local/bin/clisso
+}
 
-  clisso version
-  say "clisso installation complete"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
+needs unzip
+github_install_helper clisso "allcloud-io/clisso" "version"

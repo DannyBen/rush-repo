@@ -1,21 +1,11 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for github/hub"
-version=$(get_github_release_version github/hub)
-say "latest version is $version"
-
-if ! is_installed hub ; then
-  say "installing hub (github)"
+install_function() {
   curl -L "https://github.com/github/hub/releases/download/v$version/hub-linux-amd64-$version.tgz" | tar xvz --strip-components=2 "hub-linux-amd64-$version/bin/hub"
 
   sudo install -m 755 hub /usr/local/bin/hub
   rm hub
-  
-  hub --version
-  say "hub installation complete"
+}
 
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper hub "github/hub"

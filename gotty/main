@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for yudai/gotty"
-version=$(get_github_release_version yudai/gotty)
-say "latest version is $version"
-
-if ! is_installed gotty ; then
-  say "installing gotty (github)"
+install_function() {
   curl -s https://api.github.com/repos/yudai/gotty/releases/latest | grep "download.*linux_amd64.tar.gz" | cut -d : -f 2,3 | tr -d \" | xargs wget -q
 
   say "extracing binary"
@@ -19,11 +14,6 @@ if ! is_installed gotty ; then
 
   say "copying config"
   cp .gotty ~/.gotty
+}
 
-  gotty --version
-  say "gotty installation complete"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper gotty "yudai/gotty"

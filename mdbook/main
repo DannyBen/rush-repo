@@ -1,20 +1,10 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for rust-lang/mdBook"
-version=$(get_github_release_version rust-lang/mdBook)
-say "latest version is $version"
-
-if ! is_installed mdbook ; then
-  say "installing mdbook (github)"
+install_function() {
   curl -sL "https://github.com/rust-lang/mdBook/releases/download/v$version/mdbook-v$version-x86_64-unknown-linux-gnu.tar.gz" | tar -xzv
   chmod +x mdbook
   sudo mv mdbook /usr/local/bin/
+}
 
-  mdbook --version
-  say "mdbook installatiton complete"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper mdbook "rust-lang/mdBook"

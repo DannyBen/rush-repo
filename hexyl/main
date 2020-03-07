@@ -1,20 +1,10 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for sharkdp/hexyl"
-version=$(get_github_release_version sharkdp/hexyl)
-say "latest version is $version"
-
-if ! is_installed hexyl; then
-  say "installing hexyl (github)"
+install_function() {
   wget "https://github.com/sharkdp/hexyl/releases/download/v0.4.0/hexyl_0.4.0_amd64.deb"
   sudo dpkg -i hexyl_0.4.0_amd64.deb
   rm hexyl_0.4.0_amd64.deb
-  
-  hexyl --version
-  say "hexyl installation complete"
+}
 
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper hexyl "sharkdp/hexyl"

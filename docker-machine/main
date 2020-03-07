@@ -2,12 +2,7 @@
 # Source: https://github.com/docker/machine/releases
 source ../common.sh
 
-say "identifying latest version for docker/machine"
-version=$(get_github_release_version docker/machine)
-say "latest version is $version"
-
-if ! is_installed docker-machine ; then
-  say "installing docker-machine (github)"
+install_function() {
   curl -# -L "https://github.com/docker/machine/releases/download/v$version/docker-machine-$(uname -s)-$(uname -m)" >/tmp/docker-machine
   chmod +x /tmp/docker-machine
   sudo mv /tmp/docker-machine /usr/local/bin/docker-machine
@@ -18,10 +13,7 @@ if ! is_installed docker-machine ; then
   say "downloading docker-machine bash completion"
   sudo wget -q --show-progress https://raw.githubusercontent.com/docker/machine/master/contrib/completion/bash/docker-machine.bash -O /etc/bash_completion.d/docker-machine.bash
 
-  say "docker-machine installation complete"
-  say "you may need to restart your shell"
+  attention "you may need to restart your shell"
+}
 
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper docker-machine "docker/machine"

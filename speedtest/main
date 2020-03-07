@@ -5,7 +5,6 @@ if command_exist speedtest ; then
   say "speedtest-cli is already installed"
 
 else
-  say "installing prerequisites"
   needs python
 
   pip3 install speedtest-cli

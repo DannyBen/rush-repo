@@ -1,20 +1,10 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for cli/cli"
-version=$(get_github_release_version cli/cli)
-say "latest version is $version"
-
-if ! is_installed gh version ; then
-  say "installing gh (github)"
+install_function() {
   wget -qO ./gh.deb "https://github.com/cli/cli/releases/download/v$version/gh_${version}_linux_amd64.deb"
   sudo dpkg -i gh.deb
   rm gh.deb
+}
 
-  gh version
-  say "gh installation complete"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper gh "cli/cli" "version"

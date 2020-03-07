@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "installing zip (apt)"
-sudo apt-get install -y zip
-say "zip installation complete"
+if command_exist zip ; then
+  say "zip is already installed"
+
+else
+  say "installing zip (apt)"
+  sudo apt-get install -y zip
+  say "zip installation complete"
+
+fi

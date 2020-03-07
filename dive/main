@@ -1,22 +1,12 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for wagoodman/dive"
-version=$(get_github_release_version wagoodman/dive)
-say "latest version is $version"
-
-if ! is_installed dive ; then
-  say  "installing dive (github)"
+install_function() {
   wget "https://github.com/wagoodman/dive/releases/download/v${version}/dive_${version}_linux_amd64.deb"
   sudo apt install "./dive_${version}_linux_amd64.deb"
   rm "./dive_${version}_linux_amd64.deb"
 
-  say "copying config file to ~/.dive.yaml"
   cp .dive.yaml ~/.dive.yaml
+}
 
-  say "dive installation complete"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper dive "wagoodman/dive"

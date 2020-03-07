@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "installing prerequisites"
 needs bashrc
 
 say "installing direnv"
-sudo apt install direnv
+sudo apt install -y direnv
 
 say "copying bashrc.d configuration"
 cp direnv.bashrc ~/.bashrc.d/direnv.bashrc

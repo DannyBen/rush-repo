@@ -1,20 +1,10 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for sharkdp/fd"
-version=$(get_github_release_version sharkdp/fd)
-say "latest version is $version"
-
-if ! is_installed fd ; then
-  say "installing fd (github)"
+install_function() {
   wget -qO ./fd.deb "https://github.com/sharkdp/fd/releases/download/v$version/fd_${version}_amd64.deb"
   sudo dpkg -i fd.deb
   rm fd.deb
+}
 
-  fd --version
-  say "fd installation complete"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper fd "sharkdp/fd"

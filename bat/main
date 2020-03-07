@@ -1,24 +1,13 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "identifying latest version for sharkdp/bat"
-version=$(get_github_release_version sharkdp/bat)
-say "latest version is $version"
-
-if ! is_installed bat; then
-  say "installing bat (github)"
+install_function() {
   wget -qO ./bat.deb "https://github.com/sharkdp/bat/releases/download/v${version}/bat_${version}_amd64.deb"
   sudo dpkg -i bat.deb 
   rm bat.deb
 
-  say "copying config file to ~/.config/bat"
   mkdir -p ~/.config/bat
   cp config ~/.config/bat/config
+}
 
-  bat --version
-  say "bat installation complete"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
+github_install_helper bat "sharkdp/bat"
