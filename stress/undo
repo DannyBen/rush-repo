@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling stress"
+sudo apt remove -y stress
+say "uninstalled stress"
