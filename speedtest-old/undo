@@ -2,5 +2,5 @@
 source ../common.sh
 
 say "uninstalling speedtest"
-sudo apt-get remove -y speedtest
+pip3 uninstall -y speedtest-cli
 say "uninstalled speedtest"

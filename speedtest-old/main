@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist speedtest ; then
+  say "speedtest-cli is already installed"
+
+else
+  needs python
+
+  pip3 install speedtest-cli
+  speedtest --version
+  
+  say "speedtest-cli installaction complete"
+
+fi
