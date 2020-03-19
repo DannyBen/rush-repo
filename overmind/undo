@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling overmind"
+sudo rm /usr/local/bin/overmind
+say "uninstalled overmind"

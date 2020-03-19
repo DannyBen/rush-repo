@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist gpg2 ; then
+  say "gpg2 is already installed"
+
+else
+  say "installing gpg2 (apt)"
+  sudo apt-get install -y gnupg2
+  say "gpg2 installation complete"
+
+fi
