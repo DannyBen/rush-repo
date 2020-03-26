@@ -3,6 +3,7 @@ source ../common.sh
 
 if command_exist rvm ; then
   say "rvm is already installed"
+  say "run 'rvm get stable' to upgrade"
 
 else
   say "installing rvm (apt)"
