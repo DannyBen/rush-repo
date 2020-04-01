@@ -33,7 +33,11 @@ command_exist() {
 needs() {
   say "installing prerequisites"
   for pack in $* ; do
-    rush "$REPO:$pack"
+    if [[ $pack =~ .*:.* ]]; then
+      rush get "$pack" --clone
+    else
+      rush get "$REPO:$pack"
+    fi
   done
 }
 
