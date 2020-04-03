@@ -6,7 +6,7 @@ if command_exist flynn ; then
 
 else
   say "installying flynn"
-  curl -sSL -O -A "`uname -sp`" https://dl.flynn.io/cli
+  curl -sSL -O -A "$(uname -sp)" https://dl.flynn.io/cli
   zcat cli > /tmp/flynn
   sudo install /tmp/flynn /usr/local/bin/flynn
   rm cli
