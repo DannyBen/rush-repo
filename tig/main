@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist tig ; then
+  say "tig is already installed"
+
+else
+  say "installing tig (apt)"
+  sudo apt-get install -y tig
+
+fi
