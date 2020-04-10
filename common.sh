@@ -11,7 +11,7 @@ bold() { printf "\e[1m%b\e[0m\n" "$*"; }
 underlined() { printf "\e[4m%b\e[0m\n" "$*"; }
 
 # Output functions
-say() { printf "%-20s | %s\n" "$(cyan $(basename $PWD))" "$(bold "$*")"; }
+say() { printf "%-20s | %s\n" "$(cyan $(basename $PWD))" "$*"; }
 attention() { printf "%-20s | %s\n" "$(cyan $(basename $PWD))" "$(green "$*")"; }
 warning() { printf "%-20s | %s\n" "$(cyan $(basename $PWD))" "$(red "$*")"; }
 
@@ -59,4 +59,3 @@ github_install_helper() {
     say "$binary_name installation complete"
   fi
 }
-
