@@ -10,6 +10,4 @@ else
   say "installing svg-term-cli (yarn)"
   sudo yarn global add svg-term-cli
 
-  say "svg-term installation complete"
-
 fi

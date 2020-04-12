@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling ctop"
 sudo rm /usr/local/bin/ctop
-say "uninstalled ctop"

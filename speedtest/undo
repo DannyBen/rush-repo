@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling speedtest"
 sudo apt-get remove -y speedtest
-say "uninstalled speedtest"

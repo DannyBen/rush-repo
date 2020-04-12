@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling unzip"
 sudo apt-get remove -y unzip
-say "uninstalled unzip"

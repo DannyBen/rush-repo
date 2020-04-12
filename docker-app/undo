@@ -6,4 +6,3 @@ rm -f ~/.docker/cli-plugins/docker-app
 rm -rf ~/.docker/app
 rm -f ~/.bashrc.d/docker-app.bashrc
 (rmdir ~/.docker/cli-plugins 2> /dev/null) || true
-say "uninstalled docker app"

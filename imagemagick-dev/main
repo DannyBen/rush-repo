@@ -2,4 +2,3 @@
 source ../common.sh
 say "installing imagemagick and libmagick++-dev"
 sudo apt-get install -y imagemagick libmagick++-dev
-say "imagemagick-dev installation complete"

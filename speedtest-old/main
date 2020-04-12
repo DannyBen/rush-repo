@@ -10,6 +10,4 @@ else
   pip3 install speedtest-cli
   speedtest --version
   
-  say "speedtest-cli installaction complete"
-
 fi

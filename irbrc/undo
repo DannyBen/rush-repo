@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling irbrc"
 rm ~/.irbrc
-say "uninstalled irbrc"

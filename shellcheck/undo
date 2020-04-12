@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling shellcheck"
 sudo rm /usr/local/bin/shellcheck
-say "uninstalled shellcheck"

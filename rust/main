@@ -11,4 +11,3 @@ cp rust.bashrc ~/.bashrc.d/rust.bashrc
 
 say "rust installation complete"
 say "restart your terminal or source ~/.cargo/env"
-

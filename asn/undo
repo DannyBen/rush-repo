@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling asn"
 sudo rm /usr/local/bin/asn
-say "uninstalled asn"

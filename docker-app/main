@@ -15,4 +15,3 @@ say "copying bashrc.d configuration"
 cp docker-app.bashrc ~/.bashrc.d/
 
 docker app --version
-say "docker app installation complete"

@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling gh"
 sudo dpkg -r gh
-say "uninstalled gh"

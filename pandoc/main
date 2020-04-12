@@ -2,4 +2,3 @@
 source ../common.sh
 say "installing pandoc (apt)"
 sudo apt install -y pandoc
-say "pandoc installation complete"

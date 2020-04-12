@@ -7,6 +7,5 @@ if command_exist unzip ; then
 else
   say "Installing unzip (apt)"
   sudo apt-get install -y unzip
-  say "unzip installation complete"
 
 fi

@@ -3,4 +3,3 @@ source ../common.sh
 
 say "installing asciinema (apt)"
 sudo apt-get install -y asciinema
-say "asciinema installation complete"

@@ -20,6 +20,5 @@ else
   cp ngrok.yml ~/.ngrok2/ngrok.yml
 
   ngrok --version
-  say "ngrok installation complete"
 
 fi

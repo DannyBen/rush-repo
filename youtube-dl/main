@@ -7,4 +7,3 @@ say "installing youtube-dl (pip)"
 sudo pip3 install --upgrade youtube-dl
 
 youtube-dl --version
-say "youtube-dl installation complete"

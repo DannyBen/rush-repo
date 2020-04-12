@@ -11,4 +11,3 @@ say "copying bashrc.d config"
 cp opcode.bashrc ~/.bashrc.d/opcode.bashrc
 
 op --version
-say "opcode installtion complete"

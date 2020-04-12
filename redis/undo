@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling redis"
 sudo apt-get remove -y redis-tools redis-server
-say "uninstalled redis"

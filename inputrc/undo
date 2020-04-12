@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling inputrc"
 rm ~/.inputrc
-say "uninstalled inputrc"

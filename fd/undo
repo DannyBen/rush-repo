@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling fd"
 sudo dpkg -r fd
-say "uninstalled fd"

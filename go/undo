@@ -4,4 +4,3 @@ source ../common.sh
 say "uninstalling go"
 sudo snap remove go
 rm ~/.bashrc.d/go.bashrc
-say "uninstalled go"

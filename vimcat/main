@@ -12,6 +12,4 @@ else
   sudo dpkg -i vimcat_$version-1_all.deb
   rm vimcat_$version-1_all.deb
 
-  say "vimcat installation complete"
-
 fi

@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling most"
 sudo apt remove -y most
-say "uninstalled most"

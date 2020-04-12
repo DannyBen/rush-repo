@@ -5,4 +5,3 @@ say "installing ack (apt)"
 sudo apt install -y ack
 echo "--color-match=blue" > ~/.ackrc
 ack --version | head -n1
-say "ack installation complete"

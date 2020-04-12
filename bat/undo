@@ -4,4 +4,3 @@ source ../common.sh
 say "uninstalling bat"
 sudo dpkg -r bat
 rm -rf ~/.config/bat
-say "uninstalled bat"

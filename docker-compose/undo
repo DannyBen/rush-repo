@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling docker-compose"
 sudo rm /usr/local/bin/docker-compose
-say "uninstalled docker-compose"

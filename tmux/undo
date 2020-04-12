@@ -8,4 +8,3 @@ sudo apt-get remove -y tmux
 rm ~/.tmux.conf
 rm ~/.bashrc.d/tmux.bashrc
 rm -rf ~/.tmux
-say "uninstalled tmux"

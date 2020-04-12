@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling crystal"
 sudo apt remove -y crystal
-say "uninstalled crystal"

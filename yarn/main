@@ -17,6 +17,5 @@ else
   cp yarn.bashrc ~/.bashrc.d/yarn.bashrc
 
   yarn --version
-  say "yarn installation complete"
 
 fi

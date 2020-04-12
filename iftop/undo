@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling iftop"
 sudo apt remove -y iftop
-say "uninstalled iftop"

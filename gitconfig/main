@@ -10,5 +10,3 @@ git config --global core.editor vi
 git config --global core.autocrlf input
 git config --global core.excludesfile ~/.gitignore_global
 git config --global credential.helper "cache --timeout=21600"
-
-say "git configuration complete"

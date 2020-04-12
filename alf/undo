@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling alf"
 sudo rm /usr/local/bin/alf
-say "uninstalled alf"

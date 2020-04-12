@@ -8,5 +8,3 @@ sudo apt install -y direnv
 
 say "copying bashrc.d configuration"
 cp direnv.bashrc ~/.bashrc.d/direnv.bashrc
-
-say "direnv installation complete"

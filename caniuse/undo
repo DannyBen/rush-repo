@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling caniuse"
 yarn global remove caniuse-cmd
-say "uninstalled caniuse"

@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling toprc"
 rm ~/.toprc
-say "uninstalled toprc"

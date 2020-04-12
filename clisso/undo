@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling clisso"
 sudo rm /usr/local/bin/clisso
-say "uninstalled clisso"

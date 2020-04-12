@@ -16,4 +16,3 @@ say "cleaning up"
 rm -rf shellcheck-stable
 
 shellcheck --version
-say "shellcheck installation complete"

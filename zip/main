@@ -7,6 +7,5 @@ if command_exist zip ; then
 else
   say "installing zip (apt)"
   sudo apt-get install -y zip
-  say "zip installation complete"
 
 fi

@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling gh-md-toc"
 sudo rm /usr/local/bin/gh-md-toc
-say "uninstalled gh-md-toc"

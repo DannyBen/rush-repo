@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling hexyl"
 sudo dpkg -r hexyl
-say "uninstalled hexyl"

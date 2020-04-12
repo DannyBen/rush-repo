@@ -8,5 +8,3 @@ wd=$PWD
 cd /vagrant/bash
 alf connect DannyBen/alf-conf -y
 cd "$wd"
-
-say "my/alf installation complete"

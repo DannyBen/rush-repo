@@ -7,6 +7,5 @@ if command_exist stress ; then
 else
   say "installing stress (apt)"
   sudo apt-get install -y stress
-  say "stress installation complete"
 
 fi

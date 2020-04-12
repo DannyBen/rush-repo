@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling kompose"
 sudo rm /usr/local/bin/kompose
-say "uninstalled kompose"

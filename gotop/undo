@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling gotop"
 sudo dpkg -r gotop
-say "uninstalled gotop"

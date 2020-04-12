@@ -7,7 +7,6 @@ if command_exist python3 && command_exist pip3 ; then
 else
   say "installing python3 and pip3 (apt)"
   sudo apt install -y python3 python3-pip
-  say "python installation complete"
 
 fi
 

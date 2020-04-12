@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling snyk"
 sudo rm /usr/local/bin/snyk
-say "uninstalled snyk"

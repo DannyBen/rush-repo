@@ -5,5 +5,3 @@ needs bashrc
 
 say "copying ~/.bashrc.d/global.bashrc"
 cp global.bashrc "$HOME/.bashrc.d/global.bashrc"
-
-say "my/bashrc installation complete"

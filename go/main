@@ -8,5 +8,3 @@ sudo snap install go --classic
 
 say "copying bashrc.d config"
 cp go.bashrc ~/.bashrc.d/go.bashrc
-
-say "go installation complete"

@@ -4,4 +4,3 @@ source ../common.sh
 say "installing rsvg-convert (apt)"
 sudo apt install -y librsvg2-bin
 rsvg-convert --version
-say "rsvg-convert installation complete"

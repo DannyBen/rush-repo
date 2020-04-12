@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling asciinema"
 sudo apt-get remove -y asciinema
-say "uninstalled asciinema"

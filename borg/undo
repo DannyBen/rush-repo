@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling borgbackup"
 sudo apt remove -y borgbackup
-say "uninstalled borgbackup"

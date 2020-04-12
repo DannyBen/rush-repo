@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling vimcat"
 sudo dpkg -r vimcat
-say "uninstalled vimcat"

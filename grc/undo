@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling grc"
 sudo apt remove grc
-say "uninstalled grc"

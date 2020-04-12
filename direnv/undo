@@ -4,4 +4,3 @@ source ../common.sh
 say "uninstalling direnv"
 sudo apt remove -y direnv
 rm ~/.bashrc.d/direnv.bashrc
-say "uninstalled direnv"

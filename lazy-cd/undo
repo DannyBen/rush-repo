@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling lazy-cd"
 rm ~/.bashrc.d/lcd.bashrc
-say "uninstalled lazy-cd"

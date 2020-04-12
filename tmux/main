@@ -12,5 +12,3 @@ cp tmux.bashrc ~/.bashrc.d/tmux.bashrc
 
 say "installing tmux plugin manager (tpm)"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-say "tmux installation complete"

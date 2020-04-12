@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling zip"
 sudo apt remove -y zip
-say "uninstalled zip"

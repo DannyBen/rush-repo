@@ -7,6 +7,5 @@ if command_exist gpg2 ; then
 else
   say "installing gpg2 (apt)"
   sudo apt-get install -y gnupg2
-  say "gpg2 installation complete"
 
 fi

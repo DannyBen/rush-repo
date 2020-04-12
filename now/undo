@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling now"
 yarn global remove now
-say "uninstalled now"

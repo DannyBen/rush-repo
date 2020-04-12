@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling graphviz"
 sudo apt remove -y graphviz
-say "uninstalled graphviz"

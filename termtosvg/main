@@ -5,6 +5,4 @@ needs python
 
 say "installing termtosvg (pip)"
 sudo pip3 install --upgrade termtosvg
-
 termtosvg -h | head -n2
-say "termtosvg installation complete"

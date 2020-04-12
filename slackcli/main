@@ -5,6 +5,5 @@ say "installing slack cli (github)"
 sudo wget -qO /usr/local/bin/slk https://raw.githubusercontent.com/rockymadden/slack-cli/master/src/slack
 sudo chmod +x /usr/local/bin/slk
 slk --version
-say "slack cli installation complete"
 attention "remember to set the SLACK_CLI_TOKEN environment variable"
 

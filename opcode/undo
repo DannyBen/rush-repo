@@ -4,4 +4,3 @@ source ../common.sh
 say "uninstalling opcode"
 sudo rm /usr/local/bin/op
 rm ~/.bashrc.d/opcode.bashrc
-say "uninstalled opcode"

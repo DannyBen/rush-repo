@@ -9,7 +9,5 @@ else
   curl -# -L https://raw.githubusercontent.com/DannyBen/solo/master/solo >/tmp/solo
   chmod +x /tmp/solo
   sudo mv /tmp/solo /usr/local/bin/
-  
-  say "solo installation complete"
 
 fi

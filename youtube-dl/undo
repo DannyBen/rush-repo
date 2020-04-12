@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling youtube-dl"
 sudo pip3 uninstall youtube-dl
-say "uninstalled youtube-dl"

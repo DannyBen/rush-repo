@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling heroku"
 sudo apt-get uninstall -y heroku
-say "uninstalled heroku"

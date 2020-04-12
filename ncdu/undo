@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling ncdu"
 sudo apt remove -y ncdu
-say "uninstalled ncdu"

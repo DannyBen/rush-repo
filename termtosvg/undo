@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling termtosvg"
 sudo pip3 uninstall termtosvg
-say "uninstalled termtosvg"

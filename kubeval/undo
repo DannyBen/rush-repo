@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling kubeval"
 sudo rm /usr/local/bin/kubeval
-say "uninstalled kubeval"

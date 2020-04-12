@@ -11,7 +11,6 @@ sudo apt-get -y update
 sudo apt install -y crystal
 
 crystal --version | head -n1
-say "crystal installation complete"
 
 ### Optionals
 # sudo apt install libssl-dev      # for using OpenSSL

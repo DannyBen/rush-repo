@@ -5,5 +5,3 @@ needs yarn
 
 say "installing now cli (yarn)"
 yarn global add now
-
-say "now installation complete"

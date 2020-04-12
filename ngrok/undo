@@ -4,4 +4,3 @@ source ../common.sh
 say "uninstalling ngrok"
 rm ~/.ngrok2/ngrok.yml
 sudo rm /usr/local/bin/ngrok
-say "uninstalled ngrok"

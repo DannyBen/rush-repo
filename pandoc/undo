@@ -3,4 +3,3 @@ source ../common.sh
 
 say "uninstalling pandoc"
 sudo apt remove -y pandoc
-say "uninstalled pandoc"
