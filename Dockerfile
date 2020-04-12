@@ -6,9 +6,7 @@ WORKDIR /app
 
 USER root
 
-RUN curl -s \
-    https://raw.githubusercontent.com/DannyBen/rush-cli/master/rush > \
-    /usr/local/bin/rush && \
+RUN curl -Ls get.dannyb.co/rush > /usr/local/bin/rush && \
     chmod +x /usr/local/bin/rush
 
 USER ubuntu

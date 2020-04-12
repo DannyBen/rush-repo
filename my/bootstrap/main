@@ -2,7 +2,7 @@
 source ../../common.sh
 
 say "installing my/* packages"
-needs my/bashrc my/cdpath my/gitconfig my/rigit my/rush
+needs my/bashrc my/cdpath my/gitconfig my/rigit
 
 say "installing public packages"
 needs dircolors exrc inputrc irbrc
