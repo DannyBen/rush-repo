@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling lazydocker"
+sudo rm -f /usr/local/bin/lazydocker
+rm -f ~/.config/jesseduffield/lazydocker/config.yml
+(rmdir ~/.config/jesseduffield/lazydocker 2> /dev/null) || true
+(rmdir ~/.config/jesseduffield 2> /dev/null) || true
