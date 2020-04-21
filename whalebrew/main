@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  sudo curl -L "https://github.com/whalebrew/whalebrew/releases/download/$version/whalebrew-$(uname -s)-$(uname -m)" -o /usr/local/bin/whalebrew
+  sudo chmod +x /usr/local/bin/whalebrew
+}
+
+github_install_helper whalebrew "whalebrew/whalebrew" "version"
