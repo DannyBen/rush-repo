@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -x
+
+source ../common.sh
+
+say "uninstalling tmate"
+sudo apt-get remove -y tmate
