@@ -8,4 +8,8 @@ else
   say "installing gpg2 (apt)"
   sudo apt-get install -y gnupg2
 
+  say "copying bashrc.d config"
+  cp gpg2.bashrc ~/.bashrc.d/
+
 fi
+
