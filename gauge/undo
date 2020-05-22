@@ -3,4 +3,4 @@ source ../common.sh
 
 say "uninstalling gauge"
 sudo rm -f /usr/local/bin/gauge
-rm -rf $HOME/.gauge
+rm -rf "$HOME/.gauge"
