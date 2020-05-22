@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "installing gauge"
+curl -SsL https://downloads.gauge.org/stable | sh
