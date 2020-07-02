@@ -2,4 +2,5 @@
 source ../common.sh
 
 say "uninstalling gotop"
-sudo dpkg -r gotop
+sudo rm -f /usr/local/bin/gotop
+sudo rm -rf ~/.config/gotop

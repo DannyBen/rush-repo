@@ -7,6 +7,9 @@ install_function() {
 
   sudo install -m 755 gotop /usr/local/bin/gotop
   rm gotop
+
+  mkdir -p ~/.config/gotop/
+  cp gotop.conf ~/.config/gotop/
 }
 
 github_install_helper gotop "xxxserxxx/gotop"
