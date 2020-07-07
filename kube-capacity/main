@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  curl -sL "https://github.com/robscott/kube-capacity/releases/download/$version/kube-capacity_${version}_Linux_x86_64.tar.gz" | tar -xzv kube-capacity
+  sudo install -m 755 kube-capacity /usr/local/bin/kube-capacity
+  rm kube-capacity
+}
+
+github_install_helper kube-capacity "robscott/kube-capacity" version
