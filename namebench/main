@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist namebench ; then
+  say "namebench is already installed"
+
+else
+  say "installing namebench (apt)"
+  sudo apt-get install -y namebench
+
+fi
