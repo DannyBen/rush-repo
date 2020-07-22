@@ -2,6 +2,6 @@
 # ref: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux
 source ../common.sh
 
-say "installing awscli (pip"
+say "installing awscli (pip)"
 sudo pip install awscli
 aws --version
