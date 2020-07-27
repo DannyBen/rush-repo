@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+needs python
+
+say "installing httpie (pip)"
+sudo pip3 install --upgrade httpie
+
+http --version
