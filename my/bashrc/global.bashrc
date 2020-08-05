@@ -8,4 +8,4 @@ export NOEXEC_EXCLUDE="run! github_changelog_generator"
 
 ### Non-alf aliases
 alias ..="cd .."
-
+alias -- -="cd -"
