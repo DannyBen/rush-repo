@@ -5,8 +5,6 @@ install_function() {
   wget "https://github.com/wagoodman/dive/releases/download/v${version}/dive_${version}_linux_amd64.deb"
   sudo apt install "./dive_${version}_linux_amd64.deb"
   rm "./dive_${version}_linux_amd64.deb"
-
-  cp .dive.yaml ~/.dive.yaml
 }
 
 github_install_helper dive "wagoodman/dive"
