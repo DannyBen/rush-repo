@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling pnpm"
+yarn global remove pnpm
+
+say "removing pnpm data directory"
+rm -rf ~/.pnpm-store
