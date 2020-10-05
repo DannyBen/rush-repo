@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-version=2.6.3
+version=2.7.0
 
 if ! command_exist rvm ; then
   attention "rvm is not installed"

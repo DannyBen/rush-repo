@@ -6,5 +6,5 @@ needs alf
 say "connecting alf to github repo"
 wd=$PWD
 cd /vagrant/bash
-alf connect DannyBen/alf-conf -y
+alf connect DannyBen/alf-conf -y --ssh
 cd "$wd"
