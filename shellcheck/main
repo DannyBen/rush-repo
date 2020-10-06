@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "installing shellcheck (google)"
-curl -o shellcheck.tzr.xz https://storage.googleapis.com/shellcheck/shellcheck-stable.linux.x86_64.tar.xz
-
-say "extracing archive"
-tar -xf shellcheck.tzr.xz
-rm shellcheck.tzr.xz
+say "installing shellcheck (github)"
+wget -qO- "https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.x86_64.tar.xz" | tar -xJv
 
 say "copying binary"
-sudo mv shellcheck-stable/shellcheck /usr/local/bin/
-sudo chmod +x /usr/local/bin/shellcheck
+sudo install -m 755 shellcheck-stable/shellcheck /usr/local/bin/
 
 say "cleaning up"
 rm -rf shellcheck-stable
