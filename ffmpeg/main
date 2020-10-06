@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "installing ffmpeg (apt)"
+sudo apt install -y ffmpeg
+ffmpeg -version |head -1
+

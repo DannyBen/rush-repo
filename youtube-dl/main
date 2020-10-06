@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-needs python
+needs python ffmpeg
 
 say "installing youtube-dl (pip)"
 sudo pip3 install --upgrade youtube-dl
