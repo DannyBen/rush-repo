@@ -3,6 +3,7 @@ source ../common.sh
 
 needs bashrc
 
+
 say "installing opcode (github)"
 sudo wget -qO /usr/local/bin/op https://raw.githubusercontent.com/DannyBen/opcode/master/op
 sudo chmod +x /usr/local/bin/op
