@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 source ../../common.sh
 
-needs alf
+if command_exist alf ; then
+  say "skipping alf symlink, already exists"
 
-say "connecting alf to github repo"
-wd=$PWD
-cd /vagrant/bash
-alf connect DannyBen/alf-conf -y --ssh
-cd "$wd"
+else
+  say "symlinking alf"
+  sudo ln -s /vagrant/bash/alf/alf /usr/local/bin/alf
+
+fi
+
+say "updating ~/.alfrc"
+echo /vagrant/bash/alf-conf > ~/.alfrc
