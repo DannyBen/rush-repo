@@ -6,7 +6,7 @@ sudo apt-get install -y postgresql libpq-dev
 
 # Reference: https://stackoverflow.com/questions/32439167/psql-could-not-connect-to-server-connection-refused-error-when-connecting-to
 say "configuring server"
-file=$(ls /etc/postgresql/*/main/postgresql.conf | head -1)
+file=$(find /etc/postgresql/*/main/postgresql.conf | head -1)
 sudo sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/g" "$file"
 sudo sed -i "s/port = 543[[:digit:]]/port = 5432/g" "$file"
 
