@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-source ../common.sh
-
-needs yarn
-
-say "installing now cli (yarn)"
-yarn global add now
