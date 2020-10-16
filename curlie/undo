@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling curlie"
+sudo dpkg -r curlie
