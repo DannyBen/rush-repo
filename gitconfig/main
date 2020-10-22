@@ -2,11 +2,18 @@
 source ../common.sh
 say "configuring git"
 
-cp .gitignore_global ~/.gitignore_global
+cp .gitignore_global ~/
+cp .gitattributes_global ~/
 
 git config --global push.default simple
 git config --global color.ui true
 git config --global core.editor vi
 git config --global core.autocrlf input
-git config --global core.excludesfile ~/.gitignore_global
 git config --global credential.helper "cache --timeout=21600"
+git config --global core.excludesfile ~/.gitignore_global
+git config --global core.attributesfile ~/.gitattributes_global
+
+# List of supported hunk header patterns for .gitattributes:
+# https://github.com/git/git/blob/master/userdiff.c
+# or
+# $ man gitattributes (and search for ada)
