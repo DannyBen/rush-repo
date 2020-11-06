@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist aspell ; then
+  say "aspell is already installed"
+
+else
+  say "installing aspell (apt)"
+  sudo apt-get install -y aspell
+
+fi
