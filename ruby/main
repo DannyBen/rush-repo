@@ -12,8 +12,9 @@ fi
 if ! is_installed ruby ; then
   rvm install "$version"
 
-  say "copying ~/.gemrc"
-  cp .gemrc ~/.gemrc
+  say "copying configuration files"
+  cp .gemrc ~/
+  cp config ~/.bundle/
 
   attention "please run:"
   attention "rvm use $version --default && gem install bundler"
