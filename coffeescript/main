@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist coffee ; then
+  say "coffee is already installed"
+
+else
+  needs yarn
+
+  say "installing coffeescript"
+  yarn global add coffeescript
+  coffee --version
+
+fi
