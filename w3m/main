@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist w3m ; then
+  say "w3m is already installed"
+
+else
+  say "installing w3m (apt)"
+  sudo apt-get install -y w3m
+
+fi
