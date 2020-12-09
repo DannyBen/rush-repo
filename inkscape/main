@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist inkscape ; then
+  say "inkscape is already installed"
+
+else
+  say "installing inkscape (apt)"
+  sudo apt-get install -y inkscape
+
+fi
