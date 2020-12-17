@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling chrome"
+sudo rm -rf /opt/chrome
+sudo rm -rf /usr/local/bin/chrome
+
