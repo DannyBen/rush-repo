@@ -7,7 +7,7 @@ target=/opt/chrome
 say "identifying latest revision"
 
 url="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2FLAST_CHANGE?alt=media"
-revision=$(curl -s -S $url)
+revision=$(curl -s -S "$url")
 say "latest revision is $revision"
 
 if [[ -d "$target/$revision" ]] ; then
@@ -19,11 +19,11 @@ url="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots
 zipfile="chrome.zip"
 say "downloading chrome from $url"
 
-curl -# $url > $zipfile
+curl -# "$url" > "$zipfile"
 
 say "unzipping to $target"
 sudo mkdir -p "$target"
-sudo unzip $zipfile -d "$target"
+sudo unzip "$zipfile" -d "$target"
 sudo mv "$target/chrome-linux" "$target/$revision"
 sudo rm -f "$target/latest"
 sudo ln -s "$target/$revision" "$target/latest"
