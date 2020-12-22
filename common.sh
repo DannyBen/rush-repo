@@ -59,3 +59,12 @@ github_install_helper() {
     say "$binary_name installation complete"
   fi
 }
+
+# Install a .deb package from a URL using apt
+apt_install_deb() {
+  url="$1"
+  temp_deb="$(mktemp).deb"
+  wget -O "$temp_deb" "$url"
+  sudo apt-get -yf install "$temp_deb"
+  rm -f "$temp_deb"
+}
