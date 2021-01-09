@@ -2,12 +2,7 @@
 source ../common.sh
 
 say "installing essential rush packages"
-
-rush get "$REPO:bashrc"
-rush get "$REPO:dircolors"
-rush get "$REPO:exrc"
-rush get "$REPO:inputrc"
-rush get "$REPO:irbrc"
-[[ -x "$(command -v alf)" ]] || rush get "$REPO:alf"
+needs bashrc dircolors exrc inputrc irbrc
+command_exist alf || rush get "$REPO:alf"
 
 say "bootstrap complete - you may need to restart your session"
