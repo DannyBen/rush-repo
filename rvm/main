@@ -12,6 +12,7 @@ else
   sudo apt-get update -y
   sudo apt-get install -y rvm
   sudo usermod -a -G rvm "$(whoami)"
+  cp .rvmrc ~/
 
   say "rvm installation complete"
   say "restart your session for rvm to be enabled"
