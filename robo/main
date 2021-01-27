@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+source ../common.sh
+say "installing robo from gobinaries"
+curl -sf https://gobinaries.com/tj/robo | sh
