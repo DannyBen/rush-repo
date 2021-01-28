@@ -9,3 +9,6 @@ export NOEXEC_EXCLUDE="run! github_changelog_generator"
 ### Non-alf aliases
 alias ..="cd .."
 alias -- -="cd -"
+
+### Audio Addict
+export AUDIO_ADDICT_DOWNLOAD_COUNT=3
