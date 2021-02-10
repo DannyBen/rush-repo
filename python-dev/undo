@@ -5,4 +5,4 @@ say "uninstalling python3-venv"
 sudo apt remove -y python3-venv
 
 say "uninstalling pipenv"
-pip3 uninstall pipenv
+python3 -m pip uninstall pipenv

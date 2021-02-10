@@ -4,6 +4,6 @@ source ../common.sh
 needs python
 
 say "installing httpie (pip)"
-sudo pip3 install --upgrade httpie
+sudo python3 -m pip install --upgrade httpie
 
 http --version

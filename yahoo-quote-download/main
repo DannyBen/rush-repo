@@ -4,6 +4,6 @@ source ../common.sh
 needs python
 
 say "installing yqdownload (pip)"
-sudo pip3 install --upgrade yahoo_quote_download
+sudo python3 -m pip install --upgrade yahoo_quote_download
 
 youtube-dl -h | head -n3

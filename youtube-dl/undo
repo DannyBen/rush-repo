@@ -2,4 +2,4 @@
 source ../common.sh
 
 say "uninstalling youtube-dl"
-sudo pip3 uninstall youtube-dl
+sudo python3 -m pip uninstall youtube-dl

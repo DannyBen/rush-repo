@@ -4,6 +4,6 @@ source ../common.sh
 needs python ffmpeg
 
 say "installing youtube-dl (pip)"
-sudo pip3 install --upgrade youtube-dl
+sudo python3 -m pip install --upgrade youtube-dl
 
 youtube-dl --version

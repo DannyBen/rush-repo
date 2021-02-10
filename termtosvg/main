@@ -4,5 +4,5 @@ source ../common.sh
 needs python
 
 say "installing termtosvg (pip)"
-sudo pip3 install --upgrade termtosvg
+sudo python3 -m pip install --upgrade termtosvg
 termtosvg -h | head -n2

@@ -5,4 +5,4 @@ say "installing python3-venv"
 sudo apt install -y python3-venv
 
 say "installing pipenv"
-pip3 install pipenv
+python3 -m pip install pipenv

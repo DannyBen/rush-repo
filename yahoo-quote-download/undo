@@ -2,4 +2,4 @@
 source ../common.sh
 
 say "uninstalling yahoo-quote-download"
-sudo pip3 uninstall yahoo_quote_download
+sudo python3 -m pip uninstall yahoo_quote_download

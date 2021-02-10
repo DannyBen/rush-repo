@@ -7,7 +7,7 @@ if command_exist speedtest ; then
 else
   needs python
 
-  pip3 install speedtest-cli
+  python3 -m pip install speedtest-cli
   speedtest --version
   
 fi

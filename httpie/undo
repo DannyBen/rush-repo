@@ -2,4 +2,4 @@
 source ../common.sh
 
 say "uninstalling httpie"
-sudo pip3 uninstall httpie
+sudo python3 -m pip uninstall httpie
