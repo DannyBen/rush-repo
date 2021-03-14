@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  url="https://github.com/mithrandie/csvq/releases/download/v${version}/csvq-v${version}-linux-amd64.tar.gz"
+  wget "$url" -O "csvq.tar.gz"
+  tar -zxvf "csvq.tar.gz" "csvq-v${version}-linux-amd64/csvq"
+  sudo install -m 755 "csvq-v${version}-linux-amd64/csvq" /usr/local/bin/csvq
+  rm -rf "csvq-v${version}-linux-amd64"
+  rm -f "csvq.tar.gz"
+}
+
+github_install_helper csvq "mithrandie/csvq"
