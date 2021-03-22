@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  wget "https://github.com/cheat/cheat/releases/download/${version}/cheat-linux-amd64.gz"
+  gzip -d cheat-linux-amd64.gz
+  sudo install cheat-linux-amd64 /usr/local/bin/cheat
+  rm cheat-linux-amd64
+}
+
+github_install_helper cheat "cheat/cheat"
