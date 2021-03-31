@@ -2,10 +2,10 @@
 source ../../common.sh
 
 say "installing my/* packages"
-needs my/bashrc my/cdpath my/gitconfig my/rigit
+needs my/bashrc my/cdpath my/gitconfig my/rigit my/ssh-agent
 
 say "installing public packages"
-needs dircolors exrc inputrc irbrc toprc locale ssh-agent
+needs dircolors exrc inputrc irbrc toprc locale
 
 command_exist alf || rush get "$REPO:my/alf"
 
