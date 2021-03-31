@@ -3,5 +3,6 @@ source ../common.sh
 
 say "uninstalling cheat"
 sudo rm -f /usr/local/bin/cheat
-sudo rm -rf ~/.config/cheat
+sudo rm -r
+f ~/.config/cheat
 

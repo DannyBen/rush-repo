@@ -5,7 +5,7 @@ say "installing my/* packages"
 needs my/bashrc my/cdpath my/gitconfig my/rigit
 
 say "installing public packages"
-needs dircolors exrc inputrc irbrc toprc locale
+needs dircolors exrc inputrc irbrc toprc locale ssh-agent
 
 command_exist alf || rush get "$REPO:my/alf"
 
