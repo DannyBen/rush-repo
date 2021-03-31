@@ -5,7 +5,7 @@ if command_exist speedtest ; then
   say "speedtest is already installed"
 
 else
-  sudo apt-get install gnupg1 apt-transport-https dirmngr
+  sudo apt-get install -y gnupg1 apt-transport-https dirmngr
   install_key=379CE192D401AB61
   deb_distro=$(lsb_release -sc)
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $install_key
