@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-version=2.7.0
+version=3.0.0
 
 if ! command_exist rvm ; then
   attention "rvm is not installed"
@@ -14,6 +14,7 @@ if ! is_installed ruby ; then
 
   say "copying configuration files"
   cp .gemrc ~/
+  mkdir -p ~/.bundle/
   cp config ~/.bundle/
 
   attention "please run:"
