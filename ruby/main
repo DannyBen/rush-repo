@@ -4,7 +4,8 @@ source ../common.sh
 version=3.0.1
 
 needs rbenv
-source ~/.bashrc.d/rbenv.bashrc  # in case rbenv was not installed yet
+# shellcheck disable=SC1091
+source "$HOME/.bashrc.d/rbenv.bashrc"  # in case rbenv was not installed yet
 
 say "installing ruby $version with rbenv"
 rbenv install -s "$version"
@@ -15,3 +16,6 @@ cp .gemrc ~/
 mkdir -p ~/.bundle/
 cp config ~/.bundle/
 ruby -v
+
+say "ruby installation complete"
+say "you may need to restart your session or source ~/.bashrc.d/rbenv.bashrc"

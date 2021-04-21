@@ -14,7 +14,8 @@ else
 
   say "copying bashrc.d config"
   cp rbenv.bashrc ~/.bashrc.d/
-  source ~/.bashrc.d/rbenv.bashrc
+  # shellcheck disable=SC1091
+  source "$HOME/.bashrc.d/rbenv.bashrc"
 
   say "installing ruby-build plugin"
   mkdir -p "$(rbenv root)"/plugins
