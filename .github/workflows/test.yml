@@ -13,5 +13,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Update shellcheck
+      run: apt install -y shellcheck
+
     - name: Run tests
       run: ./test.sh
