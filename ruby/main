@@ -4,7 +4,7 @@ source ../common.sh
 version=3.0.1
 
 needs rbenv
-# shellcheck disable=SC1091, SC1090
+# shellcheck disable=SC1091,SC1090
 source "$HOME/.bashrc.d/rbenv.bashrc"  # in case rbenv was not installed yet
 
 say "installing ruby $version with rbenv"
