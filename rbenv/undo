@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling rbenv and ruby-build"
+
+rm -rf "$(rbenv root)"
+rm -f ~/.bashrc.d/rbenv.bashrc
