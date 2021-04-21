@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "installing libv8-dev (apt)"
+sudo apt-get install -y libv8-dev
