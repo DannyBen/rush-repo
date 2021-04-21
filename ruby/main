@@ -1,27 +1,17 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-version=3.0.0
+version=3.0.1
 
-if ! command_exist rvm ; then
-  attention "rvm is not installed"
-  attention "run 'rush get $REPO:rvm' first and try again"
-  exit 1
-fi
+needs rbenv
+source ~/.bashrc.d/rbenv.bashrc  # in case rbenv was not installed yet
 
-if ! is_installed ruby ; then
-  rvm install "$version"
+say "installing ruby $version with rbenv"
+rbenv install -s "$version"
+rbenv global "$version"
 
-  say "copying configuration files"
-  cp .gemrc ~/
-  mkdir -p ~/.bundle/
-  cp config ~/.bundle/
-
-  attention "please run:"
-  attention "rvm use $version --default && gem install bundler"
-
-else
-  say "installed version is also $version, no update needed."
-
-fi
-
+say "copying configuration files"
+cp .gemrc ~/
+mkdir -p ~/.bundle/
+cp config ~/.bundle/
+ruby -v

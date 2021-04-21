@@ -14,14 +14,13 @@ else
 
   say "copying bashrc.d config"
   cp rbenv.bashrc ~/.bashrc.d/
-  source rbenv.bashrc
+  source ~/.bashrc.d/rbenv.bashrc
 
   say "installing ruby-build plugin"
   mkdir -p "$(rbenv root)"/plugins
   git clone --depth 1 https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
-  say "rvm installation complete"
-  say "restart your session for rvm to be enabled"
-  say "(or source ~/.bashrc.d/rbenv.bashrc)"
+  say "rbenv installation complete"
+  say "restart your session or source ~/.bashrc.d/rbenv.bashrc to enable it"
 
 fi
