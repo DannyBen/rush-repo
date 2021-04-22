@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+# Versions: https://github.com/postmodern/chruby/releases
+version=0.3.9
+
+say "uninstalling chruby $version"
+tmpdir=$(mktemp -d -t rush-XXXXXX)
+pushd "$tmpdir"
+ 
+wget -O chruby-$version.tar.gz https://github.com/postmodern/chruby/archive/v$version.tar.gz
+tar -xzvf chruby-$version.tar.gz
+pushd chruby-$version/
+sudo make uninstall
+
+popd
+popd
+rm -rf "$tmpdir"
+
+rm -f ~/.bashrc.d/chruby.bashrc
+say "chruby uninstalled, restart your session"

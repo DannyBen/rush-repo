@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+# Versions: https://github.com/postmodern/ruby-install/releases
+version=0.8.1
+
+say "installing ruby-install $version"
+tmpdir=$(mktemp -d -t rush-XXXXXX)
+pushd "$tmpdir"
+ 
+wget -O ruby-install-$version.tar.gz https://github.com/postmodern/ruby-install/archive/v$version.tar.gz
+tar -xzvf ruby-install-$version.tar.gz
+pushd ruby-install-$version/
+sudo make install
+
+popd
+popd
+rm -rf "$tmpdir"
+
+say "ruby-install installed"
