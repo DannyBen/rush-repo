@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "installing ruby prerequisites"
+sudo apt-get update && sudo apt-get install -y \
+  autoconf \
+  build-essential \
+  curl \
+  git \
+  libffi-dev \
+  libgdbm-dev \
+  libreadline-dev \
+  libreadline-dev \
+  libssl-dev \
+  libyaml-dev \
+  wget \
+  zlib1g-dev

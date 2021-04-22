@@ -3,7 +3,7 @@ source ../common.sh
 
 version=3.0.1
 
-needs rbenv
+needs ruby-base rbenv
 # shellcheck disable=SC1091,SC1090
 source "$HOME/.bashrc.d/rbenv.bashrc"  # in case rbenv was not installed yet
 
@@ -18,4 +18,4 @@ cp config ~/.bundle/
 ruby -v
 
 say "ruby installation complete"
-say "you may need to restart your session or source ~/.bashrc.d/rbenv.bashrc"
+attention "you may need to restart your session or source ~/.bashrc.d/rbenv.bashrc"
