@@ -10,7 +10,7 @@ if command_exist rbenv ; then
 
 else
   say "installing rbenv to ~/.rbenv"
-  git clone --depth 1 https://github.com/rbenv/rbenv.git ~/.rbenv
+  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 
   say "copying bashrc.d config"
   cp rbenv.bashrc ~/.bashrc.d/
@@ -19,7 +19,7 @@ else
 
   say "installing ruby-build plugin"
   mkdir -p "$(rbenv root)"/plugins
-  git clone --depth 1 https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+  git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
   say "rbenv installation complete"
   attention "restart your session or source ~/.bashrc.d/rbenv.bashrc"
