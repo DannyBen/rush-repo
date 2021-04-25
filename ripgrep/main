@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  tmpdir=$(mktemp -d -t rush-XXXXXX)
+  pushd "$tmpdir"
+  url="https://github.com/BurntSushi/ripgrep/releases/download/$version/ripgrep_${version}_amd64.deb"
+  curl -LO "$url"
+  sudo dpkg -i "ripgrep_${version}_amd64.deb"
+  popd
+  rm -rf "$tmpdir"
+}
+
+github_install_helper rg "BurntSushi/ripgrep"
+
+

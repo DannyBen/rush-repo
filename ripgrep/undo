@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling ripgrep (rg)"
+sudo dpkg -r ripgrep
+
