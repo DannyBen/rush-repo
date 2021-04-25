@@ -2,7 +2,7 @@
 source ../common.sh
 
 if command_exist java ; then
-  say "zip is already installed"
+  say "java is already installed"
 
 else
   say "installing java (apt)"

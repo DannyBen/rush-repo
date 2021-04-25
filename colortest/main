@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "installing colortest (apt)"
+sudo apt-get install -y colortest

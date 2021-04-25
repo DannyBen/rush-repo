@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-if command_exist elinks ; then
-  say "elinks is already installed"
-
-else
-  say "installing elinks (apt)"
-  sudo apt-get install -y zip
-
-fi
+say "installing elinks"
+sudo apt-get install -y elinks

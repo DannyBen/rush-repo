@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-if command_exist sipcalc ; then
-  say "sipcalc is already installed"
-
-else
-  say "installing sipcalc (apt)"
-  sudo apt-get install -y sipcalc
-
-fi
+say "installing sipcalc (apt)"
+sudo apt-get install -y sipcalc

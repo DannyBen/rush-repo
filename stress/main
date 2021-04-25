@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-if command_exist stress ; then
-  say "stress is already installed"
-
-else
-  say "installing stress (apt)"
-  sudo apt-get install -y stress
-
-fi
+say "installing stress (apt)"
+sudo apt-get install -y stress

@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-if command_exist httpry ; then
-  say "httpry is already installed"
-
-else
-  say "installing httpry (apt)"
-  sudo apt-get install -y httpry
-
-fi
+say "installing httpry (apt)"
+sudo apt-get install -y httpry
