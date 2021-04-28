@@ -5,4 +5,5 @@ say "installing essential rush packages"
 needs bashrc dircolors exrc inputrc irbrc
 command_exist alf || rush get "$REPO:alf"
 
-say "bootstrap complete - you may need to restart your session"
+say "bootstrap complete"
+attention "you may need to restart your session"

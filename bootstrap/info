@@ -1,3 +1,11 @@
 A meta package executing several configuration packages
 
-This is designed to quickly get a new linux machine properly configured.
+Running this will install:
+
+- bashrc
+- dircolors
+- exrc
+- inputrc
+- irbrc
+- alf
+
