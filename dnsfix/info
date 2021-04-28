@@ -1,0 +1,4 @@
+Fix DNS issues in Ubuntu
+
+This package configures the file `/etc/systemd/resolved.conf` by adding
+the `1.1.1.1` and `8.8.8.8` name servers.

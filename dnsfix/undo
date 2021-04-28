@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+file=/etc/systemd/resolved.conf
+say "configuring $file"
+sudo sed -i 's/^DNS=.*/#DNS=/g' "$file"
+attention "you need to reboot for changes to take effect"
