@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 source ../../common.sh
+
+needs bashrc
+
 say "copying ssh-agent.bashrc"
 cp ssh-agent.bashrc "$HOME/.bashrc.d/ssh-agent.bashrc"
