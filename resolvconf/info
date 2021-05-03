@@ -1,0 +1,4 @@
+Install resolvconf to fix DNS issues
+
+This package installs the resolvconf package, and adds 1.1.1.1 and 8.8.8.8
+as primary DNS servers.

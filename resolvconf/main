@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "installing resolveconf"
+sudo apt install -y resolvconf
+
+say "copying configuration file"
+sudo cp config /etc/resolvconf/resolv.conf.d/head
+
+sudo service resolvconf restart
+cat /etc/resolv.conf
+attention "reboot may be required"

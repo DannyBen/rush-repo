@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling resolvconf"
+sudo apt remove -y resolvconf
+attention "reboot is required"
