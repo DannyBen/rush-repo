@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 source ../common.sh
 
+needs bashrc
+
 say "installing rush (github)"
+say "copying completion script to ~/.bashrc.d/"
+cp rush.bashrc ~/.bashrc.d/
 say "rush will update in the background in a moment"
 ( sleep 1 && sudo wget -qO /usr/local/bin/rush https://raw.githubusercontent.com/DannyBen/rush-cli/master/rush ) &
