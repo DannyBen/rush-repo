@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-needs bashrc
+say "installing rush"
 
-say "installing rush (github)"
-say "copying completion script to ~/.bashrc.d/"
-cp rush.bashrc ~/.bashrc.d/
+if [[ -f ~/.bashrc.d/rush.bashrc ]]; then
+  say "cleaning up previous installation"
+  rm ~/.bashrc.d/rush.bashrc
+fi
+
 say "rush will update in the background in a moment"
-( sleep 1 && sudo wget -qO /usr/local/bin/rush https://raw.githubusercontent.com/DannyBen/rush-cli/master/rush ) &
+( sleep 1 && bash <(curl -Ls get.dannyb.co/rush/setup) > /dev/null ) &
