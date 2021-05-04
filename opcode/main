@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-needs bashrc
-
 say "installing opcode"
 
 if [[ -f ~/.bashrc.d/opcode.bashrc ]]; then
@@ -11,5 +9,4 @@ if [[ -f ~/.bashrc.d/opcode.bashrc ]]; then
 fi
 
 bash <(curl -Ls get.dannyb.co/opcode/setup)
-
 op --version
