@@ -3,11 +3,13 @@ source ../common.sh
 
 needs bashrc
 
-say "installing opcode (github)"
-sudo wget -qO /usr/local/bin/op https://raw.githubusercontent.com/DannyBen/opcode/master/op
-sudo chmod +x /usr/local/bin/op
+say "installing opcode"
 
-say "copying bashrc.d config"
-cp opcode.bashrc ~/.bashrc.d/opcode.bashrc
+if [[ -f ~/.bashrc.d/opcode.bashrc ]]; then
+  say "cleaning up previous installation"
+  rm ~/.bashrc.d/opcode.bashrc
+fi
+
+bash <(curl -Ls get.dannyb.co/opcode/setup)
 
 op --version
