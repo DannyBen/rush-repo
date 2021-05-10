@@ -2,7 +2,7 @@
 source ../common.sh
 
 install_function() {
-  tmpdir=$(mktemp -d -t rush-XXXXXX)
+  tmpdir=$(temp_dir)
   pushd "$tmpdir"
   url="https://github.com/BurntSushi/ripgrep/releases/download/$version/ripgrep_${version}_amd64.deb"
   curl -LO "$url"
