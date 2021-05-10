@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  tmpdir=$(mktemp -d -t rush-XXXXXX)
+  pushd "$tmpdir" 
+  wget -O syft-$version.tar.gz https://github.com/anchore/syft/releases/download/v$version/syft_${version}_linux_amd64.tar.gz
+  tar -xzvf syft-$version.tar.gz
+  sudo cp syft /usr/local/bin/
+}
+
+github_install_helper syft anchore/syft version
