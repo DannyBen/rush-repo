@@ -1,6 +1,6 @@
 Install syft by anchore
 
-Syft is a CLI tool for generating a Software Bill of Materials from
-container images and filesystems.
+A CLI tool for generating a Software Bill of Materials from container images
+and filesystems.
 
 Source: https://github.com/anchore/syft
