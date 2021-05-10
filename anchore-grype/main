@@ -4,8 +4,8 @@ source ../common.sh
 install_function() {
   tmpdir=$(mktemp -d -t rush-XXXXXX)
   pushd "$tmpdir" 
-  wget -O grype-$version.tar.gz https://github.com/anchore/grype/releases/download/v$version/grype_${version}_linux_amd64.tar.gz
-  tar -xzvf grype-$version.tar.gz
+  wget -O "grype-$version.tar.gz" "https://github.com/anchore/grype/releases/download/v$version/grype_${version}_linux_amd64.tar.gz"
+  tar -xzvf "grype-$version.tar.gz"
   sudo cp grype /usr/local/bin/
 }
 
