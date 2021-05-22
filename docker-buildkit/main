@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+needs jq
+
+say "enabling docker buildkit"
+file=/etc/docker/daemon.json
+if [[ -f "$file" ]]; then
+  json=$(<$file)
+else
+  json="{}"
+fi
+
+new_json=$(jq '.features.buildkit = true' <<< "$json")
+echo "$new_json" | sudo tee "$file" > /dev/null
+
+say "restarting docker service"
+sudo service docker restart
