@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  needs unzip
+
+  url="https://github.com/ericchiang/pup/releases/download/v${version}/pup_v${version}_linux_amd64.zip"
+  tmpdir=$(temp_dir)
+  file="$tmpdir/pup.zip"
+
+  wget -qO "$file" "$url"
+  unzip "$file"
+
+  sudo unzip -j "$file" pup -d "/usr/local/bin/"
+  sudo chmod +x "/usr/local/bin/"
+}
+
+github_install_helper pup ericchiang/pup

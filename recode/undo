@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling recode"
+sudo apt-get remove -y recode
