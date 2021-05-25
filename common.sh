@@ -31,12 +31,23 @@ command_exist() {
 }
 
 needs() {
-  say "installing prerequisites"
+  say "installing dependencies"
   for pack in $* ; do
     if [[ $pack =~ .*:.* ]]; then
       rush get "$pack" --clone
     else
       rush get "$REPO:$pack"
+    fi
+  done
+}
+
+discard() {
+  say "uninstalling dependencies"
+  for pack in $* ; do
+    if [[ $pack =~ .*:.* ]]; then
+      rush undo "$pack"
+    else
+      rush undo "$REPO:$pack"
     fi
   done
 }
