@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-needs pup recode
+needs jq pup recode
 
 say "installing tuxi"
 sudo curl -sL "https://raw.githubusercontent.com/Bugswriter/tuxi/main/tuxi" -o /usr/local/bin/tuxi
