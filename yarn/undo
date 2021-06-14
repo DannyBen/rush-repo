@@ -2,5 +2,4 @@
 source ../common.sh
 
 say "uninstalling yarn"
-sudo apt-get remove -y yarn
-rm ~/.bashrc.d/yarn.bashrc
+sudo npm uninstall -g yarn
