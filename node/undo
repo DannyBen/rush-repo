@@ -4,3 +4,5 @@ source ../common.sh
 say "uninstalling nodejs"
 sudo apt-get remove -y nodejs
 
+rm -rf ~/.npm-global
+rm -f ~/.bashrc.d/node.bashrc
