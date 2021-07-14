@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  url="https://github.com/sass/dart-sass/releases/download/$version/dart-sass-${version}-linux-x64.tar.gz"
+  pushd "$(temp_dir)"
+  
+  curl -L "$url" | tar xvz --strip-components 1 "dart-sass/sass"
+  ls
+
+  sudo install -m 755 sass /usr/local/bin/sass
+  popd
+}
+
+github_install_helper sass "sass/dart-sass"
