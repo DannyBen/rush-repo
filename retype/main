@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+needs yarn
+
+say "installing retype (yarn)"
+yarn global add retypeapp
+say "retype installation complete"
+
