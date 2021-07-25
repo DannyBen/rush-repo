@@ -3,19 +3,9 @@ source ../common.sh
 
 # Reference: https://www.tangram.xyz/docs/install
 
-if command_exist tangram ; then
-  say "tangram is already installed"
+install_function() {
+  url="https://github.com/tangramxyz/tangram/releases/download/v${version}/tangram_${version}_amd64.deb"
+  apt_install_deb "$url"
+}
 
-else
-  say "installing tangram"
-
-  # Add the tangram gpg key.
-  curl -fsSL https://pkgs.tangram.xyz/stable/ubuntu/bionic.gpg | sudo apt-key add -
-
-  # Add the tangram repository.
-  curl -fsSL https://pkgs.tangram.xyz/stable/ubuntu/bionic.list | sudo tee /etc/apt/sources.list.d/tangram.list
-
-  # Install
-  sudo apt-get update && sudo apt-get install tangram
-
-fi
+github_install_helper tangram "tangramxyz/tangram"

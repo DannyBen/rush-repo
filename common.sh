@@ -77,7 +77,7 @@ apt_install_deb() {
   tmpdir=$(temp_dir)
   pushd "$tmpdir"
   wget -O package.deb "$url"
-  sudo apt-get -yf install package.deb
+  sudo apt-get -yf install ./package.deb
   popd
   rm -rf "$tmpdir"
 }
