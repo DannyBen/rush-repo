@@ -2,4 +2,4 @@
 source ../common.sh
 
 say "uninstalling yarn"
-sudo npm uninstall -g yarn
+npm uninstall -g yarn
