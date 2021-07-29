@@ -12,7 +12,7 @@ install_function() {
   unzip "$file"
 
   sudo unzip -j "$file" pup -d "/usr/local/bin/"
-  sudo chmod +x "/usr/local/bin/"
+  sudo chmod +x "/usr/local/bin/pup"
 }
 
 github_install_helper pup ericchiang/pup
