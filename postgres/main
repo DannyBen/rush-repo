@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source ../common.sh
 
+needs net-tools
+
 say "installing postgres (apt)"
 sudo apt-get install -y postgresql libpq-dev
 
