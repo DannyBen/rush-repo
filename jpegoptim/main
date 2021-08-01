@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "installing jpegoptim (apt)"
+sudo apt-get install -y jpegoptim
