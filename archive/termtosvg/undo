@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source ../../common.sh
 
 say "uninstalling termtosvg"
 sudo python3 -m pip uninstall termtosvg
