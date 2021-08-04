@@ -2,4 +2,4 @@
 source ../common.sh
 
 say "uninstalling svg-term"
-sudo yarn global remove svg-term-cli
+yarn global remove svg-term-cli

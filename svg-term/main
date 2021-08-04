@@ -8,6 +8,6 @@ else
   needs yarn asciinema
 
   say "installing svg-term-cli (yarn)"
-  sudo yarn global add svg-term-cli
+  yarn global add svg-term-cli
 
 fi
