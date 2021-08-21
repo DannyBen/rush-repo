@@ -1,0 +1,8 @@
+g co:
+- $(git branch 2> /dev/null)
+
+g b -d:
+- $(git branch 2> /dev/null)
+
+g del:
+- $(git branch 2> /dev/null)

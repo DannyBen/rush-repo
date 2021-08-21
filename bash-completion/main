@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "configuring user bash completions"
+cp .bash_completion ~/
+mkdir -p ~/.bash_completion.d
+attention "restart your session or source ~/.bash_completion"

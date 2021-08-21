@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source ../../common.sh
+
+needs bash-completion
+
+say "copying completion scripts"
+cp comps/*.bash "$HOME/.bash_completion.d/"
+attention "restart your session or source ~/.bash_completion"

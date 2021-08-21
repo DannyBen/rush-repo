@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "removing user bash completions"
+rm ~/.bash_completion
+rm -rf ~/.bash_completion.d
+
