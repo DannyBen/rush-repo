@@ -10,6 +10,7 @@ _g_completions() {
     'g b -d'*) COMPREPLY=($(compgen -W "$(git branch 2> /dev/null)" -- "$cur")) ;;
     'g del'*) COMPREPLY=($(compgen -W "$(git branch 2> /dev/null)" -- "$cur")) ;;
     'g co'*) COMPREPLY=($(compgen -W "$(git branch 2> /dev/null)" -- "$cur")) ;;
+    'g m'*) COMPREPLY=($(compgen -W "$(git branch 2> /dev/null)" -- "$cur")) ;;
   esac
 }
 
