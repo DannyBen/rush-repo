@@ -2,9 +2,7 @@
 source ../common.sh
 
 install_function() {
-  tmpdir=$(temp_dir)
-  
-  pushd "$tmpdir"  
+  pushd "$(temp_dir)"
   curl -sL "https://github.com/extrawurst/gitui/releases/download/v$version/gitui-linux-musl.tar.gz" | tar -xzv
   sudo install -m 755 gitui /usr/local/bin/
   rm -f gitui
