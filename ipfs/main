@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushd "$(temp_dir)"
+  curl -sL "https://github.com/ipfs/go-ipfs/releases/download/v$version/go-ipfs_v${version}_linux-amd64.tar.gz" | tar -xzv
+  sudo install -m 755 go-ipfs/ipfs /usr/local/bin/
+  rm -rf go-ipfs
+  popd
+}
+
+github_install_helper ipfs "ipfs/go-ipfs"

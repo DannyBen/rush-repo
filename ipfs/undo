@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling ipfs"
+sudo rm -f /usr/local/bin/ipfs
