@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist tree ; then
+  say "tree is already installed"
+
+else
+  say "installing tree (apt)"
+  sudo apt-get install -y tree
+
+fi
