@@ -3,3 +3,6 @@ source ../common.sh
 
 say "uninstalling ipfs"
 sudo rm -f /usr/local/bin/ipfs
+if [[ -d ~/.ipfs ]]; then
+  attention "for a complete cleanup, also run 'rm -rf ~/.ipfs'"
+fi

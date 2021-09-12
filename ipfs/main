@@ -7,15 +7,6 @@ install_function() {
   sudo install -m 755 go-ipfs/ipfs /usr/local/bin/
   rm -rf go-ipfs
   popd
-
-  say "configuring ipfs"
-  # Increase UDP receive buffer for the daemon
-  # ref: https://github.com/lucas-clemente/quic-go/wiki/UDP-Receive-Buffer-Size
-  sudo sysctl -w net.core.rmem_max=2500000
-
-  # Change configuration binding address to 0.0.0.0
-  ipfs config Addresses.API /ip4/0.0.0.0/tcp/5001
-  ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8080
 }
 
 github_install_helper ipfs "ipfs/go-ipfs"

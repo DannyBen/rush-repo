@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../../common.sh
+
+say "removing ~/.bashrc.d/ipfs.bashrc"
+rm -f ~/.bashrc.d/ipfs.bashrc
