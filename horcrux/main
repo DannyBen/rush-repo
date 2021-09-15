@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushd "$(temp_dir)"
+  url="https://github.com/jesseduffield/horcrux/releases/download/v$version/horcrux_${version}_Linux_x86_64.tar.gz"
+  curl -sL "$url" | tar -xzv
+            
+  sudo install -m 755 horcrux /usr/local/bin/
+  popd
+}
+
+# Cannot use github_install_helper since horcrux does not have a --version flag
+# github_install_helper horcrux "jesseduffield/horcrux"
+
+# Instead, we call manually
+version=0.2
+install_function
