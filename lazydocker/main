@@ -2,9 +2,13 @@
 source ../common.sh
 
 install_function() {
-  curl -sL "https://github.com/jesseduffield/lazydocker/releases/download/v$version/lazydocker_0.8_Linux_x86_64.tar.gz" | tar -xzv lazydocker
+  url="https://github.com/jesseduffield/lazydocker/releases/download/v$version/lazydocker_${version}_Linux_x86_64.tar.gz"
+  
+  pushtmp
+  curl -sL "$url" | tar -xzv lazydocker
   chmod +x lazydocker
   sudo mv lazydocker /usr/local/bin/
+  popd
 }
 
 github_install_helper lazydocker "jesseduffield/lazydocker"
