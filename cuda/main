@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# ref: https://linuxconfig.org/how-to-install-cuda-on-ubuntu-20-04-focal-fossa-linux
+source ../common.sh
+
+say "installing cuda (apt)"
+sudo apt update
+sudo apt install -y nvidia-cuda-toolkit
+
+nvcc --version
