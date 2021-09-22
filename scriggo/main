@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/open2b/scriggo/releases/download/v$version/scriggo${version}.linux-amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 scriggo /usr/local/bin/
+  popd
+}
+
+github_install_helper scriggo "open2b/scriggo" version
