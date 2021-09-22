@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling scruggo"
-sudo rm -f /usr/local/bin/scruggo
+say "uninstalling scriggo"
+sudo rm -f /usr/local/bin/scriggo
