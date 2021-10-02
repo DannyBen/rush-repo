@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source ../common.sh
+say "installing imagemagick7"
+t=$(mktemp) && \
+wget 'https://dist.1-2.dev/imei.sh' -qO "$t" && \
+sudo bash "$t" && \
+rm "$t"

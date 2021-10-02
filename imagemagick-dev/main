@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
 source ../common.sh
-say "installing imagemagick and libmagick++-dev"
-sudo apt-get install -y imagemagick libmagick++-dev
+
+# we must abort if already installed, since the newer rush package
+# named `imagemagick` installs the newer imagemagick 7 using IMEI
+if command_exist convert ; then
+  say "imagemagick is already installed"
+
+else
+  warning "this installs the legacy imagemagick 6"
+  say "installing imagemagick and libmagick++-dev"
+  sudo apt-get install -y imagemagick libmagick++-dev
+
+fi
