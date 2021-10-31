@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling static-web-server"
+sudo rm /usr/local/bin/static-web-server
