@@ -1,11 +1,9 @@
-g co:
+g co: &branch
 - $(git branch 2> /dev/null)
 
-g b -d:
-- $(git branch 2> /dev/null)
+g retag: &tag
+- $(git tag 2> /dev/null)
 
-g del:
-- $(git branch 2> /dev/null)
-
-g m:
-- $(git branch 2> /dev/null)
+g b -d: *branch
+g del: *branch
+g m: *branch
