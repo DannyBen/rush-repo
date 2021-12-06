@@ -8,6 +8,7 @@ _g_completions() {
   local comp_line="${COMP_WORDS[*]:1}"
 
   case "$comp_line" in
+    'rename'*) COMPREPLY=($(compgen -W "$(git branch 2> /dev/null)" -- "$cur")) ;;
     'retag'*) COMPREPLY=($(compgen -W "$(git tag 2> /dev/null)" -- "$cur")) ;;
     'b -d'*) COMPREPLY=($(compgen -W "$(git branch 2> /dev/null)" -- "$cur")) ;;
     'del'*) COMPREPLY=($(compgen -W "$(git branch 2> /dev/null)" -- "$cur")) ;;

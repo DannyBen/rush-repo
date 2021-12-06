@@ -7,3 +7,4 @@ g retag: &tag
 g b -d: *branch
 g del: *branch
 g m: *branch
+g rename: *branch
