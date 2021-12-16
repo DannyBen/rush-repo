@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-needs python ffmpeg
+install_function() {
+  needs ffmpeg
+  url="https://github.com/yt-dlp/yt-dlp/releases/download/$version/yt-dlp"
 
-say "installing youtube-dl (pip)"
-sudo python3 -m pip install --upgrade youtube-dl
+  sudo wget -O /usr/local/bin/youtube-dl "$url"
+  sudo chmod +x /usr/local/bin/youtube-dl
+}
 
-youtube-dl --version
+github_install_helper youtube-dl "yt-dlp/yt-dlp"
