@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "installing ag (apt)"
+sudo apt install -y silversearcher-ag
+ag --version |head -n1
