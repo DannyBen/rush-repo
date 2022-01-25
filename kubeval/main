@@ -2,7 +2,8 @@
 source ../common.sh
 
 install_function() {
-  curl -sL "https://github.com/instrumenta/kubeval/releases/download/$version/kubeval-linux-amd64.tar.gz" | tar -xzv kubeval
+  url="https://github.com/instrumenta/kubeval/releases/download/v$version/kubeval-linux-amd64.tar.gz"
+  curl -sL "$url" | tar -xzv kubeval
   chmod +x kubeval
   sudo mv kubeval /usr/local/bin/
 }
