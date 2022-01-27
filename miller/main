@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "installing miller (mlr) (apt)"
+sudo apt install -y miller
+mlr --version
