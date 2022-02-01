@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# ref: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux
 source ../common.sh
 
 say "installing awscli (pip)"
