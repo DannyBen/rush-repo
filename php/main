@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist php ; then
+  say "php is already installed"
+
+else
+  say "installing php 7.4 (apt)"
+  sudo apt-get install -y php7.4-cli
+
+fi

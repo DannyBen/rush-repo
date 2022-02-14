@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling php"
+sudo apt-get remove -y php7.4-cli
