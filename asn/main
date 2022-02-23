@@ -3,5 +3,6 @@
 source ../common.sh
 
 say "installing asn (github)"
+needs whois
 sudo wget -qO /usr/local/bin/asn https://gist.githubusercontent.com/DannyBen/c51cb89b776df2b0937e0412eed9b4b5/raw/23256e7e4f1f10a233925bf144b41455ea49cbb9/asn
 sudo chmod +x /usr/local/bin/asn
