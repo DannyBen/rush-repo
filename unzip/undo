@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling unzip"
-sudo apt-get remove -y unzip
+apt_uninstall unzip

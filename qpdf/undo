@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling qpdf"
-sudo apt remove -y qpdf
+apt_uninstall qpdf

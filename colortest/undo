@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling colortest"
-sudo apt-get remove -y colortest
+apt_uninstall colortest

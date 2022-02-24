@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling optipng"
-sudo apt-get remove -y optipng
+apt_uninstall optipng

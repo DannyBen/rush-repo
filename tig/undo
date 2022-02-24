@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling tig"
-sudo apt remove -y tig
+apt_uninstall tig

@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling speedtest"
-sudo apt-get remove -y speedtest
+apt_uninstall speedtest

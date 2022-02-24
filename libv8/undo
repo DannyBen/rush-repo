@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling libv8-dev"
-sudo apt-get remove -y libv8-dev
+apt_uninstall libv8-dev

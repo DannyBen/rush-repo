@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling asciinema"
-sudo apt-get remove -y asciinema
+apt_uninstall asciinema

@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling sipcalc"
-sudo apt remove -y sipcalc
+apt_uninstall sipcalc

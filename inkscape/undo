@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling inkscape"
-sudo apt remove -y inkscape
+apt_uninstall inkscape

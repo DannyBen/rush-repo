@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling httpry"
-sudo apt remove -y httpry
+apt_uninstall httpry

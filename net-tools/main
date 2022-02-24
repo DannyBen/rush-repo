@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "installing net-tools (apt)"
-sudo apt-get install -y net-tools
+apt_install net-tools

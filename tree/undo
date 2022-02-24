@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling tree"
-sudo apt-get remove -y tree
+apt_uninstall tree

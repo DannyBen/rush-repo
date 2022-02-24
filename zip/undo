@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling zip"
-sudo apt-get remove -y zip
+apt_uninstall zip

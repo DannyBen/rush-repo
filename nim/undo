@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling nim"
-sudo apt-get remove -y nim
+apt_uninstall nim

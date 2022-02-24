@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling whois"
-sudo apt-get remove -y whois
+apt_uninstall whois

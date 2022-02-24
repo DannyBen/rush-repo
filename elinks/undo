@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling elinks"
-sudo apt remove -y elinks
+apt_uninstall elinks

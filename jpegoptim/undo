@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling jpegoptim"
-sudo apt-get remove -y jpegoptim
+apt_uninstall jpegoptim

@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling w3m"
-sudo apt remove -y w3m
+apt_uninstall w3m

@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling ack"
-sudo apt-get remove -y ack
+apt_uninstall ack
 rm -f ~/.ackrc

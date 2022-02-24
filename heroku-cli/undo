@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling heroku"
-sudo apt-get uninstall -y heroku
+apt_uninstall heroku

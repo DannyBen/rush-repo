@@ -82,6 +82,26 @@ apt_install_deb() {
   rm -rf "$tmpdir"
 }
 
+# Install/uninstall simple apt packages
+apt_install() {
+  package="$1"
+  display_name="${2:-$1}"
+
+  if command_exist "$package" ; then
+    say "$display_name is already installed"
+  else
+    say "installing $display_name (apt)"
+    sudo apt-get install -y $package
+  fi
+}
+
+apt_uninstall() {
+  package="$1"
+  display_name="${2:-$1}"
+  say "uninstalling $display_name"
+  sudo apt-get remove -y "$package"
+}
+
 # Get a standardized tmp dir
 temp_dir() {
   mktemp -d -t rush-XXX

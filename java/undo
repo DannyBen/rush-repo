@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling java"
-sudo apt remove -y default-jre
+apt_uninstall default-jre java

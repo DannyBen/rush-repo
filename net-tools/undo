@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling net-tools"
-sudo apt-get remove -y net-tools
+apt_uninstall net-tools

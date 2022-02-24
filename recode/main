@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "installing recode (apt)"
-sudo apt-get install -y recode
+apt_install recode
 

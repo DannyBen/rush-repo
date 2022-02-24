@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "installing ack (apt)"
-sudo apt-get install -y ack
+apt_install ack
 echo "--color-match=blue" > ~/.ackrc
 
