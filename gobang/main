@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/TaKO8Ki/gobang/releases/download/v${version}/gobang-${version}-x86_64-unknown-linux-musl.tar.gz"
+  wget "$url" -O "gobang.tar.gz"
+  tar -zxvf "gobang.tar.gz" "gobang-${version}-x86_64-unknown-linux-musl/gobang"
+  sudo install -m 755 "gobang-${version}-x86_64-unknown-linux-musl/gobang" /usr/local/bin/gobang
+  rm -rf "gobang-${version}-x86_64-unknown-linux-musl"
+  rm -f "gobang.tar.gz"
+  popd
+}
+
+github_install_helper gobang "TaKO8Ki/gobang"
