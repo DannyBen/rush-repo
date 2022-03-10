@@ -3,7 +3,7 @@ source ../common.sh
 
 install_function() {
   pushtmp
-  url="https://github.com/zyedidia/micro/releases/download/v${version}/micro-${version}-linux64-static.tar.gz"
+  url="https://github.com/zyedidia/micro/releases/download/v${version}/micro-${version}-linux64.tar.gz"
   wget "$url" -O "micro.tar.gz"
   tar -zxvf "micro.tar.gz" "micro-${version}/micro"
   sudo install -m 755 "micro-${version}/micro" /usr/local/bin/micro
