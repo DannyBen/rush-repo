@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling micro"
+sudo rm -f /usr/local/bin/micro
+say "removing ~/.config/micro"
+sudo rm -rf ~/.config/micro
