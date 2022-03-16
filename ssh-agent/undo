@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "removing ssh-agent.bashrc"
+rm -f "$HOME/.bashrc.d/ssh-agent.bashrc"
