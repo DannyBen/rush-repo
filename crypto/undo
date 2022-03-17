@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling crypto"
-sudo rm /usr/local/bin/crypto
+uninstall_bin crypto

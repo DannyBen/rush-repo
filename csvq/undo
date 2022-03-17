@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling csvq"
-sudo rm -f /usr/local/bin/csvq
+uninstall_bin csvq

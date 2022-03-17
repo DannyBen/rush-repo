@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling gobang"
-sudo rm -f /usr/local/bin/gobang
+uninstall_bin gobang

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling ctop"
-sudo rm /usr/local/bin/ctop
+uninstall_bin ctop

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling gitui"
-sudo rm -f /usr/local/bin/gitui
+uninstall_bin gitui

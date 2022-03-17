@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling cheat"
-sudo rm -f /usr/local/bin/cheat
-sudo rm -r
-f ~/.config/cheat
+uninstall_bin cheat
+sudo rm -rf ~/.config/cheat
 

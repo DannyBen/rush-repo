@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling whalebrew"
-sudo rm /usr/local/bin/whalebrew
+uninstall_bin whalebrew

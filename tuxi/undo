@@ -2,6 +2,4 @@
 source ../common.sh
 
 discard pup recode
-
-say "uninstalling tuxi"
-sudo rm -f /usr/local/bin/tuxi
+uninstall_bin tuxi

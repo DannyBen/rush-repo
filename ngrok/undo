@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling ngrok"
+uninstall_bin ngrok
 rm ~/.ngrok2/ngrok.yml
-sudo rm /usr/local/bin/ngrok

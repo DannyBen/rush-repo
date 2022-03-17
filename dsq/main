@@ -5,8 +5,8 @@ install_function() {
   needs unzip
   pushtmp
   curl -LO "https://github.com/multiprocessio/dsq/releases/download/$version/dsq-$(uname -s | awk '{ print tolower($0) }')-x64-${version}.zip"
-  unzip dsq-*-${version}.zip
-  rm -f dsq-*-${version}.zip
+  unzip dsq-*-"${version}".zip
+  rm -f dsq-*-"${version}".zip
   sudo mv dsq /usr/local/bin/dsq
   popd
 }

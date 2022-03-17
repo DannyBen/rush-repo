@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling gotty"
+uninstall_bin gotty
 rm ~/.gotty
-sudo rm /usr/local/bin/gotty

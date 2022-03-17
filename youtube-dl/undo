@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling youtube-dl"
-sudo rm -f /usr/local/bin/youtube-dl
+uninstall_bin youtube-dl

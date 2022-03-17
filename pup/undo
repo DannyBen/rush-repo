@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling pup"
-sudo rm -f /usr/local/bin/pup
+uninstall_bin pup

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling gotop"
-sudo rm -f /usr/local/bin/gotop
+uninstall_bin gotop
 sudo rm -rf ~/.config/gotop

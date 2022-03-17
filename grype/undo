@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling grype"
-sudo rm -f /usr/local/bin/grype
+uninstall_bin grype

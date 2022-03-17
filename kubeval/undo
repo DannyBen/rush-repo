@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling kubeval"
-sudo rm /usr/local/bin/kubeval
+uninstall_bin kubeval

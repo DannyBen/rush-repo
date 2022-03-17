@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling gauge"
-sudo rm -f /usr/local/bin/gauge
+uninstall_bin gauge
 rm -rf "$HOME/.gauge"

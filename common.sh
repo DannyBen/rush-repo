@@ -102,6 +102,12 @@ apt_uninstall() {
   sudo apt-get remove -y "$package"
 }
 
+uninstall_bin() {
+  package="$1"
+  say "uninstalling $package"
+  sudo rm -f "/usr/local/bin/$package"
+}
+
 # Get a standardized tmp dir
 temp_dir() {
   mktemp -d -t rush-XXX

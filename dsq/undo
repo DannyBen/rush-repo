@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling dsq"
-sudo rm /usr/local/bin/dsq
+uninstall_bin dsq

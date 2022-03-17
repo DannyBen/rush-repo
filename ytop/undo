@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling ytop"
-sudo rm /usr/local/bin/ytop
+uninstall_bin ytop

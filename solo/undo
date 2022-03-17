@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling solo"
-sudo rm /usr/local/bin/solo
+uninstall_bin solo

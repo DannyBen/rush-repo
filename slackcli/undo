@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling slk"
-sudo rm /usr/local/bin/slk
+uninstall_bin slk

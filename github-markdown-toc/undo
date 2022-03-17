@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling gh-md-toc"
-sudo rm /usr/local/bin/gh-md-toc
+uninstall_bin gh-md-toc

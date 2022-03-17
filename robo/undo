@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling robo"
-sudo rm /usr/local/bin/robo
+uninstall_bin robo

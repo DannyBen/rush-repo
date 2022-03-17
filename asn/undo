@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling asn"
-sudo rm /usr/local/bin/asn
+uninstall_bin asn

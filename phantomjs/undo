@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling phantomjs"
-sudo rm /usr/local/bin/phantomjs
+uninstall_bin phantomjs

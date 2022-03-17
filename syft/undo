@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling syft"
-sudo rm -f /usr/local/bin/syft
+uninstall_bin syft

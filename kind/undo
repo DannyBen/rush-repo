@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling kind"
-sudo rm /usr/local/bin/kind
+uninstall_bin kind

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling yq"
-sudo rm /usr/local/bin/yq
+uninstall_bin yq

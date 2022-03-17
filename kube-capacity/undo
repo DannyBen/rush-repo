@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling kube-capacity"
-sudo rm /usr/local/bin/kube-capacity
+uninstall_bin kube-capacity
