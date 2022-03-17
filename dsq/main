@@ -11,4 +11,4 @@ install_function() {
   popd
 }
 
-github_install_helper dsq "multiprocessio/dsq" "--help"
+github_install_helper dsq "multiprocessio/dsq"
