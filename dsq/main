@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  needs unzip
+  pushtmp
+  curl -LO "https://github.com/multiprocessio/dsq/releases/download/$version/dsq-$(uname -s | awk '{ print tolower($0) }')-x64-${version}.zip"
+  unzip dsq-*-${version}.zip
+  rm -f dsq-*-${version}.zip
+  sudo mv dsq /usr/local/bin/dsq
+  popd
+}
+
+github_install_helper dsq "multiprocessio/dsq" "--help"
