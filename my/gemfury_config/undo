@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source ../../common.sh
+
+gemfury=$(gem sources |grep fury)
+
+if [[ -n "$gemfury" ]]; then
+  gem sources --remove "$gemfury"
+fi
