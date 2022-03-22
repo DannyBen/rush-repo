@@ -2,6 +2,7 @@
 source ../common.sh
 
 say "installing docker (setup script)"
+needs bashrc
 
 # Ideally, this would be the thing to run...
 # curl https://get.docker.com | sudo sh
@@ -13,3 +14,7 @@ sh /tmp/get-docker.sh
 
 sudo usermod -aG docker "$(whoami)"
 sudo service docker start
+
+# Config
+say "copying ~/.bashrc.d/docker.bashrc"
+cp docker.bashrc "$HOME/.bashrc.d/"
