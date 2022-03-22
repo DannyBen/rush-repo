@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-version=3.0.1
+version=3.1.0
 
 needs ruby-base rbenv
 # shellcheck disable=SC1091,SC1090
-source "$HOME/.bashrc.d/rbenv.bashrc"  # in case rbenv was not installed yet
+source "$HOME/.bashrc.d/rbenv.bashrc"  # in case rbenv was installed just now
 
 say "installing ruby $version with rbenv"
 rbenv install -s "$version"
@@ -13,6 +13,7 @@ rbenv global "$version"
 
 say "copying configuration files"
 cp .gemrc ~/
+cp .irbrc ~/
 mkdir -p ~/.bundle/
 cp config ~/.bundle/
 ruby -v
