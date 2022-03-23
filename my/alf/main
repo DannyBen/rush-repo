@@ -18,5 +18,5 @@ if [[ -d /vagrant/bash/alf-conf ]]; then
   echo /vagrant/bash/alf-conf > ~/.alfrc
 else
   say "connecting alf to dannyben repo"
-  alf connect dannyben
+  alf connect dannyben --https
 fi
