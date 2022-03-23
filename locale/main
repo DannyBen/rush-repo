@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 source ../common.sh
 say "configuring locale"
-sudo localectl set-locale LANG=en_US.UTF-8
+if command_exist localectl
+  sudo localectl set-locale LANG=en_US.UTF-8
+else
+  warning "cannot configure locale without localectl"
+fi
