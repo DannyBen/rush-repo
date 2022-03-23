@@ -2,7 +2,7 @@
 source ../../common.sh
 
 say "installing my/* packages"
-needs my/bashrc my/cdpath my/gitconfig my/rigit my/bash-completion
+needs my/bashrc my/cdpath my/gitconfig my/rigit my/bash-completion my/alf
 
 say "installing public packages"
 needs dircolors exrc inputrc toprc locale
@@ -10,8 +10,8 @@ needs dircolors exrc inputrc toprc locale
 if [[ -z "$SSH_AUTH_SOCK" ]]; then
   say "installing ssh-agent"
   needs ssh-agent
+else
+  say "skipping ssh-agent installation since an agent was forwarded"
 fi
-
-command_exist alf || rush get "$REPO:my/alf"
 
 say "my/bootstrap complete, you may need to login again"
