@@ -2,11 +2,14 @@
 source ../../common.sh
 
 if command_exist alf ; then
-  say "skipping alf symlink, already exists"
+  say "skipping alf installation, already exists"
 
-else
+elif [[ -f /vagrant/bash/alf/alf ]]; then
   say "symlinking alf"
   sudo ln -s /vagrant/bash/alf/alf /usr/local/bin/alf
+
+else
+  needs alf
 
 fi
 
