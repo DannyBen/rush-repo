@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-needs bashrc
+needs bashrc rlwrap
 
 pushtmp
 curl https://cht.sh/:cht.sh > cht.sh
 sudo install cht.sh /usr/local/bin/cht.sh
-
-curl https://cheat.sh/:bash_completion >> ~/.bashrc.d/cht.sh.bashrc
 popd
 
 cp cht.sh.bashrc ~/.bashrc.d/
+curl https://cheat.sh/:bash_completion >> ~/.bashrc.d/cht.sh.bashrc
 
