@@ -13,6 +13,7 @@ install_function() {
   popd
 
   cp navi.bashrc ~/.bashrc.d/
+  attention "restart your session or source ~/.bashrc"
 }
 
 github_install_helper navi "denisidoro/navi"

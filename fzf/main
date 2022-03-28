@@ -10,6 +10,8 @@ install_function() {
   popd
 
   cp fzf.bashrc ~/.bashrc.d/
+
+  # shellcheck disable=SC1091,SC1090
   source ~/.fzf.bash
   attention "restart your session or source ~/.bashrc"
 }
