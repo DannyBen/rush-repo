@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+uninstall_bin cht.sh
+sudo rm -f ~/.bashrc.d/cht.sh.bashrc
+
