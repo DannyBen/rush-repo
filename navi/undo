@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+uninstall_bin navi
+rm -f ~/.bashrc.d/navi.bashrc
+discard fzf
