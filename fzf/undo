@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-uninstall_bin csvq
+pushd ~/.fzf
+~/.fzf/uninstall
+popd
+
+rm -f ~/.bashrc.d/fzf.bashrc
+
+
