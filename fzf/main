@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  needs bashrc
+  url="https://github.com/junegunn/fzf.git"
+  pushtmp
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install --all --no-update-rc
+  popd
+
+  cp fzf.bashrc ~/.bashrc.d/
+  source ~/.fzf.bash
+  attention "restart your session or source ~/.bashrc"
+}
+
+github_install_helper fzf "junegunn/fzf"
