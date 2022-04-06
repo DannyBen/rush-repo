@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  url="https://github.com/gokcehan/lf/releases/download/$version/lf-linux-amd64.tar.gz"
+  pushtmp
+  curl -sL "$url" | tar -xzv
+  sudo install lf /usr/local/bin/  
+  rm -f lf
+  popd
+}
+
+github_install_helper lf "gokcehan/lf" "-version"
