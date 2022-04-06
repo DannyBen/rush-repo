@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-apt_uninstall zip
-rm ~/.bashrc.d/nnn.bashrc
+apt_uninstall nnn
+rm -f ~/.bashrc.d/nnn.bashrc
