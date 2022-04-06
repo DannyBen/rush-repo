@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+rm -rf ~/.z.sh
+rm -f ~/.z
+rm -f ~/.bashrc.d/z.bashrc
+sudo rm -f /usr/share/man/man1/z.1

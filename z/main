@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+needs bashrc
+say "downloading z.sh to ~/.z/"
+mkdir -p ~/.z.sh
+wget -O ~/.z.sh/z.sh https://raw.githubusercontent.com/rupa/z/master/z.sh
+
+say "downloading z manpage"
+pushtmp
+wget https://raw.githubusercontent.com/rupa/z/master/z.1
+sudo mv z.1 /usr/share/man/man1/
+popd
+
+say "copying bashrc.d config"
+cp z.bashrc ~/.bashrc.d/
+
+attention "restart your session or source ~/.bashrc"
