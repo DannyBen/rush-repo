@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling nnn"
-sudo apt remove -y nnn
+apt_uninstall zip
 rm ~/.bashrc.d/nnn.bashrc
