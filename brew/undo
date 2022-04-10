@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-source ../common.sh
-
-say "uninstalling brew"
-sudo apt remove -y linuxbrew-wrapper
-rm -f ~/.bashrc.d/brew.bashrc
-sudo rm -rf /home/linuxbrew
