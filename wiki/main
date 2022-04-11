@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  curl -LO https://github.com/BetaPictoris/wiki/releases/latest/download/wiki
+  sudo install -Dt /usr/local/bin -m 755 wiki
+  popd
+}
+
+github_install_helper wiki "BetaPictoris/wiki"
