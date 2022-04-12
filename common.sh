@@ -86,8 +86,9 @@ apt_install_deb() {
 apt_install() {
   package="$1"
   display_name="${2:-$1}"
+  command_name="${3:-$2}"
 
-  if command_exist "$package" ; then
+  if command_exist "$command_name" ; then
     say "$display_name is already installed"
   else
     say "installing $display_name (apt)"

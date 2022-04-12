@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  needs 7zip
+  url="https://github.com/OJ/gobuster/releases/download/v${version}/gobuster-linux-amd64.7z"
+  pushtmp
+  wget "$url"
+  7z x gobuster-linux-amd64.7z
+  sudo install -m 755 gobuster-linux-amd64/gobuster /usr/local/bin/
+  popd
+}
+
+github_install_helper gobuster "OJ/gobuster" version
