@@ -85,13 +85,17 @@ apt_install_deb() {
 # Install/uninstall simple apt packages
 apt_install() {
   package="$1"
-  display_name="${2:-$1}"
-  command_name="${3:-$2}"
+  command_name="${2:-$1}"
+  if [[ "$command_name" == $package ]]; then
+    display_name="$command_name"
+  else
+    display_name="$command_name ($package)"
+  fi
 
   if command_exist "$command_name" ; then
     say "$display_name is already installed"
   else
-    say "installing $display_name (apt)"
+    say "installing $display_name"
     sudo apt-get install -y $package
   fi
 }
