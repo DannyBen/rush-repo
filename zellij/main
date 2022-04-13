@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/zellij-org/zellij/releases/download/v${version}/zellij-x86_64-unknown-linux-musl.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 zellij /usr/local/bin/
+  popd
+}
+
+github_install_helper zellij zellij-org/zellij

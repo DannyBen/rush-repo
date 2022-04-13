@@ -2,7 +2,7 @@
 source ../common.sh
 
 install_function() {
-  pushd "$(temp_dir)"
+  pushtmp
   url="https://github.com/jesseduffield/horcrux/releases/download/v$version/horcrux_${version}_Linux_x86_64.tar.gz"
   curl -sL "$url" | tar -xzv
             
