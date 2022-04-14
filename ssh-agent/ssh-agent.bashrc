@@ -1,2 +1,7 @@
 ### Remember ssh key passphrase
-eval $(ssh-agent) > /dev/null
+
+# Without keychain:
+# eval $(ssh-agent) > /dev/null
+
+# With keychain:
+eval $(keychain --eval --quiet)

@@ -2,3 +2,4 @@
 source ../common.sh
 
 uninstall_bin zellij
+rm -rf ~/.config/zellij

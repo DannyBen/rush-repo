@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-needs bashrc
+# needs bashrc
 
 say "installing tmux (apt)"
 sudo apt-get install -y tmux
 
 say "copying configuration files"
 cp .tmux.conf ~/.tmux.conf
-cp tmux.bashrc ~/.bashrc.d/tmux.bashrc
+# cp tmux.bashrc ~/.bashrc.d/
+# tmux bashrc config is not needed if using keychain
 
 say "installing tmux plugin manager (tpm)"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

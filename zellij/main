@@ -7,6 +7,9 @@ install_function() {
   curl -sL "$url" | tar -xzv
   sudo install -m 755 zellij /usr/local/bin/
   popd
+
+  mkdir -p ~/.config/zellij/
+  cp config.yaml ~/.config/zellij/
 }
 
 github_install_helper zellij zellij-org/zellij
