@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  url="https://github.com/sharkdp/hyperfine/releases/download/v${version}/hyperfine_${version}_amd64.deb"
+  apt_install_deb "$url"
+}
+
+github_install_helper hyperfine sharkdp/hyperfine
