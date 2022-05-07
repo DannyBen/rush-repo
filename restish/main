@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/danielgtaylor/restish/releases/download/v${version}/restish-${version}-linux-x86_64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 restish /usr/local/bin/
+  popd
+}
+
+github_install_helper restish danielgtaylor/restish
