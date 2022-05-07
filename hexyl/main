@@ -2,9 +2,7 @@
 source ../common.sh
 
 install_function() {
-  wget -O hexyl.deb "https://github.com/sharkdp/hexyl/releases/download/v$version/hexyl_${version}_amd64.deb"
-  sudo dpkg -i hexyl.deb
-  rm hexyl.deb
+  apt_install_deb "https://github.com/sharkdp/hexyl/releases/download/v$version/hexyl_${version}_amd64.deb"
 }
 
 github_install_helper hexyl "sharkdp/hexyl"

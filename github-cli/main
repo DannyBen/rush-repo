@@ -2,9 +2,7 @@
 source ../common.sh
 
 install_function() {
-  wget -qO ./gh.deb "https://github.com/cli/cli/releases/download/v$version/gh_${version}_linux_amd64.deb"
-  sudo dpkg -i gh.deb
-  rm gh.deb
+  apt_install_deb "https://github.com/cli/cli/releases/download/v$version/gh_${version}_linux_amd64.deb"
 }
 
 github_install_helper gh "cli/cli" "version"

@@ -2,9 +2,7 @@
 source ../common.sh
 
 install_function() {
-  wget -O curlie.deb "https://github.com/rs/curlie/releases/download/v$version/curlie_${version}_linux_amd64.deb"
-  sudo dpkg -i curlie.deb
-  rm curlie.deb
+  apt_install_deb "https://github.com/rs/curlie/releases/download/v$version/curlie_${version}_linux_amd64.deb"
 }
 
 github_install_helper curlie rs/curlie version

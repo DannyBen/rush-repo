@@ -2,15 +2,9 @@
 source ../common.sh
 
 install_function() {
-  tmpdir=$(temp_dir)
-  pushd "$tmpdir"
-  url="https://github.com/BurntSushi/ripgrep/releases/download/$version/ripgrep_${version}_amd64.deb"
-  curl -LO "$url"
-  sudo dpkg -i "ripgrep_${version}_amd64.deb"
-  popd
-  rm -rf "$tmpdir"
+  apt_install_deb "https://github.com/BurntSushi/ripgrep/releases/download/$version/ripgrep_${version}_amd64.deb"
 }
 
-github_install_helper rg "BurntSushi/ripgrep"
+github_install_helper rg BurntSushi/ripgrep
 
 

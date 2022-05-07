@@ -8,8 +8,6 @@ if command_exist vimcat; then
 
 else
   say "installing vimcat (github)"
-  wget "https://github.com/ofavre/vimcat/releases/download/v$version/vimcat_$version-1_all.deb"
-  sudo dpkg -i vimcat_$version-1_all.deb
-  rm vimcat_$version-1_all.deb
+  apt_install_deb "https://github.com/ofavre/vimcat/releases/download/v$version/vimcat_$version-1_all.deb"
 
 fi

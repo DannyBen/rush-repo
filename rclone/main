@@ -2,8 +2,7 @@
 source ../common.sh
 
 install_function() {
-  url="https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-linux-amd64.deb"
-  apt_install_deb "$url"
+  apt_install_deb "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-linux-amd64.deb"
 }
 
 github_install_helper rclone rclone/rclone

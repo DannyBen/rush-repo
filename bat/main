@@ -2,9 +2,7 @@
 source ../common.sh
 
 install_function() {
-  wget -qO ./bat.deb "https://github.com/sharkdp/bat/releases/download/v${version}/bat_${version}_amd64.deb"
-  sudo dpkg -i bat.deb 
-  rm bat.deb
+  apt_install_deb "https://github.com/sharkdp/bat/releases/download/v${version}/bat_${version}_amd64.deb"
 
   mkdir -p ~/.config/bat
   cp config ~/.config/bat/config
