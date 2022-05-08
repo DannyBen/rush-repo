@@ -2,4 +2,5 @@
 source ../common.sh
 
 uninstall_bin restish
-
+say "removing ~/.restish"
+rm -rf ~/.restish
