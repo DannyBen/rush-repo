@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  download_url="https://github.com/datreeio/datree/releases/download/${version}/datree-cli_${version}_Linux_x86_64.zip"
+  wget --no-verbose -O datree.zip "$download_url"
+  
+  sudo unzip -o datree.zip datree -d /usr/local/bin/
+  sudo chmod +x /usr/local/bin/datree
+  popd
+}
+
+needs unzip
+github_install_helper datree datreeio/datree version
