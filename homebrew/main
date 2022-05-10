@@ -6,11 +6,16 @@ if command_exist brew ; then
 
 else
   needs bashrc
-  
+
   say "running homebrew install script"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   
   say "copying bashrc.d config"
   cp homebrew.bashrc ~/.bashrc.d/
+
+  attention "restart your session or source ~/.bashrc to apply changes"
+
+  # also source it ourselves, in case this package is used as a dependency
+  source ~/.bashrc/homebrew.bashrc
   
 fi
