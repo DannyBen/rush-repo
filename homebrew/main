@@ -5,6 +5,8 @@ if command_exist brew ; then
   say "homebrew is already installed"
 
 else
+  needs bashrc
+  
   say "running homebrew install script"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   
