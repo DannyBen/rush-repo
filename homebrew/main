@@ -9,6 +9,6 @@ else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   
   say "copying bashrc.d config"
-  cp homebrea.bashrc ~/.bashrc.d/
+  cp homebrew.bashrc ~/.bashrc.d/
   
 fi

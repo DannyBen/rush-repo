@@ -6,7 +6,7 @@ if command_exist brew ; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 
   say "removing bashrc.d config"
-  rm -f ~/.bashrc.d/homebrea.bashrc
+  rm -f ~/.bashrc.d/homebrew.bashrc
 
 else
   say "homebrew is not installed"
