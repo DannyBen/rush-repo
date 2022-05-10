@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist brew ; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+
+else
+  say "homebrew is not installed"
+  
+fi
