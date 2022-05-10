@@ -1,1 +1,5 @@
 Install or update docker-compose
+
+Note: Newer versions of docker already include docker compose.
+If the command `docker compose` works for you, there is no need to install
+this package.
