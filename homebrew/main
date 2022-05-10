@@ -5,6 +5,10 @@ if command_exist brew ; then
   say "homebrew is already installed"
 
 else
+  say "running homebrew install script"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  
+  say "copying bashrc.d config"
+  cp homebrea.bashrc ~/.bashrc.d/
   
 fi
