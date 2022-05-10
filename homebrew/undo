@@ -6,10 +6,10 @@ if command_exist brew ; then
   pushtmp
   wget https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh
   bash uninstall.sh --force
+  popd
 
   say "removing bashrc.d config"
   rm -f ~/.bashrc.d/homebrew.bashrc
-  popd
 
 else
   say "homebrew is not installed"
