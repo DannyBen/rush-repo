@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  curl -s https://api.github.com/repos/yudai/gotty/releases/latest | grep "download.*linux_amd64.tar.gz" | cut -d : -f 2,3 | tr -d \" | xargs wget -q
+
+  say "extracing binary"
+  tar -xzvf gotty_linux_amd64.tar.gz 
+  rm gotty_linux_amd64.tar.gz
+
+  say "copying binary"
+  sudo mv gotty /usr/local/bin/ 
+  sudo chmod +x /usr/local/bin/gotty 
+
+  say "copying config"
+  cp .gotty ~/.gotty
+}
+
+github_install_helper gotty "yudai/gotty"
