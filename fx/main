@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  url="https://github.com/antonmedv/fx/releases/download/$version/fx_linux_amd64"
+  pushtmp
+  wget "$url" -O fx
+  sudo install -m 755 fx /usr/local/bin/
+  popd
+}
+
+github_install_helper fx antonmedv/fx
