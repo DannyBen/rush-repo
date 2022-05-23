@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source ../../common.sh
+
+needs bashrc
+
+say "copying ~/.bashrc.d/prompt.bashrc"
+cp prompt.bashrc "$HOME/.bashrc.d/"
+attention "restart your session or source ~/.bashrc"
