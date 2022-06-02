@@ -5,6 +5,6 @@ say "installing my/* packages"
 needs my/bashrc my/cdpath my/gitconfig my/rigit my/bash-completion my/alf
 
 say "installing public packages"
-needs dircolors exrc inputrc toprc locale ssh-agent
+needs dircolors exrc inputrc toprc locale ssh-agent prompt/color
 
 say "my/bootstrap complete, you may need to login again"
