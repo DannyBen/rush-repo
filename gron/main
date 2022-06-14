@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/tomnomnom/gron/releases/download/v${version}/gron-linux-amd64-${version}.tgz"
+  curl -L "$url" | tar xvz "gron"
+  sudo install -m 755 gron /usr/local/bin/
+  popd
+}
+
+github_install_helper gron tomnomnom/gron
