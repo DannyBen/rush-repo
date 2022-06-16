@@ -3,3 +3,4 @@ source ../common.sh
 
 uninstall_bin sake
 sudo rm -f /usr/local/share/man/man1/sake.1
+rm -f ~/.bashrc.d/sake.bashrc
