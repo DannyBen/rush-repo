@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  url="https://github.com/alajmo/sake/releases/download/v${version}/sake_${version}_linux_amd64.tar.gz"
+  pushtmp
+  wget "$url" -O "sake.tar.gz"
+  tar -zxvf "sake.tar.gz"
+  sudo install -m 755 sake /usr/local/bin/
+  sudo cp sake.1 /usr/local/share/man/man1/
+  popd
+}
+
+github_install_helper sake alajmo/sake
