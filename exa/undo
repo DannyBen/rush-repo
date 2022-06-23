@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+uninstall_bin exa
+
+sudo rm -f /usr/share/bash-completion/completions/exa.bash
+sudo rm -f /usr/local/share/man/man1/exa.1
+sudo rm -f /usr/local/share/man/man5/exa_colors.5

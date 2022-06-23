@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  needs unzip
+
+  pushtmp
+  url="https://github.com/ogham/exa/releases/download/v${version}/exa-linux-x86_64-v${version}.zip"
+  wget -O exa.zip "$url"
+  unzip exa.zip
+
+  sudo install -m 755 bin/exa /usr/local/bin/
+  sudo cp completions/exa.bash /usr/share/bash-completion/completions/
+  sudo cp man/exa.1 /usr/local/share/man/man1/
+  sudo mkdir -p /usr/local/share/man/man5
+  sudo cp man/exa_colors.5 /usr/local/share/man/man5/
+  popd
+
+}
+
+github_install_helper exa ogham/exa
