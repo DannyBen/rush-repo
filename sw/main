@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+pushtmp
+url="https://raw.githubusercontent.com/coryfklein/sw/master/sw"
+wget "$url"
+sudo install -m 755 sw /usr/local/bin/
+popd
