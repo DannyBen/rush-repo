@@ -2,6 +2,7 @@
 source ../common.sh
 
 install_function() {
+  version=1.3.0  # version 1.4.0 does not obey color config - github.com/sorenisanerd/gotty/issues/41
   url="https://github.com/sorenisanerd/gotty/releases/download/v${version}/gotty_v${version}_linux_amd64.tar.gz"
   
   pushtmp
