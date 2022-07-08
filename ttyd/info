@@ -1,0 +1,13 @@
+Install ttyd, the gotty alternative
+
+Source:  https://github.com/tsl0922/ttyd
+Wiki:    https://github.com/tsl0922/ttyd/wiki
+Theme:   https://xtermjs.org/docs/api/terminal/interfaces/itheme/
+Options: https://xtermjs.org/docs/api/terminal/interfaces/iterminaloptions/
+
+Theme:
+
+  theme='{"background": "white", "foreground": "black", "selection": "#ccc", "cursor": "blue" }'
+  ttyd --port 3000 -t fontSize=20 \
+    -t theme="$theme" \
+    bash
