@@ -56,10 +56,15 @@ github_install_helper() {
   binary_name="$1"
   github_repo="$2"
   version_flag="${3:---version}"
+  version="$4"
 
-  say "identifying latest version for $github_repo"
-  version=$(get_github_release_version "$github_repo")
-  say "latest version is $version"
+  if [[ -n "$version" ]]; then
+    attention "forcing version $version"
+  else
+    say "identifying latest version for $github_repo"
+    version=$(get_github_release_version "$github_repo")
+    say "latest version is $version"
+  fi
 
   if is_installed "$binary_name" "$version_flag"; then
     say "$binary_name is already at the latest version"
