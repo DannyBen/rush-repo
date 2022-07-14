@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  url="https://github.com/cube2222/octosql/releases/download/v${version}/octosql_${version}_linux_amd64.tar.gz"
+  pushtmp
+  wget "$url" -O "octosql.tar.gz"
+  tar -zxvf "octosql.tar.gz" "octosql"
+  sudo install -m 755 "octosql" /usr/local/bin/
+  rm -f "octosql"
+  rm -f "octosql.tar.gz"
+  popd
+}
+
+github_install_helper octosql cube2222/octosql
