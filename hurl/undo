@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling hurl"
+sudo dpkg -r hurl
