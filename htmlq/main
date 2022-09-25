@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/mgdm/htmlq/releases/download/v${version}/htmlq-x86_64-linux.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 htmlq /usr/local/bin/
+  popd
+}
+
+github_install_helper htmlq mgdm/htmlq

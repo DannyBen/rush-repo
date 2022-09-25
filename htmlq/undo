@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+uninstall_bin htmlq
