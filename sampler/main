@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  url="https://github.com/sqshq/sampler/releases/download/v${version}/sampler-${version}-linux-amd64"
+  sudo wget "$url" -O /usr/local/bin/sampler
+  sudo chmod +x /usr/local/bin/sampler
+}
+
+github_install_helper sampler sqshq/sampler
