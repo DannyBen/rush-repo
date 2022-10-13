@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+if command_exist semgrep ; then
+  say "semgrep is already installed"
+
+else
+  needs python
+  python3 -m pip install semgrep
+  
+fi

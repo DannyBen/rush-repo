@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling semgrep"
+python3 -m pip uninstall -y semgrep
+
