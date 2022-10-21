@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "uninstalling fuzzy-cd"
+rm -rf ~/.fuzzy-cd
+rm -f ~/.bashrc.d/fuzzy-cd.bashrc
+attention "restart your session for a a complete uninstall"

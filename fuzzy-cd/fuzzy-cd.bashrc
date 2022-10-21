@@ -1,0 +1,1 @@
+source ~/.fuzzy-cd/fuzzy-cd

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+needs bashrc
+command_exist fzf || needs fzf
+
+say "installing fuzzy-cd"
+mkdir -p ~/.fuzzy-cd
+wget --quiet -O ~/.fuzzy-cd/fuzzy-cd https://raw.githubusercontent.com/dannyben/fuzzy-cd/master/fuzzy-cd
+
+say "copying bashrc.d config"
+cp fuzzy-cd.bashrc ~/.bashrc.d/
+
+attention "restart your session or source ~/.bashrc"
