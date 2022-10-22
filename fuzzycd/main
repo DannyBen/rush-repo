@@ -5,10 +5,10 @@ needs bashrc
 command_exist fzf || needs fzf
 
 say "installing fuzzy-cd"
-mkdir -p ~/.fuzzy-cd
-wget --quiet -O ~/.fuzzy-cd/fuzzy-cd https://raw.githubusercontent.com/dannyben/fuzzy-cd/master/fuzzy-cd
+sudo wget -qO /usr/local/bin/fuzzycd https://raw.githubusercontent.com/DannyBen/fuzzycd/master/fuzzycd
+sudo chmod +x /usr/local/bin/fuzzycd
 
 say "copying bashrc.d config"
-cp fuzzy-cd.bashrc ~/.bashrc.d/
+cp fuzzycd.bashrc ~/.bashrc.d/
 
 attention "restart your session or source ~/.bashrc"
