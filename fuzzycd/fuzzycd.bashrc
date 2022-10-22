@@ -1,1 +1,1 @@
-source /usr/local/bin/fuzzy-cd
+source /usr/local/bin/fuzzycd
