@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/anthonynsimon/bild/releases/download/v${version}/bild_v${version}_x64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 bild /usr/local/bin/
+  popd
+}
+
+github_install_helper bild anthonynsimon/bild
