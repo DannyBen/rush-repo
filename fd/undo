@@ -2,4 +2,4 @@
 source ../common.sh
 
 say "uninstalling fd"
-sudo dpkg -r fd
+apt_uninstall fd

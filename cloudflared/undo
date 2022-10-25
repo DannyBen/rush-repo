@@ -2,4 +2,4 @@
 source ../common.sh
 
 say "uninstalling cloudflared"
-sudo dpkg -r cloudflared
+apt_uninstall cloudflared

@@ -2,4 +2,4 @@
 source ../common.sh
 
 say "uninstalling curlie"
-sudo dpkg -r curlie
+apt_uninstall curlie
