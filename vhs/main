@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  needs ttyd ffmpeg
+  apt_install_deb "https://github.com/charmbracelet/vhs/releases/download/v${version}/vhs_${version}_linux_amd64.deb"
+}
+
+github_install_helper vhs charmbracelet/vhs
