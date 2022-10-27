@@ -66,9 +66,10 @@ github_install_helper() {
     say "latest version is $version"
   fi
 
-  if is_installed "$binary_name" "$version_flag"; then
+  if [[ -z "$FORCE" ]] && is_installed "$binary_name" "$version_flag"; then
     say "$binary_name is already at the latest version"
   else
+    unset FORCE  # to prevent nested tools to also be forced
     say "installing $binary_name"
     install_function
     "$binary_name" $version_flag
