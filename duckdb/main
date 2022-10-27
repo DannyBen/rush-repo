@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  needs unzip
+  download_url="https://github.com/duckdb/duckdb/releases/download/v${version}/duckdb_cli-linux-amd64.zip"
+  
+  pushtmp
+  wget --no-verbose -O duckdb.zip "$download_url"
+  sudo unzip -o duckdb.zip
+  sudo install -m0755 duckdb /usr/local/bin/
+  popd
+}
+
+github_install_helper duckdb duckdb/duckdb
