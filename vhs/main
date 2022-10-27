@@ -3,6 +3,11 @@ source ../common.sh
 
 install_function() {
   needs ttyd ffmpeg
+  
+  # TODO: Remove this manual libgbm1 install when this is resolved
+  #       https://github.com/charmbracelet/vhs/issues/45
+  apt_install libgbm1 
+
   apt_install_deb "https://github.com/charmbracelet/vhs/releases/download/v${version}/vhs_${version}_linux_amd64.deb"
 }
 
