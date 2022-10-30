@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  needs sass
+  if [[ -f /usr/local/bin/sass ]]; then
+    say "renaming sass to dartsass"
+    sudo mv /usr/local/bin/sass /usr/local/bin/dartsass
+  fi
+}
+
+github_install_helper dartsass "sass/dart-sass"
+
+
+
