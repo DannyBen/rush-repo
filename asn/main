@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
-# Gist Source: https://gist.github.com/DannyBen/c51cb89b776df2b0937e0412eed9b4b5
 source ../common.sh
 
+
+
+say "installing dependencies for asn (apt)"
+
+# The official docs state that these are the dependencies
+# apt -y install curl whois bind9-host mtr-tiny jq ipcalc grepcidr nmap ncat aha
+# ref: https://github.com/nitefood/asn#prerequisite-packages
+needs aha grepcidr ipcalc ncat   jq mtr whois
+
 say "installing asn (github)"
-needs whois
-sudo wget -qO /usr/local/bin/asn https://gist.githubusercontent.com/DannyBen/c51cb89b776df2b0937e0412eed9b4b5/raw/23256e7e4f1f10a233925bf144b41455ea49cbb9/asn
+sudo wget -qO /usr/local/bin/asn https://raw.githubusercontent.com/nitefood/asn/master/asn
 sudo chmod +x /usr/local/bin/asn
+
