@@ -2,13 +2,15 @@
 source ../common.sh
 
 install_function() {
-  download_url="https://github.com/allcloud-io/clisso/releases/download/${version}/clisso-linux-amd64.zip"
-  wget --no-verbose -O clisso.zip "$download_url"
-  
-  sudo unzip -o clisso.zip -d /usr/local/bin/
-  rm clisso.zip
+  download_url="https://github.com/allcloud-io/clisso/releases/download/${version}/clisso_linux_amd64.zip"
 
-  sudo mv /usr/local/bin/clisso-linux-amd64 /usr/local/bin/clisso
+  pushtmp
+  wget --no-verbose -O download.zip "$download_url"
+  unzip download.zip clisso
+  sudo install -m0755 clisso /usr/local/bin/
+  rm -f download.zip
+  rm -f clisso
+  popd
 }
 
 needs unzip

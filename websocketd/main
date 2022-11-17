@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  download_url="https://github.com/joewalnes/websocketd/releases/download/v${version}/websocketd-${version}-linux_amd64.zip"
+
+  pushtmp  
+  wget --no-verbose -O download.zip "$download_url"
+  unzip download.zip websocketd
+  sudo install -m0755 websocketd /usr/local/bin/
+  rm -f download.zip
+  rm -f websocketd
+  popd
+}
+
+needs unzip
+github_install_helper websocketd joewalnes/websocketd
+
