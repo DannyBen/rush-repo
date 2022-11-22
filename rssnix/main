@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/jafarlihi/rssnix/releases/download/${version}/rssnix_${version}_linux_amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 rssnix /usr/local/bin/
+  popd
+}
+
+github_install_helper rssnix jafarlihi/rssnix
