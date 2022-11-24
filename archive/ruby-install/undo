@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-source ../common.sh
+source ../../common.sh
 
-# Versions: https://github.com/postmodern/ruby-install/releases
-version=0.8.1
+# Versions: https://github.com/postmodern/ruby-install/tags
+version=0.8.5
 
 say "uninstalling ruby-install $version"
 tmpdir=$(temp_dir)
