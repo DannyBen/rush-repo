@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/terrastruct/TALA/releases/download/v${version}/tala-v${version}-linux-amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 "tala-v$version/bin/d2plugin-tala" /usr/local/bin/
+  sudo cp "tala-v$version/man/d2plugin-tala.1" /usr/local/share/man/man1/
+  popd
+}
+
+github_install_helper d2plugin-tala terrastruct/TALA
