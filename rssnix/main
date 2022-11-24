@@ -9,4 +9,4 @@ install_function() {
   popd
 }
 
-github_install_helper rssnix jafarlihi/rssnix
+github_install_helper rssnix jafarlihi/rssnix version
