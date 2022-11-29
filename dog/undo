@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+uninstall_bin dog
+sudo rm -f /usr/local/share/man/man1/dog.1
+sudo rm -f /usr/share/bash-completion/completions/dog
