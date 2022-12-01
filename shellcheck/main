@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "installing shellcheck (github)"
-wget -qO- "https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.x86_64.tar.xz" | tar -xJv
+install_function() {
+  pushtmp
+  wget -qO- "https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.x86_64.tar.xz" | tar -xJv
+  sudo install -m 755 shellcheck-stable/shellcheck /usr/local/bin/
+  popd
+}
 
-say "copying binary"
-sudo install -m 755 shellcheck-stable/shellcheck /usr/local/bin/
-
-say "cleaning up"
-rm -rf shellcheck-stable
-
-shellcheck --version
+github_install_helper shellcheck koalaman/shellcheck
