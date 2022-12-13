@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+needs python
+say "installing sqlite-web"
+pip install sqlite-web
+sqlite_web -h |head -n1
