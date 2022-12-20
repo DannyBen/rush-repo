@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/wtfutil/wtf/releases/download/v${version}/wtf_${version}_linux_amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 "wtf_${version}_linux_amd64/wtfutil" /usr/local/bin/
+  popd
+
+}
+
+github_install_helper wtfutil wtfutil/wtf
