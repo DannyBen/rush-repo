@@ -1,0 +1,1 @@
+export RUBY_YJIT_ENABLE=1

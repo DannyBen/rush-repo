@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "disabling ruby yjit"
+rm -f ~/.bashrc.d/yjit.bashrc
+attention "restart your session"

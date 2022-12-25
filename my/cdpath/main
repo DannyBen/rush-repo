@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 source ../../common.sh
+
+needs bashrc
+
 say "copying cdpath.bashrc"
 cp cdpath.bashrc ~/.bashrc.d/cdpath.bashrc

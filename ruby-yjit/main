@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+needs bashrc
+
+say "enabling ruby yjit"
+cp yjit.bashrc ~/.bashrc.d/
+attention "restart your session or source ~/.bashrc"
