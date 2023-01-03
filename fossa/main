@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  needs unzip
+  download_url="https://github.com/fossas/fossa-cli/releases/download/v${version}/fossa_${version}_linux_amd64.zip"
+
+  pushtmp
+  wget --no-verbose -O download.zip "$download_url"
+  unzip download.zip fossa
+  sudo install -m0755 fossa /usr/local/bin/
+  rm -f download.zip
+  rm -f fossa
+  popd
+}
+
+github_install_helper fossa fossas/fossa-cli
