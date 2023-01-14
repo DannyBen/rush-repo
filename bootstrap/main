@@ -2,7 +2,7 @@
 source ../common.sh
 
 say "installing essential rush packages"
-needs bashrc dircolors exrc inputrc prompt/color
+needs bashrc dircolors exrc inputrc prompt/dollar-color
 command_exist alf || rush get "$REPO:alf"
 
 say "bootstrap complete"
