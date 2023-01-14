@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_uninstall speedtest
+uninstall_bin speedtest

@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-if command_exist yarn ; then
-  say "yarn is already installed"
-
-else
+install_function() {
   needs node
-
   say "installing yarn via npm"
   npm install -g yarn
   yarn --version
+}
 
-fi
+general_install_helper yarn

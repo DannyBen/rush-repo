@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-if [[ -z $FORCE ]] && command_exist asciinema ; then
-  say "already installed (-f to install anyway)"
-else
+install_function() {
   sudo apt-add-repository -y ppa:zanchey/asciinema
   sudo apt-get -y update
   sudo apt-get -y install asciinema
-fi
+}
+
+general_install_helper asciinema

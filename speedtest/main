@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-if [[ -z $FORCE ]] && command_exist speedtest ; then
-  say "already installed (-f to install anyway)"
-else
-  curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
-  sudo apt-get install speedtest
-fi
+install_function() {
+  pushtmp
+  # Version can be found here: https://www.speedtest.net/apps/cli
+  version=1.2.0
+  url="https://install.speedtest.net/app/cli/ookla-speedtest-${version}-linux-x86_64.tgz"
+  curl -L "$url" | tar xvz "speedtest"
+  sudo install -m 755 speedtest /usr/local/bin/
+  rm speedtest
+  popd
+}
+
+general_install_helper speedtest
