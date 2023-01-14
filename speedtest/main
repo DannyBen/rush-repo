@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-if command_exist speedtest ; then
-  say "speedtest is already installed"
-
+if [[ -z $FORCE ]] && command_exist speedtest ; then
+  say "already installed (-f to install anyway)"
 else
   curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
   sudo apt-get install speedtest
-  
 fi
