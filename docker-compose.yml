@@ -1,7 +1,5 @@
-version: '3'
-
 services:
-  bash: &default
+  bash:
     build: .
     image: dannyben/rush-repo-sandbox
     volumes: 
