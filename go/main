@@ -1,10 +1,26 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-needs bashrc
+if [[ -z "$FORCE" ]] && is_installed go version; then
+  say "go is already at the latest version"
+else
+  unset FORCE
+  needs bashrc
 
-say "installing go (snap)"
-sudo snap install go --classic
+  say "installing go (snap)"
+  version="$(curl https://go.dev/VERSION?m=text)"
+  url="https://go.dev/dl/$version.linux-amd64.tar.gz"
 
-say "copying bashrc.d config"
-cp go.bashrc ~/.bashrc.d/go.bashrc
+  pushtmp
+  wget -O go.tar.gz "$url"
+  sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go.tar.gz
+  rm go.tar.gz
+  popd
+
+  say "copying bashrc.d config"
+  cp go.bashrc ~/.bashrc.d/go.bashrc
+
+  source go.bashrc
+  go version
+  attention "restart your session or source ~/.bashrc"
+fi

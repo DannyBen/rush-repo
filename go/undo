@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling go"
-sudo snap remove go
+uninstall_bin go
 rm ~/.bashrc.d/go.bashrc
