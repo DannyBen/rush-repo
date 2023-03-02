@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/joerdav/xc/releases/download/v${version}/xc_${version}_linux_amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 xc /usr/local/bin/
+  popd
+}
+
+github_install_helper xc joerdav/xc
