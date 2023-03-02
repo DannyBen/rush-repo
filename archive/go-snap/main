@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source ../../common.sh
+
+needs bashrc
+
+say "installing go (snap)"
+sudo snap install go --classic
+
+say "copying bashrc.d config"
+cp go.bashrc ~/.bashrc.d/go.bashrc
