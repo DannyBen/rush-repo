@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  url="https://github.com/replicate/cog/releases/latest/download/cog_$(uname -s)_$(uname -m)"
+  sudo curl -o /usr/local/bin/cog -L "$url"
+  sudo chmod +x /usr/local/bin/cog
+}
+
+github_install_helper cog replicate/cog
