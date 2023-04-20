@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/gitleaks/gitleaks/releases/download/v${version}/gitleaks_${version}_linux_x64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 gitleaks /usr/local/bin/
+  popd
+}
+
+github_install_helper gitleaks gitleaks/gitleaks version
