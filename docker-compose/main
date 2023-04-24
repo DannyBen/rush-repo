@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-source ../common.sh
-
-install_function() {
-  sudo curl -L "https://github.com/docker/compose/releases/download/v$version/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-  sudo chmod +x /usr/local/bin/docker-compose
-}
-
-github_install_helper docker-compose "docker/compose"
