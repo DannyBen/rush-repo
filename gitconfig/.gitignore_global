@@ -3,5 +3,6 @@
 .byebug_history
 .env
 .envrc
+.envrc.gpg
 .ruby-version
 .sass-cache
