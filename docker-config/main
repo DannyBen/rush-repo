@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+say "copying /etc/docker/daemon.json"
+sudo cp daemon.json /etc/docker/
+
+say "restarting docker"
+sudo systemctl restart docker
