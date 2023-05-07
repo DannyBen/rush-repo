@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source ../../common.sh
+host=hq
+
+say "updating hostname to $host"
+sudo hostnamectl set-hostname "$host"
+
+say "updating /etc/hosts"
+grep -qE "^127\.0\.0\.1\s+$host(\s|$)" /etc/hosts || echo "127.0.0.1   $host" | sudo tee -a /etc/hosts > /dev/null
+
+say "restarting systemd-hostnamed"
+sudo systemctl restart systemd-hostnamed
+
+attention "restart your session"
