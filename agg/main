@@ -2,7 +2,7 @@
 source ../common.sh
 
 install_function() {
-  url="https://github.com/asciinema/agg/releases/download/v$version/agg-x86_64-unknown-linux-gnu"
+  url="https://github.com/asciinema/agg/releases/download/v$version/agg-x86_64-unknown-linux-musl"
   pushtmp
   wget -O agg "$url"
   sudo install agg /usr/local/bin/
