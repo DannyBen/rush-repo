@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/Y2Z/monolith/releases/download/v${version}/monolith-gnu-linux-x86_64"
+  wget -O monolith "$url"
+  sudo install -m 755 monolith /usr/local/bin/
+  popd
+}
+
+github_install_helper monolith Y2Z/monolith
