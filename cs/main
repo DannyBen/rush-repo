@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+install_function() {
+  pushtmp
+  url="https://github.com/boyter/cs/releases/download/v${version}/cs_${version}_Linux_x86_64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 cs /usr/local/bin/
+  popd
+}
+
+github_install_helper cs boyter/cs
