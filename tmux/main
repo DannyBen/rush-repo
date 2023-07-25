@@ -2,9 +2,7 @@
 source ../common.sh
 
 # needs bashrc
-
-say "installing tmux (apt)"
-sudo apt-get install -y tmux
+package_install tmux
 
 say "copying configuration files"
 cp .tmux.conf ~/.tmux.conf

@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 source ../../common.sh
 
+say "installing prerequisites"
+needs curl git wget
+
 say "installing my/* packages"
-needs my/bashrc my/cdpath my/gitconfig my/bash-completion my/alf
+needs my/bashrc my/cdpath my/gitconfig my/bash-completion my/alf my/hostname
 
 say "installing public packages"
 needs dircolors exrc inputrc toprc locale ssh-agent prompt/dollar-color

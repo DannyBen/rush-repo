@@ -105,8 +105,8 @@ apt_install_deb() {
   rm -rf "$tmpdir"
 }
 
-# Install/uninstall simple apt packages
-apt_install() {
+# Install/uninstall simple packages with pacman or apt
+package_install() {
   package="$1"
   command_name="${2:-$1}"
   if [[ "$command_name" == $package ]]; then
@@ -119,15 +119,31 @@ apt_install() {
     say "$display_name is already installed"
   else
     say "installing $display_name"
-    sudo apt-get install -y $package
+    case "$DISTRO" in
+      "ubuntu") sudo apt-get install -y "$package" ;;
+      "arch") sudo pacman -S --noconfirm "$package" ;;
+    esac    
   fi
 }
 
-apt_uninstall() {
+package_uninstall() {
   package="$1"
   display_name="${2:-$1}"
   say "uninstalling $display_name"
-  sudo apt-get remove -y "$package"
+  case "$DISTRO" in
+    "ubuntu") sudo apt-get remove -y "$package" ;;
+    "arch") sudo pacman -Rs --noconfirm "$package" ;;
+  esac    
+}
+
+# DEPRECATED
+apt_install() {
+  package_install "$@"
+}
+
+# DEPRECATED
+apt_uninstall() {
+  package_uninstall "$@"
 }
 
 uninstall_bin() {

@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 source ../common.sh
 
+if [[ "$DISTRO" == "arch" ]]; then
+  package_install bash-completion
+fi
+
 say "configuring user bash completions"
 cp .bash_completion ~/
 mkdir -p ~/.bash_completion.d
