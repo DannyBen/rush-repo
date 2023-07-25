@@ -9,11 +9,15 @@ if command_exist rbenv ; then
   git -C "$(rbenv root)"/plugins/ruby-build pull
 
 else
-  # Note: This also installs the apt version of Ruby
-  # It appears it is needed for ruby-build to work...
-  # ref: https://github.com/rubyomr-preview/rubyomr-preview/issues/22
-  say "installing system ruby with apt"
-  sudo apt install -y ruby
+  case "$DISTRO" in
+    "ubuntu")
+      # Note: This also installs the apt version of Ruby
+      # It appears it is needed for ruby-build to work...
+      # ref: https://github.com/rubyomr-preview/rubyomr-preview/issues/22
+      say "installing system ruby with apt"
+      sudo apt install -y ruby
+      ;;
+  esac
 
   say "installing rbenv to ~/.rbenv"
   git clone https://github.com/rbenv/rbenv.git ~/.rbenv

@@ -5,10 +5,19 @@ if command_exist node ; then
   say "node is already installed"
 
 else
-  # ref: https://github.com/nodesource/distributions#installation-instructions
-  say "installing node (setup script + apt)"
-  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-  sudo apt-get install nodejs -y
+  case "$DISTRO" in
+    "ubuntu")
+      # ref: https://github.com/nodesource/distributions#installation-instructions
+      say "installing node (setup script + apt)"
+      curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+      sudo apt-get install nodejs -y
+      ;;
+
+    "arch")
+      say "installing node and npm"
+      sudo pacman -S --noconfirm nodejs npm
+      ;;
+  esac
 
   # ref: https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
   say "configuring global node directory in ~/.npm-global"

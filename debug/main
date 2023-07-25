@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-needs bash-completion
-sleep 1
-needs bash-completion
+echo "$DISTRO"

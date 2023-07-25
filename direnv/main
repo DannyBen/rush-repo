@@ -4,7 +4,10 @@ source ../common.sh
 needs bashrc
 
 say "installing direnv"
-sudo apt install -y direnv
+case "$DISTRO" in
+  "ubuntu") sudo apt install -y direnv ;;
+  "arch") sudo pacman -S --noconfirm direnv ;;
+esac
 
 say "copying bashrc.d configuration"
 cp direnv.bashrc ~/.bashrc.d/direnv.bashrc
