@@ -13,7 +13,7 @@ case "$DISTRO" in
     ;;
 
   "ubuntu")
-    say "not available in Ubuntu"
+    say "not available for Ubuntu"
 
 esac
 

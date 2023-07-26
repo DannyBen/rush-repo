@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source ../common.sh
+
+case "$DISTRO" in
+  "ubuntu")
+    attention "not available for Ubuntu"
+    ;;
+
+  "arch")
+    package_uninstall pikaur
+    ;;
+
+esac
+
