@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 source ../common.sh
-
 case "$DISTRO" in
   "ubuntu")
     package_install sqlite3
     package_install libsqlite3-dev
     ;;
 
-  "acrh"
+  "acrh")
     package_install sqlite
     ;;
 esac

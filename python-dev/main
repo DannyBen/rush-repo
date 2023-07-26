@@ -3,7 +3,7 @@ source ../common.sh
 
 case "$DISTRO" in
   "arch")
-    attention "not available for Arch Linux" ;;
+    attention "not available for Arch Linux"
     ;;
   "ubuntu")
     say "installing python3-venv"

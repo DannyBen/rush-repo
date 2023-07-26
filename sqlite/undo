@@ -7,7 +7,7 @@ case "$DISTRO" in
     package_uninstall libsqlite3-dev
     ;;
 
-  "acrh"
+  "acrh")
     package_uninstall sqlite
     ;;
 esac
