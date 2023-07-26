@@ -2,6 +2,6 @@
 source ../common.sh
 case "$DISTRO" in
   "ubuntu") package_uninstall httpry ;;
-  "arch") attention "not available for Arch Linux"
+  "arch") attention "not available for Arch Linux" ;;
 esac
 
