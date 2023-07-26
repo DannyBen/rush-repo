@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling crystal"
-sudo apt remove -y crystal
+package_uninstall crystal

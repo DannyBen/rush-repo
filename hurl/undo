@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling hurl"
-sudo dpkg -r hurl
+case "$DISTRO" in
+  "ubuntu") package_uninstall hurl ;;
+  "arch") attention "not available for Arch Linux" ;;
+esac

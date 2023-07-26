@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling pandoc"
-sudo apt remove -y pandoc
+case "$DISTRO" in
+  "ubuntu") package_uninstall pandoc ;;
+  "arch") package_uninstall pandoc-cli ;;
+esac

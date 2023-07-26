@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling most"
-sudo apt remove -y most
+package_uninstall most

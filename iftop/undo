@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling iftop"
-sudo apt remove -y iftop
+package_uninstall iftop

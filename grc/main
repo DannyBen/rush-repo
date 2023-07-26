@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-say "installing grc (apt)"
-sudo apt install -y grc
+package_install grc

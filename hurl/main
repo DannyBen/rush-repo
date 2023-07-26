@@ -5,4 +5,7 @@ install_function() {
   apt_install_deb "https://github.com/Orange-OpenSource/hurl/releases/download/${version}/hurl_${version}_amd64.deb"
 }
 
-github_install_helper hurl Orange-OpenSource/hurl
+case "$DISTRO" in
+  "ubuntu") github_install_helper hurl Orange-OpenSource/hurl ;;
+  "arch") attention "not available for Arch Linux" ;;
+esac

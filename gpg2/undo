@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling gpg2"
-sudo apt remove -y gnupg2
+case "$DISTRO" in
+  "ubuntu") package_uninstall gnupg2 ;;
+  "arch") package_uninstall gnupg ;;
+esac

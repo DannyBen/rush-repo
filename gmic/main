@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "installing gmic (apt)"
-sudo apt install -y gmic
+package_install gmic
 gmic --version

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling resolvconf"
-sudo apt remove -y resolvconf
+case "$DISTRO" in
+  "ubuntu") package_uninstall resolvconf ;;
+  "arch") package_uninstall systemd-resolvconf ;;
+esac
+
 attention "reboot is required"

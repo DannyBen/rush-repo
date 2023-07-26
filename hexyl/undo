@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling hexyl"
-sudo dpkg -r hexyl
+package_uninstall hexyl

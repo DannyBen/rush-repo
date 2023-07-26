@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
 source ../common.sh
-say "installing redis client and server (apt)"
-sudo apt-get install -y redis-tools redis-server
+say "installing redis client and server"
+case "$DISTRO" in
+  "ubuntu")
+    package_install redis-server
+    package_install redis-tools redis-cli
+    ;;
+
+  "arch")
+    package_install redis
+    sudo systemctl start redis
+    ;;
+esac

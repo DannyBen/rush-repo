@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling fd"
-apt_uninstall fd
+package_uninstall fd

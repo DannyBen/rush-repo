@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling ag"
-sudo apt remove -y silversearcher-ag
+case "$DISTRO" in
+  "ubuntu") package_uninstall silversearcher-ag ;;
+  "arch") package_uninstall the_silver_searcher ;;
+esac

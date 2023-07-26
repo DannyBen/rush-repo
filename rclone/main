@@ -5,4 +5,7 @@ install_function() {
   apt_install_deb "https://github.com/rclone/rclone/releases/download/v${version}/rclone-v${version}-linux-amd64.deb"
 }
 
-github_install_helper rclone rclone/rclone
+case "$DISTRO" in
+  "ubuntu") github_install_helper rclone rclone/rclone ;;
+  "arch") package_install rclone ;;
+esac

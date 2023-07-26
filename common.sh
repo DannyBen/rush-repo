@@ -136,16 +136,6 @@ package_uninstall() {
   esac    
 }
 
-# DEPRECATED
-apt_install() {
-  package_install "$@"
-}
-
-# DEPRECATED
-apt_uninstall() {
-  package_uninstall "$@"
-}
-
 uninstall_bin() {
   package="$1"
   say "uninstalling $package"

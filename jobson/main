@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-source ../common.sh
-
-install_function() {
-  apt_install_deb "https://github.com/adamkewley/jobson/releases/download/${version}/jobson_${version}_all.deb"
-}
-
-github_install_helper jobson adamkewley/jobson

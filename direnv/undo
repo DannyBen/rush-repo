@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling direnv"
-sudo apt remove -y direnv
+package_uninstall direnv
 rm ~/.bashrc.d/direnv.bashrc

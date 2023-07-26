@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling postgres"
-sudo apt-get remove -y postgresql libpq-dev
+case "$DISTRO" in
+  "arch")
+    package_uninstall postgresql
+    ;;
+  "ubuntu")
+    package_uninstall postgresql
+    package_uninstall libpq-dev
+    ;;
+esac

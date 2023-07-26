@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-source ../common.sh
-
-say "uninstalling jobson"
-apt_uninstall jobson
-

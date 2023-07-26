@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling ncdu"
-sudo apt remove -y ncdu
+package_uninstall ncdu

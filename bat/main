@@ -6,12 +6,8 @@ install_function() {
 }
 
 case "$DISTRO" in
-  "ubuntu")
-    github_install_helper bat "sharkdp/bat"
-    ;;
-  "arch")
-    package_install bat
-    ;;
+  "ubuntu") github_install_helper bat "sharkdp/bat" ;;
+  "arch") package_install bat ;;
 esac
 
 say "copying configuration files"

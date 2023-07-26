@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling grc"
-sudo apt remove grc
+package_uninstall grc

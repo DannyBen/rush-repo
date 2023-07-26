@@ -1,19 +1,6 @@
 #!/usr/bin/env bash
-# Borg can be installed with `sudo apt install borgbackup`
-# However, this is not the latest version, so this rush package is:
-#
-# 1. Installing borgbackup with apt, to get the man pages
-# 2. Replacing the binary with the latest release downloaded from GitHub
 source ../common.sh
-
-install_function() {
-  say "installing borgbackup (apt)"
-  sudo apt install -y borgbackup
-
-  say "downloading latest borg binary from github"
-  curl -# -L "https://github.com/borgbackup/borg/releases/download/$version/borg-linux64" > /tmp/borg
-  chmod +x /tmp/borg
-  sudo mv /tmp/borg /usr/bin/borg
-}
-
-github_install_helper borg "borgbackup/borg"
+case "$DISTRO" in
+  "ubuntu") package_install borgbackup ;;
+  "arch") package_install borg ;;
+esac

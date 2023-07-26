@@ -5,4 +5,7 @@ install_function() {
   apt_install_deb "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_Linux-64bit.deb"
 }
 
-github_install_helper trivy aquasecurity/trivy
+case "$DISTRO" in
+  "ubuntu") github_install_helper trivy aquasecurity/trivy ;;
+  "arch") package_install trivy ;;
+esac

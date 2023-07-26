@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-apt_uninstall hyperfine
+package_uninstall hyperfine
 

@@ -6,4 +6,7 @@ install_function() {
   cp .dive.yaml ~/.dive.yaml
 }
 
-github_install_helper dive "wagoodman/dive"
+case "$DISTRO" in
+  "ubuntu") github_install_helper dive wagoodman/dive ;;
+  "arch") package_install dive ;;
+esac

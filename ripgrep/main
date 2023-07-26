@@ -5,6 +5,7 @@ install_function() {
   apt_install_deb "https://github.com/BurntSushi/ripgrep/releases/download/$version/ripgrep_${version}_amd64.deb"
 }
 
-github_install_helper rg BurntSushi/ripgrep
-
-
+case "$DISTRO" in
+  "ubuntu") github_install_helper rg BurntSushi/ripgrep ;;
+  "arch") package_install ripgrep ;;
+esac

@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling nodejs"
-sudo apt-get remove -y nodejs
+case "$DISTRO" in
+  "ubuntu")
+    package_uninstall nodejs
+    ;;
+
+  "arch")
+    package_uninstall nodejs
+    package_uninstall npm
+    ;;
+
+esac
 
 rm -rf ~/.npm-global
 rm -f ~/.bashrc.d/node.bashrc

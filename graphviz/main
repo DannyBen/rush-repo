@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
-say "installing graphviz (apt)"
-sudo apt install -y graphviz
+package_install graphviz
 dot -V

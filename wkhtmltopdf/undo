@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-source ../common.sh
-
-say "uninstalling wkhtmltopdf (wkhtmltox)"
-sudo apt-get remove -y wkhtmltox

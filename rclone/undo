@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-apt_uninstall rclone
+package_uninstall rclone
 

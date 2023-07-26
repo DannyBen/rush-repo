@@ -5,4 +5,7 @@ install_function() {
   apt_install_deb "https://github.com/sharkdp/fd/releases/download/v$version/fd_${version}_amd64.deb"
 }
 
-github_install_helper fd "sharkdp/fd"
+case "$DISTRO" in
+  "ubuntu") github_install_helper fd sharkdp/fd ;;
+  "arch") package_install fd ;;
+esac

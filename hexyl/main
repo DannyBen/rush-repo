@@ -5,4 +5,7 @@ install_function() {
   apt_install_deb "https://github.com/sharkdp/hexyl/releases/download/v$version/hexyl_${version}_amd64.deb"
 }
 
-github_install_helper hexyl "sharkdp/hexyl"
+case "$DISTRO" in
+  "ubuntu") github_install_helper hexyl sharkdp/hexyl ;;
+  "arch") package_install hexyl ;;
+esac

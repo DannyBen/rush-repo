@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "installing resolveconf"
-sudo apt install -y resolvconf
+case "$DISTRO" in
+  "ubuntu") package_install resolvconf ;;
+  "arch") package_install systemd-resolvconf ;;
+esac
 
 say "copying configuration file"
 sudo cp config /etc/resolvconf/resolv.conf.d/head

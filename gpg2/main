@@ -5,8 +5,10 @@ if command_exist gpg2 ; then
   say "gpg2 is already installed"
 
 else
-  say "installing gpg2 (apt)"
-  sudo apt-get install -y gnupg2
+  case "$DISTRO" in
+    "ubuntu") package_install gnupg2 ;;
+    "arch") package_install gnupg ;;
+  esac
 
   say "copying bashrc.d config"
   cp gpg2.bashrc ~/.bashrc.d/

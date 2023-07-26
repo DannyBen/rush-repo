@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling borgbackup"
-sudo apt remove -y borgbackup
+case "$DISTRO" in
+  "ubuntu") package_uninstall borgbackup ;;
+  "arch") package_uninstall borg ;;
+esac

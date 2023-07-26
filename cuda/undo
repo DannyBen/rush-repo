@@ -2,5 +2,7 @@
 # ref: https://linuxconfig.org/how-to-install-cuda-on-ubuntu-20-04-focal-fossa-linux
 source ../common.sh
 
-say "uninstalling cuda (apt)"
-sudo apt remove -y nvidia-cuda-toolkit
+case "$DISTRO" in
+  "ubuntu") package_uninstall nvidia-cuda-toolkit ;;
+  "acrh") package_uninstall cuda ;;
+esac

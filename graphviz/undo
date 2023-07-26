@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-
-say "uninstalling graphviz"
-sudo apt remove -y graphviz
+package_uninstall graphviz

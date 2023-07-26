@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling dive"
-apt_uninstall dive
+package_uninstall dive
 rm ~/.dive.yaml

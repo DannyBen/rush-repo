@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-source ../common.sh
-
-say "uninstalling imagemagick-dev"
-sudo apt-get remove -y imagemagick libmagick++-dev

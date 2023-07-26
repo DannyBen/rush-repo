@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling gh"
-sudo dpkg -r gh
+case "$DISTRO" in
+  "ubuntu") package_uninstall gh ;;
+  "arch") package_uninstall github-cli ;;
+esac

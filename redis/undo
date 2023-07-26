@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling redis"
-sudo apt-get remove -y redis-tools redis-server
+case "$DISTRO" in
+  "ubuntu")
+    package_uninstall redis-server
+    package_uninstall redis-tools
+    ;;
+
+  "arch")
+    package_uninstall redis
+    ;;
+esac

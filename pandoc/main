@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 source ../common.sh
-say "installing pandoc (apt)"
-sudo apt install -y pandoc
+case "$DISTRO" in
+  "ubuntu") package_install pandoc ;;
+  "arch") package_install pandoc-cli ;;
+esac
