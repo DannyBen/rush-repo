@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "installing rsvg-convert (apt)"
-sudo apt install -y librsvg2-bin
+case "$DISTRO" in
+  "ubuntu") package_install librsvg2-bin rsvg-convert ;;
+  "arch") package_install librsvg rsvg-convert ;;
+esac
+
 rsvg-convert --version
