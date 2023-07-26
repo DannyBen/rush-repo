@@ -9,14 +9,13 @@ cp docker.bashrc "$HOME/.bashrc.d/"
 
 case "$DISTRO" in
   "arch")
-    if command_exist docker ; then
-      say "docker is already installed"
-    else
-      package_install docker
-      sudo usermod -aG docker "$(whoami)"
-      attention "you must reboot your machine"
-    fi
-    
+    package_install docker
+    package_install docker-compose
+    package_install docker-buildx
+
+    sudo usermod -aG docker "$(whoami)"
+
+    attention "system reboot may be required"
     ;;
 
   "ubuntu")
