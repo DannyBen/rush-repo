@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_install ack
+package_install ack
 echo "--color-match=blue" > ~/.ackrc
 

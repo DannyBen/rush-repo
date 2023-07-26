@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_install zip
+package_install zip

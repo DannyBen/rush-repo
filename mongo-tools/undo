@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_uninstall mongo-tools
+case "$DISTRO" in
+  "ubuntu") package_uninstall mongo-tools ;;
+  "arch") attention "not available for Arch Linux"
+esac
+

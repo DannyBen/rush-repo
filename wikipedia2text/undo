@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_uninstall wikipedia2text
+case "$DISTRO" in
+  "ubuntu") package_uninstall wikipedia2text ;;
+  "arch") attention "not available for Arch Linux" ;;
+esac
+
+

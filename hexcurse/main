@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_install hexcurse
+case "$DISTRO" in
+  "ubuntu") package_install hexcurse ;;
+  "arch") attention "not available for Arch Linux"
+esac

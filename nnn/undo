@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-apt_uninstall nnn
+package_uninstall nnn
 rm -f ~/.bashrc.d/nnn.bashrc

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "uninstalling curlie"
-apt_uninstall curlie
+uninstall_bin curlie

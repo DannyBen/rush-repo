@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_uninstall ncat
+case "$DISTRO" in
+  "ubuntu") package_uninstall ncat ;;
+  "arch") package_uninstall nmap ;;
+esac
+
+

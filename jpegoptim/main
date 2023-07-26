@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_install jpegoptim
+package_install jpegoptim
 

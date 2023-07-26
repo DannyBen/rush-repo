@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_uninstall namebench
+case "$DISTRO" in
+  "ubuntu") package_uninstall namebench ;;
+  "arch") attention "not available for Arch Linux"
+esac

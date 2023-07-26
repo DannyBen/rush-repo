@@ -5,4 +5,7 @@ install_function() {
   apt_install_deb "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb"
 }
 
-github_install_helper cloudflared cloudflare/cloudflared
+case "$DISTRO" in
+  "ubuntu") github_install_helper cloudflared cloudflare/cloudflared ;;
+  "arch") package_install cloudflared ;;
+esac

@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_uninstall libv8-dev
+case "$DISTRO" in
+  "ubuntu") package_uninstall libv8-dev ;;
+  "arch") attention "not available for Arch Linux"
+esac
+

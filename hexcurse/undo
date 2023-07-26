@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_uninstall hexcurse
+case "$DISTRO" in
+  "ubuntu") package_uninstall hexcurse ;;
+  "arch") attention "not available for Arch Linux"
+esac
+

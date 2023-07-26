@@ -3,9 +3,17 @@ source ../common.sh
 
 install_function() {
   apt_install_deb "https://github.com/sharkdp/bat/releases/download/v${version}/bat_${version}_amd64.deb"
-
-  mkdir -p ~/.config/bat
-  cp config ~/.config/bat/config
 }
 
-github_install_helper bat "sharkdp/bat"
+case "$DISTRO" in
+  "ubuntu")
+    github_install_helper bat "sharkdp/bat"
+    ;;
+  "arch")
+    package_install bat
+    ;;
+esac
+
+say "copying configuration files"
+mkdir -p ~/.config/bat
+cp config ~/.config/bat/config

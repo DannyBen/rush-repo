@@ -2,7 +2,7 @@
 source ../common.sh
 
 needs bashrc
-apt_install nnn
+package_install nnn
 
 say "copying bashrc.d config"
 cp nnn.bashrc ~/.bashrc.d/nnn.bashrc

@@ -1,20 +1,38 @@
 #!/usr/bin/env bash
 source ../common.sh
 
-say "installing docker (setup script)"
 needs bashrc
 
-# Ideally, this would be the thing to run...
-# curl https://get.docker.com | sudo sh
-
-# ...but the stupid script sleeps for 20 seconds, and we don't want that
-curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
-sed -i 's/sleep 20/sleep 0/g' /tmp/get-docker.sh
-sh /tmp/get-docker.sh
-
-sudo usermod -aG docker "$(whoami)"
-sudo service docker start
-
-# Config
+# Add configuration file
 say "copying ~/.bashrc.d/docker.bashrc"
 cp docker.bashrc "$HOME/.bashrc.d/"
+
+case "$DISTRO" in
+  "arch")
+    if command_exist docker ; then
+      say "docker is already installed"
+    else
+      package_install docker
+      sudo usermod -aG docker "$(whoami)"
+      attention "you must reboot your machine"
+    fi
+    
+    ;;
+
+  "ubuntu")
+    say "installing docker (setup script)"
+    # Ideally, this would be the thing to run...
+    # curl https://get.docker.com | sudo sh
+
+    # ...but the stupid script sleeps for 20 seconds, and we don't want that
+    curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
+    sed -i 's/sleep 20/sleep 0/g' /tmp/get-docker.sh
+    sh /tmp/get-docker.sh
+
+    # Add user to group
+    sudo usermod -aG docker "$(whoami)"
+    sudo service docker start
+    ;;
+
+esac
+

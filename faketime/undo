@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_uninstall faketime
+case "$DISTRO" in
+  "arch") package_uninstall libfaketime ;;
+  "ubuntu") package_uninstall faketime ;;
+esac
+

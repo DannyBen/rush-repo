@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_install wikipedia2text
+case "$DISTRO" in
+  "ubuntu") package_install wikipedia2text ;;
+  "arch") attention "not available for Arch Linux" ;;
+esac
+

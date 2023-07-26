@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_uninstall php7.4-cli php
+case "$DISTRO" in
+  "ubuntu") package_uninstall php7.4-cli php ;;
+  "arch") package_uninstall php ;;
+esac

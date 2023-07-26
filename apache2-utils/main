@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_install apache2-utils
+case "$DISTRO" in
+  "arch") package_install apache ;;
+  "ubuntu") package_install apache2-utils ;;
+esac

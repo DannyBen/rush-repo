@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source ../common.sh
+case "$DISTRO" in
+  "ubuntu") package_install poppler-utils ;;
+  "arch") package_install poppler ;;
+esac

@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_uninstall grepcidr
+case "$DISTRO" in
+  "ubuntu") package_uninstall grepcidr ;;
+  "arch") attention "not available for Arch Linux" ;;
+esac

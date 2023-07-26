@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 source ../common.sh
-apt_uninstall default-jre java
+
+case "$DISTRO" in
+  "ubuntu") package_uninstall default-jre java ;;
+  "arch") package_uninstall jre-openjdk java ;;
+esac
