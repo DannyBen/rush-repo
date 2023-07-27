@@ -5,4 +5,3 @@ case "$DISTRO" in
   "arch") package_install p7zip ;;
   "ubuntu") package_install p7zip-full 7z ;;
 esac
-
