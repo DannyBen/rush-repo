@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 uninstall_bin gauge
 rm -rf "$HOME/.gauge"

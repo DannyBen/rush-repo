@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../../common.sh
+source "$REPO_PATH/lib.sh"
 
 warning "this package is currently blocked since it requires too many dependencies"
 

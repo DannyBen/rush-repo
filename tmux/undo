@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -x
 
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 package_uninstall tmux
 rm ~/.tmux.conf

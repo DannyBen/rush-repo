@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 say "configuring locale"
 if command_exist localectl; then
   sudo localectl set-locale LANG=en_US.UTF-8

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../../common.sh
+source "$REPO_PATH/lib.sh"
 
 if [[ -z "$BUNDLE_GEM__FURY__IO" ]]; then
   warning "Unable to add without BUNDLE_GEM__FURY__IO"

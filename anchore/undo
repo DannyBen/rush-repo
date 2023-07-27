@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 rush undo "$REPO:syft"
 rush undo "$REPO:grype"

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 say "installing alf (github)"
 sudo wget -qO /usr/local/bin/alf https://raw.githubusercontent.com/DannyBen/alf/master/alf

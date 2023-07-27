@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 uninstall_bin d2plugin-tala
 sudo rm -f /usr/local/share/man/man1/d2plugin-tala.1

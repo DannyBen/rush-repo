@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 if command_exist check-jsonschema ; then
   say "check-jsonschema is already installed"

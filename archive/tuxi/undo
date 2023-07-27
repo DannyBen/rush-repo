@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../../common.sh
+source "$REPO_PATH/lib.sh"
 
 discard pup recode
 uninstall_bin tuxi

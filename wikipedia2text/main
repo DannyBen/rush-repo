@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 case "$DISTRO" in
   "ubuntu") package_install wikipedia2text ;;
   "arch") attention "not available for Arch Linux" ;;

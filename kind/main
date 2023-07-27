@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 install_function() {
   sudo curl -L "https://github.com/kubernetes-sigs/kind/releases/download/v$version/kind-linux-amd64" -o /usr/local/bin/kind
