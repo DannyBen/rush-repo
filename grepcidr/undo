@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 case "$DISTRO" in
   "ubuntu") package_uninstall grepcidr ;;
   "arch") attention "not available for Arch Linux" ;;

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 install_function() {
   sudo curl -L "https://github.com/mikefarah/yq/releases/download/v$version/yq_linux_amd64" -o /usr/local/bin/yq

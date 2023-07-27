@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 install_function() {
   apt_install_deb "https://github.com/cli/cli/releases/download/v$version/gh_${version}_linux_amd64.deb"

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 uninstall_bin ouch
 sudo rm -f /usr/local/share/man/man1/ouch*.1

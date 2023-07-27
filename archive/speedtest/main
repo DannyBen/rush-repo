@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../../common.sh
+source "$REPO_PATH/boot.sh"
 
 if command_exist speedtest ; then
   say "speedtest-cli is already installed"

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 install_function() {
   sudo wget "https://github.com/bcicen/ctop/releases/download/v$version/ctop-$version-linux-amd64" -O /usr/local/bin/ctop

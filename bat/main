@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 install_function() {
   apt_install_deb "https://github.com/sharkdp/bat/releases/download/v${version}/bat_${version}_amd64.deb"

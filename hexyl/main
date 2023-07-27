@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 install_function() {
   apt_install_deb "https://github.com/sharkdp/hexyl/releases/download/v$version/hexyl_${version}_amd64.deb"

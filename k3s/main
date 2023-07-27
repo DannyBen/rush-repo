@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 install_function() {
   curl -# -L "https://github.com/rancher/k3s/releases/download/v$version/k3s" >/tmp/k3s

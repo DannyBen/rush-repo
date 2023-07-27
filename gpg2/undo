@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 case "$DISTRO" in
   "ubuntu") package_uninstall gnupg2 ;;
   "arch") package_uninstall gnupg ;;

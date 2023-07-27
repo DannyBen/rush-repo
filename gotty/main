@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 install_function() {
   url="https://github.com/sorenisanerd/gotty/releases/download/v${version}/gotty_v${version}_linux_amd64.tar.gz"

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
-say "copying ~/.dircolors"
-cp .dircolors ~/.dircolors
+source "$REPO_PATH/boot.sh"
+needs bashrc
+say "copying ~/.bashrc.d/ls_colors.bash"
+cp ls_colors.bash ~/.bashrc.d/

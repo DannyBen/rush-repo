@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 install_function() {
   curl -# -L "https://github.com/kubernetes/kompose/releases/download/v$version/kompose-linux-amd64" -o kompose

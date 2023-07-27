@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 package_uninstall miller

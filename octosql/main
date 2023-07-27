@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 install_function() {
   url="https://github.com/cube2222/octosql/releases/download/v${version}/octosql_${version}_linux_amd64.tar.gz"

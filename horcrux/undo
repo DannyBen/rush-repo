@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 uninstall_bin horcrux

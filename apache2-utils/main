@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 case "$DISTRO" in
   "arch") package_install apache ;;
   "ubuntu") package_install apache2-utils ;;

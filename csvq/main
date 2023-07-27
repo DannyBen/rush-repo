@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/boot.sh"
 
 install_function() {
   url="https://github.com/mithrandie/csvq/releases/download/v${version}/csvq-v${version}-linux-amd64.tar.gz"
