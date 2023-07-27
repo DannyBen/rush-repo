@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin go
-rm ~/.bashrc.d/go.bashrc
+case "$DISTRO" in
+  "arch")
+    package_uninstall go
+    ;;
+  "ubuntu")
+    uninstall_bin go
+    rm ~/.bashrc.d/go.bashrc
+esac

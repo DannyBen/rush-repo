@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-
-say "uninstalling go"
-sudo snap remove go
-rm ~/.bashrc.d/go.bashrc
