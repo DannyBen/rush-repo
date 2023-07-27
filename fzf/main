@@ -3,7 +3,6 @@ source "$REPO_PATH/lib.sh"
 
 install_function() {
   needs bashrc
-  url="https://github.com/junegunn/fzf.git"
   pushtmp
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install --all --no-update-rc
