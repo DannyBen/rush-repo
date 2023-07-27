@@ -6,3 +6,5 @@ needs gitconfig
 say "applying personal git configuration"
 git config --global user.name "Danny Ben Shitrit"
 git config --global user.email db@dannyben.com
+git config --global core.editor /usr/bin/vim
+git config --global safe.directory '*'
