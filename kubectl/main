@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ref: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 say "installing kubectl (google)"
 sudo curl --output /usr/local/bin/kubectl -L "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"

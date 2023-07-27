@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 say "installing robo from gobinaries"
 curl -sf https://gobinaries.com/tj/robo | sh

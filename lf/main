@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 install_function() {
   url="https://github.com/gokcehan/lf/releases/download/$version/lf-linux-amd64.tar.gz"

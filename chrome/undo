@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 say "uninstalling chrome"
 sudo rm -rf /opt/chrome

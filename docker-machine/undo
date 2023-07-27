@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 say "uninstalling docker-machine"
 sudo rm -f /usr/local/bin/docker-machine

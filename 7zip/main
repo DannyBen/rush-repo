@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
   "arch") package_install p7zip ;;
   "ubuntu") package_install p7zip-full 7z ;;
 esac
-

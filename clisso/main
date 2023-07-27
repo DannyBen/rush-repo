@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 install_function() {
   download_url="https://github.com/allcloud-io/clisso/releases/download/${version}/clisso_linux_amd64.zip"

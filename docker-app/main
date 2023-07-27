@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 # TODO: Convert this to use github_install_helper when 0.9.0 is live
 

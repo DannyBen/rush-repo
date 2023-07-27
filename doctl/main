@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 install_function() {
   curl -sL "https://github.com/digitalocean/doctl/releases/download/v$version/doctl-$version-linux-amd64.tar.gz" | tar -xzv

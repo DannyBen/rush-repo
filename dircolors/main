@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-source "../common.sh"
+source "$REPO_PATH/lib.sh"
+
 needs bashrc
 say "copying ~/.bashrc.d/ls_colors.bash"
 cp ls_colors.bash ~/.bashrc.d/

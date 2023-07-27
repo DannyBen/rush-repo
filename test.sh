@@ -7,9 +7,8 @@ echo "==> shellcheck started"
 
 for file in **/{main,undo} ; do
   echo "==> shellcheck $file"
-  pushd ./$(dirname $file) > /dev/null
-  shellcheck -x $(basename $file)
-  popd $wd > /dev/null
+  # shellcheck --external-sources --source-path=SCRIPTDIR:"$PWD" "$file"
+  shellcheck "$file"
 done
 
 echo "==> shellcheck done, all good"

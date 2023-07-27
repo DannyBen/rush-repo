@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 uninstall_bin sake
 sudo rm -f /usr/local/share/man/man1/sake.1

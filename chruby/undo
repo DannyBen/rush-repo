@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ../common.sh
+source "$REPO_PATH/lib.sh"
 
 # Versions: https://github.com/postmodern/chruby/releases
 version=0.3.9
