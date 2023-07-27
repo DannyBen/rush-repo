@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   apt_install_deb "https://github.com/sharkdp/fd/releases/download/v$version/fd_${version}_amd64.deb"

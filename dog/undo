@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 uninstall_bin dog
 sudo rm -f /usr/local/share/man/man1/dog.1

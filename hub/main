@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   curl -L "https://github.com/github/hub/releases/download/v$version/hub-linux-amd64-$version.tgz" | tar xvz --strip-components=2 "hub-linux-amd64-$version/bin/hub"

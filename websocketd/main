@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   download_url="https://github.com/joewalnes/websocketd/releases/download/v${version}/websocketd-${version}-linux_amd64.zip"

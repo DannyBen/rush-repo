@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 # Versions: https://github.com/postmodern/chruby/releases
 version=0.3.9

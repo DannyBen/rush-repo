@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   sudo curl -L "https://github.com/snyk/cli/releases/download/v$version/snyk-linux" -o /usr/local/bin/snyk

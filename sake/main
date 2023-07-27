@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   url="https://github.com/alajmo/sake/releases/download/v${version}/sake_${version}_linux_amd64.tar.gz"

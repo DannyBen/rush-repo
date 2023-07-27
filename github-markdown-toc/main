@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   sudo wget -P /usr/local/bin/ https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc

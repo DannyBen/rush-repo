@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../../common.sh
 
 say "uninstalling rvm"
 sudo apt remove -y rvm

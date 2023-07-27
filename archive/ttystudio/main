@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../../common.sh
 
 warning "this package is deprecated since it is no longer maintained."
 

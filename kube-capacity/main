@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   curl -sL "https://github.com/robscott/kube-capacity/releases/download/$version/kube-capacity_${version}_Linux_x86_64.tar.gz" | tar -xzv kube-capacity

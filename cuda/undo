@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ref: https://linuxconfig.org/how-to-install-cuda-on-ubuntu-20-04-focal-fossa-linux
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 case "$DISTRO" in
   "ubuntu") package_uninstall nvidia-cuda-toolkit ;;

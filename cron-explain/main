@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Gist: https://gist.github.com/DannyBen/a4adefbcfbcd93cde7d941684bc947ac
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 say "installing cron-explain (github)"
 sudo wget -qO /usr/local/bin/cron-explain https://gist.githubusercontent.com/DannyBen/a4adefbcfbcd93cde7d941684bc947ac/raw/8751450ac2b0d7e32e00964fc55ddac7373deb84/cron-explain

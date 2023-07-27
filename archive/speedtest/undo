@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../../common.sh
 
 say "uninstalling speedtest"
 python3 -m pip uninstall -y speedtest-cli

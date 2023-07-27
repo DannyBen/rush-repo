@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   url="https://github.com/asciinema/agg/releases/download/v$version/agg-x86_64-unknown-linux-musl"

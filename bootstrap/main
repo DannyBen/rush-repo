@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 say "installing essential rush packages"
 needs bashrc dircolors exrc inputrc prompt/dollar-color

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Source: https://github.com/docker/machine/releases
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   curl -# -L "https://github.com/docker/machine/releases/download/v$version/docker-machine-$(uname -s)-$(uname -m)" >/tmp/docker-machine

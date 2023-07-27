@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 uninstall_bin static-web-server

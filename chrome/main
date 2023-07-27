@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script adapted from https://github.com/scheib/chromium-latest-linux
 
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 target=/opt/chrome
 say "identifying latest revision"

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   sudo curl -L "https://github.com/whalebrew/whalebrew/releases/download/$version/whalebrew-$(uname -s)-$(uname -m)" -o /usr/local/bin/whalebrew

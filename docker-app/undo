@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 say "uninstalling docker app"
 rm -f ~/.docker/cli-plugins/docker-app

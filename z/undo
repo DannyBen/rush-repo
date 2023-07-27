@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 rm -rf ~/.z.sh
 rm -f ~/.z
 rm -f ~/.bashrc.d/z.bashrc

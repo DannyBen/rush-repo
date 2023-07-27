@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   url="https://github.com/tsl0922/ttyd/releases/download/${version}/ttyd.x86_64"

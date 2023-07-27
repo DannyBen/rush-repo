@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   wget "https://github.com/DarthSim/overmind/releases/download/v$version/overmind-v$version-linux-amd64.gz"

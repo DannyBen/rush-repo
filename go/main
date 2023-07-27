@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 if [[ -z "$FORCE" ]] && is_installed go version; then
   say "go is already at the latest version"

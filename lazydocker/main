@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   url="https://github.com/jesseduffield/lazydocker/releases/download/v$version/lazydocker_${version}_Linux_x86_64.tar.gz"

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/boot.sh"
+source ../common.sh
 
 install_function() {
   url="https://github.com/antonmedv/fx/releases/download/$version/fx_linux_amd64"
