@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-say "uninstalling check-jsonschema"
-python3 -m pip uninstall -y check-jsonschema
+case "$DISTRO" in
+  "arch")
+    package_uninstall check-jsonschema
+    ;;
+
+  "ubuntu")
+    say "uninstalling check-jsonschema"
+    python3 -m pip uninstall -y check-jsonschema
+    ;;
+esac

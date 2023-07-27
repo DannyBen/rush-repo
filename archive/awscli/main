@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-say "installing awscli (pip)"
-sudo pip install awscli
+case "$DISTRO" in
+  "arch")
+    package_install aws-cli
+    ;;
+  "ubuntu")
+    say "installing awscli (pip)"
+    sudo pip install awscli
+    ;;
+esac
 aws --version

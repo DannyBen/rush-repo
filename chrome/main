@@ -3,35 +3,42 @@
 
 source "$REPO_PATH/lib.sh"
 
-target=/opt/chrome
-say "identifying latest revision"
+case "$DISTRO" in
+  "arch")
+    package_install chromium
+    ;;
 
-url="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2FLAST_CHANGE?alt=media"
-revision=$(curl -s -S "$url")
-say "latest revision is $revision"
+  "ubuntu")
+    target=/opt/chrome
+    say "identifying latest revision"
 
-if [[ -d "$target/$revision" ]] ; then
-  say "latest revision already installed ($target), aborting"
-  exit
-fi
+    url="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2FLAST_CHANGE?alt=media"
+    revision=$(curl -s -S "$url")
+    say "latest revision is $revision"
 
-url="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F$revision%2Fchrome-linux.zip?alt=media"
-zipfile="chrome.zip"
-say "downloading chrome from $url"
+    if [[ -d "$target/$revision" ]] ; then
+      say "latest revision already installed ($target), aborting"
+      exit
+    fi
 
-curl -# "$url" > "$zipfile"
+    url="https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F$revision%2Fchrome-linux.zip?alt=media"
+    zipfile="chrome.zip"
+    say "downloading chrome from $url"
 
-say "unzipping to $target"
-sudo mkdir -p "$target"
-sudo unzip "$zipfile" -d "$target"
-sudo mv "$target/chrome-linux" "$target/$revision"
-sudo rm -f "$target/latest"
-sudo ln -s "$target/$revision" "$target/latest"
-sudo rm -f "/usr/local/bin/chrome"
-sudo ln -s "$target/latest/chrome" "/usr/local/bin/chrome"
+    curl -# "$url" > "$zipfile"
 
-say "cleaning up"
-rm chrome.zip
+    say "unzipping to $target"
+    sudo mkdir -p "$target"
+    sudo unzip "$zipfile" -d "$target"
+    sudo mv "$target/chrome-linux" "$target/$revision"
+    sudo rm -f "$target/latest"
+    sudo ln -s "$target/$revision" "$target/latest"
+    sudo rm -f "/usr/local/bin/chrome"
+    sudo ln -s "$target/latest/chrome" "/usr/local/bin/chrome"
 
+    say "cleaning up"
+    rm chrome.zip
+    say "done"
+    ;;
+esac
 chrome --version
-say "done"
