@@ -10,6 +10,8 @@ linux_distro() {
     echo "debian"
   elif [ -f "/etc/redhat-release" ]; then
     echo "centos"
+  elif [ "$(uname)" == "Darwin" ]; then
+    echo "mac"
   else
     echo "unknown"
   fi
