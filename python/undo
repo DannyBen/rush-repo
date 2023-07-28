@@ -1,26 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-case "$DISTRO" in
-  "arch")
-    package_uninstall python-pip
-    package_uninstall python
-    ;;
-
-  "ubuntu")
-    package_uninstall python3-pip
-    package_uninstall python3
-
-    if [[ -L /usr/bin/python ]]; then
-      say "removing symlink python"
-      rm -f /usr/bin/python
-    fi
-
-    if [[ -L /usr/bin/pip ]]; then
-      say "removing symlink pip"
-      rm -f /usr/bin/pip
-    fi
-
-    ;;
-
-esac
+distro_script undo

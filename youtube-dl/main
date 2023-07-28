@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
+# This is a youtube-dl fork
+# Do not install the Arch package, as it seems to be the old version
+
 install_function() {
   needs ffmpeg
   url="https://github.com/yt-dlp/yt-dlp/releases/download/$version/yt-dlp"

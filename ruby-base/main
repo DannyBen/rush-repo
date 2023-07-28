@@ -2,30 +2,4 @@
 source "$REPO_PATH/lib.sh"
 
 say "installing ruby prerequisites"
-case "$DISTRO" in
-  "ubuntu")
-    sudo apt-get update && sudo apt-get install -y \
-      autoconf \
-      build-essential \
-      curl \
-      git \
-      libffi-dev \
-      libgdbm-dev \
-      libreadline-dev \
-      libreadline-dev \
-      libssl-dev \
-      libyaml-dev \
-      wget \
-      zlib1g-dev
-      ;;
-
-  "arch")
-    sudo pacman -Syu && sudo pacman -S --noconfirm \
-      base-devel \
-      curl \
-      git \
-      libyaml \
-      wget
-    ;;
-
-esac
+distro_script

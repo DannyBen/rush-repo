@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-needs python
-
-say "installing httpie (pip)"
-sudo python3 -m pip install --upgrade httpie
-
+distro_script
 http --version

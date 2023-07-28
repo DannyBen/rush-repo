@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin mdbook
+case "$DISTRO" in
+  "arch") package_uninstall mdbook ;;
+  "ubuntu") uninstall_bin mdbook ;;
+esac

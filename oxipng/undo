@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin oxipng
-
+case "$DISTRO" in
+  "arch") package_uninstall oxipng ;;
+  "ubuntu") uninstall_bin oxipng ;;
+esac

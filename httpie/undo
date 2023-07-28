@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-say "uninstalling httpie"
-sudo python3 -m pip uninstall httpie
+case "$DISTRO" in
+  "arch")
+    package_uninstall httpie
+    ;;
+  "ubuntu")
+    say "uninstalling httpie"
+    sudo python3 -m pip uninstall httpie
+    ;;
+esac

@@ -1,15 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-case "$DISTRO" in
-  "arch")
-    attention "not available for Arch Linux"
-    ;;
-  "ubuntu")
-    say "installing python3-venv"
-    sudo apt install -y python3-venv
-
-    say "installing pipenv"
-    python3 -m pip install pipenv
-    ;;
-esac
+distro_script

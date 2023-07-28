@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin zellij
+case "$DISTRO" in
+  "arch") package_uninstall zellij ;;
+  "ubuntu") uninstall_bin zellij ;;
+esac
+
+say "removing ~/.config/zellij"
 rm -rf ~/.config/zellij

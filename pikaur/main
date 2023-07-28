@@ -1,21 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-case "$DISTRO" in
-  "ubuntu")
-    attention "not available for Ubuntu"
-    ;;
-
-  "arch")
-    if command_exist pikaur; then
-      say "already installed"
-    else
-      sudo pacman -S --needed base-devel git
-      pushtmp
-      git clone https://aur.archlinux.org/pikaur.git
-      cd pikaur
-      makepkg -fsri --noconfirm
-      popd
-    fi
-    ;;
-esac
-
+distro_script

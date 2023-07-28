@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+needs bashrc
+
+say "installing rust (setup script)"
+curl https://sh.rustup.rs -sSf | sh
+
+say "copying rust.bashrc"
+cp rust.bashrc ~/.bashrc.d/rust.bashrc
+
+say "rust installation complete"
+say "restart your terminal or source ~/.cargo/env"

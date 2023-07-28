@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+if command_exist pnpm ; then
+  say "pnpm is already installed"
+
+else
+  needs yarn
+
+  say "installing pnpm"
+  yarn global add pnpm
+
+fi

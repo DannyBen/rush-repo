@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-say "uninstalling yarn"
-npm uninstall -g yarn
+distro_script undo

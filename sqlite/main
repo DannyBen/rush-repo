@@ -1,12 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-case "$DISTRO" in
-  "ubuntu")
-    package_install sqlite3
-    package_install libsqlite3-dev
-    ;;
-
-  "acrh")
-    package_install sqlite
-    ;;
-esac
+distro_script

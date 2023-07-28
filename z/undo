@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-rm -rf ~/.z.sh
-rm -f ~/.z
-rm -f ~/.bashrc.d/z.bashrc
-sudo rm -f /usr/share/man/man1/z.1
+distro_script undo

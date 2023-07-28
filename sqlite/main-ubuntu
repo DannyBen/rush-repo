@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+package_install sqlite3
+package_install libsqlite3-dev

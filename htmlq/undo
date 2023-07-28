@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin htmlq
+case "$DISTRO" in
+  "arch") package_uninstall htmlq ;;
+  "ubuntu") uninstall_bin htmlq ;;
+esac

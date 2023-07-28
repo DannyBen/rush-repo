@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "uninstalling python3-venv"
+sudo apt remove -y python3-venv
+
+say "uninstalling pipenv"
+python3 -m pip uninstall pipenv

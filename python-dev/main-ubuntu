@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "installing python3-venv"
+sudo apt install -y python3-venv
+
+say "installing pipenv"
+python3 -m pip install pipenv

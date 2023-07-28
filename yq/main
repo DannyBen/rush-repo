@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
+# Note: The Arch linux with the same name is a different yq, so we install
+# from GitHub
+
 install_function() {
   sudo curl -L "https://github.com/mikefarah/yq/releases/download/v$version/yq_linux_amd64" -o /usr/local/bin/yq
   sudo chmod +x /usr/local/bin/yq

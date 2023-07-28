@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+package_install python3
+package_install python3-pip
+
+if ! command_exist python ; then
+  say "symlinking python => python3"
+  sudo ln -s /usr/bin/python3 /usr/bin/python
+fi
+
+if ! command_exist pip ; then
+  say "symlinking pip => pip3"
+  sudo ln -s /usr/bin/pip3 /usr/bin/pip
+fi

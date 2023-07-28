@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-uninstall_bin navi
-rm -f ~/.bashrc.d/navi.bashrc
-discard fzf
+distro_script undo

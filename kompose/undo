@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin kompose
+case "$DISTRO" in
+  "arch") package_uninstall kompose ;;
+  "ubuntu") uninstall_bin kompose ;;
+esac

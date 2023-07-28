@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin kubectl
-# rm ~/.bashrc.d/kubectl.bashrc
-
+case "$DISTRO" in
+  "arch") package_uninstall kubectl ;;
+  "ubuntu") uninstall_bin kubectl ;;
+esac

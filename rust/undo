@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-say "uninstalling rust"
-rustup self uninstall
-rm ~/.bashrc.d/rust.bashrc
+distro_script undo

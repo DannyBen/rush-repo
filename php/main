@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
   "ubuntu") package_install php7.4-cli php ;;
   "arch") package_install php ;;

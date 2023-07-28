@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin micro
+case "$DISTRO" in
+  "arch") package_uninstall micro ;;
+  "ubuntu") uninstall_bin micro ;;
+esac
+
 say "removing ~/.config/micro"
 sudo rm -rf ~/.config/micro

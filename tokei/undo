@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin tokei
+case "$DISTRO" in
+  "arch") package_uninstall tokei ;;
+  "ubuntu") uninstall_bin tokei ;;
+esac

@@ -1,14 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-say "installing redis client and server"
-case "$DISTRO" in
-  "ubuntu")
-    package_install redis-server
-    package_install redis-tools redis-cli
-    ;;
-
-  "arch")
-    package_install redis
-    sudo systemctl start redis
-    ;;
-esac
+distro_script

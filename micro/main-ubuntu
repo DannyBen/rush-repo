@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/zyedidia/micro/releases/download/v${version}/micro-${version}-linux64.tar.gz"
+  wget "$url" -O "micro.tar.gz"
+  tar -zxvf "micro.tar.gz" "micro-${version}/micro"
+  sudo install -m 755 "micro-${version}/micro" /usr/local/bin/micro
+  rm -rf "micro-${version}"
+  rm -f "micro.tar.gz"
+  popd
+
+  say "copying config file to ~/.config/micro"
+  [[ -d ~/.config/micro ]] || mkdir -p ~/.config/micro
+  cp settings.json ~/.config/micro/
+}
+
+github_install_helper micro "zyedidia/micro"

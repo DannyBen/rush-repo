@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  needs node
+  say "installing yarn via npm"
+  npm install -g yarn
+  yarn --version
+}
+
+general_install_helper yarn

@@ -1,14 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-case "$DISTRO" in
-  "ubuntu")
-    attention "not available for Ubuntu"
-    ;;
-
-  "arch")
-    package_uninstall pikaur
-    ;;
-
-esac
-
+package_uninstall pikaur

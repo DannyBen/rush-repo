@@ -1,13 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-case "$DISTRO" in
-  "ubuntu")
-    package_uninstall redis-server
-    package_uninstall redis-tools
-    ;;
-
-  "arch")
-    package_uninstall redis
-    ;;
-esac
+distro_script undo
