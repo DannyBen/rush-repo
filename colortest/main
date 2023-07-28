@@ -1,3 +1,15 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-package_install colortest
+
+if command_exist colortest; then
+  say "colortest is already installed"
+else
+  say "installing colortest"
+
+  url="https://raw.githubusercontent.com/pablopunk/colortest/master/colortest"
+
+  pushtmp
+  wget "$url"
+  sudo install -m 755 colortest /usr/local/bin/
+  popd
+fi
