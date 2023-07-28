@@ -1,17 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-case "$DISTRO" in
-  "arch")
-    package_install check-jsonschema
-    ;;
-
-  "ubuntu")
-    if command_exist check-jsonschema ; then
-      say "check-jsonschema is already installed"
-    else
-      needs python
-      python3 -m pip install check-jsonschema
-    fi
-    ;;
-esac
+distro_script
