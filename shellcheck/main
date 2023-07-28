@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-# shellcheck is available also as Arch package, but it is bloated with haskell
-# stuff - so we always install through GitHub
+# the shellcheck package is available also as Arch package, but it is bloated
+# with haskell stuff - so we always install through GitHub
 
 install_function() {
   pushtmp
