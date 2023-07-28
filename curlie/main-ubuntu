@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/rs/curlie/releases/download/v${version}/curlie_${version}_linux_amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 curlie /usr/local/bin/
+  popd
+
+}
+
+github_install_helper curlie rs/curlie version
+

@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-say "uninstalling coffeescript"
-yarn global remove coffeescript
+case "$DISTRO" in
+  "arch")
+    package_uninstall coffeescript
+    ;;
+
+  "ubuntu")
+    say "uninstalling coffeescript"
+    yarn global remove coffeescript
+    ;;
+esac

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin sass
+case "$DISTRO" in
+  "arch") package_uninstall dart-sass ;;
+  "ubuntu") uninstall_bin sass ;;
+esac

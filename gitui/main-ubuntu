@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushd "$(temp_dir)"
+  curl -sL "https://github.com/extrawurst/gitui/releases/download/v$version/gitui-linux-musl.tar.gz" | tar -xzv
+  sudo install -m 755 gitui /usr/local/bin/
+  rm -f gitui
+  popd
+}
+
+github_install_helper gitui "extrawurst/gitui"

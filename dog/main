@@ -1,20 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-install_function() {
-  needs unzip
-  download_url="https://github.com/ogham/dog/releases/download/v${version}/dog-v${version}-x86_64-unknown-linux-gnu.zip"
-
-  pushtmp
-  wget --no-verbose -O download.zip "$download_url"
-  unzip download.zip
-  sudo install -m0755 bin/dog /usr/local/bin/
-  sudo cp man/dog.1 /usr/local/share/man/man1/
-  sudo cp completions/dog.bash /usr/share/bash-completion/completions/dog
-  popd
-}
-
-# Currently not working:
-# Ref: https://github.com/ogham/dog/issues/109
-# github_install_helper dog ogham/dog
-attention "not installing, see https://github.com/ogham/dog/issues/109"
+distro_script

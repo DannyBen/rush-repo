@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin ctop
+case "$DISTRO" in
+  "arch") package_uninstall ctop ;;
+  "ubuntu") uninstall_bin ctop ;;
+esac

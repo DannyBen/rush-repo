@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin container-diff
-
+case "$DISTRO" in
+  "arch") package_uninstall container-diff ;;
+  "ubuntu") uninstall_bin container-diff ;;
+esac

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "uninstalling elixir"
+sudo dpkg -r erlang-solutions
+sudo apt-get -y remove elixir esl-erlang

@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+if [[ -z "$FORCE" ]] && command_exist go; then
+  say "go is already installed"
+else
+  unset FORCE
+  needs bashrc
+
+  say "installing go"
+  version="$(curl https://go.dev/VERSION?m=text)"
+  url="https://go.dev/dl/$version.linux-amd64.tar.gz"
+
+  pushtmp
+  wget -O go.tar.gz "$url"
+  sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go.tar.gz
+  rm go.tar.gz
+  popd
+
+  say "copying bashrc.d config"
+  cp go.bashrc ~/.bashrc.d/go.bashrc
+
+  source go.bashrc
+  go version
+  attention "restart your session or source ~/.bashrc"
+fi

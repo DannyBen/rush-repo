@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "installing docker (setup script)"
+# Ideally, this would be the thing to run...
+# curl https://get.docker.com | sudo sh
+
+# ...but the stupid script sleeps for 20 seconds, and we don't want that
+curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
+sed -i 's/sleep 20/sleep 0/g' /tmp/get-docker.sh
+sh /tmp/get-docker.sh
+
+# Add user to group
+sudo usermod -aG docker "$(whoami)"
+sudo service docker start

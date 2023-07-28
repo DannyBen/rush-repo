@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-echo "$DISTRO"
+distro_script

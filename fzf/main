@@ -1,18 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-install_function() {
-  needs bashrc
-  pushtmp
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install --all --no-update-rc
-  popd
-
-  cp fzf.bashrc ~/.bashrc.d/
-
-  # shellcheck disable=SC1091,SC1090
-  source ~/.fzf.bash
-  attention "restart your session or source ~/.bashrc"
-}
-
-github_install_helper fzf "junegunn/fzf"
+distro_script

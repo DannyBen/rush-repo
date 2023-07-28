@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin doctl
-rm ~/.bashrc.d/doctl.bashrc
+case "$DISTRO" in
+  "arch") 
+    package_uninstall doctl
+    ;;
+  "ubuntu")
+    uninstall_bin doctl
+    rm ~/.bashrc.d/doctl.bashrc
+    ;;
+esac

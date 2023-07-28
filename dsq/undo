@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin dsq
+case "$DISTRO" in
+  "arch") package_uninstall dsq ;;
+  "ubuntu") uninstall_bin dsq ;;
+esac

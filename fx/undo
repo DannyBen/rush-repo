@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-uninstall_bin fx
+
+case "$DISTRO" in
+  "arch") package_uninstall fx ;;
+  "ubuntu") uninstall_bin fx ;;
+esac

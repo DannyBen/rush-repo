@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+pushd ~/.fzf
+~/.fzf/uninstall
+popd
+
+rm -f ~/.bashrc.d/fzf.bashrc
+
+

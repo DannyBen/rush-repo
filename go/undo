@@ -8,4 +8,5 @@ case "$DISTRO" in
   "ubuntu")
     uninstall_bin go
     rm ~/.bashrc.d/go.bashrc
+    ;;
 esac

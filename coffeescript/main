@@ -5,10 +5,18 @@ if command_exist coffee ; then
   say "coffee is already installed"
 
 else
-  needs yarn
+  case "$DISTRO" in
+    "arch")
+      package_install coffeescript
+      ;;
 
-  say "installing coffeescript"
-  yarn global add coffeescript
+    "ubuntu")
+      needs yarn
+
+      say "installing coffeescript"
+      yarn global add coffeescript
+      ;;
+  esac
+
   coffee --version
-
 fi

@@ -1,13 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-case "$DISTRO" in
-  "arch")
-    package_uninstall elixir
-    ;;
-
-  "ubuntu")
-    say "uninstalling elixir"
-    sudo dpkg -r erlang-solutions
-    sudo apt-get -y remove elixir esl-erlang
-    ;;
-esac
+distro_script undo

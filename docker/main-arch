@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+package_install docker
+package_install docker-compose
+package_install docker-buildx
+
+sudo usermod -aG docker "$(whoami)"
+
+attention "system reboot may be required"

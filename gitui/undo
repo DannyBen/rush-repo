@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin gitui
+case "$DISTRO" in
+  "arch") package_uninstall gitui ;;
+  "ubuntu") uninstall_bin gitui ;;
+esac

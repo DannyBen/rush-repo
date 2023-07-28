@@ -1,13 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-install_function() {
-  curl -sL "https://github.com/digitalocean/doctl/releases/download/v$version/doctl-$version-linux-amd64.tar.gz" | tar -xzv
-  chmod +x doctl
-  sudo mv doctl /usr/local/bin/
-
-  cp doctl.bashrc ~/.bashrc.d/doctl.bashrc
-}
-
-needs bashrc
-github_install_helper doctl "digitalocean/doctl" "version"
+distro_script
