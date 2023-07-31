@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall gron ;;
-  "ubuntu") uninstall_bin gron ;;
+  "ubuntu") bin_uninstall gron ;;
 esac

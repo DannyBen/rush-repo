@@ -3,7 +3,7 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall zellij ;;
-  "ubuntu") uninstall_bin zellij ;;
+  "ubuntu") bin_uninstall zellij ;;
 esac
 
 say "removing ~/.config/zellij"

@@ -9,7 +9,7 @@ install_function() {
   wget "$url" -O "sake.tar.gz"
   tar -zxvf "sake.tar.gz"
   sudo install -m 755 sake /usr/local/bin/
-  sudo cp sake.1 /usr/local/share/man/man1/
+  man_install sake.1
   popd
 
   cp sake.bashrc ~/.bashrc.d/

@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall oxipng ;;
-  "ubuntu") uninstall_bin oxipng ;;
+  "ubuntu") bin_uninstall oxipng ;;
 esac

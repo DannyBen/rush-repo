@@ -3,7 +3,7 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall micro ;;
-  "ubuntu") uninstall_bin micro ;;
+  "ubuntu") bin_uninstall micro ;;
 esac
 
 say "removing ~/.config/micro"

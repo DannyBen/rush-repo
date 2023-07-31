@@ -4,6 +4,6 @@ package_uninstall() {
   say "uninstalling $display_name"
   case "$DISTRO" in
     "ubuntu") sudo apt-get remove -y "$package" ;;
-    "arch") sudo pacman -Rs --noconfirm "$package" ;;
+    "arch") sudo pacman -Rs --noconfirm "$package" || true ;;
   esac    
 }

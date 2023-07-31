@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall mdbook ;;
-  "ubuntu") uninstall_bin mdbook ;;
+  "ubuntu") bin_uninstall mdbook ;;
 esac

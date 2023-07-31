@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-case "$DISTRO" in
-  "ubuntu") package_uninstall pandoc ;;
-  "arch") package_uninstall pandoc-cli ;;
-esac
+bin_uninstall pandoc
+man_uninstall pandoc.1.gz

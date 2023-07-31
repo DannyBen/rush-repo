@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall kubectl ;;
-  "ubuntu") uninstall_bin kubectl ;;
+  "ubuntu") bin_uninstall kubectl ;;
 esac

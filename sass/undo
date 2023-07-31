@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall dart-sass ;;
-  "ubuntu") uninstall_bin sass ;;
+  "ubuntu") bin_uninstall sass ;;
 esac

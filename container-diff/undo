@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall container-diff ;;
-  "ubuntu") uninstall_bin container-diff ;;
+  "ubuntu") bin_uninstall container-diff ;;
 esac

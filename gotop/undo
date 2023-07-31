@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin gotop
+bin_uninstall gotop
 sudo rm -rf ~/.config/gotop

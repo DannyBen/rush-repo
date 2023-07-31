@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall ctop ;;
-  "ubuntu") uninstall_bin ctop ;;
+  "ubuntu") bin_uninstall ctop ;;
 esac

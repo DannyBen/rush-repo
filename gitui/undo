@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall gitui ;;
-  "ubuntu") uninstall_bin gitui ;;
+  "ubuntu") bin_uninstall gitui ;;
 esac

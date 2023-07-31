@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall lf ;;
-  "ubuntu") uninstall_bin lf ;;
+  "ubuntu") bin_uninstall lf ;;
 esac

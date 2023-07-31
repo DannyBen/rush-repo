@@ -1,4 +1,4 @@
-# Install/uninstall simple packages with pacman or apt
+# Install simple packages with pacman or apt
 package_install() {
   package="$1"
   command_name="${2:-$1}"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin ipfs
+bin_uninstall ipfs
 if [[ -d ~/.ipfs ]]; then
   attention "for a complete cleanup, also run 'rm -rf ~/.ipfs'"
 fi

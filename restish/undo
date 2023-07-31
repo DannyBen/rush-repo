@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin restish
+bin_uninstall restish
 say "removing ~/.restish"
 rm -rf ~/.restish

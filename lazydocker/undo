@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin lazydocker
+bin_uninstall lazydocker
 rm -f ~/.config/jesseduffield/lazydocker/config.yml
 (rmdir ~/.config/jesseduffield/lazydocker 2> /dev/null) || true
 (rmdir ~/.config/jesseduffield 2> /dev/null) || true

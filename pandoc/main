@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-case "$DISTRO" in
-  "ubuntu") package_install pandoc ;;
-  "arch") package_install pandoc-cli ;;
-esac
+# Installing from GitHub since the Arch package depends on the heavy Haskell
+install_function() {
+  pushtmp
+  url="https://github.com/jgm/pandoc/releases/download/$version/pandoc-$version-linux-amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 "pandoc-$version/bin/pandoc" /usr/local/bin/
+  man_install "pandoc-$version/share/man/man1/pandoc.1.gz"
+  popd
+}
+
+github_install_helper pandoc jgm/pandoc

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin cht.sh
+bin_uninstall cht.sh
 sudo rm -f ~/.bashrc.d/cht.sh.bashrc
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin rssnix
+bin_uninstall rssnix
 

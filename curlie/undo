@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall curlie ;;
-  "ubuntu") uninstall_bin curlie ;;
+  "ubuntu") bin_uninstall curlie ;;
 esac

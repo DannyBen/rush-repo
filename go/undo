@@ -6,7 +6,7 @@ case "$DISTRO" in
     package_uninstall go
     ;;
   "ubuntu")
-    uninstall_bin go
+    bin_uninstall go
     rm ~/.bashrc.d/go.bashrc
     ;;
 esac

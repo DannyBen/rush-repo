@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall ttyd ;;
-  "ubuntu") uninstall_bin ttyd ;;
+  "ubuntu") bin_uninstall ttyd ;;
 esac

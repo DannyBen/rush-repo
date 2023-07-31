@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin navi
+bin_uninstall navi
 rm -f ~/.bashrc.d/navi.bashrc
 discard fzf

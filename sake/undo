@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin sake
-sudo rm -f /usr/local/share/man/man1/sake.1
+bin_uninstall sake
+man_uninstall sake.1
 rm -f ~/.bashrc.d/sake.bashrc

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin ouch
+bin_uninstall ouch
 sudo rm -f /usr/local/share/man/man1/ouch*.1
 sudo rm -f /usr/share/bash-completion/completions/ouch
 

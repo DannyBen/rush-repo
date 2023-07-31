@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall datree ;;
-  "ubuntu") uninstall_bin datree ;;
+  "ubuntu") bin_uninstall datree ;;
 esac

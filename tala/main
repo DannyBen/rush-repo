@@ -6,7 +6,7 @@ install_function() {
   url="https://github.com/terrastruct/TALA/releases/download/v${version}/tala-v${version}-linux-amd64.tar.gz"
   curl -sL "$url" | tar -xzv
   sudo install -m 755 "tala-v$version/bin/d2plugin-tala" /usr/local/bin/
-  sudo cp "tala-v$version/man/d2plugin-tala.1" /usr/local/share/man/man1/
+  man_install "tala-v$version/man/d2plugin-tala.1"
   popd
 }
 

@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall dsq ;;
-  "ubuntu") uninstall_bin dsq ;;
+  "ubuntu") bin_uninstall dsq ;;
 esac

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin monolith
+bin_uninstall monolith

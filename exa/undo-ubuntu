@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin exa
+bin_uninstall exa
 
 sudo rm -f /usr/share/bash-completion/completions/exa.bash
 sudo rm -f /usr/local/share/man/man1/exa.1

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin cheat
+bin_uninstall cheat
 sudo rm -rf ~/.config/cheat
 

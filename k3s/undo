@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-uninstall_bin k3s
+bin_uninstall k3s
 sudo rm -rf /etc/rancher
 sudo rm -rf /var/lib/rancher
 sudo rm -rf "$HOME/.rancher"

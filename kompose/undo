@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall kompose ;;
-  "ubuntu") uninstall_bin kompose ;;
+  "ubuntu") bin_uninstall kompose ;;
 esac
