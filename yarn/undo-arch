@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 package_uninstall yarn
+say "removing ~/.bashrc.d/yarn.bashrc"
+rm -f "$HOME/.bashrc.d/yarn.bashrc"
