@@ -12,6 +12,7 @@ git config --global core.autocrlf input
 git config --global credential.helper "cache --timeout=21600"
 git config --global core.excludesfile ~/.gitignore_global
 git config --global core.attributesfile ~/.gitattributes_global
+git config --global init.defaultBranch master
 
 # List of supported hunk header patterns for .gitattributes:
 # https://github.com/git/git/blob/master/userdiff.c
