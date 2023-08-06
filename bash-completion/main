@@ -5,7 +5,8 @@ if [[ "$DISTRO" == "arch" ]]; then
   package_install bash-completion
 fi
 
-say "configuring user bash completions"
-cp .bash_completion ~/
-mkdir -p ~/.bash_completion.d
-attention "restart your session or source ~/.bash_completion"
+needs bashrc
+
+say "copying ~/.bashrc.d/bash_completion.bashrc"
+cp bash_completion.bashrc ~/.bashrc.d/
+attention "restart your session or source ~/.bashrc"
