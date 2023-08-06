@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-package_install aspell
+
+case "$DISTRO" in
+  "arch") package_install aspell-en ;;
+  "ubuntu") package_install aspell ;;
+esac
+
