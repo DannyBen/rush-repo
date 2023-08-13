@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+case "$DISTRO" in
+  "arch") package_install python-pipx ;;
+  "ubuntu") package_install pipx ;;
+esac
+

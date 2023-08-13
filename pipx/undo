@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+case "$DISTRO" in
+  "arch") package_uninstall python-pipx ;;
+  "ubuntu") package_uninstall pipx ;;
+esac
+
+
