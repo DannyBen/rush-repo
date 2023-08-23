@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 package_install ncdu
+say 'copying ~/.config/ncdu/config'
+mkdir -p ~/.config/ncdu
+cp config ~/.config/ncdu/
