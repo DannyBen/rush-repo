@@ -5,7 +5,7 @@ set -e
 
 echo "==> shellcheck started"
 
-for file in **/{main,undo} ; do
+for file in **/{main,undo}* ; do
   echo "==> shellcheck $file"
   # shellcheck --external-sources --source-path=SCRIPTDIR:"$PWD" "$file"
   shellcheck "$file"

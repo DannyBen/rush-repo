@@ -26,4 +26,11 @@ $ rush get dannyben:hello    # test that it is working
 $ rush list dannyben         # see package list
 ```
 
+Development
+--------------------------------------------------
+
+Use the provided docker compose configuration to develop and test on different
+operating systems. The containers come with some basic packages (like wget and
+curl) and with the local rush repo mounted and connected.
+
 [rush-cli]: https://github.com/DannyBen/rush-cli

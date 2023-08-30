@@ -1,7 +1,15 @@
 services:
-  bash:
-    build: .
-    image: dannyben/rush-repo-sandbox
+  ubuntu:
+    build:
+      dockerfile: ubuntu.Dockerfile
+    image: dannyben/rush-ubuntu-sandbox
+    volumes: 
+    - .:/app/rush-repo
+
+  arch:
+    build:
+      dockerfile: arch.Dockerfile
+    image: dannyben/rush-arch-sandbox
     volumes: 
     - .:/app/rush-repo
 
