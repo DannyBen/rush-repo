@@ -2,6 +2,4 @@
 source "$REPO_PATH/lib.sh"
 
 say "installing alf (github)"
-sudo wget -qO /usr/local/bin/alf https://raw.githubusercontent.com/DannyBen/alf/master/alf
-sudo chmod +x /usr/local/bin/alf
-alf --version
+curl -Ls get.dannyb.co/alf/setup | bash
