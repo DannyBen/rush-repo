@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "uninstalling git-changelog"
+curl -Ls get.dannyb.co/git-changelog/uninstall | bash
