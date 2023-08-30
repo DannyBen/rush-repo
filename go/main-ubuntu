@@ -8,7 +8,7 @@ else
   needs bashrc
 
   say "installing go"
-  version="$(curl https://go.dev/VERSION?m=text)"
+  version="$(curl https://go.dev/VERSION?m=text | head -n1)"
   url="https://go.dev/dl/$version.linux-amd64.tar.gz"
 
   pushtmp
