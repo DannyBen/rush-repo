@@ -2,11 +2,4 @@
 source "$REPO_PATH/lib.sh"
 
 say "installing opcode"
-
-if [[ -f ~/.bashrc.d/opcode.bashrc ]]; then
-  say "cleaning up previous installation"
-  rm ~/.bashrc.d/opcode.bashrc
-fi
-
-bash <(curl -Ls get.dannyb.co/opcode/setup)
-op --version
+curl -Ls get.dannyb.co/opcode/setup | bash

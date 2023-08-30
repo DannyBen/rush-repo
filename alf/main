@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-say "installing alf (github)"
+say "installing alf"
 curl -Ls get.dannyb.co/alf/setup | bash
