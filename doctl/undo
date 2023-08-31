@@ -2,11 +2,16 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") 
+  arch|fedora) 
     package_uninstall doctl
     ;;
-  "ubuntu")
+  
+  ubuntu)
     bin_uninstall doctl
     rm ~/.bashrc.d/doctl.bashrc
+    ;;
+
+  *)
+    warning "not available for distro:$DISTRO"
     ;;
 esac

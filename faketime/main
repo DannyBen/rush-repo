@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "arch") package_install libfaketime ;;
-  "ubuntu") package_install faketime ;;
+  arch|fedora)  package_install libfaketime ;;
+  ubuntu)       package_install faketime ;;
+  *)            fail "not available for distro:$DISTRO" ;;
 esac

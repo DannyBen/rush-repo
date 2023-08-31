@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-package_install ffmpeg
-ffmpeg -version |head -1
+case "$DISTRO" in
+  arch|ubuntu)  package_install ffmpeg ;;
+  fedora)       package_install ffmpeg-free ;;
+  *)            fail "not available for distro:$DISTRO" ;;
+esac
 
+ffmpeg -version |head -1

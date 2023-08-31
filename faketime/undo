@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-case "$DISTRO" in
-  "arch") package_uninstall libfaketime ;;
-  "ubuntu") package_uninstall faketime ;;
-esac
 
+case "$DISTRO" in
+  arch|fedora)  package_uninstall libfaketime ;;
+  ubuntu)       package_uninstall faketime ;;
+  *)            fail "not available for distro:$DISTRO" ;;
+esac

@@ -4,4 +4,5 @@ source "$REPO_PATH/lib.sh"
 case "$DISTRO" in
   arch)           package_uninstall datree ;;
   fedora|ubuntu)  bin_uninstall datree ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

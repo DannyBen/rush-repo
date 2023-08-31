@@ -2,13 +2,17 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch")
+  arch)
     package_uninstall dog
     ;;
 
-  "ubuntu")
+  fedora|ubuntu)
     bin_uninstall dog
     sudo rm -f /usr/local/share/man/man1/dog.1
     sudo rm -f /usr/share/bash-completion/completions/dog
+    ;;
+  
+  *)
+    warning "not available for distro:$DISTRO"
     ;;
 esac
