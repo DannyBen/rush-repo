@@ -4,6 +4,4 @@ source "$REPO_PATH/lib.sh"
 say "removing ~/.bashrc.d/docker.bashrc"
 rm -f "$HOME/.bashrc.d/docker.bashrc"
 
-package_uninstall docker
-package_uninstall docker-compose
-package_uninstall docker-buildx
+package_uninstall docker docker-compose docker-buildx

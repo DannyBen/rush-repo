@@ -2,6 +2,6 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "ubuntu") package_uninstall default-jre java ;;
-  "arch") package_uninstall jre-openjdk java ;;
+  "ubuntu") package_uninstall default-jre ;;
+  "arch") package_uninstall jre-openjdk ;;
 esac

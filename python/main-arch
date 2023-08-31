@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-package_install python
-package_install python-pip
+package_install python python-pip

@@ -2,11 +2,6 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch")
-    package_uninstall postgresql
-    ;;
-  "ubuntu")
-    package_uninstall postgresql
-    package_uninstall libpq-dev
-    ;;
+  "arch") package_uninstall postgresql ;;
+  "ubuntu") package_uninstall postgresql libpq-dev ;;
 esac

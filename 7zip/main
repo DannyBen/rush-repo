@@ -2,10 +2,6 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch) package_install p7zip ;;
-  ubuntu) package_install p7zip-full 7z ;;
-  fedora)
-    package_install p7zip 7z
-    package_install p7zip-plugins 7z
-    ;;
+  "arch") package_install p7zip ;;
+  "ubuntu") package_install p7zip-full ;;
 esac

@@ -3,9 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   "arch") package_uninstall p7zip ;;
-  "ubuntu") package_uninstall p7zip-full 7z ;;
-  "fedora")
-    package_uninstall p7zip
-    package_uninstall p7zip-plugins
-    ;;
+  "ubuntu") package_uninstall p7zip-full ;;
 esac

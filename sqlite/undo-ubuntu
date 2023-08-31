@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-package_uninstall sqlite3
-package_uninstall libsqlite3-dev
+package_uninstall sqlite3 libsqlite3-dev
