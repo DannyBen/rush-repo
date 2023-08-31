@@ -4,5 +4,5 @@ source "$REPO_PATH/lib.sh"
 case "$DISTRO" in
   arch)          package_uninstall borg ;;
   ubuntu|fedora) package_uninstall borgbackup ;;
-  *)             fail "not available for distro:$DISTRO" ;;
+  *)             warning "not available for distro:$DISTRO" ;;
 esac

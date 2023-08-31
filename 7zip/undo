@@ -5,6 +5,6 @@ case "$DISTRO" in
   arch)   package_uninstall p7zip ;;
   fedora) package_uninstall p7zip p7zip-plugins ;;
   ubuntu) package_uninstall p7zip-full ;;
-  *)      fail "not available for distro:$DISTRO" ;;
+  *)      warning "not available for distro:$DISTRO" ;;
 esac
 

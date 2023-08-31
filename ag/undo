@@ -4,5 +4,5 @@ source "$REPO_PATH/lib.sh"
 case "$DISTRO" in
   arch|fedora) package_uninstall the_silver_searcher ;;
   ubuntu)      package_uninstall silversearcher-ag ;;
-  *)           fail "not available for distro:$DISTRO" ;;
+  *)           warning "not available for distro:$DISTRO" ;;
 esac

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  dnf_install_rpm "https://github.com/wagoodman/dive/releases/download/v${version}/dive_${version}_linux_amd64.rpm"
+  cp .dive.yaml ~/.dive.yaml
+}
+
+github_install_helper dive wagoodman/dive

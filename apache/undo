@@ -5,6 +5,6 @@ case "$DISTRO" in
   arch)   package_uninstall apache ;;
   fedora) package_uninstall httpd-tools ;;
   ubuntu) package_uninstall apache2-utils ;;
-  *)      fail "not available for distro:$DISTRO" ;;
+  *)      warning "not available for distro:$DISTRO" ;;
 esac
 

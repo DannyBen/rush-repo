@@ -5,5 +5,5 @@ case "$DISTRO" in
   arch)   package_uninstall bind ;;
   fedora) package_uninstall bind-utils ;;
   ubuntu) package_uninstall bind9-host ;;
-  *)      fail "not available for distro:$DISTRO" ;;
+  *)      warning "not available for distro:$DISTRO" ;;
 esac
