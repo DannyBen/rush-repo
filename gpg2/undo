@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_uninstall gnupg2 ;;
-  "arch") package_uninstall gnupg ;;
+  arch)           package_uninstall gnupg ;;
+  fedora|ubuntu)  package_uninstall gnupg2 ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac
+
+rm -f  ~/.bashrc.d/gpg2.bashrc

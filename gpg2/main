@@ -6,12 +6,13 @@ if command_exist gpg2 ; then
 
 else
   case "$DISTRO" in
-    "ubuntu") package_install gnupg2 ;;
-    "arch") package_install gnupg ;;
+    arch)           package_install gnupg ;;
+    fedora|ubuntu)  package_install gnupg2 ;;
+    *)              fail "not available for distro:$DISTRO" ;;
   esac
 
+  needs bashrc
   say "copying bashrc.d config"
   cp gpg2.bashrc ~/.bashrc.d/
-
 fi
 
