@@ -5,5 +5,6 @@ package_uninstall() {
   case "$DISTRO" in
     "ubuntu") sudo apt-get remove -y "$package" ;;
     "arch") sudo pacman -Rs --noconfirm "$package" || true ;;
+    "fedora") sudo dnf remove -y "$package";;
   esac    
 }

@@ -15,6 +15,7 @@ package_install() {
     case "$DISTRO" in
       "ubuntu") sudo apt-get install -y "$package" ;;
       "arch") sudo pacman -S --noconfirm "$package" ;;
+      "fedora") sudo dnf install -y "$package" ;;
     esac    
   fi
 }
