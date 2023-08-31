@@ -12,6 +12,6 @@ RUN curl -Ls get.dannyb.co/rush > /usr/local/bin/rush && \
 
 USER megatron
 
-RUN echo 'PS1="\\n\\n>> rush-arch \\W \\$ "' >> ~/.bashrc
+RUN echo 'PS1="\\n\\n>> rush-fedora \\W \\$ "' >> ~/.bashrc
 
 RUN rush add default /app/rush-repo

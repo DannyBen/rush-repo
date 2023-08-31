@@ -2,7 +2,9 @@ package_install() {
   say "installing $*"
   
   case "$DISTRO" in
-    "ubuntu") sudo apt-get install -y "$@" ;;
-    "arch") sudo pacman -S --noconfirm "$@" ;;
+    arch)          sudo pacman -S --noconfirm "$@" ;;
+    debian|ubuntu) sudo apt-get install -y "$@" ;;
+    fedora|cenros) sudo dnf install -y "$@" ;;
+    *)             fail "unsupported distro:$DISTRO"
   esac    
 }

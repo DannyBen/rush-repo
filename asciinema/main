@@ -8,7 +8,8 @@ install_function() {
 }
 
 case "$DISTRO" in
-  "ubuntu") general_install_helper asciinema ;;
-  "arch") package_install asciinema ;;
+  arch|fedora) package_install asciinema ;;
+  ubuntu)      general_install_helper asciinema ;;
+  *)           fail "not available for distro:$DISTRO" ;;
 esac
 

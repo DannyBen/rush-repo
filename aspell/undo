@@ -2,6 +2,8 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall aspell-en ;;
-  "ubuntu") package_uninstall aspell ;;
+  arch)          package_uninstall aspell-en ;;
+  fedora|ubuntu) package_uninstall aspell ;;
+  *)             fail "not available for distro:$DISTRO" ;;
 esac
+

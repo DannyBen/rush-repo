@@ -6,8 +6,9 @@ install_function() {
 }
 
 case "$DISTRO" in
-  "ubuntu") github_install_helper bat "sharkdp/bat" ;;
-  "arch") package_install bat ;;
+  arch|fedora) package_install bat ;;
+  ubuntu)      github_install_helper bat sharkdp/bat ;;
+  *)           fail "not available for distro:$DISTRO" ;;
 esac
 
 say "copying configuration files"

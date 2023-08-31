@@ -5,7 +5,6 @@ distro_script() {
   if [[ -f "$script" ]]; then
     . "$script"
   else
-    warning "not available for distro:$DISTRO"
-    return 1
+    fail "not available for distro:$DISTRO"
   fi
 }

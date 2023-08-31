@@ -1,22 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-if command_exist coffee ; then
-  say "coffee is already installed"
-
-else
-  case "$DISTRO" in
-    "arch")
-      package_install coffeescript
-      ;;
-
-    "ubuntu")
-      needs yarn
-
-      say "installing coffeescript"
-      yarn global add coffeescript
-      ;;
-  esac
-
-  coffee --version
-fi
+distro_script
+coffee --version
