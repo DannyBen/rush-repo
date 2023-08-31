@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-package_install redis-server
-package_install redis-tools redis-cli
+package_install redis-server redis-tools

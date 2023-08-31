@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 case "$DISTRO" in
-  "ubuntu") package_install default-jre java ;;
-  "arch") package_install jre-openjdk java ;;
+  "ubuntu") package_install default-jre ;;
+  "arch") package_install jre-openjdk ;;
 esac

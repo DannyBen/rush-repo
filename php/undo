@@ -2,6 +2,6 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "ubuntu") package_uninstall php7.4-cli php ;;
+  "ubuntu") package_uninstall php7.4-cli ;;
   "arch") package_uninstall php ;;
 esac
