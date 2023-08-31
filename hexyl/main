@@ -6,6 +6,7 @@ install_function() {
 }
 
 case "$DISTRO" in
-  "ubuntu") github_install_helper hexyl sharkdp/hexyl ;;
-  "arch") package_install hexyl ;;
+  arch|fedora)  package_install hexyl ;;
+  ubuntu)       github_install_helper hexyl sharkdp/hexyl ;;
+  *)            fail "not available for distro:$DISTRO" ;;
 esac

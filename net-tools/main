@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 package_install net-tools
+netstat --version |head -n1

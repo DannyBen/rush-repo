@@ -2,6 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall mdbook ;;
-  "ubuntu") bin_uninstall mdbook ;;
+  arch)           package_uninstall mdbook ;;
+  fedora|ubuntu)  bin_uninstall mdbook ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

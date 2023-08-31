@@ -14,5 +14,5 @@ else
   cp homebrew.bashrc ~/.bashrc.d/
 
   attention "restart your session or source ~/.bashrc to apply changes"
-  
+
 fi

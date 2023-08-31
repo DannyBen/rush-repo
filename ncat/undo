@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_uninstall ncat ;;
-  "arch") package_uninstall nmap ;;
+  arch)    package_uninstall nmap ;;
+  fedora)  package_uninstall nmap-ncat ;;
+  ubuntu)  package_uninstall ncat ;;
+  *)       warning "not available for distro:$DISTRO" ;;
 esac
-
-

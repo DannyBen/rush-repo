@@ -2,8 +2,9 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall micro ;;
-  "ubuntu") bin_uninstall micro ;;
+  arch|fedora)  package_uninstall micro ;;
+  ubuntu)       bin_uninstall micro ;;
+  *)            warning "not available for distro:$DISTRO" ;;
 esac
 
 say "removing ~/.config/micro"

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_install httpry ;;
-  "arch") attention "not available for Arch Linux" ;;
+  fedora|ubuntu)  package_install httpry ;;
+  *)              fail "not available for distro:$DISTRO" ;;
 esac
 
