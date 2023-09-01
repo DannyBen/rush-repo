@@ -2,8 +2,10 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "ubuntu") package_uninstall resolvconf ;;
-  "arch") package_uninstall systemd-resolvconf ;;
+  arch)    package_uninstall systemd-resolvconf ;;
+  fedora)  package_uninstall openresolv ;;
+  ubuntu)  package_uninstall resolvconf ;;
+  *)       warning "not available for distro:$DISTRO" ;;
 esac
 
 attention "reboot is required"

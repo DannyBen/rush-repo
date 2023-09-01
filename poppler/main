@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_install poppler-utils ;;
-  "arch") package_install poppler ;;
+  arch|fedora)  package_install poppler ;;
+  ubuntu)       package_install poppler-utils ;;
+  *)            fail "not available for distro:$DISTRO" ;;
 esac

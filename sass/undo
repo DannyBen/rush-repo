@@ -2,6 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall dart-sass ;;
-  "ubuntu") bin_uninstall sass ;;
+  arch)           package_uninstall dart-sass ;;
+  fedora|ubuntu)  bin_uninstall sass ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_uninstall poppler-utils ;;
-  "arch") package_uninstall poppler ;;
+  arch|fedora)  package_uninstall poppler ;;
+  ubuntu)       package_uninstall poppler-utils ;;
+  *)            warning "not available for distro:$DISTRO" ;;
 esac
