@@ -2,9 +2,9 @@
 dnf_install_rpm() {
   url="$1"
   tmpdir=$(temp_dir)
-  pushd "$tmpdir"
+  pushd "$tmpdir" || fail "cannot pushd"
   wget -O package.rpm "$url"
   sudo dnf -y install ./package.rpm
-  popd
+  popd || fail "cannot popd"
   rm -rf "$tmpdir"
 }

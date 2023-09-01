@@ -1,3 +1,3 @@
 command_exist() {
-  [[ -x "$(command -v $1)" ]]
+  [[ -x "$(command -v "$1")" ]]
 }

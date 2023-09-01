@@ -1,6 +1,6 @@
 needs() {
   say "installing dependencies"
-  for pack in $* ; do
+  for pack in "$@" ; do
     if [[ $pack =~ .*:.* ]]; then
       rush get "$pack" --clone
     else

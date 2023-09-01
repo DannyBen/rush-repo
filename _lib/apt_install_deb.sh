@@ -2,9 +2,9 @@
 apt_install_deb() {
   url="$1"
   tmpdir=$(temp_dir)
-  pushd "$tmpdir"
+  pushd "$tmpdir" || fail "cannot pushd"
   wget -O package.deb "$url"
   sudo apt-get -yf install ./package.deb
-  popd
+  popd || fail "cannot popd"
   rm -rf "$tmpdir"
 }
