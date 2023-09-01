@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 # ref: https://linuxconfig.org/how-to-install-cuda-on-ubuntu-20-04-focal-fossa-linux
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_install nvidia-cuda-toolkit ;;
-  "acrh") package_install cuda ;;
+  acrh)   package_install cuda ;;
+  ubuntu) package_install nvidia-cuda-toolkit ;;
+  *)      fail "not available for distro:$DISTRO" ;;
 esac
 
 nvcc --version

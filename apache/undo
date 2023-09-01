@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+case "$DISTRO" in
+  arch)   package_uninstall apache ;;
+  fedora) package_uninstall httpd-tools ;;
+  ubuntu) package_uninstall apache2-utils ;;
+  *)      warning "not available for distro:$DISTRO" ;;
+esac
+

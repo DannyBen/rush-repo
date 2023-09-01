@@ -2,11 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch")
-    package_uninstall postgresql
-    ;;
-  "ubuntu")
-    package_uninstall postgresql
-    package_uninstall libpq-dev
-    ;;
+  arch|fedora)  package_uninstall postgresql ;;
+  ubuntu)       package_uninstall postgresql libpq-dev ;;
+  *)            warning "not available for distro:$DISTRO" ;;
 esac

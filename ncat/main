@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-case "$DISTRO" in
-  "ubuntu") package_install ncat ;;
-  "arch") package_install nmap ;;
-esac
 
+case "$DISTRO" in
+  arch)    package_install nmap ;;
+  fedora)  package_install nmap-ncat ;;
+  ubuntu)  package_install ncat ;;
+  *)       fail "not available for distro:$DISTRO" ;;
+esac

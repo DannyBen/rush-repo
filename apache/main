@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+case "$DISTRO" in
+  arch)   package_install apache ;;
+  fedora) package_install httpd-tools ;;
+  ubuntu) package_install apache2-utils ;;
+  *)      fail "not available for distro:$DISTRO" ;;
+esac

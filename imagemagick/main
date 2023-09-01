@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-package_install imagemagick
+
+case "$DISTRO" in
+  arch|ubuntu)  package_install imagemagick ;;
+  fedora)       package_install ImageMagick ;;
+  *)            fail "not available for distro:$DISTRO" ;;
+esac
+
+convert --version | head -n1

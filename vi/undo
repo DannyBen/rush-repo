@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-package_uninstall vim
-say "removing ~/.bashrc.d/vi.bashrc"
-rm -f "$HOME/.bashrc.d/vi.bashrc"
+
+case "$DISTRO" in
+  arch)
+    package_uninstall vim
+    say "removing ~/.bashrc.d/vi.bashrc"
+    rm -f "$HOME/.bashrc.d/vi.bashrc"
+    ;;
+
+  *)
+    warning "not available for distro:$DISTRO"
+    ;;
+  
+esac
+

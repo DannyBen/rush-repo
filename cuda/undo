@@ -3,6 +3,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "ubuntu") package_uninstall nvidia-cuda-toolkit ;;
-  "acrh") package_uninstall cuda ;;
+  acrh)   package_uninstall cuda ;;
+  ubuntu) package_uninstall nvidia-cuda-toolkit ;;
+  *)      warning "not available for distro:$DISTRO" ;;
 esac

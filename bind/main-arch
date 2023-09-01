@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-package_install bind

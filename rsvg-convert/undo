@@ -2,6 +2,8 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "ubuntu") package_uninstall librsvg2-bin ;;
-  "arch") package_uninstall librsvg ;;
+  arch)    package_uninstall librsvg ;;
+  fedora)  package_uninstall librsvg2-tools ;;
+  ubuntu)  package_uninstall librsvg2-bin ;;
+  *)       warning "not available for distro:$DISTRO" ;;
 esac

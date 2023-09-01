@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-package_install nim
+
+case "$DISTRO" in
+  arch|ubuntu)  package_install nim ;;
+  *)            fail "not available for distro:$DISTRO" ;;
+esac

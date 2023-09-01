@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+sudo dnf update && sudo dnf install -y \
+  autoconf \
+  bzip2 \
+  gcc \
+  gcc-c++ \
+  curl \
+  git \
+  libffi-devel \
+  gdbm-devel \
+  readline-devel \
+  openssl-devel \
+  libyaml-devel \
+  wget \
+  zlib-devel

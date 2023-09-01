@@ -2,6 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "ubuntu") package_uninstall php7.4-cli php ;;
-  "arch") package_uninstall php ;;
+  arch|fedora)  package_uninstall php ;;
+  ubuntu)       package_uninstall php7.4-cli ;;
+  *)            warning "not available for distro:$DISTRO" ;;
 esac

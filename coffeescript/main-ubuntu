@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+needs yarn
+say "installing coffeescript"
+yarn global add coffeescript

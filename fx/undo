@@ -2,6 +2,6 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall fx ;;
-  "ubuntu") bin_uninstall fx ;;
+  arch)           package_uninstall fx ;;
+  fedora|ubuntu)  bin_uninstall fx ;;
 esac

@@ -2,6 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall dsq ;;
-  "ubuntu") bin_uninstall dsq ;;
+  arch)           package_uninstall dsq ;;
+  fedora|ubuntu)  bin_uninstall dsq ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

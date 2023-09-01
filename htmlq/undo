@@ -2,6 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall htmlq ;;
-  "ubuntu") bin_uninstall htmlq ;;
+  arch)           package_uninstall htmlq ;;
+  fedora|ubuntu)  bin_uninstall htmlq ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

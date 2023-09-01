@@ -1,5 +1,5 @@
 Install poppler / poppler-utils, the PDF manipulation utility
 
-Including: 
+Provides: 
 pdfdetach, pdffonts, pdfimages, pdfinfo, pdftocairo, pdftohtml, pdftoppm,
 pdftops, pdfseparate, pdfsig, pdfunite

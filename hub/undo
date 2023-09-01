@@ -2,6 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall hub ;;
-  "ubuntu") bin_uninstall hub ;;
+  arch|fedora)  package_uninstall hub ;;
+  ubuntu)       bin_uninstall hub ;;
+  *)            warning "not available for distro:$DISTRO" ;;
 esac

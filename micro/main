@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
 distro_script
+
 say "copying config file to ~/.config/micro"
 [[ -d ~/.config/micro ]] || mkdir -p ~/.config/micro
 cp settings.json ~/.config/micro/

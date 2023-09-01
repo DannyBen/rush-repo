@@ -2,6 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "ubuntu") package_uninstall gh ;;
-  "arch") package_uninstall github-cli ;;
+  arch)           package_uninstall github-cli ;;
+  fedora|ubuntu)  package_uninstall gh ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

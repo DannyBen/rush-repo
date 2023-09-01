@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+package_uninstall python3 python3-pip

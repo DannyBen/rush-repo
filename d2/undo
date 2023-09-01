@@ -2,11 +2,16 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch")
+  arch)
     package_uninstall d2
     ;;
-  "ubuntu")
+  
+  fedora|ubuntu)
     bin_uninstall d2
     sudo rm -f /usr/local/share/man/man1/d2.1
+    ;;
+
+  *)
+    warning "not available for distro:$DISTRO"
     ;;
 esac

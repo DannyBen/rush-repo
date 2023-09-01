@@ -6,6 +6,8 @@ install_function() {
 }
 
 case "$DISTRO" in
-  "ubuntu") github_install_helper fd sharkdp/fd ;;
-  "arch") package_install fd ;;
+  arch)   package_install fd ;;
+  fedora) package_install fd-find ;;
+  ubuntu) github_install_helper fd sharkdp/fd ;;
+  *)      fail "not available for distro:$DISTRO" ;;
 esac

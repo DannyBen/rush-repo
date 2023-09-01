@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-case "$DISTRO" in
-  "ubuntu") package_uninstall grepcidr ;;
-  "arch") attention "not available for Arch Linux" ;;
-esac
+package_uninstall grepcidr

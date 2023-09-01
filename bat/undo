@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-say "uninstalling bat"
-case "$DISTRO" in
-  "ubuntu") sudo dpkg -r bat ;;
-  "arch") package_uninstall bat ;;
-esac
-
+package_uninstall bat
 rm -rf ~/.config/bat

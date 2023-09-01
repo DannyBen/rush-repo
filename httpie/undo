@@ -2,11 +2,16 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch")
+  arch|fedora)
     package_uninstall httpie
     ;;
-  "ubuntu")
+  
+  ubuntu)
     say "uninstalling httpie"
     sudo python3 -m pip uninstall httpie
+    ;;
+
+  *)
+    warning "not available for distro:$DISTRO"
     ;;
 esac

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/ouch-org/ouch/releases/download/${version}/ouch-x86_64-unknown-linux-musl.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 ouch-x86_64-unknown-linux-musl/ouch /usr/local/bin/
+  sudo cp ouch-x86_64-unknown-linux-musl/man/ouch*.1 /usr/local/share/man/man1/
+  sudo cp ouch-x86_64-unknown-linux-musl/completions/ouch.bash /usr/share/bash-completion/completions/ouch
+  popd
+}
+
+github_install_helper ouch ouch-org/ouch

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-package_uninstall redis-server
-package_uninstall redis-tools
+package_uninstall redis-server redis-tools

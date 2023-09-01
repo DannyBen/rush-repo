@@ -6,7 +6,7 @@ say "installing dependencies for asn (apt)"
 # The official docs state that these are the dependencies
 # apt -y install curl whois bind9-host mtr-tiny jq ipcalc grepcidr nmap ncat aha
 # ref: https://github.com/nitefood/asn#prerequisite-packages
-needs aha grepcidr ipcalc ncat   jq mtr whois
+needs aha grepcidr ipcalc ncat jq mtr whois
 
 say "installing asn (github)"
 sudo wget -qO /usr/local/bin/asn https://raw.githubusercontent.com/nitefood/asn/master/asn

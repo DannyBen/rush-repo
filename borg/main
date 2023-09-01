@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_install borgbackup ;;
-  "arch") package_install borg ;;
+  arch)          package_install borg ;;
+  ubuntu|fedora) package_install borgbackup ;;
+  *)             fail "not available for distro:$DISTRO" ;;
 esac

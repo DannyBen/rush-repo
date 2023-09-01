@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-package_uninstall python3-pip
-package_uninstall python3
+package_uninstall python3-pip python3
 
 if [[ -L /usr/bin/python ]]; then
   say "removing symlink python"

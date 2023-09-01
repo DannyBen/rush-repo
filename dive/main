@@ -1,12 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-install_function() {
-  apt_install_deb "https://github.com/wagoodman/dive/releases/download/v${version}/dive_${version}_linux_amd64.deb"
-  cp .dive.yaml ~/.dive.yaml
-}
-
-case "$DISTRO" in
-  "ubuntu") github_install_helper dive wagoodman/dive ;;
-  "arch") package_install dive ;;
-esac
+distro_script

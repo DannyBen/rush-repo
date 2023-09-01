@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-distro_script undo
+
+case "$DISTRO" in
+  arch)   package_uninstall bind ;;
+  fedora) package_uninstall bind-utils ;;
+  ubuntu) package_uninstall bind9-host ;;
+  *)      warning "not available for distro:$DISTRO" ;;
+esac

@@ -2,6 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall oxipng ;;
-  "ubuntu") bin_uninstall oxipng ;;
+  arch)           package_uninstall oxipng ;;
+  fedora|ubuntu)  bin_uninstall oxipng ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

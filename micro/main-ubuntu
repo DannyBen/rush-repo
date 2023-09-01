@@ -10,10 +10,6 @@ install_function() {
   rm -rf "micro-${version}"
   rm -f "micro.tar.gz"
   popd
-
-  say "copying config file to ~/.config/micro"
-  [[ -d ~/.config/micro ]] || mkdir -p ~/.config/micro
-  cp settings.json ~/.config/micro/
 }
 
 github_install_helper micro "zyedidia/micro"

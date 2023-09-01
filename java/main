@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_install default-jre java ;;
-  "arch") package_install jre-openjdk java ;;
+  arch)   package_install jre-openjdk ;;
+  fedora) package_install java-latest-openjdk ;;
+  ubuntu) package_install default-jre ;;
+  *)      fail "not available for distro:$DISTRO" ;;
 esac
+
+java --version |head -n1

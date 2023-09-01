@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-distro_script
+
+case "$DISTRO" in
+  arch)   package_install bind ;;
+  fedora) package_install bind-utils ;;
+  ubuntu) package_install bind9-host ;;
+  *)      fail "not available for distro:$DISTRO" ;;
+esac
+

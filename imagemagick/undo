@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-package_uninstall imagemagick
+
+case "$DISTRO" in
+  arch|ubuntu)  package_uninstall imagemagick ;;
+  fedora)       package_uninstall ImageMagick ;;
+  *)            fail "not available for distro:$DISTRO" ;;
+esac

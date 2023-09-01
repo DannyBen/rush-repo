@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-case "$DISTRO" in
-  "ubuntu") package_uninstall libv8-dev ;;
-  "arch") attention "not available for Arch Linux" ;;
-esac
 
+case "$DISTRO" in
+  fedora)  package_uninstall v8 ;;
+  ubuntu)  package_uninstall libv8-dev ;;
+  *)       fail "not available for distro:$DISTRO" ;;
+esac

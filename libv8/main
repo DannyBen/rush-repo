@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_install libv8-dev ;;
-  "arch") attention "not available for Arch Linux" ;;
+  fedora)  package_install v8 ;;
+  ubuntu)  package_install libv8-dev ;;
+  *)       fail "not available for distro:$DISTRO" ;;
 esac

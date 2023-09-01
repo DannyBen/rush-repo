@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-package_uninstall nodejs
-package_uninstall npm
+package_uninstall nodejs npm

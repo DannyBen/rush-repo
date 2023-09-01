@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_uninstall webp ;;
-  "arch") package_uninstall libwebp ;;
+  arch|fedora)  package_uninstall libwebp ;;
+  ubuntu)       package_uninstall webp ;;
+  *)            warning "not available for distro:$DISTRO" ;;
 esac

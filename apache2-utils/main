@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-case "$DISTRO" in
-  "arch") package_install apache ;;
-  "ubuntu") package_install apache2-utils ;;
-esac

@@ -2,6 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall curlie ;;
-  "ubuntu") bin_uninstall curlie ;;
+  arch)           package_uninstall curlie ;;
+  fedora|ubuntu)  bin_uninstall curlie ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

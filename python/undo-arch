@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-package_uninstall python-pip
-package_uninstall python
+package_uninstall python-pip python

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  dnf_install_rpm "https://github.com/cli/cli/releases/download/v$version/gh_${version}_linux_amd64.rpm"
+}
+
+github_install_helper gh cli/cli version

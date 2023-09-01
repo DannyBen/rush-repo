@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-distro_script undo
+
+case "$DISTRO" in
+  arch|fedora)  package_uninstall sqlite ;;
+  ubuntu)       package_uninstall sqlite3 libsqlite3-dev ;;
+  *)            warning "not available for distro:$DISTRO" ;;
+esac

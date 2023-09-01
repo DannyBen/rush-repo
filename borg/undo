@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_uninstall borgbackup ;;
-  "arch") package_uninstall borg ;;
+  arch)          package_uninstall borg ;;
+  ubuntu|fedora) package_uninstall borgbackup ;;
+  *)             warning "not available for distro:$DISTRO" ;;
 esac

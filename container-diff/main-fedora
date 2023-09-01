@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/GoogleContainerTools/container-diff/releases/download/v${version}/container-diff-linux-amd64"
+  curl -LO "$url"
+  sudo install container-diff-linux-amd64 /usr/local/bin/container-diff
+  popd
+}
+
+github_install_helper container-diff GoogleContainerTools/container-diff version

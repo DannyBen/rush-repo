@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-package_uninstall ffmpeg
-rm -f ~/.ackrc
+case "$DISTRO" in
+  arch|ubuntu)  package_uninstall ffmpeg ;;
+  fedora)       package_uninstall ffmpeg-free ;;
+  *)            fail "not available for distro:$DISTRO" ;;
+esac

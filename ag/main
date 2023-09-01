@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 case "$DISTRO" in
-  "ubuntu") package_install silversearcher-ag ;;
-  "arch") package_install the_silver_searcher ;;
+  arch|fedora) package_install the_silver_searcher ;;
+  ubuntu)      package_install silversearcher-ag ;;
+  *)           fail "not available for distro:$DISTRO" ;;
 esac
