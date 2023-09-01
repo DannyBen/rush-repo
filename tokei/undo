@@ -2,6 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall tokei ;;
-  "ubuntu") bin_uninstall tokei ;;
+  arch|fedora)  package_uninstall tokei ;;
+  ubuntu)       bin_uninstall tokei ;;
+  *)            warning "not available for distro:$DISTRO" ;;
 esac

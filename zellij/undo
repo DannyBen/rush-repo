@@ -2,8 +2,9 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall zellij ;;
-  "ubuntu") bin_uninstall zellij ;;
+  arch)           package_uninstall zellij ;;
+  fedora|ubuntu)  bin_uninstall zellij ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac
 
 say "removing ~/.config/zellij"

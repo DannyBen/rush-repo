@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-package_install sshfs
 
+case "$DISTRO" in
+  arch|ubuntu)  package_install sshfs ;;
+  fedora)       package_install fuse-sshfs ;;
+  *)            fail "not available for distro:$DISTRO" ;;
+esac

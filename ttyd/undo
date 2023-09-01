@@ -2,6 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "arch") package_uninstall ttyd ;;
-  "ubuntu") bin_uninstall ttyd ;;
+  arch)           package_uninstall ttyd ;;
+  fedora|ubuntu)  bin_uninstall ttyd ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

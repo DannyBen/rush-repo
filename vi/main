@@ -2,14 +2,15 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  "ubuntu")
-    attention "not needed for Ubuntu"
-    ;;
-  "arch")
+  arch)
     package_install vim
     say "copying ~/.bashrc.d/vi.bashrc"
     cp vi.bashrc "$HOME/.bashrc.d/"
     ;;
 
+  fedora|ubuntu)
+    attention "not needed for $DISTRO"
+    ;;
+  
 esac
 

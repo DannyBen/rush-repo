@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-package_uninstall sshfs
 
+case "$DISTRO" in
+  arch|ubuntu)  package_uninstall sshfs ;;
+  fedora)       package_uninstall fuse-sshfs ;;
+  *)            warning "not available for distro:$DISTRO" ;;
+esac

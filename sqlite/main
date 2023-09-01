@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-distro_script
+
+case "$DISTRO" in
+  arch|fedora)  package_install sqlite ;;
+  ubuntu)       package_install sqlite3 libsqlite3-dev ;;
+  *)            fail "not available for distro:$DISTRO" ;;
+esac
