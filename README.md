@@ -13,7 +13,7 @@ _  /     /_/    \__,_/ /____/ /_/ /_/
 This is my rush repo for use with the [rush package manager][rush-cli].
 
 - All packages are suitable for public consumption.
-- Most packages can be used on **Arch Linux**, **Ubuntu** and **Fedora**.
+- Most packages can be used on **Arch Linux**, **Debian**, **Ubuntu**,  and **Fedora**.
 - Packages under the [my](my) folder are personal packages, most likely not
   suitable for anybody else.
 
