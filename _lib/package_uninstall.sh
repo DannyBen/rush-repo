@@ -4,7 +4,7 @@ package_uninstall() {
   case "$DISTRO" in
     arch)          sudo pacman -Rs --noconfirm "$@" || true ;;
     debian|ubuntu) sudo apt-get remove -y "$@" ;;
-    fedora|cenros) sudo dnf remove -y "$@" ;;
+    fedora)        sudo dnf remove -y "$@" ;;
     *)             fail "unsupported distro:$DISTRO"
   esac    
 }

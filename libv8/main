@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  fedora)  package_install v8 ;;
-  ubuntu)  package_install libv8-dev ;;
-  *)       fail "not available for distro:$DISTRO" ;;
+  fedora)         package_install v8 ;;
+  debian|ubuntu)  package_install libv8-dev ;;
+  *)              fail "not available for distro:$DISTRO" ;;
 esac

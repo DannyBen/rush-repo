@@ -1,12 +1,2 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-
-install_function() {
-  pushtmp
-  url="https://github.com/shssoichiro/oxipng/releases/download/v${version}/oxipng-${version}-x86_64-unknown-linux-musl.tar.gz"
-  curl -sL "$url" | tar -xzv
-  sudo install -m 755 "oxipng-${version}-x86_64-unknown-linux-musl/oxipng" /usr/local/bin/
-  popd
-}
-
-github_install_helper oxipng shssoichiro/oxipng
+./main-ubuntu

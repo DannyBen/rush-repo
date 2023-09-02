@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch|fedora)  package_uninstall poppler ;;
-  ubuntu)       package_uninstall poppler-utils ;;
-  *)            warning "not available for distro:$DISTRO" ;;
+  arch|fedora)    package_uninstall poppler ;;
+  debian|ubuntu)  package_uninstall poppler-utils ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

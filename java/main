@@ -2,10 +2,10 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)   package_install jre-openjdk ;;
-  fedora) package_install java-latest-openjdk ;;
-  ubuntu) package_install default-jre ;;
-  *)      fail "not available for distro:$DISTRO" ;;
+  arch)           package_install jre-openjdk ;;
+  debian|ubuntu)  package_install default-jre ;;
+  fedora)         package_install java-latest-openjdk ;;
+  *)              fail "not available for distro:$DISTRO" ;;
 esac
 
 java --version |head -n1

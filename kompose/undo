@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)           package_uninstall kompose ;;
-  fedora|ubuntu)  bin_uninstall kompose ;;
-  *)              warning "not available for distro:$DISTRO" ;;
+  arch)                  package_uninstall kompose ;;
+  debian|fedora|ubuntu)  bin_uninstall kompose ;;
+  *)                     warning "not available for distro:$DISTRO" ;;
 esac

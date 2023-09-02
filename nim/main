@@ -2,6 +2,6 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch|ubuntu)  package_install nim ;;
-  *)            fail "not available for distro:$DISTRO" ;;
+  arch|debian|ubuntu)  package_install nim ;;
+  *)                   fail "not available for distro:$DISTRO" ;;
 esac

@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)           package_uninstall python-pipx ;;
-  fedora|ubuntu)  package_uninstall pipx ;;
-  *)              warning "not available for distro:$DISTRO" ;;
+  arch)                  package_uninstall python-pipx ;;
+  debian|fedora|ubuntu)  package_uninstall pipx ;;
+  *)                     warning "not available for distro:$DISTRO" ;;
 esac
