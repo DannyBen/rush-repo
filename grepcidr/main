@@ -2,6 +2,6 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  fedora|ubuntu)  package_install grepcidr ;;
-  *)              fail "not available for distro:$DISTRO" ;;
+  debian|fedora|ubuntu)  package_install grepcidr ;;
+  *)                     fail "not available for distro:$DISTRO" ;;
 esac

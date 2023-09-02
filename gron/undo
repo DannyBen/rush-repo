@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch|fedora)  package_uninstall gron ;;
-  ubuntu)       bin_uninstall gron ;;
-  *)            warning "not available for distro:$DISTRO" ;;
+  arch|debian|fedora)  package_uninstall gron ;;
+  ubuntu)              bin_uninstall gron ;;
+  *)                   warning "not available for distro:$DISTRO" ;;
 esac

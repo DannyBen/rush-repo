@@ -6,7 +6,7 @@ case "$DISTRO" in
     package_uninstall dog
     ;;
 
-  fedora|ubuntu)
+  debian|fedora|ubuntu)
     bin_uninstall dog
     sudo rm -f /usr/local/share/man/man1/dog.1
     sudo rm -f /usr/share/bash-completion/completions/dog

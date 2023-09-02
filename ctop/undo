@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)           package_uninstall ctop ;;
-  fedora|ubuntu)  bin_uninstall ctop ;;
-  *)              warning "not available for distro:$DISTRO" ;;
+  arch)                  package_uninstall ctop ;;
+  debian|fedora|ubuntu)  bin_uninstall ctop ;;
+  *)                     warning "not available for distro:$DISTRO" ;;
 esac

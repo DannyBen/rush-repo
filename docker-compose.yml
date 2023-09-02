@@ -12,6 +12,12 @@ services:
     image: dannyben/rush-arch-sandbox
     volumes: *rush-repo
 
+  debian:
+    build:
+      dockerfile: _dockerfiles/debian.Dockerfile
+    image: dannyben/rush-debian-sandbox
+    volumes: *rush-repo
+
   fedora:
     build:
       dockerfile: _dockerfiles/fedora.Dockerfile

@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)          package_install borg ;;
-  ubuntu|fedora) package_install borgbackup ;;
-  *)             fail "not available for distro:$DISTRO" ;;
+  arch)                  package_install borg ;;
+  debian|fedora|ubuntu)  package_install borgbackup ;;
+  *)                     fail "not available for distro:$DISTRO" ;;
 esac

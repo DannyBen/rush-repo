@@ -2,8 +2,8 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)   package_uninstall bind ;;
-  fedora) package_uninstall bind-utils ;;
-  ubuntu) package_uninstall bind9-host ;;
-  *)      warning "not available for distro:$DISTRO" ;;
+  arch)           package_uninstall bind ;;
+  debian|ubuntu)  package_uninstall bind9-host ;;
+  fedora)         package_uninstall bind-utils ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

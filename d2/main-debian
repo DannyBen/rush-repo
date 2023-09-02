@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/terrastruct/d2/releases/download/v${version}/d2-v${version}-linux-amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 "d2-v$version/bin/d2" /usr/local/bin/
+  sudo cp "d2-v$version/man/d2.1" /usr/local/share/man/man1/
+  popd
+}
+
+github_install_helper d2 terrastruct/d2

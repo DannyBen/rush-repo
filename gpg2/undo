@@ -2,9 +2,9 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)           package_uninstall gnupg ;;
-  fedora|ubuntu)  package_uninstall gnupg2 ;;
-  *)              warning "not available for distro:$DISTRO" ;;
+  arch)                  package_uninstall gnupg ;;
+  debian|fedora|ubuntu)  package_uninstall gnupg2 ;;
+  *)                     warning "not available for distro:$DISTRO" ;;
 esac
 
 rm -f  ~/.bashrc.d/gpg2.bashrc

@@ -2,9 +2,9 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch|ubuntu)  package_install ffmpeg ;;
-  fedora)       package_install ffmpeg-free ;;
-  *)            fail "not available for distro:$DISTRO" ;;
+  arch|debian|ubuntu)  package_install ffmpeg ;;
+  fedora)              package_install ffmpeg-free ;;
+  *)                   fail "not available for distro:$DISTRO" ;;
 esac
 
 ffmpeg -version |head -1

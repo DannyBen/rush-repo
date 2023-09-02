@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch|fedora)  package_install libfaketime ;;
-  ubuntu)       package_install faketime ;;
-  *)            fail "not available for distro:$DISTRO" ;;
+  arch|fedora)    package_install libfaketime ;;
+  debian|ubuntu)  package_install faketime ;;
+  *)              fail "not available for distro:$DISTRO" ;;
 esac

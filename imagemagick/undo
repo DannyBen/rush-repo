@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch|ubuntu)  package_uninstall imagemagick ;;
-  fedora)       package_uninstall ImageMagick ;;
-  *)            fail "not available for distro:$DISTRO" ;;
+  arch|debian|ubuntu)  package_uninstall imagemagick ;;
+  fedora)              package_uninstall ImageMagick ;;
+  *)                   fail "not available for distro:$DISTRO" ;;
 esac

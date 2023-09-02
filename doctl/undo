@@ -6,7 +6,7 @@ case "$DISTRO" in
     package_uninstall doctl
     ;;
   
-  ubuntu)
+  debian|ubuntu)
     bin_uninstall doctl
     rm ~/.bashrc.d/doctl.bashrc
     ;;

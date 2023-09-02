@@ -2,9 +2,9 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)   package_install bind ;;
-  fedora) package_install bind-utils ;;
-  ubuntu) package_install bind9-host ;;
-  *)      fail "not available for distro:$DISTRO" ;;
+  arch)           package_install bind ;;
+  debian|ubuntu)  package_install bind9-host ;;
+  fedora)         package_install bind-utils ;;
+  *)              fail "not available for distro:$DISTRO" ;;
 esac
 

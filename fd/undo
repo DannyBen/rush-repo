@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-package_uninstall fd
+case "$DISTRO" in
+  arch)           package_uninstall fd ;;
+  debian|ubuntu)  github_install_helper fd sharkdp/fd ;;
+  fedora)         package_uninstall fd-find ;;
+  *)              warning "not available for distro:$DISTRO" ;;
+esac

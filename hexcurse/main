@@ -2,6 +2,6 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  ubuntu)  package_install hexcurse ;;
-  *)       fail "not available for distro:$DISTRO" ;;
+  debian|ubuntu)  package_install hexcurse ;;
+  *)              fail "not available for distro:$DISTRO" ;;
 esac

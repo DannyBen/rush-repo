@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  sudo wget "https://github.com/bcicen/ctop/releases/download/v$version/ctop-$version-linux-amd64" -O /usr/local/bin/ctop
+  sudo chmod +x /usr/local/bin/ctop
+}
+
+github_install_helper ctop "bcicen/ctop" "-v"

@@ -6,9 +6,9 @@ if command_exist gpg2 ; then
 
 else
   case "$DISTRO" in
-    arch)           package_install gnupg ;;
-    fedora|ubuntu)  package_install gnupg2 ;;
-    *)              fail "not available for distro:$DISTRO" ;;
+    arch)                  package_install gnupg ;;
+    debian|fedora|ubuntu)  package_install gnupg2 ;;
+    *)                     fail "not available for distro:$DISTRO" ;;
   esac
 
   needs bashrc

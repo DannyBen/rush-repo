@@ -6,7 +6,7 @@ case "$DISTRO" in
     package_uninstall go
     ;;
 
-  fedora)
+  debian|fedora)
     package_uninstall golang
     ;;
   
