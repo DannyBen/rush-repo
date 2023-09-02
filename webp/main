@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch|fedora)  package_install libwebp ;;
-  ubuntu)       package_install webp ;;
-  *)            fail "not available for distro:$DISTRO" ;;
+  arch|fedora)    package_install libwebp ;;
+  debian|ubuntu)  package_install webp ;;
+  *)              fail "not available for distro:$DISTRO" ;;
 esac

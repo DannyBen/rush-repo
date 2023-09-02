@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch|fedora)  package_uninstall sqlite ;;
-  ubuntu)       package_uninstall sqlite3 libsqlite3-dev ;;
-  *)            warning "not available for distro:$DISTRO" ;;
+  arch|fedora)    package_uninstall sqlite ;;
+  debian|ubuntu)  package_uninstall sqlite3 libsqlite3-dev ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac

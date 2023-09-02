@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)           package_uninstall syft ;;
-  fedora|ubuntu)  bin_uninstall syft ;;
-  *)              warning "not available for distro:$DISTRO" ;;
+  arch)                  package_uninstall syft ;;
+  fedora|debian|ubuntu)  bin_uninstall syft ;;
+  *)                     warning "not available for distro:$DISTRO" ;;
 esac

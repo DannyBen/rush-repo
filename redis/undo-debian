@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-./main-ubuntu
+
+package_uninstall redis

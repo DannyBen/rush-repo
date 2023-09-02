@@ -2,10 +2,10 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)    package_install librsvg ;;
-  fedora)  package_install librsvg2-tools ;;
-  ubuntu)  package_install librsvg2-bin ;;
-  *)       fail "not available for distro:$DISTRO" ;;
+  arch)           package_install librsvg ;;
+  debian|ubuntu)  package_install librsvg2-bin ;;
+  fedora)         package_install librsvg2-tools ;;
+  *)              fail "not available for distro:$DISTRO" ;;
 esac
 
 rsvg-convert --version

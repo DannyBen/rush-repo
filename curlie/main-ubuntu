@@ -11,4 +11,3 @@ install_function() {
 }
 
 github_install_helper curlie rs/curlie version
-

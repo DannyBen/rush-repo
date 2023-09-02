@@ -1,16 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-case "$DISTRO" in
-  arch)    package_install systemd-resolvconf ;;
-  fedora)  package_install openresolv ;;
-  ubuntu)  package_install resolvconf ;;
-  *)        warning "not available for distro:$DISTRO" ;;
-esac
-
-say "copying configuration file"
-sudo cp config /etc/resolv.conf
-
-sudo service resolvconf restart
-cat /etc/resolv.conf
-attention "reboot may be required"
+distro_script

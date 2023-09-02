@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "uninstalling yarn"
+sudo npm uninstall -g yarn

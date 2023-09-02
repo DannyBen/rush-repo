@@ -1,5 +1,2 @@
 #!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-
-say "installing crystal (setup script)"
-curl -fsSL https://crystal-lang.org/install.sh | sudo bash
+./main-ubuntu
