@@ -4,8 +4,8 @@ source "$REPO_PATH/lib.sh"
 case "$DISTRO" in
   arch)
     package_install vim
-    say "copying ~/.bashrc.d/vi.bashrc"
-    cp vi.bashrc "$HOME/.bashrc.d/"
+    say "creating vi symlink"
+    sudo ln -s /usr/bin/vim /usr/local/bin/vi
     ;;
 
   *)
