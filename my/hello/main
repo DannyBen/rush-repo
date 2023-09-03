@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-REPO=${REPO:=ERROR}
-
-echo "What's the nested rush? (hello from $REPO)"
