@@ -22,4 +22,3 @@ COPY lib.sh /app/rush-repo/
 COPY _lib /app/rush-repo/_lib
 COPY inputrc /app/rush-repo/inputrc
 RUN rush get inputrc
-

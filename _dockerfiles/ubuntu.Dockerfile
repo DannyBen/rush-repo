@@ -15,3 +15,10 @@ USER ubuntu
 RUN echo 'PS1="\\n\\n>> rush-ubuntu \\W \\$ "' >> ~/.bashrc
 
 RUN rush add default /app/rush-repo
+
+# Just copy some essential packages so we can have them on boot
+# The others will be mounted by docker compose
+COPY lib.sh /app/rush-repo/
+COPY _lib /app/rush-repo/_lib
+COPY inputrc /app/rush-repo/inputrc
+RUN rush get inputrc
