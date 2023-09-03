@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-distro_script undo
-attention "reboot is required"

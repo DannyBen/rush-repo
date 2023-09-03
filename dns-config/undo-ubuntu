@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+package_uninstall resolvconf
+rm -f /etc/resolv.conf
+attention "reboot may be required"

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+# ref: man resolved.conf 5
+
+say "copying configuration file"
+sudo mkdir -p /etc/systemd/resolved.conf.d
+sudo cp configs/resolved.conf /etc/systemd/resolved.conf.d/dns.conf
+
+say "restarting systemd-resolved"
+sudo systemctl restart systemd-resolved
+
+say "done"
+resolvectl status

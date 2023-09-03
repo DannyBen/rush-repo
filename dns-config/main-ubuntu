@@ -4,7 +4,7 @@ source "$REPO_PATH/lib.sh"
 package_install resolvconf
 
 say "copying configuration file"
-sudo cp config /etc/resolv.conf
+sudo cp configs/resolv.conf /etc/resolv.conf
 
 sudo service resolvconf restart
 cat /etc/resolv.conf

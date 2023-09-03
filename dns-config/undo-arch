@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "removing configuration file"
+sudo rm -f /etc/systemd/resolved.conf.d/dns.conf
+[[ -d /etc/systemd/resolved.conf.d ]] && sudo rmdir --ignore-fail-on-non-empty /etc/systemd/resolved.conf.d
+
+say "restarting systemd-resolved"
+sudo systemctl restart systemd-resolved
+
+say "done"
+resolvectl status
+
