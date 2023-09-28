@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+needs bashrc
+say "copying binpath.bashrc"
+cp binpath.bashrc ~/.bashrc.d
+attention "restart your session or source ~/.bashrc"

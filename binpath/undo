@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "removing binpath.bashrc"
+rm -f ~/.bashrc.d/binpath.bashrc
