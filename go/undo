@@ -2,20 +2,11 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)
-    package_uninstall go
-    ;;
-
-  debian|fedora)
-    package_uninstall golang
-    ;;
-  
-  ubuntu)
-    bin_uninstall go
-    rm ~/.bashrc.d/go.bashrc
-    ;;
-
-  *)
-    warning "not available for distro:$DISTRO"
-    ;;
+  arch)           package_uninstall go ;;
+  debian|fedora)  package_uninstall golang ;;
+  ubuntu)         bin_uninstall go ;;
+  *)              warning "not available for distro:$DISTRO" ;;
 esac
+
+say "removing bashrc.d config"
+rm -f ~/.bashrc.d/go.bashrc
