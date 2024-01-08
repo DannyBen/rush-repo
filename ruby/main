@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-version=3.1.4
+version=3.3.0
 
 needs ruby-base rbenv
 # shellcheck disable=SC1091,SC1090
