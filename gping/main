@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  version_number="${version#*-}"
+  url="https://github.com/orf/gping/releases/download/gping-v$version_number/gping-Linux-x86_64.tar.gz"
+  echo "$url"
+  curl -sL "$url" | tar -xzv
+  chmod +x gping
+  sudo mv gping /usr/local/bin/
+}
+
+github_install_helper gping "orf/gping"
