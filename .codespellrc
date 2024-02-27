@@ -1,0 +1,3 @@
+[codespell]
+skip = tmp,sublime*
+; ignore-words-list = rouge

@@ -4,7 +4,7 @@ source "$REPO_PATH/lib.sh"
 install_function() {
   curl -s https://api.github.com/repos/yudai/gotty/releases/latest | grep "download.*linux_amd64.tar.gz" | cut -d : -f 2,3 | tr -d \" | xargs wget -q
 
-  say "extracing binary"
+  say "extracting binary"
   tar -xzvf gotty_linux_amd64.tar.gz 
   rm gotty_linux_amd64.tar.gz
 
