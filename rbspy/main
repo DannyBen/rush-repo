@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  url="https://github.com/rbspy/rbspy/releases/download/v$version/rbspy-x86_64-unknown-linux-gnu.tar.gz"
+  curl -sL "$url" | tar -xzv
+  chmod +x rbspy-x86_64-unknown-linux-gnu
+  sudo mv rbspy-x86_64-unknown-linux-gnu /usr/local/bin/rbspy
+}
+
+github_install_helper rbspy "rbspy/rbspy"
