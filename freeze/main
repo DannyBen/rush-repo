@@ -5,8 +5,8 @@ install_function() {
   pushtmp
   url="https://github.com/charmbracelet/freeze/releases/download/v$version/freeze_${version}_Linux_x86_64.tar.gz"
   curl -sL "$url" | tar -xzv
-  chmod +x freeze_${version}_Linux_x86_64/freeze
-  sudo mv freeze_${version}_Linux_x86_64/freeze /usr/local/bin/
+  chmod +x "freeze_${version}_Linux_x86_64/freeze"
+  sudo mv "freeze_${version}_Linux_x86_64/freeze" /usr/local/bin/
   popd
 }
 
