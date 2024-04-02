@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+bin_uninstall glow
+# man page in the release is empty
+# man_uninstall glow.1.gz

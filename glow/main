@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/charmbracelet/glow/releases/download/v$version/glow_Linux_x86_64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  chmod +x glow
+  sudo mv glow /usr/local/bin/
+  # man page in the release is empty
+  # man_install manpages/glow.1.gz
+  popd
+}
+
+github_install_helper glow "charmbracelet/glow"
