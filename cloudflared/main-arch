@@ -1,3 +1,17 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-package_install cloudflared
+# The package coming from arch repository is broken
+# ref: https://github.com/cloudflare/cloudflared/issues/1148
+# package_install cloudflared
+
+install_function() {
+  pushtmp
+  url="https://github.com/cloudflare/cloudflared/releases/download/$version/cloudflared-linux-amd64"
+  wget "$url"
+  chmod +x cloudflared-linux-amd64
+  sudo mv cloudflared-linux-amd64 /usr/local/bin/cloudflared
+  popd
+}
+
+github_install_helper cloudflared "cloudflare/cloudflared"
+
