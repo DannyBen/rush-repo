@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+bin_uninstall ledger
+man_uninstall ledger.1
+man_uninstall ledger.5 man5

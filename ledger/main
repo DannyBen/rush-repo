@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/howeyc/ledger/releases/download/v${version}/ledger_${version}_linux_amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  dir="ledger_${version}_linux_amd64"
+  bin_install "$dir/ledger"
+  man_install "$dir/docs/ledger.1"
+  man_install "$dir/docs/ledger.5" man5
+  popd
+}
+
+github_install_helper ledger "howeyc/ledger" version
