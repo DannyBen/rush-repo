@@ -6,3 +6,4 @@
 .envrc.gpg
 .ruby-version
 .sass-cache
+.venv
