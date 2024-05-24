@@ -11,7 +11,7 @@ sudo mkdir -p /etc/systemd/resolved.conf.d
 sudo cp resolved.conf /etc/systemd/resolved.conf.d/dns.conf
 sudo chmod 644 /etc/systemd/resolved.conf.d/dns.conf
 
-say "restarting cloudflared-proxy-dns"
+say "enabling cloudflared-proxy-dns"
 sudo systemctl enable --now cloudflared-proxy-dns
 
 say "restarting systemd-resolved"
