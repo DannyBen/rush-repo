@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "removing DNS configuration file"
+sudo rm -f /etc/systemd/resolved.conf.d/dns.conf
+[[ -d /etc/systemd/resolved.conf.d ]] && sudo rmdir --ignore-fail-on-non-empty /etc/systemd/resolved.conf.d
+
+say "disabling cloudflared-proxy-dns"
+sudo systemctl disable --now cloudflared-proxy-dns
+
+say "restarting systemd-resolved"
+sudo systemctl restart systemd-resolved
+
+say "removing service configuration file"
+sudo rm /etc/systemd/system/cloudflared-proxy-dns.service 
+
+say "done"
+resolvectl status
