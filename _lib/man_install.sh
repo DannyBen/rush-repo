@@ -5,5 +5,8 @@ man_install() {
   say "installing man page"
   sudo mkdir -p "/usr/local/share/man/$target"
   sudo cp "$file" "/usr/local/share/man/$target/"
-  sudo makewhatis /usr/local/man
+
+  if command_exist makewhatis ; then
+    sudo makewhatis /usr/local/man
+  fi
 }
