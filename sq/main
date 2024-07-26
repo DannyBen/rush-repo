@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  url="https://github.com/neilotoole/sq/releases/download/v$version/sq-${version}-amd64-amd64.tar.gz"
+
+  pushtmp
+  curl -sL "$url" | tar -xzv
+  chmod +x sq
+  sudo mv sq /usr/local/bin/
+  man_install manpages/sq.1.gz
+  popd
+
+}
+
+github_install_helper sq neilotoole/sq
