@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  url="https://github.com/boyter/scc/releases/download/v${version}/scc_Linux_x86_64.tar.gz"
+
+  pushtmp
+  curl -sL "$url" | tar -xzv
+  chmod +x scc
+  sudo mv scc /usr/local/bin/
+  popd
+
+}
+
+github_install_helper scc boyter/scc
