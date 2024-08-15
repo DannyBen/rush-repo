@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  clean_version=${version%-*}
+  download_url="https://github.com/hypered/slab/releases/download/v${version}/slab-v${clean_version}-linux-x86-64-musl"
+  
+  pushtmp
+  wget -q --show-progress -O slab "$download_url"
+  sudo install -m0755 slab /usr/local/bin/
+  popd
+}
+
+# Cannot use github helper, since slab does not have a version flag
+# ref: https://github.com/hypered/slab/issues/2
+version=0.0.3.0-alpha
+install_function
+# github_install_helper slab hypered/slab
