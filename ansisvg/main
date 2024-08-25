@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/wader/ansisvg/releases/download/v${version}/ansisvg_${version}_linux_amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 ansisvg /usr/local/bin/
+  popd
+}
+
+github_install_helper ansisvg wader/ansisvg
