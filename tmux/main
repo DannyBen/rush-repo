@@ -9,5 +9,12 @@ cp .tmux.conf ~/.tmux.conf
 # cp tmux.bashrc ~/.bashrc.d/
 # tmux bashrc config is not needed if using keychain
 
-say "installing tmux plugin manager (tpm)"
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+PLUGIN_DIR="$HOME/.tmux/plugins/tpm"
+
+if [ -d "$PLUGIN_DIR" ]; then
+  say "updating tmux plugin manager (tpm)"
+  git -C "$PLUGIN_DIR" pull
+else
+  say "installing tmux plugin manager (tpm)"
+  git clone https://github.com/tmux-plugins/tpm "$PLUGIN_DIR"
+fi
