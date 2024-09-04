@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+if command_exist magick ; then
+  say "ImageMagick is already installed"
+else
+  pushtmp
+  wget https://imagemagick.org/download/ImageMagick.tar.gz
+  tar xvzf ImageMagick.tar.gz
+  cd ImageMagick-7.*
+  ./configure
+  make
+  sudo make install
+  sudo ldconfig /usr/local/lib
+  cd ..
+  rm -rf ImageMagick-7.*
+  popd
+fi
+
+magick --version |head -n1

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/zyedidia/eget/releases/download/v${version}/eget-${version}-linux_amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  dir="eget-${version}-linux_amd64"
+  bin_install "$dir/eget"
+  man_install "$dir/eget.1"
+  popd
+}
+
+github_install_helper eget "zyedidia/eget"
