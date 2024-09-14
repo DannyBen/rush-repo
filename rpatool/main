@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+needs python
+
+say "installing rpatool"
+pushtmp
+wget "https://raw.githubusercontent.com/shizmob/rpatool/master/rpatool"
+bin_install rpatool
+rm -f rpatool
+popd
+
+rpatool --version
