@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+
 package_install pueue
+systemctl --user enable pueued.service
+systemctl --user start pueued.service
+
+# Daemon can also be started manually with **a secondary binary**:
+# $ pueued -d
