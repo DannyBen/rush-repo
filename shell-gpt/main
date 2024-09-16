@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+if command_exist shell-gpt; then
+  say "shell-gpt is already installed"
+else
+  needs pipx
+  pipx install shell-gpt
+fi
+
