@@ -12,4 +12,4 @@ install_function() {
 # need to get version from a different place (copied from the install script)
 # since the version on github is prefixed with "cli/"
 version=$(curl -sL https://plandex.ai/cli-version.txt)
-github_install_helper plandex plandex-ai/plandex version $version
+github_install_helper plandex plandex-ai/plandex version "$version"
