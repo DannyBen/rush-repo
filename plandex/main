@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/plandex-ai/plandex/releases/download/cli%2Fv${version}/plandex_${version}_linux_amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  sudo install -m 755 plandex /usr/local/bin/
+  popd
+}
+
+# need to get version from a different place (copied from the install script)
+# since the version on github is prefixed with "cli/"
+version=$(curl -sL https://plandex.ai/cli-version.txt)
+github_install_helper plandex plandex-ai/plandex version $version
