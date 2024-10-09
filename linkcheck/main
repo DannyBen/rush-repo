@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/filiph/linkcheck/releases/download/${version}/linkcheck-${version}-linux-x64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  bin_install linkcheck/linkcheck
+  popd
+}
+
+github_install_helper linkcheck "filiph/linkcheck"

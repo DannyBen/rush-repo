@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/marwanhawari/stew/releases/download/v{$version}/stew-v{$version}-linux-amd64.tar.gz"
+  curl -sL "$url" | tar -xzv
+  bin_install stew
+  popd
+}
+
+github_install_helper stew "marwanhawari/stew"
