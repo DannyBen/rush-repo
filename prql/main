@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+install_function() {
+  pushtmp
+  url="https://github.com/PRQL/prql/releases/download/$version/prqlc-${version}-x86_64-unknown-linux-musl.tar.gz"
+  curl -sL "$url" | tar -xzv
+  mv prqlc prql
+  bin_install prql
+  popd
+}
+
+github_install_helper prql "PRQL/prql"
