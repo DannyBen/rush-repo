@@ -10,15 +10,5 @@ install_function() {
   popd
 }
 
-if command_exist pipet ; then
-  say "pipet is already installed"
-else
-  version=0.2.2
-  install_function
-fi
-
-# version flag not provided by pipet
-# ref: https://github.com/bjesus/pipet/issues/2
-# when it is, we can use the below function instead of the condition above
-# github_install_helper pipet "bjesus/pipet"
+github_install_helper pipet "bjesus/pipet"
 
