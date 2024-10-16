@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-
-# The arch package is broken
-# package_uninstall check-jsonschema
-
-say "uninstalling check-jsonschema"
-pipx uninstall check-jsonschema
-

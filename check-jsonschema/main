@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-distro_script
+
+if command_exist check-jsonschema ; then
+  say "check-jsonschema is already installed"
+else
+  needs pipx
+  pipx install check-jsonschema
+fi

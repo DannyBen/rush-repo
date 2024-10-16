@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-
-if command_exist check-jsonschema ; then
-  say "check-jsonschema is already installed"
-else
-  needs python
-  python3 -m pip install check-jsonschema
-fi
