@@ -3,5 +3,6 @@ source "$REPO_PATH/lib.sh"
 
 needs bashrc
 
-say "copying ~/.bashrc.d/global.bashrc"
-cp global.bashrc "$HOME/.bashrc.d/global.bashrc"
+say "copying ~/.bashrc.d/ files"
+cp global.bashrc "$HOME/.bashrc.d/"
+cp history.bashrc "$HOME/.bashrc.d/"
