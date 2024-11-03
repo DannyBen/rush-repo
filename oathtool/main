@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+case "$DISTRO" in
+  arch|fedora)    package_install oath-toolkit ;;
+  debian|ubuntu)  package_install oathtool ;;
+  *)              fail "not available for distro:$DISTRO" ;;
+esac

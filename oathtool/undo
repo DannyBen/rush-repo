@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+case "$DISTRO" in
+  arch|fedora)    package_uninstall oath-toolkit ;;
+  debian|ubuntu)  package_uninstall oathtool ;;
+  *)              warning "not available for distro:$DISTRO" ;;
+esac
+
