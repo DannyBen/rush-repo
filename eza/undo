@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   arch|fedora)  package_uninstall eza ;;
-  *)            uninstall_bin eza ;;
+  *)            bin_uninstall eza ;;
 esac
