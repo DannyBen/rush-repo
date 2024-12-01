@@ -1,18 +1,12 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-if command_exist gpg2 ; then
-  say "gpg2 is already installed"
+case "$DISTRO" in
+  arch)                  package_install gnupg ;;
+  debian|fedora|ubuntu)  package_install gnupg2 ;;
+  *)                     fail "not available for distro:$DISTRO" ;;
+esac
 
-else
-  case "$DISTRO" in
-    arch)                  package_install gnupg ;;
-    debian|fedora|ubuntu)  package_install gnupg2 ;;
-    *)                     fail "not available for distro:$DISTRO" ;;
-  esac
-
-  needs bashrc
-  say "copying bashrc.d config"
-  cp gpg2.bashrc ~/.bashrc.d/
-fi
-
+needs bashrc
+say "copying bashrc.d config"
+cp gpg2.bashrc ~/.bashrc.d/

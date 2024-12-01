@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-package_install eza
+
+case "$DISTRO" in
+  arch|fedora)  package_install eza ;;
+  *)            eget_install eza-community/eza ;;
+esac
