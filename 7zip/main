@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch)           package_install p7zip ;;
+  arch)           package_install 7zip ;;
   debian|ubuntu)  package_install p7zip-full ;;
   fedora)         package_install p7zip p7zip-plugins ;;
   *)              fail "not available for distro:$DISTRO" ;;
