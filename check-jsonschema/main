@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-if command_exist check-jsonschema ; then
+if [[ -z $FORCE ]] && command_exist check-jsonschema ; then
   say "check-jsonschema is already installed"
 else
   needs pipx
