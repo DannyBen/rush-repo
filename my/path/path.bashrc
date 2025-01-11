@@ -1,1 +1,2 @@
-export PATH="/vagrant/bin:$PATH"
+[[ ":$PATH:" != *":/vagrant/bin:"* ]] && PATH="/vagrant/bin:$PATH"
+
