@@ -1,0 +1,4 @@
+{
+    "default_options": ["--verify=/etc/ssl/certs/ca-certificates.crt"]
+}
+
