@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 package_install httpie
 
 say 'copying config file to ~/.config/httpie/config.json'
-mkdir -p $HOME/.config/httpie
-cp config.json $HOME/.config/httpie/
+mkdir -p "$HOME/.config/httpie"
+cp config.json "$HOME/.config/httpie/"
