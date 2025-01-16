@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-install_function() {
-  sudo curl -L "https://github.com/whalebrew/whalebrew/releases/download/$version/whalebrew-$(uname -s)-$(uname -m)" -o /usr/local/bin/whalebrew
-  sudo chmod +x /usr/local/bin/whalebrew
-}
+eget_install "whalebrew/whalebrew"
 
-github_install_helper whalebrew "whalebrew/whalebrew" "version"
+say "creating config file in ~/.whalebrew"
+mkdir -p "$HOME/.whalebrew"
+echo "install_path: $HOME/.local/bin" > "$HOME/.whalebrew/config.yaml"
+
