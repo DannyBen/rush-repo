@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+eget_install "lightpanda-io/browser"
