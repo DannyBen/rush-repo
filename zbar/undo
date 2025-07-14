@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+case "$DISTRO" in
+  arch|fedora)    package_uninstall zbar ;;
+  debian|ubuntu)  package_uninstall zbar-tools ;;
+  *)              fail "not available for distro:$DISTRO" ;;
+esac
