@@ -1,3 +1,6 @@
+*.egg
+*.egg-info
+*.py[cod]
 *.sublime-project
 *.sublime-workspace
 .byebug_history
@@ -7,3 +10,4 @@
 .ruby-version
 .sass-cache
 .venv
+__pycache__
