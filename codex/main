@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+say "installing $package"
+command_exist eget || needs eget
+sudo eget --upgrade-only --to=/usr/local/bin/codex openai/codex --asset codex-x86_64-unknown-linux-gnu.tar.gz
