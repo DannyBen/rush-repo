@@ -4,5 +4,6 @@ source "$REPO_PATH/lib.sh"
 package_install docker docker-compose docker-buildx
 
 sudo usermod -aG docker "$(whoami)"
+sudo systemctl enable --now docker.service
 
 attention "system reboot may be required"
