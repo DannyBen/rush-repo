@@ -3,6 +3,7 @@
 *.py[cod]
 *.sublime-project
 *.sublime-workspace
+.aider*
 .byebug_history
 .direnv
 .env
