@@ -7,4 +7,4 @@ To complete installation, run this from the host and leave it open
 
   vagrant ssh -- -L 1455:localhost:1455
 
-while running `vagrant login` on the guest.
+while running `codex login` on the guest.
