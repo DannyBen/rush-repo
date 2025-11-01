@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "installing docker-mcp"
+command_exist eget || needs eget
+
+package="docker/docker-mcp"
+target_dir="$HOME/.docker/cli-plugins"
+
+mkdir -p "$target_dir"
+sudo eget --upgrade-only --pre-release --to="$target_dir" "$package"
+
+docker mcp --version

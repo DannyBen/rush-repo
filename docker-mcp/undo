@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "uninstalling docker-mcp"
+executable="$HOME/.docker/cli-plugins/docker-mcp"
+sudo rm -f "$executable"
