@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+case "$DISTRO" in
+  arch)
+    package_install python-weasyprint
+    ;;
+  fedora)
+    package_install python3-weasyprint
+    ;;
+  debian|ubuntu)
+    needs pipx
+    pipx install weasyprint
+    ;;
+  *)
+    fail "not available for distro: $DISTRO"
+    ;;
+esac

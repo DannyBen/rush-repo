@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+case "$DISTRO" in
+  arch)
+    package_uninstall python-weasyprint
+    ;;
+  fedora)
+    package_uninstall python3-weasyprint
+    ;;
+  debian|ubuntu)
+    pipx uninstall weasyprint
+    ;;
+  *)
+    fail "not available for distro: $DISTRO"
+    ;;
+esac
