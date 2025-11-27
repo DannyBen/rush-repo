@@ -1,1 +1,1 @@
-export PATH="$PATH:$HOME/.npm-global/bin"
+export PATH="$PATH:$(yarn global bin)"
