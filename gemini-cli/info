@@ -8,5 +8,5 @@ To login on a headless linux:
   1. Run `gemini` and choose login with Google account, then exit gemini
   2. Run it again with `gemini 2> out.txt`
   3. Open the URL printed in `out.txt` in your browser
-  4. Login in the browser, and copy the code back to the CLI.\
+  4. Login in the browser, and copy the code back to the CLI.
 
