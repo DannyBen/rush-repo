@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-say "uninstalling coffeescript"
-pnpm remove -g coffeescript
+js_uninstall coffeescript

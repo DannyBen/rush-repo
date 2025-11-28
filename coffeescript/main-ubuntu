@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-needs pnpm
-say "installing coffeescript"
-pnpm install -g coffeescript
+js_install coffeescript

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-say "uninstalling svg-term"
-pnpm remove -g svg-term-cli
+js_uninstall svg-term-cli

@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-needs pnpm
-
-say "installing gemini (using pnpm)"
-pnpm install -g @google/gemini-cli
+js_install @google/gemini-cli
 

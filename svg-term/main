@@ -2,9 +2,8 @@
 source "$REPO_PATH/lib.sh"
 
 install_function() {
-  needs pnpm asciinema
-  say "installing svg-term-cli (pnpm)"
-  pnpm install -g svg-term-cli
+  needs asciinema
+  js_install svg-term-cli
 }
 
 general_install_helper svg-term

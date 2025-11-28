@@ -2,4 +2,4 @@
 source "$REPO_PATH/lib.sh"
 
 say "uninstalling caniuse"
-pnpm remove -g caniuse-cmd
+js_uninstall caniuse-cmd

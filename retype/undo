@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-say "uninstalling retype"
-pnpm remove -g retypeapp
+js_uninstall retypeapp

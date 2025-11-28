@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-needs pnpm
-
-say "installing retype (pnpm)"
-pnpm install -g retypeapp
-say "retype installation complete"
-
+js_install retypeapp

@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-say "uninstalling gemini (using pnpm)"
-pnpm remove -g @google/gemini-cli
-
+js_uninstall @google/gemini-cli
