@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 package_uninstall pnpm
+say "removing pnpm.bashrc"
+rm -f "$HOME/.bashrc.d/pnpm.bashrc"

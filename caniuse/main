@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-needs yarn
+needs pnpm
 
-say "installing caniuse-cmd (yarn)"
-yarn global add caniuse-cmd
+say "installing caniuse-cmd (pnpm)"
+pnpm install -g caniuse-cmd
 say "caniuse installation complete"
 say "you may need to restart your session"
 

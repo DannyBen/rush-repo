@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-needs yarn
+needs pnpm
 
-say "installing retype (yarn)"
-yarn global add retypeapp
+say "installing retype (pnpm)"
+pnpm install -g retypeapp
 say "retype installation complete"
 

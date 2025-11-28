@@ -2,9 +2,9 @@
 source "$REPO_PATH/lib.sh"
 
 install_function() {
-  needs yarn asciinema
-  say "installing svg-term-cli (yarn)"
-  yarn global add svg-term-cli
+  needs pnpm asciinema
+  say "installing svg-term-cli (pnpm)"
+  pnpm install -g svg-term-cli
 }
 
 general_install_helper svg-term

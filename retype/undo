@@ -2,4 +2,4 @@
 source "$REPO_PATH/lib.sh"
 
 say "uninstalling retype"
-yarn global remove retypeapp
+pnpm remove -g retypeapp

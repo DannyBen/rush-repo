@@ -5,9 +5,9 @@ if command_exist pnpm ; then
   say "pnpm is already installed"
 
 else
-  needs yarn
+  needs npm
 
   say "installing pnpm"
-  yarn global add pnpm
+  npm install -g pnpm
 
 fi

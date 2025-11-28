@@ -2,4 +2,4 @@
 source "$REPO_PATH/lib.sh"
 
 say "uninstalling caniuse"
-yarn global remove caniuse-cmd
+pnpm remove -g caniuse-cmd

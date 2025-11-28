@@ -2,4 +2,4 @@
 source "$REPO_PATH/lib.sh"
 
 say "uninstalling coffeescript"
-yarn global remove coffeescript
+pnpm remove -g coffeescript

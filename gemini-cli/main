@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-needs yarn
+needs pnpm
 
-say "installing gemini (yarn)"
-yarn global add @google/gemini-cli
+say "installing gemini (using pnpm)"
+pnpm install -g @google/gemini-cli
+
