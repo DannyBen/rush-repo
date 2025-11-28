@@ -1,1 +1,2 @@
-export PATH="$PATH:$HOME/.yarn/bin"
+dir="$HOME/.yarn/bin"
+[[ ":$PATH:" == *":$dir:"* ]] || export PATH="$PATH:$dir"
