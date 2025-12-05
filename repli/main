@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "installing repli"
+curl -Ls get.dannyb.co/repli/setup | bash
