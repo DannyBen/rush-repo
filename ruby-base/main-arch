@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-sudo pacman -Syu && sudo pacman -S --noconfirm base-devel curl git wget
+sudo pacman -Syu && sudo pacman -S --noconfirm --needed \
+  base-devel \
+  curl \
+  gdbm \
+  git \
+  libffi \
+  libyaml \
+  ncurses \
+  openssl \
+  readline \
+  wget \
+  zlib
