@@ -2,10 +2,17 @@
 source "$REPO_PATH/lib.sh"
 
 install_function() {
+  needs bashrc
+
   wget "https://github.com/DarthSim/overmind/releases/download/v$version/overmind-v$version-linux-amd64.gz"
   gzip -d "overmind-v$version-linux-amd64.gz"
   sudo mv "overmind-v$version-linux-amd64" /usr/local/bin/overmind
   sudo chmod +x /usr/local/bin/overmind
+
+  say "copying bashrc.d config"
+  cp overmind.bashrc ~/.bashrc.d/
+
+  attention "restart your session or source ~/.bashrc.d/overmind.bashrc"
 }
 
 github_install_helper overmind "DarthSim/overmind"
