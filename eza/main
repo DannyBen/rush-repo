@@ -2,6 +2,6 @@
 source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
-  arch|fedora)  package_install eza ;;
-  *)            eget_install eza-community/eza --asset gnu.tar.gz ;;
+  arch|fedora|debian)  package_install eza ;;
+  *)                   eget_install eza-community/eza --asset gnu.tar.gz ;;
 esac
