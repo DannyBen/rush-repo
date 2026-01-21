@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "installing respec"
+curl -Ls get.dannyb.co/respec/setup | bash
