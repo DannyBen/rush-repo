@@ -2,7 +2,7 @@
 source "$REPO_PATH/lib.sh"
 
 say "installing prerequisites"
-needs curl git wget
+needs curl git wget eza
 
 say "installing my/* packages"
 needs my/bashrc my/cdpath my/gitconfig my/bash-completion my/alf my/hostname
