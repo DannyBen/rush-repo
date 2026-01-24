@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-needs bashrc
+needs bashrc bash-completion
 
 eget_install spinel-coop/rv
 
 say "copying shell configuration"
 cp rv.bashrc ~/.bashrc.d/
+
+say "creating bash completions"
+rv shell completions bash > ~/.bash_completion.d/rv.bash
+
 attention "restart your session or source ~/.bashrc"
