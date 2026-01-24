@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-sudo pacman -Syu && sudo pacman -S --noconfirm --needed \
+sudo pacman -Syu --noconfirm && sudo pacman -S --noconfirm --needed \
   base-devel \
   curl \
   gdbm \

@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
 needs bashrc
 
-say "copying ~/.bashrc.d/prompt.bashrc"
-cp prompt.bashrc "$HOME/.bashrc.d/"
+eget_install spinel-coop/rv
+
+say "copying shell configuration"
+cp rv.bashrc ~/.bashrc.d/
 attention "restart your session or source ~/.bashrc"

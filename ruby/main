@@ -3,13 +3,15 @@ source "$REPO_PATH/lib.sh"
 
 version=4.0.1
 
-needs ruby-base rbenv
+needs ruby-base rv
 # shellcheck disable=SC1091,SC1090
-source "$HOME/.bashrc.d/rbenv.bashrc"  # in case rbenv was installed just now
+source "$HOME/.bashrc.d/rv.bashrc"  # in case it was installed just now
 
-say "installing ruby $version with rbenv"
-rbenv install --skip-existing --verbose "$version"
-rbenv global "$version"
+say "installing ruby $version with rv"
+rv ruby install "$version"
+pushd ~
+rv ruby pin "$version"
+popd
 
 say "copying configuration files"
 cp .gemrc ~/
@@ -19,4 +21,4 @@ cp config ~/.bundle/
 ruby -v
 
 say "ruby installation complete"
-attention "you may need to restart your session or source ~/.bashrc.d/rbenv.bashrc"
+attention "restart your session or source ~/.bashrc"
