@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+if command_exist gptme ; then
+  say "gptme is already installed"
+else
+  needs pipx
+  pipx install gptme
+fi
+
