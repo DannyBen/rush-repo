@@ -3,8 +3,6 @@ Install codex, the OpenAI coding CLI
 Source: https://github.com/openai/codex
 Home: https://developers.openai.com/codex
 
-To complete installation, run this from the host and leave it open
+To login, run:
 
-  vagrant ssh -- -L 1455:localhost:1455
-
-while running `codex login` on the guest.
+  $ codex login --device-auth
