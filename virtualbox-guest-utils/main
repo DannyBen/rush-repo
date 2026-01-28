@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+package_install virtualbox-guest-utils
+VBoxService --version
+attention "reboot may be required"
+
