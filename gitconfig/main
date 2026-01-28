@@ -14,9 +14,11 @@ git config --global core.excludesfile ~/.gitignore_global
 git config --global core.attributesfile ~/.gitattributes_global
 git config --global init.defaultBranch master
 
-# reduce git locks
+# performance
 git config --global core.preloadindex true
 git config --global gc.auto 0
+git config --global core.untrackedCache true
+git config --global core.fsyncMethod batch
 
 # List of supported hunk header patterns for .gitattributes:
 # https://github.com/git/git/blob/master/userdiff.c
