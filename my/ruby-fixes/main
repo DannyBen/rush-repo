@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "removing default rdoc version 7.0.3"
+cd ~/.local/share/rv
+sudo fd rdoc-7.0.3 -x rm -rf   # the default gem version to delete
+sudo fd rdoc_plugin -x rm -rf

@@ -6,3 +6,4 @@ package_install direnv
 
 say "copying bashrc.d configuration"
 cp direnv.bashrc ~/.bashrc.d/direnv.bashrc
+attention "restart your session or source ~/.bashrc"
