@@ -9,6 +9,6 @@ needs bashrc
 
 say "copying ~/.bashrc.d/bash_completion.bashrc"
 cp bash_completion.bashrc ~/.bashrc.d/
-say "creating ~/.bash_completion.d"
-mkdir -p ~/.bash_completion.d
+say "creating ~/.local/share/bash-completion/completions"
+mkdir -p ~/.local/share/bash-completion/completions
 attention "restart your session or source ~/.bashrc"

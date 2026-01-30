@@ -1,3 +1,3 @@
-for bcfile in ~/.bash_completion.d/* ; do
-  [ -f "$bcfile" ] && source $bcfile
-done
+[[ -r /usr/share/bash-completion/bash_completion ]] &&
+  source /usr/share/bash-completion/bash_completion
+

@@ -3,3 +3,5 @@ source "$REPO_PATH/lib.sh"
 bin_uninstall rv
 say "removing shell configuration"
 rm -f ~/.bashrc.d/rv.bashrc
+remove_completions rv
+attention "restart your session"

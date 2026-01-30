@@ -3,5 +3,5 @@ source "$REPO_PATH/lib.sh"
 
 bin_uninstall ouch
 sudo rm -f /usr/local/share/man/man1/ouch*.1
-sudo rm -f /usr/share/bash-completion/completions/ouch
+remove_completions ouch
 

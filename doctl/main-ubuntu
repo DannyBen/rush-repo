@@ -6,7 +6,7 @@ install_function() {
   chmod +x doctl
   sudo mv doctl /usr/local/bin/
 
-  cp doctl.bashrc ~/.bashrc.d/doctl.bashrc
+  copy_completions completions.sh doctl
 }
 
 needs bashrc

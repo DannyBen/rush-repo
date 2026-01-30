@@ -10,7 +10,7 @@ install_function() {
   unzip exa.zip
 
   sudo install -m 755 bin/exa /usr/local/bin/
-  sudo cp completions/exa.bash /usr/share/bash-completion/completions/
+  copy_completions completions/exa.bash exa
   sudo cp man/exa.1 /usr/local/share/man/man1/
   sudo mkdir -p /usr/local/share/man/man5
   sudo cp man/exa_colors.5 /usr/local/share/man/man5/

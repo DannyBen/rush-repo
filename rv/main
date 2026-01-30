@@ -8,6 +8,8 @@ say "copying shell configuration"
 cp rv.bashrc ~/.bashrc.d/
 
 say "creating bash completions"
-rv shell completions bash > ~/.bash_completion.d/rv.bash
+source rv.bashrc
+mkdir -p ~/.local/share/bash-completion/completions
+rv shell completions bash > ~/.local/share/bash-completion/completions/rv
 
 attention "restart your session or source ~/.bashrc"
