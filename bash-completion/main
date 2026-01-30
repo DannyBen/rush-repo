@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 package_install bash-completion
+
+if [[ "$DISTRO" == "debian" || "$DISTRO" == "ubuntu" ]]; then
+  needs bashrc
+
+  say "copying .bashrc.d config"
+  cp bash_completion.bashrc ~/.bashrc.d
+  attention "restart your session or source ~/.bashrc"
+fi

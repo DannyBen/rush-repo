@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 package_uninstall bash-completion
+
+if [[ "$DISTRO" == "debian" || "$DISTRO" == "ubuntu" ]]; then
+  say "removing .bashrc.d config"
+  rm -f ~/.bashrc.d/bash_completion.bashrc
+  attention "restart your session or source ~/.bashrc"
+fi
