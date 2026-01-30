@@ -1,14 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-if [[ "$DISTRO" == "arch" ]]; then
-  package_install bash-completion
-fi
-
-needs bashrc
-
-say "copying ~/.bashrc.d/bash_completion.bashrc"
-cp bash_completion.bashrc ~/.bashrc.d/
-say "creating ~/.local/share/bash-completion/completions"
-mkdir -p ~/.local/share/bash-completion/completions
-attention "restart your session or source ~/.bashrc"
+package_install bash-completion

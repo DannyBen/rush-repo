@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-
-say "removing bashrd.c completions config"
-rm  ~/.bashrc.d/bash_completion.bashrc
-
+package_uninstall bash-completion
