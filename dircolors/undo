@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "removing ~/.bashrc.d/ls_colors.bash"
+rm -f ~/.bashrc.d/ls_colors.bashrc
