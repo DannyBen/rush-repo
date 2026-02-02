@@ -1,2 +1,2 @@
 source /usr/local/bin/fuzzycd
-eval "$(cd -c)" # bash completions
+eval "$(fuzzycd -c)" # bash completions
