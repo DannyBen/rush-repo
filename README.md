@@ -17,6 +17,8 @@ This is my rush repo for use with the [rush package manager][rush-cli].
 - Packages under the [my](my) folder are personal packages, most likely not
   suitable for anybody else.
 
+![repocard](repocard.svg)
+
 Add this repository
 --------------------------------------------------
 
