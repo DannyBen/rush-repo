@@ -1,7 +1,10 @@
 js_install() {
-  command_exist pnpm || needs pnpm
-  app="$1"
+  if ! command_exist pnpm; then
+    needs pnpm
+    source ~/.bashrc.d/pnpm.bashrc
+  fi
 
+  app="$1"
   say "installing $app using pnpm"
   pnpm install -g "$app"
 }
