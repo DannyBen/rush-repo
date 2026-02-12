@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 bin_uninstall rv
+bin_uninstall rvx
 say "removing shell configuration"
 rm -f ~/.bashrc.d/rv.bashrc
 remove_completions rv

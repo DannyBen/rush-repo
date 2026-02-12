@@ -1,15 +1,25 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-needs bashrc bash-completion
 
-eget_install spinel-coop/rv
+install_function() {
+  pushtmp
+  needs bashrc
 
-say "copying shell configuration"
-cp rv.bashrc ~/.bashrc.d/
+  url="https://github.com/spinel-coop/rv/releases/download/v${version}/rv-x86_64-unknown-linux-gnu.tar.xz"
 
-say "creating bash completions"
-source rv.bashrc
-mkdir -p ~/.local/share/bash-completion/completions
-rv shell completions bash > ~/.local/share/bash-completion/completions/rv
+  curl -sL "$url" | tar -xJ --strip-components=1
+  sudo install -m 755 rv rvx /usr/local/bin/
+  popd
 
-attention "restart your session or source ~/.bashrc"
+  say "copying shell configuration"
+  cp rv.bashrc ~/.bashrc.d/
+
+  say "creating bash completions"
+  source rv.bashrc
+  mkdir -p ~/.local/share/bash-completion/completions
+  rv shell completions bash > ~/.local/share/bash-completion/completions/rv
+
+  attention "restart your session or source ~/.bashrc"
+}
+
+github_install_helper rv spinel-coop/rv
