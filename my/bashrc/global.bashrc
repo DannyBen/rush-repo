@@ -1,5 +1,5 @@
 ### General
-export EDITOR=vim
+export EDITOR=vi
 
 ### Non-alf aliases
 alias ..="cd .."
