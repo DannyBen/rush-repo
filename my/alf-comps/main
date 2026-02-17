@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+needs bashrc
+
+say "copying g-completions.bashrc"
+cp g-completions.bashrc ~/.bashrc.d/

@@ -1,0 +1,49 @@
+g:
+  - add-upstream
+  - age
+  - amend
+  - b
+  - c
+  - checkout-pr
+  - chmod
+  - cl
+  - co
+  - compare
+  - d
+  - datelog
+  - del
+  - diff-list
+  - discard
+  - fetch-upstream
+  - find
+  - history
+  - l
+  - ll
+  - ls
+  - m
+  - new
+  - p
+  - pl
+  - remote-delete
+  - rename
+  - resolve-ours
+  - resolve-theirs
+  - retag
+  - rollback
+  - s
+  - sha
+  - shallow-clone
+  - stats
+  - tags
+  - tagsha
+  - tail
+  - touch
+  - unstage
+  - unstash
+
+g rename: [$(git branch 2> /dev/null)]
+g retag: [$(git tag 2> /dev/null)]
+g b -d: [$(git branch 2> /dev/null)]
+g del: [$(git branch 2> /dev/null)]
+g co: [$(git branch 2> /dev/null)]
+g m: [$(git branch 2> /dev/null)]
