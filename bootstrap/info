@@ -4,7 +4,7 @@ Running this will install:
 
 - bashrc
 - dircolors
-- exrc
+- vimrc
 - inputrc
 - irbrc
 - alf

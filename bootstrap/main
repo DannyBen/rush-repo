@@ -3,7 +3,7 @@ source "$REPO_PATH/lib.sh"
 
 say "installing essential rush packages"
 needs bashrc
-needs dircolors exrc inputrc prompt/dollar-color
+needs dircolors vimrc inputrc prompt/dollar-color
 needs vi fd less
 command_exist alf || rush get "$REPO:alf"
 

@@ -4,12 +4,16 @@ syntax on
 
 " Add line numbers, wrapping, indentation
 set number
+set mouse=a
 set nowrap
 set tabstop=2 shiftwidth=2 expandtab
 
 " q to quit
-map q :q!<CR>
+nnoremap q :q!<CR>
 
 " Set some explicit syntax highlighting
-autocmd BufReadPost COMMIT_EDITMSG set syntax=gitcommit
-autocmd BufRead,BufNewFile *.runfile set syntax=ruby
+augroup my_filetypes
+  autocmd!
+  autocmd BufReadPost COMMIT_EDITMSG set syntax=gitcommit
+  autocmd BufRead,BufNewFile *.runfile set syntax=ruby
+augroup END

@@ -8,7 +8,7 @@ say "installing my/* packages"
 needs my/bashrc my/cdpath my/gitconfig my/alf my/hostname
 
 say "installing public packages"
-needs dircolors exrc inputrc toprc locale ssh-agent prompt/dollar-color
+needs dircolors vimrc inputrc toprc locale ssh-agent prompt/dollar-color
 
 say "my/bootstrap complete"
 attention "you may need to restart your session"
