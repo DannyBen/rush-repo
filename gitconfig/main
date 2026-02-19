@@ -13,7 +13,6 @@ git config --global credential.helper "cache --timeout=21600"
 git config --global core.excludesfile ~/.gitignore_global
 git config --global core.attributesfile ~/.gitattributes_global
 git config --global init.defaultBranch master
-git config --global core.filemode true
 
 # performance
 git config --global core.preloadindex true
