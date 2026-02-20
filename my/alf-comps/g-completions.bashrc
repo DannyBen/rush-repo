@@ -75,7 +75,8 @@ _g_completions() {
       ;;
 
     *)
-      while read -r; do COMPREPLY+=("$REPLY"); done < <(compgen -W "$(_g_completions_filter "add-upstream age amend b c checkout-pr chmod cl co compare d datelog del diff-list discard fetch-upstream find history l ll ls m new p pl remote-delete rename resolve-ours resolve-theirs retag rollback s sha shallow-clone stats tags tagsha tail touch unstage unstash")" -- "$cur")
+      compopt -o filenames 2>/dev/null
+      while read -r; do COMPREPLY+=("$REPLY"); done < <(compgen -A file -W "$(_g_completions_filter "add-upstream age amend checkout-pr chmod compare datelog del diff-list discard fetch-upstream find history new remote-delete rename resolve-ours resolve-theirs retag rollback sha shallow-clone stats tags tagsha tail touch unstage unstash")" -- "$cur")
       ;;
 
   esac

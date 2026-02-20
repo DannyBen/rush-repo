@@ -2,14 +2,9 @@ g:
   - add-upstream
   - age
   - amend
-  - b
-  - c
   - checkout-pr
   - chmod
-  - cl
-  - co
   - compare
-  - d
   - datelog
   - del
   - diff-list
@@ -17,20 +12,13 @@ g:
   - fetch-upstream
   - find
   - history
-  - l
-  - ll
-  - ls
-  - m
   - new
-  - p
-  - pl
   - remote-delete
   - rename
   - resolve-ours
   - resolve-theirs
   - retag
   - rollback
-  - s
   - sha
   - shallow-clone
   - stats
@@ -40,6 +28,7 @@ g:
   - touch
   - unstage
   - unstash
+  - <file>
 
 g rename: [$(git branch 2> /dev/null)]
 g retag: [$(git tag 2> /dev/null)]
