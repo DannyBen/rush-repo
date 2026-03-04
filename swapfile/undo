@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+SWAPFILE=/swapfile
+FSTAB=/etc/fstab
+FSTAB_BEGIN="# rush:swapfile begin"
+FSTAB_END="# rush:swapfile end"
+CREATED_MARK=/etc/rush-swapfile.created
+
+say "undo: starting swap rollback..."
+
+if swapon --show | awk '{print $1}' | grep -qx "$SWAPFILE"; then
+  say "disabling swap ($SWAPFILE)..."
+  sudo swapoff "$SWAPFILE"
+else
+  say "swap not active."
+fi
+
+say "cleaning /etc/fstab..."
+managed_entry=0
+if grep -q "^$FSTAB_BEGIN$" "$FSTAB"; then
+  sudo sed -i "/^$FSTAB_BEGIN$/,/^$FSTAB_END$/d" "$FSTAB"
+  managed_entry=1
+fi
+
+if [ "$managed_entry" -eq 0 ]; then
+  say "no managed swap entry found in /etc/fstab."
+fi
+
+remove_swapfile=0
+if [ -f "$CREATED_MARK" ]; then
+  remove_swapfile=1
+  sudo rm -f "$CREATED_MARK"
+fi
+
+if [ "$remove_swapfile" -eq 1 ] && [ -f "$SWAPFILE" ]; then
+  say "removing $SWAPFILE..."
+  sudo rm -f "$SWAPFILE"
+elif [ "$remove_swapfile" -eq 1 ]; then
+  say "managed swapfile already absent."
+elif [ -f "$SWAPFILE" ]; then
+  say "$SWAPFILE was not created by this package; leaving it in place."
+else
+  say "swapfile not present."
+fi
+
+say "undo: complete."
+free -h

@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+SWAPFILE=/swapfile
+SIZE=1G
+FSTAB_BEGIN="# rush:swapfile begin"
+FSTAB_END="# rush:swapfile end"
+FSTAB_ENTRY="$SWAPFILE none swap sw 0 0"
+CREATED_MARK=/etc/rush-swapfile.created
+
+say "configuring swapfile..."
+if [ ! -f "$SWAPFILE" ]; then
+  say "creating swapfile ($SIZE)..."
+  sudo fallocate -l "$SIZE" "$SWAPFILE"
+  sudo chmod 600 "$SWAPFILE"
+  sudo mkswap "$SWAPFILE"
+  sudo touch "$CREATED_MARK"
+else
+  say "swapfile already exists."
+fi
+
+if swapon --show | awk '{print $1}' | grep -qx "$SWAPFILE"; then
+  say "swap already active."
+else
+  say "enabling swap..."
+  sudo swapon "$SWAPFILE"
+fi
+
+if grep -q "^$FSTAB_BEGIN$" /etc/fstab || grep -Eq "^${SWAPFILE}[[:space:]]+none[[:space:]]+swap([[:space:]]|$)" /etc/fstab; then
+  say "swap entry already present in /etc/fstab."
+else
+  say "adding swap to /etc/fstab..."
+  printf "\n%s\n%s\n%s\n" "$FSTAB_BEGIN" "$FSTAB_ENTRY" "$FSTAB_END" | sudo tee -a /etc/fstab >/dev/null
+fi
+
+say "swap configuration complete:"
+free -h
