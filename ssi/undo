@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+ssi uninstall completion ssi --shell bash
 bin_uninstall ssi
