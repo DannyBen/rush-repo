@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-shopt -s globstar 
+shopt -s globstar
 set -e
-source _lib/colors.sh
+source _lib/core/colors.sh
 
 green "==> shellcheck lib files"
 
-for file in _lib/*.sh ; do
+for file in _lib/**/*.sh ; do
   echo "==> shellcheck $file"
   # shellcheck --external-sources --source-path=SCRIPTDIR:"$PWD" "$file"
   shellcheck --exclude SC1090,SC1091 --shell bash "$file"

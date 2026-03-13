@@ -16,6 +16,7 @@
 - Keep scripts bash-compatible and consistent with existing style.
 - Reuse `lib.sh` helpers (`package_install`, `package_uninstall`, distro helpers, etc.) when possible instead of duplicating logic.
 - Preserve portability across supported Linux distros where feasible (Arch, Debian/Ubuntu, Fedora patterns exist in `_lib`).
+- `_lib` is organized by domain (`core/`, `platform/`, `installers/`, `rush/`, `shell/`); keep helper files small and group tightly related install/uninstall pairs together.
 
 ## Validation
 - Run `./test.sh` after meaningful script changes (shellcheck over `_lib` and package `main`/`undo` files).
