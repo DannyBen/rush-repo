@@ -1,0 +1,13 @@
+Install alsa-utils, the sound utilities
+
+Provides low-level ALSO (audio/souund) control and diagnostics tools:
+
+- aplay        → play raw/WAV audio via ALSA (output path validation)
+- arecord      → record audio via ALSA (input path validation)
+- amixer       → CLI mixer control (set/get volumes, mute/unmute)
+- alsactl      → save/restore mixer state (persist across reboots)
+- speaker-test → generate test tones (basic channel/speaker verification)
+- alsamixer    → interactive TUI mixer (less relevant for headless systems)
+- iecset       → control IEC958/SPDIF settings
+- alsaloop     → create loopback audio devices (advanced/debug use)
+- alsabat      → automated audio testing tool (latency/quality analysis)
