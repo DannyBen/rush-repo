@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "fetching latest claude version number"
+version="$(curl -fsSL https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/latest)"
+
+if [[ -z "$FORCE" ]] && command_exist claude; then
+  say "checking installed claude version"
+  installed_version="$(claude --version 2>/dev/null | awk 'NR==1 { print $1 }')"
+  if [[ "$installed_version" == "$version" ]]; then
+    say "already installed (--force to install anyway)"
+    exit 0
+  fi
+fi
+
+tmp="/tmp/claude-$version-linux-x64"
+say "downloading claude $version"
+curl -fsSL -o "$tmp" "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/$version/linux-x64/claude"
+say "verifying checksum"
+curl -fsSL "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/$version/manifest.json" | jq -r --arg tmp "$tmp" '.platforms["linux-x64"].checksum + "  " + $tmp' | sha256sum -c -
+chmod +x "$tmp"
+say "installing claude to /usr/local/bin/claude"
+sudo install -m 0755 "$tmp" /usr/local/bin/claude
+say "cleaning up temporary file"
+rm -f "$tmp"
+say "installation complete"
