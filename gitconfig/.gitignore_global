@@ -5,6 +5,7 @@
 *.sublime-workspace
 .aider*
 .byebug_history
+.codex
 .direnv
 .env
 .envrc
