@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
+say "updating package manager"
+needs update
+
 say "installing prerequisites"
 needs curl git wget eza
 
