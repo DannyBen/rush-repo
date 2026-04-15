@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-say "installing essential rush packages"
-needs bashrc
-needs dircolors vimrc inputrc prompt/dollar-color
-needs vi fd less
-command_exist alf || rush get "$REPO:alf"
+say "installing prerequisites"
+needs curl git wget eza
+
+say "installing configuration"
+needs gitconfig bashrc dircolors vimrc inputrc toprc locale ssh-agent prompt/dollar-color
+
+say "installing alf"
+command_exist alf || needs alf
+
+say "installing tools"
+needs vi fd less ripgrep
 
 say "bootstrap complete"
 attention "you may need to restart your session"

@@ -4,11 +4,15 @@ source "$REPO_PATH/lib.sh"
 say "installing prerequisites"
 needs curl git wget eza
 
-say "installing my/* packages"
-needs my/bashrc my/cdpath my/gitconfig my/alf my/hostname
-
-say "installing public packages"
+say "installing configuration"
+needs my/cdpath my/gitconfig my/hostname my/bashrc
 needs dircolors vimrc inputrc toprc locale ssh-agent prompt/dollar-color
+
+say "installing alf"
+needs my/alf 
+
+say "installing tools"
+needs vi fd less ripgrep
 
 say "my/bootstrap complete"
 attention "you may need to restart your session"
