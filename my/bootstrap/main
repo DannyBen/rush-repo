@@ -15,7 +15,7 @@ say "installing alf"
 needs my/alf 
 
 say "installing tools"
-needs vi fd less ripgrep
+needs vi fd less ripgrep bash-completion
 
 say "my/bootstrap complete"
 attention "you may need to restart your session"

@@ -14,7 +14,7 @@ say "installing alf"
 command_exist alf || needs alf
 
 say "installing tools"
-needs vi fd less ripgrep
+needs vi fd less ripgrep bash-completion
 
 say "bootstrap complete"
 attention "you may need to restart your session"
