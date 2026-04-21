@@ -19,7 +19,8 @@
 - `_lib` is organized by domain (`core/`, `platform/`, `installers/`, `rush/`, `shell/`); keep helper files small and group tightly related install/uninstall pairs together.
 
 ## Validation
-- Run `./test.sh` after meaningful script changes (shellcheck over `_lib` and package `main`/`undo` files).
+- For scoped package changes, prefer targeted validation via `op shellcheck <package>` and `op shfmt <package>` (see `op.conf`).
+- Run `./test.sh` after broader or cross-cutting script changes, especially when touching shared helpers under `_lib`.
 - If touching only docs/metadata, skip tests only when clearly unnecessary.
 
 ## Agent Working Notes

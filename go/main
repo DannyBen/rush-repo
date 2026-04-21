@@ -1,3 +1,16 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-distro_script
+
+case "$DISTRO" in
+  arch)                 package_install go ;;
+  debian|ubuntu|fedora) package_install golang ;;
+  *) warning "not available for distro:$DISTRO" ;;
+esac
+
+case "$DISTRO" in
+  arch|debian|ubuntu|fedora)
+    needs bashrc
+    say "copying bashrc.d config"
+    cp go.bashrc ~/.bashrc.d/go.bashrc
+    ;;
+esac
