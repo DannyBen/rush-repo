@@ -1,11 +1,1 @@
 A meta package executing several configuration packages
-
-Running this will install:
-
-- bashrc
-- dircolors
-- vimrc
-- inputrc
-- irbrc
-- alf
-

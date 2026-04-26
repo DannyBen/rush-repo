@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+case "$DISTRO" in
+  arch|fedora)    package_uninstall ctags ;;
+  debian|ubuntu)  package_uninstall universal-ctags ;;
+  *)              fail "not available for distro:$DISTRO" ;;
+esac
