@@ -3,4 +3,3 @@ source "$REPO_PATH/lib.sh"
 say "installing codex"
 command_exist eget || needs eget
 sudo eget --upgrade-only --to=/usr/local/bin/codex openai/codex --asset codex-x86_64-unknown-linux-musl.zst
-gnu.tar.gz
