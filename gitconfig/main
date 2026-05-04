@@ -20,6 +20,13 @@ git config --global gc.auto 0
 git config --global core.untrackedCache true
 git config --global core.fsyncMethod batch
 
+# virtualbox shared folder stability
+git config --global gc.autoDetach false
+git config --global maintenance.auto false
+git config --global pack.threads 1
+git config --global index.threads 1
+git config --global checkout.workers 1
+
 # List of supported hunk header patterns for .gitattributes:
 # https://github.com/git/git/blob/master/userdiff.c
 # or
