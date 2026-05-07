@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+command_exist op || needs opcode
+say "installing opcode for agents"
+sudo ln -fs /usr/local/bin/op /usr/local/bin/agent
+agent --version
