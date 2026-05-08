@@ -1,0 +1,4 @@
+[tui.keymap]
+composer.submit = "tab"
+composer.queue = "alt-q"
+editor.insert_newline = "enter"

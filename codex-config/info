@@ -1,0 +1,6 @@
+Patch Codex config with some niceties.
+
+- Keymap: Map Enter to Newline
+- Keymap: Map Tab to Submit
+
+Can be undone.

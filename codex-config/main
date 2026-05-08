@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+start_marker="# start: rush codex-config"
+end_marker="# end: rush codex-config"
+config_file="$HOME/.codex/config.toml"
+
+say "installing codex config"
+
+[[ -f "$config_file" ]] || fail "codex config does not exist: $config_file"
+
+tmpfile="$(mktemp)"
+
+{
+  awk -v start="$start_marker" -v end="$end_marker" -v snippet="config.toml" '
+    $0 == start { skip = 1; next }
+    $0 == end { skip = 0; drop_blank = 1; next }
+    drop_blank && $0 == "" { drop_blank = 0; next }
+    { drop_blank = 0 }
+
+    !skip && !inserted && $0 ~ /^\[/ {
+      print start
+      while ((getline line < snippet) > 0) print line
+      close(snippet)
+      print end
+      print ""
+      inserted = 1
+    }
+
+    !skip { print }
+
+    END {
+      if (!inserted) {
+        print start
+        while ((getline line < snippet) > 0) print line
+        close(snippet)
+        print end
+        print ""
+      }
+    }
+  ' "$config_file"
+} > "$tmpfile"
+
+mv "$tmpfile" "$config_file"
+
+say "codex config patched: $config_file"
