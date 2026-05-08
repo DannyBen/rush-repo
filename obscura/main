@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+eget_install h4ckf0r0day/obscura -f 'obscura*' --all
