@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-start_marker="# start: rush codex-config"
-end_marker="# end: rush codex-config"
+start_marker="# start: rush codex/config"
+end_marker="# end: rush codex/config"
 config_file="$HOME/.codex/config.toml"
 
 say "removing codex config patch"
