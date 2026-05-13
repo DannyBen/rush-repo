@@ -3,6 +3,7 @@
 *.py[cod]
 *.sublime-project
 *.sublime-workspace
+.agents
 .aider*
 .byebug_history
 .codex
