@@ -15,8 +15,10 @@ git config --global core.attributesfile ~/.gitattributes_global
 git config --global init.defaultBranch master
 
 # virtualbox shared folder stability
+git config --global gc.auto 0
 git config --global gc.autoDetach false
 git config --global index.threads 1
+git config --global maintenance.auto false
 git config --global maintenance.autoDetach false
 git config --global pack.threads 1
 
