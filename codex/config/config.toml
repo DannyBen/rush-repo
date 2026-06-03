@@ -2,3 +2,6 @@
 composer.submit = "tab"
 composer.queue = "alt-q"
 editor.insert_newline = "enter"
+
+[sandbox_workspace_write]
+writable_roots = ["$HOME/.cache"]
