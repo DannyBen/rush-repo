@@ -2,5 +2,6 @@ Patch Codex config with some niceties.
 
 - Keymap: Map Enter to Newline
 - Keymap: Map Tab to Submit
+- Permissions: Allow write to ~/.cache
 
 Can be undone.

@@ -1,31 +1,14 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-start_marker="# start: rush codex/config"
-end_marker="# end: rush codex/config"
 config_file="$HOME/.codex/config.toml"
 
 say "removing codex config patch"
 
-changes_done=false
-
-if [[ -f "$config_file" ]] && grep -qF "$start_marker" "$config_file"; then
-  tmpfile="$(mktemp)"
-
-  awk -v start="$start_marker" -v end="$end_marker" '
-    $0 == start { skip = 1; next }
-    $0 == end { skip = 0; drop_blank = 1; next }
-    drop_blank && $0 == "" { drop_blank = 0; next }
-    { drop_blank = 0 }
-    !skip { print }
-  ' "$config_file" > "$tmpfile"
-
-  mv "$tmpfile" "$config_file"
-  changes_done=true
-fi
-
-if [[ "$changes_done" = true ]]; then
-  say "codex config patch removed: $config_file"
-else
-  say "no changes done"
-fi
+config unset "$config_file" tui.keymap.composer.submit --if tab
+config unset "$config_file" tui.keymap.composer.queue --if alt-q
+config unset "$config_file" tui.keymap.editor.insert_newline --if enter
+config array del "$config_file" sandbox_workspace_write.writable_roots "\$HOME/.cache"
+config delete "$config_file" tui.keymap.editor --if-empty
+config delete "$config_file" tui.keymap.composer --if-empty
+config delete "$config_file" sandbox_workspace_write --if-empty
