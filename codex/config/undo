@@ -9,6 +9,3 @@ config unset "$config_file" tui.keymap.composer.submit --if tab
 config unset "$config_file" tui.keymap.composer.queue --if alt-q
 config unset "$config_file" tui.keymap.editor.insert_newline --if enter
 config array del "$config_file" sandbox_workspace_write.writable_roots "\$HOME/.cache"
-config delete "$config_file" tui.keymap.editor --if-empty
-config delete "$config_file" tui.keymap.composer --if-empty
-config delete "$config_file" sandbox_workspace_write --if-empty
