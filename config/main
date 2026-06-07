@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 eget_install DannyBen/config
+
+say "creating bash completions"
+mkdir -p ~/.local/share/bash-completion/completions
+config completion bash > ~/.local/share/bash-completion/completions/config
