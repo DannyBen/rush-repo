@@ -3,12 +3,14 @@ source "$REPO_PATH/lib.sh"
 
 config_file="$HOME/.codex/config.toml"
 
+needs config
+
 say "installing codex config"
 
 mkdir -p "$(dirname "$config_file")"
 touch "$config_file"
 
-config set "$config_file" tui.keymap.composer.submit tab
-config set "$config_file" tui.keymap.composer.queue alt-q
-config set "$config_file" tui.keymap.editor.insert_newline enter
-config array add "$config_file" sandbox_workspace_write.writable_roots "\$HOME/.cache"
+config set -f "$config_file" tui.keymap.composer.submit tab
+config set -f "$config_file" tui.keymap.composer.queue alt-q
+config set -f "$config_file" tui.keymap.editor.insert_newline enter
+config array add -f "$config_file" sandbox_workspace_write.writable_roots "\$HOME/.cache"
