@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+bin_uninstall codebase-memory-mcp
+
+config_file="$HOME/.codex/config.toml"
+if [[ -f $config_file ]]; then
+  needs config
+  say "removing codex mcp"
+  config delete -f "$config_file" mcp_servers.codebase-memory-mcp --if-exists
+fi

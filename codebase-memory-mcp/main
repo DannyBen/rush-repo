@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+eget_install DeusData/codebase-memory-mcp --asset codebase-memory-mcp-linux-amd64.tar.gz
+
+config_file="$HOME/.codex/config.toml"
+if [[ -f $config_file ]]; then
+  needs config
+  say "configuring codex mcp"
+  config set -f "$config_file" mcp_servers.codebase-memory-mcp.command /usr/local/bin/codebase-memory-mcp
+fi
