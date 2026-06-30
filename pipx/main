@@ -21,4 +21,3 @@ package_install "$package"
 # for example uploaded-prior-to = P7D with an older shared pip.
 pipx ensurepath
 PIP_CONFIG_FILE=/dev/null pipx upgrade-shared
-~/.local/share/pipx/shared/bin/python -m pip --version
