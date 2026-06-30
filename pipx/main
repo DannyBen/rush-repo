@@ -3,14 +3,22 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   arch)
-    needs binpath
-    package_install python-pipx
+    package=python-pipx
     ;;
   debian|fedora|ubuntu)
-    needs binpath
-    package_install pipx
+    package=pipx
     ;;
   *)
     fail "not available for distro:$DISTRO"
     ;;
 esac
+
+needs binpath
+package_install "$package"
+
+# Ensure latest pip version for pipx shared venv.
+# PIP_CONFIG_FILE=/dev/null avoids user pip config breaking the upgrade,
+# for example uploaded-prior-to = P7D with an older shared pip.
+pipx ensurepath
+PIP_CONFIG_FILE=/dev/null pipx upgrade-shared
+~/.local/share/pipx/shared/bin/python -m pip --version
