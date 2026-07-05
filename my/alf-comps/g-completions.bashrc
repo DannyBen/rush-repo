@@ -62,6 +62,10 @@ _g_completions() {
       while read -r; do COMPREPLY+=("$REPLY"); done < <(compgen -W "$(_g_completions_filter "$(git branch 2> /dev/null)")" -- "$cur")
       ;;
 
+    'b -D'*)
+      while read -r; do COMPREPLY+=("$REPLY"); done < <(compgen -W "$(_g_completions_filter "$(git branch 2> /dev/null)")" -- "$cur")
+      ;;
+
     'del'*)
       while read -r; do COMPREPLY+=("$REPLY"); done < <(compgen -W "$(_g_completions_filter "$(git branch 2> /dev/null)")" -- "$cur")
       ;;
