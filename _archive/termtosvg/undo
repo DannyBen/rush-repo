@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-
-say "uninstalling termtosvg"
-sudo python3 -m pip uninstall termtosvg

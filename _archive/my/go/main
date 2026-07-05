@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-
-needs go
-
-say "symlinking ~/go => /store/go"
-[[ -d $HOME/go ]] || ln -s /store/go "$HOME/go"

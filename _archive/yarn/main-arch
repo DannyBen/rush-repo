@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-package_install yarn
-say "copying config files"
-cp yarn.bashrc "$HOME/.bashrc.d/"
-cp .yarnrc "$HOME/"

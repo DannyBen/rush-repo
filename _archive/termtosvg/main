@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-
-needs python
-
-say "installing termtosvg (pip)"
-sudo python3 -m pip install --upgrade termtosvg
-termtosvg -h | head -n2

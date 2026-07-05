@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-
-needs bashrc
-
-say "enabling ruby yjit"
-cp yjit.bashrc ~/.bashrc.d/
-attention "restart your session or source ~/.bashrc"

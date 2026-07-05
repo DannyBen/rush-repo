@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-
-needs bashrc
-
-say "copying rigit.bashrc"
-cp rigit.bashrc "$HOME/.bashrc.d/rigit.bashrc"

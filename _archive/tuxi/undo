@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-source "$REPO_PATH/lib.sh"
-
-discard pup recode
-bin_uninstall tuxi
