@@ -14,9 +14,6 @@ set split-view-width = 70%
 
 # Handy global bindings
 bind generic - :toggle vertical-split
-bind generic R refresh
-bind generic S view-status
-bind generic Y view-stash
 
 # Safety: disable accidental discard/revert via !
 bind status ! none
