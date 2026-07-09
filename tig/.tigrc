@@ -1,0 +1,23 @@
+# ~/.tigrc
+
+# This may not auto-open the diff pane on startup;
+set show-changes = true
+
+# Auto chooses side-by-side or top/bottom based on terminal size
+set vertical-split = auto
+
+# Horizontal split: controls bottom pane height
+set split-view-height = 70%
+
+# Vertical split: controls right pane width
+set split-view-width = 70%
+
+# Handy global bindings
+bind generic - :toggle vertical-split
+bind generic R refresh
+bind generic S view-status
+bind generic Y view-stash
+
+# Safety: disable accidental discard/revert via !
+bind status ! none
+bind stage ! none
