@@ -1,5 +1,31 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-say "installing codex"
-command_exist eget || needs eget
-sudo eget --upgrade-only --to=/usr/local/bin/codex openai/codex --asset codex-x86_64-unknown-linux-musl.zst
+
+install_function() {
+  pushtmp
+  command_exist eget || needs eget
+
+  # Based on https://chatgpt.com/codex/install.sh
+
+  # download
+  eget openai/codex --asset codex-x86_64-unknown-linux-musl-bundle.tar.zst --all
+
+  # verify existing assets
+  [[ -x codex ]] || fail "missing codex from bundle"
+  [[ -x codex-code-mode-host ]] || fail "missing codex-code-mode-host from bundle"
+  [[ -x bwrap ]] || fail "missing bwrap from bundle"
+
+  # install assets
+  sudo install -m 755 codex /usr/local/bin/
+  sudo install -m 755 codex-code-mode-host /usr/local/bin/
+  sudo mkdir -p /usr/local/bin/codex-resources
+  sudo install -m 755 bwrap /usr/local/bin/codex-resources/
+  popd
+
+  say "installation complete"
+}
+
+# the release version is prefixed with "rust-" - so we remove it
+version=$(get_github_release_version openai/codex)
+version=${version#rust-}
+github_install_helper codex openai/codex --version "$version"
