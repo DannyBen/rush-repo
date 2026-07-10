@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 needs ttyd
-eget_install replicate/vhs --asset ^json
+eget_install charmbracelet/vhs --asset ^json
