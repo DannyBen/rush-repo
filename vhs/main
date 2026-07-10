@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-needs ttyd
-eget_install charmbracelet/vhs --asset ^json
+package_install vhs
