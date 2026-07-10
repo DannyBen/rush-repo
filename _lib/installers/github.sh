@@ -25,5 +25,19 @@ github_install_helper() {
 }
 
 get_github_release_version() {
-  curl -s "https://api.github.com/repos/$1/releases/latest" | grep "tag_name" | cut -d : -f 2,3 | tr -d \"\ ,v
+  local response version
+
+  response=$(curl -fsSL "https://api.github.com/repos/$1/releases/latest") ||
+    fail "failed to fetch latest GitHub release for $1"
+
+  version=$(
+    printf '%s\n' "$response" |
+      sed -n 's/.*"tag_name"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' |
+      head -n 1
+  )
+
+  [[ -n "$version" ]] ||
+    fail "GitHub response for $1 did not contain a release tag"
+
+  printf '%s\n' "${version#v}"
 }

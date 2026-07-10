@@ -19,4 +19,8 @@ for file in **/{main,undo}* ; do
   shellcheck "$file"
 done
 
-green "==> shellcheck done, all good"
+green "==> typos"
+
+command -v typos >/dev/null 2>&1 && typos
+
+green "==> all done"

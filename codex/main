@@ -25,7 +25,7 @@ install_function() {
   say "installation complete"
 }
 
-# the release version is prefixed with "rust-" - so we remove it
+# the release version is prefixed with "rust-v" - so we remove it
 version=$(get_github_release_version openai/codex)
-version=${version#rust-}
+version=${version#rust-v}
 github_install_helper codex openai/codex --version "$version"
