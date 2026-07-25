@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "installing tools for codex"
+needs git curl ripgrep fd jq yq tree unzip file

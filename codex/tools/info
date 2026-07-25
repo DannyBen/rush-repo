@@ -1,0 +1,11 @@
+Install useful tools for codex
+
+- git
+- curl
+- ripgrep
+- fd
+- jq
+- yq
+- tree
+- unzip
+- file
