@@ -1,0 +1,5 @@
+Install libpwquality, the password helper
+
+Provides:
+- pwmake  - for creating passwords
+- pwscore - for checking password entropy
