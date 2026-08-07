@@ -1,31 +1,15 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-install_function() {
-  pushtmp
-  command_exist eget || needs eget
+package_install openai-codex || fail "failed to install openai-codex"
 
-  # Based on https://chatgpt.com/codex/install.sh
-
-  # download
-  eget openai/codex --asset codex-x86_64-unknown-linux-musl-bundle.tar.zst --all
-
-  # verify existing assets
-  [[ -x codex ]] || fail "missing codex from bundle"
-  [[ -x codex-code-mode-host ]] || fail "missing codex-code-mode-host from bundle"
-  [[ -x bwrap ]] || fail "missing bwrap from bundle"
-
-  # install assets
-  sudo install -m 755 codex /usr/local/bin/
-  sudo install -m 755 codex-code-mode-host /usr/local/bin/
-  sudo mkdir -p /usr/local/bin/codex-resources
-  sudo install -m 755 bwrap /usr/local/bin/codex-resources/
-  popd
-
-  say "installation complete"
-}
-
-# the release version is prefixed with "rust-v" - so we remove it
-version=$(get_github_release_version openai/codex)
-version=${version#rust-v}
-github_install_helper codex openai/codex --version "$version"
+# TEMPORARY MIGRATION: Remove after users have migrated from the old
+# GitHub bundle installation to the Arch package.
+if [[ -f /usr/local/bin/codex ]] &&
+  [[ -f /usr/local/bin/codex-code-mode-host ]] &&
+  [[ -f /usr/local/bin/codex-resources/bwrap ]]; then
+  say "removing legacy codex installation"
+  bin_uninstall codex
+  bin_uninstall codex-code-mode-host
+  sudo rm -rf /usr/local/bin/codex-resources
+fi

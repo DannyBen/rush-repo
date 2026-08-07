@@ -1,0 +1,16 @@
+Install useful companion tools for the Arch Linux package manager
+
+Commands:
+- checkupdates: safely list pending package updates
+- paccache: clean old packages from the package cache
+- pacdiff: review and merge .pacnew and .pacsave files
+- paclist: list installed packages from a repository
+- paclog-pkglist: list packages recorded in pacman.log
+- pacscripts: show package install scripts
+- pacsearch: search packages with formatted output
+- pacsort: sort package names and versions
+- pactree: show package dependency trees
+- rankmirrors: rank mirrors by performance
+- updpkgsums: update checksums in a PKGBUILD
+
+Source: https://gitlab.archlinux.org/pacman/pacman-contrib

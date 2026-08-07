@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-say "uninstalling codex"
-bin_uninstall codex
-bin_uninstall codex-code-mode-host
-sudo rm -rf /usr/local/bin/codex-resources
+
+package_uninstall openai-codex
+
+# TEMPORARY MIGRATION: Remove after users have migrated from the old
+# GitHub bundle installation to the Arch package.
+if [[ -f /usr/local/bin/codex ]] &&
+  [[ -f /usr/local/bin/codex-code-mode-host ]] &&
+  [[ -f /usr/local/bin/codex-resources/bwrap ]]; then
+  say "removing legacy codex installation"
+  bin_uninstall codex
+  bin_uninstall codex-code-mode-host
+  sudo rm -rf /usr/local/bin/codex-resources
+fi
