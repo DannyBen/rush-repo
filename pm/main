@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+case "$DISTRO" in
+  arch)
+    say "installing pm"
+    curl -Ls get.dannyb.co/pm/setup | bash
+    ;;
+  *) fail "not available for distro:$DISTRO" ;;
+esac
