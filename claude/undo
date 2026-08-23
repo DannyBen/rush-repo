@@ -2,3 +2,6 @@
 source "$REPO_PATH/lib.sh"
 
 bin_uninstall claude
+say "removing claude-owned directories"
+rm -f "$HOME/.local/bin/claude"
+rm -rf "$HOME/.local/share/claude"
