@@ -3,7 +3,10 @@ source "$REPO_PATH/lib.sh"
 
 case "$DISTRO" in
   arch)
+    needs config
     package_install nix
+    sudo config set -f /etc/nix/nix.conf experimental-features "nix-command flakes"
+    sudo nix-store --init
     sudo systemctl enable --now nix-daemon.service
     nix --version
     ;;
