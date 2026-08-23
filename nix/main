@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+case "$DISTRO" in
+  arch)
+    package_install nix
+    sudo systemctl enable --now nix-daemon.service
+    nix --version
+    ;;
+  *) fail "not available for distro:$DISTRO" ;;
+esac

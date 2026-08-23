@@ -1,17 +1,24 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-if command_exist brew ; then
+if command_exist brew; then
   say "running homebrew uninstall script"
   pushtmp
-  wget https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh
-  bash uninstall.sh --force
+  if wget https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh; then
+    bash uninstall.sh --force || warning "homebrew uninstall script failed"
+  else
+    warning "could not download homebrew uninstall script"
+  fi
   popd
-
-  say "removing bashrc.d config"
-  rm -f ~/.bashrc.d/homebrew.bashrc
-
 else
   say "homebrew is not installed"
-  
 fi
+
+if [[ -d /home/linuxbrew ]]; then
+  say "removing leftover homebrew installation"
+  sudo rm -rf /home/linuxbrew/.linuxbrew
+  sudo rmdir /home/linuxbrew 2>/dev/null || true
+fi
+
+say "removing bashrc.d config"
+rm -f ~/.bashrc.d/homebrew.bashrc

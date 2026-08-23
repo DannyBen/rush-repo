@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 
-if command_exist brew ; then
+if command_exist brew; then
   say "homebrew is already installed"
 
 else
@@ -9,7 +9,7 @@ else
 
   say "running homebrew install script"
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  
+
   say "copying bashrc.d config"
   cp homebrew.bashrc ~/.bashrc.d/
 

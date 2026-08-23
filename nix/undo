@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+case "$DISTRO" in
+  arch)
+    sudo systemctl disable --now nix-daemon.service
+    package_uninstall nix
+    attention "Nix store data remains in /nix"
+    ;;
+  *) warning "not available for distro:$DISTRO" ;;
+esac
