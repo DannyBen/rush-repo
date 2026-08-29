@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-distro_script
-chrome --version
+
+case "$DISTRO" in
+  arch | debian | fedora) package_install chromium ;;
+  ubuntu) apt_install_deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" ;;
+  *) fail "not available for distro:$DISTRO" ;;
+esac
+
+case "$DISTRO" in
+  fedora) chromium-browser --version ;;
+  ubuntu) google-chrome --version ;;
+  *) chromium --version ;;
+esac

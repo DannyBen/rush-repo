@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
-distro_script undo
+
+case "$DISTRO" in
+  arch | debian | fedora) package_uninstall chromium ;;
+  ubuntu) package_uninstall google-chrome-stable ;;
+  *) warning "not available for distro:$DISTRO" ;;
+esac
