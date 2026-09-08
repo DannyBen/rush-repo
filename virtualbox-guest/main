@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
+package_uninstall virtualbox-guest-utils
 package_install virtualbox-guest-utils-nox
 VBoxService --version
 attention "reboot may be required"

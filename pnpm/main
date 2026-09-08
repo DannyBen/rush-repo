@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 distro_script
+say "copying pnpm.bashrc"
+cp pnpm.bashrc "$HOME/.bashrc.d/"
+attention "restart your session or source ~/.bashrc.d/pnpm.bashrc"
 pnpm --version

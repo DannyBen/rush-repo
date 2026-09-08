@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
 source "$REPO_PATH/lib.sh"
 package_install pnpm
-say "copying pnpm.bashrc"
-cp pnpm.bashrc "$HOME/.bashrc.d/"
-attention "restart your session or source ~/.bashrc.d/pnpm.bashrc"
