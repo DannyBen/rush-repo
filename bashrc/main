@@ -21,7 +21,7 @@ fi
 if ! grep -q "bashrc.d" "$HOME/.bashrc"; then
   say "appending source bashrc.d/* to ~/.bashrc"
   printf "# Source all files in ~/.bashrc.d\n" >> "$HOME/.bashrc"
-  printf "for f in ~/.bashrc.d/*; do source \$f; done\n" >> "$HOME/.bashrc"
+  printf "for f in ~/.bashrc.d/*; do [[ -f \$f ]] || continue; source \"\$f\"; done\n" >> "$HOME/.bashrc"
   changes_done=true
 fi
 

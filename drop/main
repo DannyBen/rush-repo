@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+package_install passt # dependency
+eget_install wrr/drop
