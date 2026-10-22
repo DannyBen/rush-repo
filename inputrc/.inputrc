@@ -1,3 +1,5 @@
+$include /etc/inputrc
+
 # Change up/down arrows behavior
 "\e[A": history-search-backward
 "\e[B": history-search-forward
