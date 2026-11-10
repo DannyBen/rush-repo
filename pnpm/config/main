@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+if ! command -v pnpm >/dev/null 2>&1; then
+  say "pnpm not installed, skipping configuration"
+  exit 0
+fi
+
+say "configuring pnpm"
+pnpm config set --global minimumReleaseAge 10080
+pnpm config set --global blockExoticSubdeps true
+pnpm config set --global trustPolicy no-downgrade
+pnpm config set --global strictDepBuilds true
+pnpm config set --global ignoreScripts true
