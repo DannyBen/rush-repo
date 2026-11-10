@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+eget_install sourcemeta/jsonschema --asset linux-x86_64.zip
