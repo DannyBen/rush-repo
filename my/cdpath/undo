@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+needs bashrc
+
+say "removing cdpath.bashrc"
+rm -f ~/.bashrc.d/cdpath.bashrc

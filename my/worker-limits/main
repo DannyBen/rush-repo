@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+needs bashrc
+
+say "copying worker-limits.bashrc"
+cp worker-limits.bashrc ~/.bashrc.d/

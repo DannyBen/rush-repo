@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source "$REPO_PATH/lib.sh"
+
+say "removing worker-limits.bashrc"
+rm -f ~/.bashrc.d/worker-limits.bashrc

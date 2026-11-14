@@ -1,0 +1,3 @@
+export RAYON_NUM_THREADS=1
+export UV_THREADPOOL_SIZE=1
+
